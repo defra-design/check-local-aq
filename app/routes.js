@@ -18,6 +18,7 @@ router.get('/where', (req, res) => {
 // POST route for where.html submission
 router.post('/location', locationController.getLocationData);
 
+
 // New GET route to handle individual location details
 router.get('/location/:id', locationController.getLocationDetails);
 
