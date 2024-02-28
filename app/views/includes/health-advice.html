@@ -1,13 +1,17 @@
-{% if airQuality.highest.value >= 4 %}
-    <h2 class="govuk-heading-s">Health advice for {{ airQuality.highest.readableBand }} levels of air pollution</h2>
+{% if highestAQDetails.value >= 4 %}
+    <h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
     <p>{{ airQuality.highest.advice }}</p>
-        {% set adultsText = airQuality.highest.atrisk.adults %}
-        {% set asthmaText = airQuality.highest.atrisk.asthma %}
-        {% set oldPeopleText = airQuality.highest.atrisk.oldPeople %}
+        {% set adultsText = highestAQDetails.atrisk.adults %}
+        {% set asthmaText = highestAQDetails.atrisk.asthma %}
+        {% set oldPeopleText = highestAQDetails.atrisk.oldPeople %}
         {{ govukInsetText({
-            html: "<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+            classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+            html: "<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p><p>Long term exposure to air pollution can result in reproductive issues, heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>" 
         }) }}
+        <p>{{ highestAQDetails.advice }}</p>
     {% else %}
-    <h2 class="govuk-heading-m">Health advice for {{ airQuality.highest.readableBand }} levels of air pollution</h2>
-        <p>Alternative content for lower air pollution levels...</p>
-    {% endif %}
+    <h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+        <p>You can enjoy your usual activities, however long term exposure to air pollution can result in reproductive issues, heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>
+{% endif %}
+<p><a href="/health-effects">Find out how the different levels of air pollution may affect health.</a></p>
+
