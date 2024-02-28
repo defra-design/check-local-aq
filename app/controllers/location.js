@@ -1,13 +1,12 @@
 const axios = require('axios');
 const airQualityModule = require('../data/air-quality.js');
+const { getHighestAQDetails } = require('../data/air-quality.js');
 const { monitoringSites, siteTypeDescriptions, pollutantTypes } = require('../data/monitoring-sites.js');
 const apiKey = process.env.OS_API_KEY;
 
 exports.getLocationData = async (req, res) => {
   try {
     const locationType = req.body.locationType;
-
-    // Determine the input field based on the location type selected
     let originalUserLocation = '';
     if (locationType === 'uk-location') {
       originalUserLocation = req.body.engScoWal;
@@ -15,18 +14,14 @@ exports.getLocationData = async (req, res) => {
       originalUserLocation = req.body.ni;
     }
 
-    // Check if originalUserLocation is defined
     if (!originalUserLocation) {
       return res.render('enter-location', { locationType: locationType });
     }
 
     let userLocation = originalUserLocation.trim().toUpperCase();
-
-    // Regular expressions for postcode validation
     const fullPostcodePattern = /^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2})$/;
     const partialPostcodePattern = /^([A-Z]{1,2}\d[A-Z\d]?)$/;
 
-    // Format the postcode if needed
     if (fullPostcodePattern.test(userLocation) && !userLocation.includes(' ')) {
       const spaceIndex = userLocation.length - 3;
       userLocation = `${userLocation.slice(0, spaceIndex)} ${userLocation.slice(spaceIndex)}`;
@@ -35,12 +30,13 @@ exports.getLocationData = async (req, res) => {
       return res.render('enter-location', { locationType: locationType });
     }
 
-    // Use imported air quality values
     const { aqValueToday, aqValueTomorrow, aqValueOutlook } = airQualityModule.airQualityValues;
     const airQuality = airQualityModule.getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook);
 
+    // Get the highest AQ details
+    const highestAQDetails = airQualityModule.getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook);
+
     if (locationType === 'uk-location') {
-      // UK location search
       let filters = [
         'LOCAL_TYPE:City',
         'LOCAL_TYPE:Town',
@@ -59,11 +55,7 @@ exports.getLocationData = async (req, res) => {
         return;
       }
 
-      let matches = results.filter(item => {
-        const name = item.GAZETTEER_ENTRY.NAME1.toUpperCase();
-        return name.includes(userLocation) || userLocation.includes(name);
-      });
-
+      let matches = results.filter(item => item.GAZETTEER_ENTRY.NAME1.toUpperCase().includes(userLocation) || userLocation.includes(item.GAZETTEER_ENTRY.NAME1.toUpperCase()));
       if (partialPostcodePattern.test(originalUserLocation) && matches.length > 0) {
         matches[0].GAZETTEER_ENTRY.NAME1 = originalUserLocation.toUpperCase();
         matches = [matches[0]];
@@ -71,11 +63,11 @@ exports.getLocationData = async (req, res) => {
 
       req.session.locationData = matches;
 
-      // Render appropriate view for UK location
       if (matches.length === 1) {
         res.render('location', {
           result: matches[0],
           airQuality: airQuality,
+          highestAQDetails: highestAQDetails,
           airQualityData: airQualityModule.commonMessages,
           monitoringSites: monitoringSites,
           siteTypeDescriptions: siteTypeDescriptions,
@@ -86,6 +78,7 @@ exports.getLocationData = async (req, res) => {
           results: matches,
           userLocation: originalUserLocation,
           airQuality: airQuality,
+          highestAQDetails: highestAQDetails,
           airQualityData: airQualityModule.commonMessages,
           monitoringSites: monitoringSites,
           siteTypeDescriptions: siteTypeDescriptions,
@@ -95,7 +88,6 @@ exports.getLocationData = async (req, res) => {
         res.render('location-not-found', { userLocation: originalUserLocation });
       }
     } else if (locationType === 'ni-location') {
-      // Northern Ireland location search
       const postcodeApiUrl = `https://api.postcodes.io/postcodes?q=${encodeURIComponent(userLocation)}`;
       const response = await axios.get(postcodeApiUrl);
       const { result } = response.data;
@@ -105,7 +97,6 @@ exports.getLocationData = async (req, res) => {
         return;
       }
     
-      // For NI locations, directly render the location view with the first result
       const locationData = {
         GAZETTEER_ENTRY: {
           NAME1: result[0].postcode,
@@ -116,6 +107,7 @@ exports.getLocationData = async (req, res) => {
       res.render('location', {
         result: locationData,
         airQuality: airQuality,
+        highestAQDetails: highestAQDetails,
         airQualityData: airQualityModule.commonMessages,
         monitoringSites: monitoringSites,
         siteTypeDescriptions: siteTypeDescriptions,
@@ -128,6 +120,8 @@ exports.getLocationData = async (req, res) => {
   }
 };
 
+console.log(airQualityModule);
+
 exports.getLocationDetails = (req, res) => {
   try {
     const locationId = req.params.id;
@@ -138,10 +132,12 @@ exports.getLocationDetails = (req, res) => {
       // Use imported air quality values
       const { aqValueToday, aqValueTomorrow, aqValueOutlook } = airQualityModule.airQualityValues;
       const airQuality = airQualityModule.getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook);
+      const highestAQDetails = airQualityModule.getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook);
 
       res.render('location', {
         result: locationDetails,
         airQuality: airQuality,
+        highestAQDetails: highestAQDetails,
         airQualityData: airQualityModule.commonMessages,
         monitoringSites: monitoringSites,
         siteTypeDescriptions: siteTypeDescriptions,
@@ -155,4 +151,3 @@ exports.getLocationDetails = (req, res) => {
     res.status(500).render('error', { error: 'An error occurred while retrieving location details.' });
   }
 };
-``

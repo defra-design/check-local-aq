@@ -20,7 +20,7 @@ const commonMessages = {
     },
     moderate: {
         values: [4, 5, 6],
-        advice: "For most people, short term exposure to moderate levels of air pollution is not an issue.",
+        advice: "For most people, short term exposure to moderate levels of air pollution is not an issue. However, long term exposure can affect your health.",
         atrisk: {
             adults: "Adults who have heart problems and feel unwell should consider doing less strenuous exercise, especially outside.",
             asthma: "People with asthma should be prepared to use their reliever inhaler.",
@@ -80,6 +80,14 @@ function getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook) {
         "10": { band: "veryHigh", readableBand: "very high" }
     };
 
+// Function for determining highest air quality value
+function getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook) {
+    const highestAQValue = Math.max(aqValueToday, aqValueTomorrow, aqValueOutlook);
+    return getAirQuality(highestAQValue, highestAQValue, highestAQValue).today; 
+}
+
+module.exports.getHighestAQDetails = getHighestAQDetails;
+
     // Function for getting detailed air quality information and advice
     function getDetailedInfo(aqValue) {
         const bandInfo = lookup[aqValue.toString()] || { band: "unknown", readableBand: "unknown" };
@@ -107,5 +115,5 @@ module.exports = {
     getAirQuality,
     getCommonMessage,
     commonMessages,
-    airQualityValues
+    airQualityValues,
 };
