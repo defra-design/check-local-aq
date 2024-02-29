@@ -7,6 +7,7 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter();
 const locationController = require('./controllers/location');
 const airQuality = require('./data/air-quality.js');
+const airQualityModule = require('./data/air-quality.js');
 
 // // Air quality
 router.get('/where', (req, res) => {
@@ -21,6 +22,14 @@ router.post('/location', locationController.getLocationData);
 
 // New GET route to handle individual location details
 router.get('/location/:id', locationController.getLocationDetails);
+
+// Health advice template
+router.get('/health-effects', (req, res) => {
+  res.render('health-effects', {
+    airQualityData: airQualityModule.commonMessages,
+    // ... other data you might need to pass
+  });
+});
 
 module.exports = router;
 

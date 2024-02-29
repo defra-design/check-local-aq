@@ -2,7 +2,7 @@
 const airQualityValues = {
     aqValueToday: "2",
     aqValueTomorrow: "3",
-    aqValueOutlook: "5"
+    aqValueOutlook: "4"
 };
 
 const commonMessages = {
@@ -20,7 +20,7 @@ const commonMessages = {
     },
     moderate: {
         values: [4, 5, 6],
-        advice: "For most people, short term exposure to moderate levels of air pollution is not an issue. However, long term exposure can affect your health.",
+        advice: "For most people, short term exposure to moderate levels of air pollution is not an issue.",
         atrisk: {
             adults: "Adults who have heart problems and feel unwell should consider doing less strenuous exercise, especially outside.",
             asthma: "People with asthma should be prepared to use their reliever inhaler.",

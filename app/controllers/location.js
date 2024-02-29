@@ -120,7 +120,6 @@ exports.getLocationData = async (req, res) => {
   }
 };
 
-console.log(airQualityModule);
 
 exports.getLocationDetails = (req, res) => {
   try {

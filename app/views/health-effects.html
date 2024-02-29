@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "How the different levels of air pollution may affect health" %}
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <p>
+        Long term exposure to air pollution, even if it's low, can increase the risk of getting certain health conditions.
+      </p>
+      <p>
+        The extent of this risk depends on what's in the air and how long you breathe it.
+      </p>
+      <p>
+        Some of the health conditions caused by long term exposure to air pollution are:
+      </p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+        <li>lung conditions, such as asthma</li>
+        <li>cancer</li>
+        <li>heart disease</li>
+        <li>Alzheimer's disease</li>
+        <li>Dementia</li>
+        <li>Parkinson disease</li>
+        <li>increased respiratory illnesses</li>
+      </ul>
+      <h2 class="govuk-heading-m">Health advice for short term exposure to air pollution</h2>
+      <h3 class="daqi-tag daqi-tag--1">Low</h3>
+      <p>{{ airQualityData['low'].advice }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
+      <h3 class="daqi-tag daqi-tag--4">Moderate</h3>
+      <p>{{ airQualityData['moderate'].advice }}</p>
+      <p>{{ airQualityData['moderate'].atrisk.adults }}</p>
+      <p>{{ airQualityData['moderate'].atrisk.asthma }}</p>
+      <p>{{ airQualityData['moderate'].atrisk.oldPeople }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
+      <h3 class="daqi-tag daqi-tag--7">High</h3>
+      <p>{{ airQualityData['high'].advice }}</p>
+      <p>{{ airQualityData['high'].atrisk.adults }}</p>
+      <p>{{ airQualityData['high'].atrisk.asthma }}</p>
+      <p>{{ airQualityData['high'].atrisk.oldPeople }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
+      <h3 class="daqi-tag daqi-tag--10">Very high</h3>
+      <p>{{ airQualityData['veryHigh'].advice }}</p>
+      <p>{{ airQualityData['veryHigh'].atrisk.adults }}</p>
+      <p>{{ airQualityData['veryHigh'].atrisk.asthma }}</p>
+      <p>{{ airQualityData['veryHigh'].atrisk.oldPeople }}</p>
+{% endblock %}
