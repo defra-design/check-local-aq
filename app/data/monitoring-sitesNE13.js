@@ -6,7 +6,7 @@ const monitoringSites = [
   {
     "site_name": "Newcastle Cradlewell Roadside",
     "site_id": "UKA00528",
-    "distance": 6.2,
+    "distance": 4.5,
     "site_type": "traffic-site",
     "pollutants": [
           {
@@ -31,7 +31,7 @@ const monitoringSites = [
   {
       "site_name": "Newcastle Centre",
       "site_id": "UKA00213",
-      "distance": 7,
+      "distance": 4.8,
       "site_type": "urban-site",
       "pollutants": [
         {
@@ -71,7 +71,7 @@ const monitoringSites = [
   {
     "site_name": "Sunderland Wessington Way",
     "site_id": "UKA00601",
-    "distance": 9.6,
+    "distance": 12.9,
     "site_type": "urban-site",
     "pollutants": [
   {
