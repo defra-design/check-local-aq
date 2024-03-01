@@ -29,24 +29,24 @@
         <li>increased respiratory illnesses</li>
       </ul>
       <h2 class="govuk-heading-m">Health advice for short term exposure to air pollution</h2>
-      <h3 class="daqi-tag daqi-tag--1">Low</h3>
-      <p>{{ airQualityData['low'].advice }}</p>
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
-      <h3 class="daqi-tag daqi-tag--4">Moderate</h3>
-      <p>{{ airQualityData['moderate'].advice }}</p>
-      <p>{{ airQualityData['moderate'].atrisk.adults }}</p>
-      <p>{{ airQualityData['moderate'].atrisk.asthma }}</p>
-      <p>{{ airQualityData['moderate'].atrisk.oldPeople }}</p>
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
-      <h3 class="daqi-tag daqi-tag--7">High</h3>
-      <p>{{ airQualityData['high'].advice }}</p>
-      <p>{{ airQualityData['high'].atrisk.adults }}</p>
-      <p>{{ airQualityData['high'].atrisk.asthma }}</p>
-      <p>{{ airQualityData['high'].atrisk.oldPeople }}</p>
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
-      <h3 class="daqi-tag daqi-tag--10">Very high</h3>
-      <p>{{ airQualityData['veryHigh'].advice }}</p>
-      <p>{{ airQualityData['veryHigh'].atrisk.adults }}</p>
-      <p>{{ airQualityData['veryHigh'].atrisk.asthma }}</p>
-      <p>{{ airQualityData['veryHigh'].atrisk.oldPeople }}</p>
+      <dl class="aq-definition-list">
+        <dt class="aq-defintion-term"><strong class="daqi-tag daqi-tag--1">Low</strong></dt>
+        <dd class="">{{ airQualityData['low'].advice }}</dd>
+        <dt class="aq-defintion-term"><strong class="daqi-tag daqi-tag--4">Moderate</strong></dt>
+        <dd class="">{{ airQualityData['moderate'].advice }}</dd>
+        <dd class="">{{ airQualityData['moderate'].atrisk.adults }}</dd>
+        <dd class="">{{ airQualityData['moderate'].atrisk.asthma }}</dd>
+        <dd class="">{{ airQualityData['moderate'].atrisk.oldPeople }}</dd>
+        <dt class="aq-defintion-term"><strong class="daqi-tag daqi-tag--7">High</strong></dt>
+        <dd class="">{{ airQualityData['high'].advice }}</dd>
+        <dd class="">{{ airQualityData['high'].atrisk.adults }}</dd>
+        <dd class="">{{ airQualityData['high'].atrisk.asthma }}</dd>
+        <dd class="">{{ airQualityData['high'].atrisk.oldPeople }}</dd>
+        <dt class="aq-defintion-term"><strong class="daqi-tag daqi-tag--10">Very high</strong></dt>
+        <dd class="">{{ airQualityData['veryHigh'].advice }}</dd>
+        <dd class="">{{ airQualityData['veryHigh'].atrisk.adults }}</dd>
+        <dd class="">{{ airQualityData['veryHigh'].atrisk.asthma }}</dd>
+        <dd class="">{{ airQualityData['veryHigh'].atrisk.oldPeople }}</dd>
+      </dl>
+      
 {% endblock %}
