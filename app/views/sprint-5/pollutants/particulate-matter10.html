@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Particulate matter (PM10)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <h2 class="govuk-heading-m">Sources of PM10</h2>
+      <p>Particulate matter (PM), are small particles of solids or liquids that are in the air. The particles are only 10 micrometres in diameter. For context, the width of a human hair is 50 to 70 micrometres.
+      </p>
+      <p>The main sources of particulate matter are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>dust from construction sites</li>
+        <li>dust from landfills</li>
+        <li>dust from agriculture</li>
+        <li>wildfires</li>
+        <li>pollen</li>
+        <li>power plants</li>
+        <li>vehicles</li>
+      </ul>
+      <h2 class="govuk-heading-m">Health effects</h2>
+      <p>Short term health impacts of PM10 can include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>difficulty breathing</li>
+        <li>coughing</li>
+        <li>eye, nose, and throat irritation</li>
+        <li>chest tightness and pain</li>
+      </ul>
+      <p>Long term health impacts of PM10 can include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>lung tissue damage </li>
+        <li>asthma</li>
+        <li>heart failure</li>
+        <li>cancer</li>
+        <li>chronic obstructive pulmonary disease (COPD)</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

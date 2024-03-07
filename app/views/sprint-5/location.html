@@ -1,0 +1,45 @@
+{% extends "layouts/sprint-5.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/pollutant/macro.njk" import appPollutant %}
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from "/" + folder + "/components/cards/macro.njk" import appCards %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+
+{% set caption = "" %}
+{% set title = result.GAZETTEER_ENTRY.NAME1 + ", " + (result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH) %}
+
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+{% if caption %}
+        <span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title }}
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      {% include "/" + folder + "/includes/forecast.html" %}
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Updated at {{ "05:00" | govukTime }} on {{ "today" | govukDate }}</p>
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/health-advice.html" %}
+<hr class="govuk-section-break govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+      {% include "/" + folder + "/includes/pollutants.html" %}
+    </div>
+  </div>
+
+{% endblock %}
+
+

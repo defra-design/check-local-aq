@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% set displayBacklink = false %}
+{% set caption = "" %}
+{% set title = "Sulphur dioxide (SO₂)" %}
+
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <h2 class="govuk-heading-m">Sources of sulphur dioxide</h2>
+      <p>Sulphur dioxide is a colourless gas with a strong odour. It's mainly produced from:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>burning of petrol or diesel in a car engine</li>
+        <li>gas boilers</li>
+        <li>coal-burning power stations</li>
+        <li>commercial manufacturing</li>
+        <li>food manufacturing</li>
+      </ul>
+      <h2 class="govuk-heading-m">Health effects </h2>
+      <p>
+      Short term exposure can cause irritation to the:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>eyes</li>
+        <li>nose</li>
+        <li>throat</li>
+      </ul>
+      <p>
+        Long term exposure at high levels may lead to:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>reduced lung function</li>
+        <li>altered sense of smell</li>
+        <li>increased in respiratory infections</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+

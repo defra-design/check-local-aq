@@ -1,0 +1,14 @@
+{% extends "layouts/private-beta.html" %}
+{% set displayBreadcrumbs = false %}
+{% set title = "We could not find" + " " + data['q'] %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">An error has occured</h1>
+    <p>There has been a problem trying to find details about the location you have requested.</p>
+    <p><a href="/{{ version }}/where">Try searching again</a></p>
+  </div>
+</div>
+{% endblock %}
+

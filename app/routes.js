@@ -1,36 +1,20 @@
-// //
-// // For guidance on how to create routes see:
-// // https://prototype-kit.service.gov.uk/docs/create-routes
-// //
-
-const govukPrototypeKit = require('govuk-prototype-kit')
+const govukPrototypeKit = require('govuk-prototype-kit');
 const router = govukPrototypeKit.requests.setupRouter();
-const locationController = require('./controllers/location');
-const airQuality = require('./data/air-quality.js');
-const airQualityModule = require('./data/air-quality.js');
+
+require('./views/private-beta/_route.js');
+require('./views/sprint-5/_route.js');
 
 
-// Air quality
-router.get('/where', (req, res) => {
-  res.render('where', {
-    airQuality: airQuality, 
-  });
+// GET SPRINT NAME - useful for relative templates
+router.use('/', (req, res, next) => {
+  res.locals.currentURL = req.originalUrl; //current screen
+  res.locals.prevURL = req.get('Referrer'); // previous screen
+  req.folder = req.originalUrl.split('/')[1]; //folder, e.g. 'current'
+  req.subfolder = req.originalUrl.split('/')[2]; //sub-folder e.g. 'service'
+  res.locals.folder = req.folder; // what folder the URL is in
+  res.locals.subfolder = req.subfolder; // what subfolder the URL is in
+  next();
 });
-
-// POST route for where.html submission
-router.post('/location', locationController.getLocationData);
-
-
-// New GET route to handle individual location details
-router.get('/location/:id', locationController.getLocationDetails);
-
-// Health effects template
-router.get('/health-effects', (req, res) => {
-  res.render('health-effects', {
-    airQualityData: airQualityModule.commonMessages,
-  });
-});
-
 
 module.exports = router;
 

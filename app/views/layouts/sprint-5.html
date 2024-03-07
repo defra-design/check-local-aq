@@ -1,8 +1,8 @@
-
+{% extends "layouts/main.html" %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-
+{% set version = "sprint-5" %}
 
 
 {% block headIcons %}{% endblock %}
@@ -17,13 +17,14 @@
 
 {% block header %}
   {{ govukHeader({
-    homepageUrl: "/",
+    homepageUrl: "/" + version,
     serviceName: serviceName,
-    serviceUrl: "/",
+    serviceUrl: "/" + version,
     containerClasses: "govuk-width-container",
     useTudorCrown: true
   }) }}
 {% endblock %}
+
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -39,18 +40,4 @@
     href: "/" + version + "/where"
   }) }}
   {% endif %}
-{% endblock %}
-
-{% block footer %}
- {{ govukFooter({
-   meta: {
-     items: [
-       {
-         href: "/",
-         text: "Versions"
-       }
-     ],
-     visuallyHiddenTitle: "Footer links"
-   }
- }) }}
 {% endblock %}
