@@ -2,7 +2,7 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-
+{% set version = "" %}
 
 
 {% block headIcons %}{% endblock %}
@@ -42,15 +42,5 @@
 {% endblock %}
 
 {% block footer %}
- {{ govukFooter({
-   meta: {
-     items: [
-       {
-         href: "/",
-         text: "Versions"
-       }
-     ],
-     visuallyHiddenTitle: "Footer links"
-   }
- }) }}
+{{ govukFooter({}) }}
 {% endblock %}

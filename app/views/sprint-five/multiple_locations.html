@@ -1,4 +1,4 @@
-{% extends "layouts/sprint-5.html" %}
+{% extends "layouts/sprint-five.html" %}
 {% set title = "Locations matching '" ~ userLocation ~ "'" %}
 
 {% block content %}
@@ -10,7 +10,7 @@
     {% for item in results %}
     <ul class="govuk-list govuk-!-margin-bottom-2">
       <li>
-        <a href="/sprint-5/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
+        <a href="/sprint-five/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
         <mark>{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
         {% if item.GAZETTEER_ENTRY.COUNTY_UNITARY %}
           {{ item.GAZETTEER_ENTRY.COUNTY_UNITARY }}

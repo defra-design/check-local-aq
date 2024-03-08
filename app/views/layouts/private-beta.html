@@ -41,3 +41,22 @@
   }) }}
   {% endif %}
 {% endblock %}
+
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Change version"
+       },
+       {
+        href: "/",
+        text: version
+      }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}

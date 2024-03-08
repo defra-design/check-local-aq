@@ -2,7 +2,7 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-{% set version = "sprint-5" %}
+{% set version = "sprint-five" %}
 
 
 {% block headIcons %}{% endblock %}
@@ -40,4 +40,23 @@
     href: "/" + version + "/where"
   }) }}
   {% endif %}
+{% endblock %}
+
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Change version"
+       },
+       {
+        href: "/",
+        text: version
+      }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
 {% endblock %}
