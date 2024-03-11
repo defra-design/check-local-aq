@@ -8,7 +8,7 @@
   <div class="govuk-grid-column-full">
     <form action="/{{ version }}/location" method="post">
 
-       <!-- Error Summary -->
+    <!-- Error Summary -->
        {% if locationType === 'uk-location' %}
        {{ govukErrorSummary({
            titleText: "There is a problem",
@@ -42,7 +42,7 @@
       {% endif %}
 
 
-      <!-- UK Location Input Field -->
+    <!-- UK Location Input Field -->
       {% if locationType === 'uk-location' %}
       {% set ukHtml %}
       {{ govukInput({
@@ -62,10 +62,10 @@
       }) }}
       {% endset %}
   {% else %}
-      {% set defaultHtml %}
+      {% set ukHtml %}
       {{ govukInput({
-          id: "default",
-          name: "default",
+          id: "engScoWal",
+          name: "engScoWal",
           classes: "govuk-!-width-one-half",
           label: { text: "Enter a location or postcode" }
       }) }}

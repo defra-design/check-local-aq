@@ -62,14 +62,14 @@
       }) }}
       {% endset %}
   {% else %}
-      {% set defaultHtml %}
-      {{ govukInput({
-          id: "default",
-          name: "default",
-          classes: "govuk-!-width-one-half",
-          label: { text: "Enter a location or postcode" }
-      }) }}
-      {% endset %}
+  {% set ukHtml %}
+  {{ govukInput({
+      id: "engScoWal",
+      name: "engScoWal",
+      classes: "govuk-!-width-one-half",
+      label: { text: "Enter a location or postcode" }
+  }) }}
+  {% endset %}
   {% endif %}
 
       <!-- Northern Ireland Input Field -->
