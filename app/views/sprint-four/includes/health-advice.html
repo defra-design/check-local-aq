@@ -1,0 +1,13 @@
+{% if airQuality.highest.value >= 4 %}
+    <h2 class="govuk-heading-s">Health advice for {{ airQuality.highest.readableBand }} levels of air pollution</h2>
+    <p>{{ airQuality.highest.advice }}</p>
+        {% set adultsText = airQuality.highest.atrisk.adults %}
+        {% set asthmaText = airQuality.highest.atrisk.asthma %}
+        {% set oldPeopleText = airQuality.highest.atrisk.oldPeople %}
+        {{ govukInsetText({
+            html: "<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+        }) }}
+    {% else %}
+    <h2 class="govuk-heading-m">Health advice for {{ airQuality.highest.readableBand }} levels of air pollution</h2>
+        <p>Alternative content for lower air pollution levels...</p>
+    {% endif %}

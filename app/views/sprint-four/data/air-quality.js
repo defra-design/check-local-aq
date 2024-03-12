@@ -2,7 +2,7 @@
 const airQualityValues = {
     aqValueToday: "2",
     aqValueTomorrow: "3",
-    aqValueOutlook: "4"
+    aqValueOutlook: "5"
 };
 
 const commonMessages = {
@@ -80,14 +80,6 @@ function getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook) {
         "10": { band: "veryHigh", readableBand: "very high" }
     };
 
-// Function for determining highest air quality value
-function getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook) {
-    const highestAQValue = Math.max(aqValueToday, aqValueTomorrow, aqValueOutlook);
-    return getAirQuality(highestAQValue, highestAQValue, highestAQValue).today; 
-}
-
-module.exports.getHighestAQDetails = getHighestAQDetails;
-
     // Function for getting detailed air quality information and advice
     function getDetailedInfo(aqValue) {
         const bandInfo = lookup[aqValue.toString()] || { band: "unknown", readableBand: "unknown" };
@@ -115,5 +107,5 @@ module.exports = {
     getAirQuality,
     getCommonMessage,
     commonMessages,
-    airQualityValues,
+    airQualityValues
 };

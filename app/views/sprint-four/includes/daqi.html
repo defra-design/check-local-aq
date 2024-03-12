@@ -1,0 +1,24 @@
+{% set daqiValue = airQuality.value %}
+
+{% set firstRow = [] %}
+{% for i in range(1, 11) %}
+    {% if daqiValue == i %}
+        {% set cellClass = "daqi-table__cell daqi-selected daqi-" ~ i %}
+    {% else %}
+        {% set cellClass = "daqi-table__cell daqi-0" %}
+    {% endif %}
+    {% set cell = { classes: cellClass, text: i | string } %}
+    {% set _ = firstRow.push(cell) %}
+{% endfor %}
+
+{{ govukTable({
+  caption: "The air pollution forecast for today is " ~ (airQuality.readableBand | default('unknown')),
+  captionClasses: "govuk-heading-m daqi-table__caption govuk-!-margin-bottom-6",
+  head: [], 
+  rows: [firstRow, [
+      { text: "Low", classes: "daqi-band", colspan: 3 },
+      { text: "Moderate", classes: "daqi-band", colspan: 3 },
+      { text: "High", classes: "daqi-band", colspan: 2 },
+      { text: "Very high", classes: "daqi-band", colspan: 2 }
+  ]]
+}) }}

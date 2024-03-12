@@ -1,0 +1,104 @@
+
+<h2 class="govuk-heading-m govuk-!-font-size-27 govuk-!-margin-bottom-5">Air pollution forecast</h2>
+
+{% set todayHtml %}
+<h3 class="govuk-heading-m govuk-!-margin-top-3 govuk-!-margin-bottom-3">Today<strong class="daqi-tag daqi-tag--{{ airQuality.today.value }}">{{ airQuality.today.readableBand | capitalize }}</strong></h3>
+<p>Air pollution today in {{ result.GAZETTEER_ENTRY.NAME1 }} is {{ airQuality.today.readableBand }}.</p>
+<h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
+<p>{{ airQuality.today.ukToday }}</p>
+{% if airQuality.today.value >= 1 and airQuality.today.value <= 3 %}
+    <!-- Display for low pollution levels -->
+{% elseif airQuality.today.value >= 4 %}
+    <!-- Display for high pollution levels -->
+    <h4 class="govuk-heading-s">Health advice for {{ airQuality.today.readableBand }} air pollution</h4>
+    <p>{{ airQuality.today.advice }}</p>
+    {% set adultsText = airQuality.today.atrisk.adults %}
+    {% set asthmaText = airQuality.today.atrisk.asthma %}
+    {% set oldPeopleText = airQuality.today.atrisk.oldPeople %}
+    {{ govukInsetText({
+        classes: "govuk-inset-text--" + (airQuality.today.value | string),
+        html:"<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+    }) }}
+{% endif %}
+{% endset -%}
+
+{% set tomorrowHtml %}
+<h3 class="govuk-heading-m govuk-!-margin-bottom-3">Tomorrow<strong class="daqi-tag daqi-tag--{{ airQuality.tomorrow.value }}">{{ airQuality.tomorrow.readableBand | capitalize }}</strong></h3>
+<p>Air pollution tomorrow in {{ result.GAZETTEER_ENTRY.NAME1 }} is expected to be {{ airQuality.today.readableBand }}.</p>
+<h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
+<p>{{ airQuality.tomorrow.ukTomorrow }}</p>
+{% if airQuality.tomorrow.value >= 1 and airQuality.tomorrow.value <= 3 %}
+    <!-- Display for low pollution levels -->
+{% elseif airQuality.tomorrow.value >= 4 %}
+    <!-- Display for high pollution levels -->
+    <h4 class="govuk-heading-s">Health advice for {{ airQuality.tomorrow.readableBand }} air pollution</h4>
+    <p>{{ airQuality.tomorrow.advice }}</p>
+    {% set adultsText = airQuality.tomorrow.atrisk.adults %}
+    {% set asthmaText = airQuality.tomorrow.atrisk.asthma %}
+    {% set oldPeopleText = airQuality.tomorrow.atrisk.oldPeople %}
+    {{ govukInsetText({
+        classes: "govuk-inset-text--" + (airQuality.tomorrow.value | string),
+        html:"<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+    }) }}    
+{% endif %}
+{% endset -%}
+
+
+
+
+
+{% set outlookHtml %}
+<h3 class="govuk-heading-m govuk-!-margin-bottom-3">Outlook<strong class="daqi-tag daqi-tag--{{ airQuality.outlook.value }}">{{ airQuality.outlook.readableBand | capitalize }}</strong></h3>
+<p>Air pollution for {{ 1 | addDaysToTodayAndDisplayDay }} and {{ 2 | addDaysToTodayAndDisplayDay }} in {{ result.GAZETTEER_ENTRY.NAME1 }} is expected to be {{ airQuality.tomorrow.readableBand }}. On {{ 3 | addDaysToTodayAndDisplayDay }} the air pollution may be {{ airQuality.outlook.readableBand }}.</p>
+<h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
+<p>{{ airQuality.outlook.ukOutlook }}</p>
+{% if airQuality.outlook.value >= 1 and airQuality.outlook.value <= 3 %} 
+{% elseif airQuality.outlook.value >= 4 %}
+    <h4 class="govuk-heading-s">Health advice for {{ airQuality.outlook.readableBand }} air pollution</h4>
+    <p>{{ airQuality.outlook.advice }}</p>
+    {% set adultsText = airQuality.outlook.atrisk.adults %}
+    {% set asthmaText = airQuality.outlook.atrisk.asthma %}
+    {% set oldPeopleText = airQuality.outlook.atrisk.oldPeople %}
+    {{ govukInsetText({
+        classes: "govuk-inset-text--" + (airQuality.outlook.value | string),
+        html:"<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+    }) }}
+{% endif %}
+{% endset -%}
+
+{{ aqTabs({
+classes: "defra-aq-tabs defra-aq-tabs--forecast",
+  items: [
+    {
+      classes: "govuk-tabs__list-item--forecast",
+      label: "Today",
+      status: "<span class='defra-aq-tabs__label-status'><strong class='daqi-tag daqi-tag--" + airQuality.today.value + "'>" + airQuality.today.readableBand | capitalize + "</strong></span>",
+      id: "today",
+      panel: {
+      html: todayHtml,
+      classes: "govuk-tabs__panel--forecast"
+      }
+    },
+    {
+      classes: "govuk-tabs__list-item--forecast",
+      label: "Tomorrow",
+      status: "<span class='defra-aq-tabs__label-status'><strong class='daqi-tag daqi-tag--" + airQuality.tomorrow.value + "'>" + airQuality.tomorrow.readableBand | capitalize + "</strong></span>",
+      id: "tomorrow",
+      panel: {
+        html: tomorrowHtml,
+        classes: "govuk-tabs__panel--forecast"
+      }
+    },
+    {
+      classes: "govuk-tabs__list-item--forecast",
+      label: "Outlook",
+      status: "<span class='defra-aq-tabs__label-status'><strong class='daqi-tag daqi-tag--" + airQuality.outlook.value + "'>" + airQuality.outlook.readableBand | capitalize + "</strong></span>",
+      id: "outlook",
+      panel: {
+        html: outlookHtml,
+        classes: "govuk-tabs__panel--forecast"
+      }
+    }
+  ]
+}) }}
+
