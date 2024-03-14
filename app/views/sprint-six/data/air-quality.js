@@ -1,6 +1,6 @@
 // This sets the value for air quality within the prototype
 const airQualityValues = {
-    aqValueToday: "2",
+    aqValueToday: "3",
     aqValueTomorrow: "3",
     aqValueOutlook: "3"
 };

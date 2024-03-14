@@ -9,7 +9,7 @@ const moment = require('moment');
 
 function formatCalendarWithLowercase(momentDate) {
     const calendarString = momentDate.calendar();
-    return calendarString.replace('AM', 'am').replace('PM', 'pm');
+    return calendarString.replace(/ ([AP])M/, '$1m');
 }
 
 addFilter('date', function(dateString) {

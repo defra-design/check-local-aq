@@ -61,5 +61,5 @@
       ],
       rows: rows
   }) }}
-  <p class='govuk-caption-s govuk-!-margin-bottom-6'>Latest {{ "now" | date | minusOneHour | lower }}</p>
+  <p class='govuk-caption-s govuk-!-margin-bottom-6'>Latest measurement {{ "now" | date | minusOneHour | lower }} on {{ "today" | govukDate }}</p>
 {% endfor %}

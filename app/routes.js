@@ -2,8 +2,10 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 const router = govukPrototypeKit.requests.setupRouter();
 
 require('./views/private-beta/_route.js');
+require('./views/sprint-six/_route.js');
 require('./views/sprint-five/_route.js');
 require('./views/sprint-four/_route.js');
+
 
 
 // GET SPRINT NAME - useful for relative templates
