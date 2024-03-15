@@ -32,11 +32,11 @@ exports.getLocationData = async (req, res, version) => {
         return res.render('/' + version + '/enter-location', { locationType: locationType });
       }
   
-      const { aqValueToday, aqValueTomorrow, aqValueOutlook } = airQualityModule.airQualityValues;
-      const airQuality = airQualityModule.getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook);
+      const { aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5 } = airQualityModule.airQualityValues;
+      const airQuality = airQualityModule.getAirQuality(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5);
   
       // Get the highest AQ details
-      const highestAQDetails = airQualityModule.getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook);
+      const highestAQDetails = airQualityModule.getHighestAQDetails(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5);
   
       if (locationType === 'uk-location') {
         let filters = [
@@ -131,9 +131,9 @@ exports.getLocationData = async (req, res, version) => {
   
       if (locationDetails) {
         // Use imported air quality values
-        const { aqValueToday, aqValueTomorrow, aqValueOutlook } = airQualityModule.airQualityValues;
-        const airQuality = airQualityModule.getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook);
-        const highestAQDetails = airQualityModule.getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook);
+        const { aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5 } = airQualityModule.airQualityValues;
+        const airQuality = airQualityModule.getAirQuality(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5);
+        const highestAQDetails = airQualityModule.getHighestAQDetails(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5);
   
         res.render('/' + version + '/location', {
           result: locationDetails,

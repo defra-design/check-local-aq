@@ -1,0 +1,51 @@
+<!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-4">UK summary</h2>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">Today</h2>
+<p>{{ airQuality.today.ukToday }}</p>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">Tomorrow</h2>
+<p>{{ airQuality.today.ukTomorrow }}</p>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">Outlook</h2>
+<p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p> -->
+
+
+<h2 class="govuk-heading-m  govuk-!-margin-bottom-6">UK forecast</h2>
+{% set todayHtml %}
+<p>{{ airQuality.today.ukTomorrow }}</p>
+{% endset -%}
+
+{% set tomorrowHtml %}
+<p>{{ airQuality.today.ukTomorrow }}</p>
+{% endset -%}
+
+{% set outlookHtml %}
+<p>{{ airQuality.today.ukOutlook }}</p>
+{% endset -%}
+
+{{ aqTabs({
+    classes: "defra-aq-tabs defra-aq-tabs--forecast",
+        items: [
+            {
+            classes: "govuk-tabs__list-item--forecast",
+            label: "Today",
+            id: "today",
+            panel: {
+            html: todayHtml
+            }
+            },
+            {
+            classes: "govuk-tabs__list-item--forecast",
+            label: "Tomorrow",
+            id: "tomorrow",
+            panel: {
+                html: tomorrowHtml
+            }
+            },
+            {
+            classes: "govuk-tabs__list-item--forecast",
+            label: "Outlook",
+            id: "outlook",
+            panel: {
+                html: outlookHtml
+            }
+        }
+    ]
+}) }}

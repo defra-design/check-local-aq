@@ -34,7 +34,7 @@ addFilter('addDaysToTodayAndDisplayDay', function(daysToAdd) {
     let futureDate = moment().add(daysToAdd, 'days');
 
     // Return the formatted future date
-    return futureDate.format('dddd');
+    return futureDate.format('ddd');
 });
 
 

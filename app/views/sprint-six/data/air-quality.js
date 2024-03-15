@@ -1,8 +1,9 @@
-// This sets the value for air quality within the prototype
 const airQualityValues = {
-    aqValueToday: "3",
-    aqValueTomorrow: "3",
-    aqValueOutlook: "3"
+    aqValueToday: "2",
+    aqValueDay2: "3",
+    aqValueDay3: "4",
+    aqValueDay4: "3",
+    aqValueDay5: "3"
 };
 
 const commonMessages = {
@@ -65,8 +66,8 @@ function getCommonMessage(band) {
     return commonMessages[band] || commonMessages.unknown;
 }
 
-// Function to get air quality labelling for today, tomorrow, outlook
-function getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook) {
+// Function for getting detailed air quality information and advice
+function getDetailedInfo(aqValue) {
     const lookup = {
         "1": { band: "low", readableBand: "low" },
         "2": { band: "low", readableBand: "low" },
@@ -80,35 +81,35 @@ function getAirQuality(aqValueToday, aqValueTomorrow, aqValueOutlook) {
         "10": { band: "veryHigh", readableBand: "very high" }
     };
 
-// Function for determining highest air quality value
-function getHighestAQDetails(aqValueToday, aqValueTomorrow, aqValueOutlook) {
-    const highestAQValue = Math.max(aqValueToday, aqValueTomorrow, aqValueOutlook);
-    return getAirQuality(highestAQValue, highestAQValue, highestAQValue).today; 
+    const bandInfo = lookup[aqValue.toString()] || { band: "unknown", readableBand: "unknown" };
+    const message = getCommonMessage(bandInfo.band);
+    return {
+        value: aqValue,
+        band: bandInfo.band,
+        readableBand: bandInfo.readableBand,
+        advice: message.advice,
+        atrisk: message.atrisk,
+        ukToday: message.ukToday, // Consider updating these messages to be relevant for each day
+        ukTomorrow: message.ukTomorrow,
+        ukOutlook: message.ukOutlook
+    };
 }
 
-module.exports.getHighestAQDetails = getHighestAQDetails;
-
-    // Function for getting detailed air quality information and advice
-    function getDetailedInfo(aqValue) {
-        const bandInfo = lookup[aqValue.toString()] || { band: "unknown", readableBand: "unknown" };
-        const message = getCommonMessage(bandInfo.band);
-        return {
-            value: aqValue,
-            band: bandInfo.band,
-            readableBand: bandInfo.readableBand,
-            advice: message.advice,
-            atrisk: message.atrisk,
-            ukToday: message.ukToday,
-            ukTomorrow: message.ukTomorrow,
-            ukOutlook: message.ukOutlook
-        };
-    }
-
+// Function to get air quality labelling for today and the next 4 days
+function getAirQuality(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5) {
     return {
         today: getDetailedInfo(aqValueToday),
-        tomorrow: getDetailedInfo(aqValueTomorrow),
-        outlook: getDetailedInfo(aqValueOutlook)
+        day2: getDetailedInfo(aqValueDay2),
+        day3: getDetailedInfo(aqValueDay3),
+        day4: getDetailedInfo(aqValueDay4),
+        day5: getDetailedInfo(aqValueDay5)
     };
+}
+
+// Function for determining the highest air quality value
+function getHighestAQDetails(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5) {
+    const highestAQValue = Math.max(aqValueToday, aqValueDay2, aqValueDay3, aqValueDay4, aqValueDay5);
+    return getAirQuality(highestAQValue, highestAQValue, highestAQValue, highestAQValue, highestAQValue).today; 
 }
 
 module.exports = {
@@ -116,4 +117,10 @@ module.exports = {
     getCommonMessage,
     commonMessages,
     airQualityValues,
+    getHighestAQDetails
 };
+
+
+
+
+

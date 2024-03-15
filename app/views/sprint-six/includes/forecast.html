@@ -1,61 +1,54 @@
 
-<h2 class="govuk-heading-m govuk-!-font-size-27 govuk-!-margin-bottom-5">Air pollution forecast</h2>
-<p>The air pollution forecast ranges from low to very high. It predicts air pollution levels and offers advice on what actions to take for your health.</p>
+{% set day2 = 1 | addDaysToTodayAndDisplayDay %}
+{% set day3 = 2 | addDaysToTodayAndDisplayDay %}
+{% set day4 = 3 | addDaysToTodayAndDisplayDay %}
+{% set day5 = 4 | addDaysToTodayAndDisplayDay %}
 
-{% set todayHtml %}
-<h3 class="govuk-heading-m govuk-!-margin-bottom-3">Today<strong class="daqi-tag daqi-tag--{{ airQuality.today.value }}">{{ airQuality.today.readableBand | capitalize }}</strong></h3>
-<p>Air pollution today in {{ result.GAZETTEER_ENTRY.NAME1 }} is {{ airQuality.today.readableBand }}.</p>
-<h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
-<p>{{ airQuality.today.ukToday }}</p>
-{% endset -%}
-
-{% set tomorrowHtml %}
-<h3 class="govuk-heading-m govuk-!-margin-bottom-3">Tomorrow<strong class="daqi-tag daqi-tag--{{ airQuality.tomorrow.value }}">{{ airQuality.tomorrow.readableBand | capitalize }}</strong></h3>
-<p>Air pollution tomorrow in {{ result.GAZETTEER_ENTRY.NAME1 }} is expected to be {{ airQuality.today.readableBand }}.</p>
-<h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
-<p>{{ airQuality.tomorrow.ukTomorrow }}</p>
-{% endset -%}
-
-{% set outlookHtml %}
-<h3 class="govuk-heading-m govuk-!-margin-bottom-3">Outlook<strong class="daqi-tag daqi-tag--{{ airQuality.outlook.value }}">{{ airQuality.outlook.readableBand | capitalize }}</strong></h3>
-<p>Air pollution for {{ 1 | addDaysToTodayAndDisplayDay }} and {{ 2 | addDaysToTodayAndDisplayDay }} in {{ result.GAZETTEER_ENTRY.NAME1 }} is expected to be {{ airQuality.tomorrow.readableBand }}. On {{ 3 | addDaysToTodayAndDisplayDay }} the air pollution may be {{ airQuality.outlook.readableBand }}.</p>
-<h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
-<p>{{ airQuality.outlook.ukOutlook }}</p>
-{% endset -%}
-
-{{ aqTabs({
-classes: "defra-aq-tabs defra-aq-tabs--forecast",
-  items: [
+{{ govukTable({
+  caption: "The forecast for the next 4 days",
+  captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-4",
+  classes: "aq-forecast-table",
+  firstCellIsHeader: false,
+  head: [
     {
-      classes: "govuk-tabs__list-item--forecast",
-      label: "Today",
-      status: "<span class='defra-aq-tabs__label-status'><strong class='daqi-tag daqi-tag--" + airQuality.today.value + "'>" + airQuality.today.readableBand | capitalize + "</strong></span>",
-      id: "today",
-      panel: {
-      html: todayHtml,
-      classes: "govuk-tabs__panel--forecast"
-      }
+      text: day2,
+      classes: "aq-forecast-table__cell"
     },
     {
-      classes: "govuk-tabs__list-item--forecast",
-      label: "Tomorrow",
-      status: "<span class='defra-aq-tabs__label-status'><strong class='daqi-tag daqi-tag--" + airQuality.tomorrow.value + "'>" + airQuality.tomorrow.readableBand | capitalize + "</strong></span>",
-      id: "tomorrow",
-      panel: {
-        html: tomorrowHtml,
-        classes: "govuk-tabs__panel--forecast"
-      }
+      text: day3,
+      classes: "aq-forecast-table__cell"
     },
     {
-      classes: "govuk-tabs__list-item--forecast",
-      label: "Outlook",
-      status: "<span class='defra-aq-tabs__label-status'><strong class='daqi-tag daqi-tag--" + airQuality.outlook.value + "'>" + airQuality.outlook.readableBand | capitalize + "</strong></span>",
-      id: "outlook",
-      panel: {
-        html: outlookHtml,
-        classes: "govuk-tabs__panel--forecast"
-      }
+      text: day4,
+      classes: "aq-forecast-table__cell"
+    },
+    {
+      text: day5,
+      classes: "aq-forecast-table__cell"
     }
+  ],
+  rows: [
+    [
+      {
+        text: airQuality.day2.readableBand | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day2.value
+      },
+      {
+        text: airQuality.day3.readableBand  | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day3.value
+      },
+      {
+        text: airQuality.day4.readableBand  | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day4.value
+      },
+      {
+        text: airQuality.day5.readableBand  | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day5.value
+      }
+    ]
   ]
 }) }}
+
+
+
 
