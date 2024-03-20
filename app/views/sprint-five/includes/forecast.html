@@ -18,7 +18,7 @@
 
 {% set outlookHtml %}
 <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Outlook<strong class="daqi-tag daqi-tag--{{ airQuality.outlook.value }}">{{ airQuality.outlook.readableBand | capitalize }}</strong></h3>
-<p>Air pollution for {{ 1 | addDaysToTodayAndDisplayDay }} and {{ 2 | addDaysToTodayAndDisplayDay }} in {{ result.GAZETTEER_ENTRY.NAME1 }} is expected to be {{ airQuality.tomorrow.readableBand }}. On {{ 3 | addDaysToTodayAndDisplayDay }} the air pollution may be {{ airQuality.outlook.readableBand }}.</p>
+<p>Air pollution for {{ 1 | addDaysToTodayFull }} and {{ 2 | addDaysToTodayFull }} in {{ result.GAZETTEER_ENTRY.NAME1 }} is expected to be {{ airQuality.tomorrow.readableBand }}. On {{ 3 | addDaysToTodayFull }} the air pollution may be {{ airQuality.outlook.readableBand }}.</p>
 <h4 class="govuk-heading-s govuk-!-margin-bottom-3">UK forecast</h4>
 <p>{{ airQuality.outlook.ukOutlook }}</p>
 {% endset -%}
