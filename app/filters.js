@@ -24,20 +24,6 @@ addFilter('minusOneHour', function(momentDate) {
     return formatCalendarWithLowercase(momentDate);
 });
 
-addFilter('addDaysToTodayAndDisplayDay', function(daysToAdd) {
-    // Default to 0 if daysToAdd is not provided or is not a number
-    if (typeof daysToAdd !== 'number') {
-        daysToAdd = 0;
-    }
-
-    // Create a new moment object for today and add days
-    let futureDate = moment().add(daysToAdd, 'days');
-
-    // Return the formatted future date
-    return futureDate.format('ddd');
-});
-
-
 
 addFilter('addDaysToTodayAbrev', function(daysToAdd) {
     // Default to 0 if daysToAdd is not provided or is not a number
