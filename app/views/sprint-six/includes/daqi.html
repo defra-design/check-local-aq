@@ -8,7 +8,7 @@
         {% set cellClass = "daqi-table__cell daqi-0" %}
     {% endif %}
     {% set cell = { classes: cellClass, text: i | string } %}
-    {% set _ = firstRow.push(cell) %}
+    {% set _ = firstRow.push(cell) %}          
 {% endfor %}
 
 <h2 class="govuk-heading-m daqi-table__caption govuk-!-margin-bottom-4">The air pollution forecast for today is {{ airQuality.today.readableBand }}<span class="daqi-scale-hidden">, {{ airQuality.today.value }} out of 10</span></h2>

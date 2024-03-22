@@ -4,74 +4,61 @@
 const monitoringSites = [
   
   {
-    "site_name": "Newcastle Cradlewell Roadside",
-    "site_id": "UKA00528",
-    "distance": 6.2,
-    "site_type": "traffic-site",
+    "site_name": "Belfast Centre",
+    "site_id": "UKA00212",
+    "distance": 1.6,
+    "site_type": "urban-site",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
               "measurement": 150.289,
               "trend": "Rising",
               "band": "Low",
-              "aqi": 3,
-              "low_range": "0 to 200"
+              "aqi": 3
           },
         {
             "type": "particulate-matter10",
             "measurement": 7.623,
             "trend": "Falling",
             "band": "Low",
-            "aqi": 1,
-            "low_range": "0 to 35"
+            "aqi": 1
+        },
+        {
+            "type": "particulate-matter2",
+            "measurement": 41.8,
+            "trend": "Falling",
+            "band": "Moderate",
+            "aqi": 4
         }
     ]
 },
 
   {
-      "site_name": "Newcastle Centre",
-      "site_id": "UKA00213",
-      "distance": 7,
-      "site_type": "urban-site",
+      "site_name": "Belfast Stockman's Lane",
+      "site_id": "UKA00594",
+      "distance": 3.9,
+      "site_type": "traffic-site",
       "pollutants": [
-        {
-            "type": "ozone",
-            "measurement": 54.882,
-            "trend": "Rising",
-            "band": "Low",
-            "aqi": 2,
-            "low_range": "0 to 100"
-        },
           {
               "type": "nitrogen-dioxide",
               "measurement": 270.238,
               "trend": "Rising",
               "band": "Moderate",
-              "aqi": 5,
-              "low_range": "0 to 200"
+              "aqi": 5
           },
         {
             "type": "particulate-matter10",
             "measurement": 35.7,
             "trend": "Falling",
-            "band": "Moderate",
-            "aqi": 4,
-            "low_range": "0 to 35"
+            "band": "Low",
+            "aqi": 3
         },
-        {
-            "type": "particulate-matter2",
-            "measurement": 40.3,
-            "trend": "Falling",
-            "band": "Moderate",
-            "aqi": 4,
-            "low_range": "0 to 35"
-        }
       ]
   },
   {
-    "site_name": "Sunderland Wessington Way",
-    "site_id": "UKA00601",
-    "distance": 9.6,
+    "site_name": "Ballymena Ballykeel",
+    "site_id": "UKA00503",
+    "distance": 20.9,
     "site_type": "urban-site",
     "pollutants": [
   {
@@ -79,24 +66,21 @@ const monitoringSites = [
     "measurement": 39.914,
     "trend": "Rising",
     "band": "Low",
-    "aqi": 2,
-    "low_range": "0 to 100"
+    "aqi": 2
 },
 {
     "type": "particulate-matter10",
     "measurement": 7.623,
     "trend": "Falling",
     "band": "Low",
-    "aqi": 1,
-    "low_range": "0 to 35"
+    "aqi": 1
 },
 {
     "type": "particulate-matter2",
-    "measurement": 41.8,
+    "measurement": 30.2,
     "trend": "Falling",
-    "band": "Moderate",
-    "aqi": 4,
-    "low_range": "0 to 35"
+    "band": "Low",
+    "aqi": 3
 }
     ]
 }
