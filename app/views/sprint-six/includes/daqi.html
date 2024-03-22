@@ -7,7 +7,7 @@
     {% else %}
         {% set cellClass = "daqi-table__cell daqi-0" %}
     {% endif %}
-    {% set cell = { classes: cellClass, text: i | string } %}
+    {% set cell = { classes: cellClass, text: " " } %} 
     {% set _ = firstRow.push(cell) %}          
 {% endfor %}
 
