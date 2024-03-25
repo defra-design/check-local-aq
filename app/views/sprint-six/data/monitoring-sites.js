@@ -4,10 +4,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Belfast Centre",
-    "site_id": "UKA00212",
-    "distance": 1.6,
-    "site_type": "urban-site",
+    "site_name": "Ballymena Antrim Road",
+    "site_id": "UKA00633",
+    "distance": 8.2,
+    "site_type": "traffic-site",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -32,33 +32,10 @@ const monitoringSites = [
         }
     ]
 },
-
-  {
-      "site_name": "Belfast Stockman's Lane",
-      "site_id": "UKA00594",
-      "distance": 3.9,
-      "site_type": "traffic-site",
-      "pollutants": [
-          {
-              "type": "nitrogen-dioxide",
-              "measurement": 270.238,
-              "trend": "Rising",
-              "band": "Moderate",
-              "aqi": 5
-          },
-        {
-            "type": "particulate-matter10",
-            "measurement": 35.7,
-            "trend": "Falling",
-            "band": "Low",
-            "aqi": 3
-        },
-      ]
-  },
-  {
+{
     "site_name": "Ballymena Ballykeel",
     "site_id": "UKA00503",
-    "distance": 20.9,
+    "distance": 8.9,
     "site_type": "urban-site",
     "pollutants": [
   {
@@ -83,7 +60,30 @@ const monitoringSites = [
     "aqi": 3
 }
     ]
-}
+},
+
+  {
+      "site_name": "Belfast Stockman's Lane",
+      "site_id": "UKA00594",
+      "distance": 15.9,
+      "site_type": "traffic-site",
+      "pollutants": [
+          {
+              "type": "nitrogen-dioxide",
+              "measurement": 270.238,
+              "trend": "Rising",
+              "band": "Moderate",
+              "aqi": 5
+          },
+        {
+            "type": "particulate-matter10",
+            "measurement": 35.7,
+            "trend": "Falling",
+            "band": "Low",
+            "aqi": 3
+        },
+      ]
+  }
 ]
 
 // Pollutant reference data
