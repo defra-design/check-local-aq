@@ -4,9 +4,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "Ballymena Antrim Road",
-    "site_id": "UKA00633",
-    "distance": 8.2,
+    "site_name": "Newcastle Cradlewell Roadside",
+    "site_id": "UKA00528",
+    "distance": 4.6,
     "site_type": "traffic-site",
     "pollutants": [
           {
@@ -33,9 +33,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Ballymena Ballykeel",
+    "site_name": "Newcastle Centre",
     "site_id": "UKA00503",
-    "distance": 8.9,
+    "distance": 5.5,
     "site_type": "urban-site",
     "pollutants": [
   {
@@ -63,9 +63,9 @@ const monitoringSites = [
 },
 
   {
-      "site_name": "Belfast Stockman's Lane",
+      "site_name": "Sunderland Wessington Way",
       "site_id": "UKA00594",
-      "distance": 15.9,
+      "distance": 8.9,
       "site_type": "traffic-site",
       "pollutants": [
           {
