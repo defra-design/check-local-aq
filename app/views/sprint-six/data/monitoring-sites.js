@@ -6,7 +6,7 @@ const monitoringSites = [
   {
     "site_name": "Belfast Centre",
     "site_id": "UKA00528",
-    "distance": 1.9,
+    "distance": 2.5,
     "site_type": "urban-site",
     "pollutants": [
           {
@@ -35,7 +35,7 @@ const monitoringSites = [
 {
     "site_name": "Belfast Stockman's Lane",
     "site_id": "UKA00503",
-    "distance": 3.2,
+    "distance": 4.3,
     "site_type": "traffic-site",
     "pollutants": [
   {
@@ -65,7 +65,7 @@ const monitoringSites = [
   {
       "site_name": "Ballymena Ballykeel",
       "site_id": "UKA00594",
-      "distance": 24.4,
+      "distance": 24.2,
       "site_type": "urban-site",
       "pollutants": [
           {
