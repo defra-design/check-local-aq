@@ -1,0 +1,54 @@
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+{{ govukTable({
+  caption: "The forecast for the next 4 days",
+  captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-4",
+  classes: "aq-forecast-table",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: day2,
+      classes: "aq-forecast-table__cell"
+    },
+    {
+      text: day3,
+      classes: "aq-forecast-table__cell"
+    },
+    {
+      text: day4,
+      classes: "aq-forecast-table__cell"
+    },
+    {
+      text: day5,
+      classes: "aq-forecast-table__cell"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: airQuality.day2.readableBand | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day2.value
+      },
+      {
+        text: airQuality.day3.readableBand  | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day3.value
+      },
+      {
+        text: airQuality.day4.readableBand  | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day4.value
+      },
+      {
+        text: airQuality.day5.readableBand  | capitalize,
+        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day5.value
+      }
+    ]
+  ]
+}) }}
+
+
+
+

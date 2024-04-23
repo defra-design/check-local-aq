@@ -49,7 +49,7 @@ function getCommonMessage(band) {
 }
 
 function getAirQuality(aqValue) {
-    const value = aqValue || "4"; // Default value
+    const value = aqValue || "3"; // Default value
 
     const lookup = {
         "1": { band: "low", readableBand: "low" },

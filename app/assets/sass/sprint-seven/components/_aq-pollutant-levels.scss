@@ -1,0 +1,25 @@
+.aq-pollutant-levels--border {
+    border-top: 1px solid $govuk-border-colour;
+    border-bottom: 1px solid $govuk-border-colour;
+}
+
+
+.aq-pollutant-chart {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: -5px;
+    margin-bottom: govuk-spacing(4)
+}
+
+.aq-pollutant-chart--24, .aq-pollutant-chart--today {
+    @include govuk-font($size: 14);
+    color: govuk-colour("dark-grey");
+    padding: 0;
+    display: block; 
+}
+
+.aq-pollutant-chart--today {
+    text-align: right;
+    margin-right: 33px;
+}

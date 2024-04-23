@@ -25,6 +25,43 @@ addFilter('minusOneHour', function(momentDate) {
 });
 
 
+addFilter('minusHours', function(momentDate, hours) {
+    // Subtract the specified number of hours
+    momentDate.subtract(hours, 'hours');
+
+    momentDate.minutes(0);
+    momentDate.seconds(0);
+    momentDate.milliseconds(0);
+
+    return formatCustomDate(momentDate);
+});
+
+function formatCustomDate(momentDate) {
+    const now = moment();
+    const today = now.startOf('day');
+    const yesterday = moment().subtract(1, 'days').startOf('day');
+    
+    let prefix;
+
+    if (momentDate.isSame(today, 'day')) {
+        prefix = 'today';
+    } else if (momentDate.isSame(yesterday, 'day')) {
+        prefix = 'yesterday';
+    } else {
+        // Format as "Last Monday" if not today or yesterday
+        prefix = momentDate.format('[Last] dddd');
+    }
+
+    // Check if minutes are 0 and format time accordingly
+    const formatString = momentDate.minutes() === 0 ? 'hA' : 'h:mmA';
+    const time = momentDate.format(formatString).toLowerCase();
+
+    return `${time}, ${prefix}`; // Reordered to show time first
+}
+
+
+
+
 addFilter('addDaysToTodayAbrev', function(daysToAdd) {
     // Default to 0 if daysToAdd is not provided or is not a number
     if (typeof daysToAdd !== 'number') {

@@ -1,0 +1,49 @@
+<h2 class="govuk-heading-m">Air pollutants monitored nearby</h2>
+{% set tabItems = [] %} {# Initialize an empty array to hold tab items #}
+
+{% for site in monitoringSites %}
+  {% set panelHtml %}
+    <div>
+      <h3 class="defra-aq-site__title govuk-heading-s">{{ site.site_name }}</h3>
+      <p class="defra-aq-site__distance govuk-caption-m govuk-!-margin-bottom-3">{{ site.distance }} miles away</p>
+      <p>{{ siteTypeDescriptions[site.site_type] }}</p>
+      {% for pollutant in site.pollutants %}
+        {% set pollutantDetail = pollutantTypes[pollutant.type] %}
+        <div class="aq-pollutant-levels--border">
+          <h4 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">
+            <a href="/{{ version }}{{ pollutantDetail.href }}">{{ pollutantDetail.title }}</a>
+          </h4>
+          <p>{{ pollutantDetail.description }}</p>
+          <h5 class="govuk-heading-s govuk-!-margin-bottom-1">Latest at {{ "now" | date | minusHours(1) }}</h5>
+          <p>{{ pollutant.measurement | int }} micrograms per cubic metre (μg/㎥)
+            <strong class="govuk-!-margin-left-2 daqi-tag daqi-tag--{{ pollutant.aqi }}">{{ pollutant.band }}</strong>
+          </p>
+        </div>
+        <h5 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-3">Levels over the past 24 hours</h5>
+        <img src="{{ '/public/charts/sprint-seven/' + pollutant.svg }}" alt="Pollutant levels over the past 24 hours">
+        <div class="aq-pollutant-chart">
+          <span class="aq-pollutant-chart--24">{{ "now" | date | minusHours(24) }}</span>
+          <span class="aq-pollutant-chart--today">{{ "now" | date | minusHours(1) }}</span>
+        </div>
+        <p class="govuk-!-margin-bottom-6"><a href="#">View levels over a longer period</a></p>
+      {% endfor %}
+    </div>
+  {% endset %}
+
+  {% set tabItem = {
+    classes: "govuk-tabs__list-item--sites",
+    label: site.site_name | truncate(15),
+    status: "<span class='defra-aq-tabs__label-distance'>" ~ site.distance ~ " miles away</span>",
+    id: site.site_id,
+    panel: {
+      html: panelHtml
+    }
+  } %}
+
+  {% set _ = tabItems.push(tabItem) %}
+{% endfor %}
+
+{{ aqTabs({
+  classes: "defra-aq-tabs",
+  items: tabItems
+}) }}

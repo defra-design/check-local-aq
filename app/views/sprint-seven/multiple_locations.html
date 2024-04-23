@@ -1,0 +1,28 @@
+{% extends "layouts/sprint-seven.html" %}
+{% set title = "Locations matching '" ~ userLocation ~ "'" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Locations matching '{{ userLocation }}'</h1>
+    <p>More than one match was found for your location. Choose the correct location from the following options:</p>
+
+    {% for item in results %}
+    <ul class="govuk-list govuk-!-margin-bottom-2">
+      <li>
+        <a href="/{{ version }}/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
+        <mark>{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
+        {% if item.GAZETTEER_ENTRY.COUNTY_UNITARY %}
+          {{ item.GAZETTEER_ENTRY.COUNTY_UNITARY }}
+        {% else %}
+          {{ item.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}
+        {% endif %}
+        </a>
+      </li>
+    </ul>
+        {% endfor %}
+    <p class="govuk-body govuk-!-margin-top-6">Alternatively, <a href="/{{ version }}/where">try searching again</a></p>
+  </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,67 @@
+.chart__area {
+    fill: #ebf0f7;
+}
+
+.chart__line {
+    stroke: #3a70b3;
+    stroke-width: 3px;
+}
+
+.chart__circle {
+    stroke: #3a70b3;
+    stroke-width: 3px;
+    fill: #fff;
+}
+
+.chart__data {
+    opacity: 0;
+}
+
+.chart__hover {
+    opacity: 0;
+}
+
+
+.chart__data:last-of-type() {
+    opacity: 1;
+}
+
+.chart__hover:hover + .chart__data {
+    opacity: 1;
+}
+
+.base_line {
+    stroke: $govuk-border-colour;
+    stroke-width: 1px;
+}
+
+.grid_line {
+    stroke: rgba($govuk-text-colour, 0.1);
+    stroke-width: 1px;
+}
+
+
+
+ // Tooltip
+    .tooltip {
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .tooltip--visible {
+        visibility: visible;
+    }
+    .tooltip-bg {
+        fill:white;
+        stroke-width: 1;
+        color: $govuk-secondary-text-colour;
+        stroke: currentColor;
+        shape-rendering: crispEdges;
+    }
+    .tooltip-text {
+        @include govuk-font($size: 16);
+        color: $govuk-text-colour;
+        fill: currentColor;
+    }
+    .tooltip-text__strong {
+        @include govuk-font($size: 19, $weight:bold);
+    }
