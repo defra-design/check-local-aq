@@ -1,67 +1,80 @@
-.chart__area {
-    fill: #ebf0f7;
-}
-
-.chart__line {
-    stroke: #3a70b3;
-    stroke-width: 3px;
-}
-
-.chart__circle {
-    stroke: #3a70b3;
-    stroke-width: 3px;
-    fill: #fff;
-}
-
-.chart__data {
-    opacity: 0;
-}
-
-.chart__hover {
-    opacity: 0;
-}
-
-
-.chart__data:last-of-type() {
-    opacity: 1;
-}
-
-.chart__hover:hover + .chart__data {
-    opacity: 1;
-}
-
-.base_line {
-    stroke: $govuk-border-colour;
-    stroke-width: 1px;
-}
-
-.grid_line {
-    stroke: rgba($govuk-text-colour, 0.1);
-    stroke-width: 1px;
-}
-
-
-
- // Tooltip
-    .tooltip {
-        visibility: hidden;
-        pointer-events: none;
+.chart {
+    &__area {
+        fill: #ebf0f7;
     }
-    .tooltip--visible {
-        visibility: visible;
+
+    &__line {
+        stroke: #3a70b3;
+        stroke-width: 3px;
     }
-    .tooltip-bg {
-        fill:white;
+
+    &__circle {
+        stroke: #3a70b3;
+        stroke-width: 3px;
+        fill: #fff;
+    }
+
+    &__data {
+        opacity: 0;
+        &:last-of-type {
+            opacity: 1;
+        }
+    }
+
+    &__hover {
+        opacity: 0;
+        &:hover {
+            & + .chart__data {
+                opacity: 1;
+            }
+            & ~ .current-reading {
+                opacity: 0; 
+            }
+        }
+    }
+
+    &__labels {
+        @include govuk-font($size: 14);
+        color: $govuk-text-colour;
+    }
+}
+
+.current-reading, .threshold {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.base_line, .grid_line {
+    stroke-width: 1px;
+    stroke: $govuk-border-colour; // Use for base_line
+    &.grid_line {
+        stroke: rgba($govuk-text-colour, 0.1); // Specific to grid_line
+    }
+}
+
+.threshold_line {
+    stroke: $govuk-text-colour;
+    stroke-width: 3px;
+    opacity: 1; // Default opacity
+    transition: opacity 0.5s ease; // Transition for smooth opacity change
+}
+
+.tooltip {
+    &-bg {
+        fill: white;
         stroke-width: 1;
         color: $govuk-secondary-text-colour;
         stroke: currentColor;
         shape-rendering: crispEdges;
     }
-    .tooltip-text {
+
+    &-text {
         @include govuk-font($size: 16);
         color: $govuk-text-colour;
         fill: currentColor;
     }
-    .tooltip-text__strong {
-        @include govuk-font($size: 19, $weight:bold);
+
+    &-text__strong {
+        @include govuk-font($size: 19, $weight: bold);
     }
+}
