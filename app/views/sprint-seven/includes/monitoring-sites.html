@@ -2,7 +2,7 @@
 {% for site in monitoringSites %}
     <div>
       <h3 class="defra-aq-site__title govuk-heading-s govuk-!-margin-bottom-0">{{ site.site_name }}</h3>
-      <p class="defra-aq-site__distance govuk-caption-m govuk-!-margin-bottom-2">{{ site.distance }} miles away</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-2">{{ site.distance }} miles away</p>
       <p>{{ siteTypeDescriptions[site.site_type] }}</p>
       {% for pollutant in site.pollutants %}
         {% set pollutantDetail = pollutantTypes[pollutant.type] %}

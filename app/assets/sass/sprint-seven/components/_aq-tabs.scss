@@ -78,7 +78,6 @@
     @include mq ($from: tablet) {
         border-bottom:0px;
         margin-bottom:0px;
-        padding-top: 5px;
     }
     &__label {
         text-decoration: underline;
@@ -119,12 +118,12 @@
     }
 }
 
-// .aq-forecast-tabs__title, .defra-aq-site__distance {
-//     @include mq ($from: tablet) {
-//         display: none;
-//         @include defra-visually-hidden();
-//     }
-// } 
+.aq-forecast-tabs__title, .defra-aq-site__distance {
+    @include mq ($from: tablet) {
+        display: none;
+        @include defra-visually-hidden();
+    }
+} 
 
 .defra-aq-site__title {
     @include govuk-responsive-margin(1, 'bottom');
