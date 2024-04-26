@@ -3,7 +3,7 @@
     {% set cy = 30 + (chartHeight - 30) * (point.value / scaleMax) %}
     <rect class="chart__hover" x="{{ loop.index0 * 24.75 }}" y="0" width="24.75" height="100%" />
     <g class="chart__data">
-      <line class="base_line" x1="{{ 12.375 + loop.index0 * 24.75 }}" y1="30" x2="{{ 12.375 + loop.index0 * 24.75 }}" y2="180" />
+      <line class="selected_line" x1="{{ 12.375 + loop.index0 * 24.75 }}" y1="30" x2="{{ 12.375 + loop.index0 * 24.75 }}" y2="180" />
       {% if loop.index0 >= fixedStartIndex %}
         <!-- Fixed tooltip for the last 6 data points -->
         <g class="tooltip" transform="translate({{ 5 + fixedStartIndex * 24.75 }}, 115)">

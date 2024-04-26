@@ -61,6 +61,10 @@
     }
 }
 
+.selected_line {
+    stroke: $govuk-text-colour;
+}
+
 .threshold_line {
     stroke: $govuk-text-colour;
     stroke-width: 3px;
