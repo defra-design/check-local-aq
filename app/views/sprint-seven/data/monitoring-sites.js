@@ -11,82 +11,30 @@ const monitoringSites = [
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
-              "measurement": 24.6,
+              "measurement": 8,
               "trend": "Rising",
               "band": "Low",
               "aqi": 3,
-              "svg" : "no-150.svg"
+              "chart" : "nitrogen"
           },
         {
             "type": "particulate-matter10",
-            "measurement": 61.23,
+            "measurement": 54.3,
             "trend": "Falling",
             "band": "Moderate",
             "aqi": 4,
-            "svg" : "pm10-61.svg"
+            "chart" : "pm10"
         },
         {
             "type": "particulate-matter2",
-            "measurement": 10.8,
+            "measurement": 8.3,
             "trend": "Falling",
             "band": "Low",
             "aqi": 3,
-            "svg" : "pm25-11.svg"
+            "chart" : "pm2-5"
         }
     ]
-},
-{
-    "site_name": "Belfast Stockman's Lane",
-    "site_id": "UKA00503",
-    "distance": 4.3,
-    "site_type": "traffic-site",
-    "pollutants": [
-  {
-    "type": "ozone",
-    "measurement": 39.914,
-    "trend": "Rising",
-    "band": "Low",
-    "aqi": 2
-},
-{
-    "type": "particulate-matter10",
-    "measurement": 7.623,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 1
-},
-{
-    "type": "particulate-matter2",
-    "measurement": 30.2,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 3
 }
-    ]
-},
-
-  {
-      "site_name": "Ballymena Ballykeel",
-      "site_id": "UKA00594",
-      "distance": 24.2,
-      "site_type": "urban-site",
-      "pollutants": [
-          {
-              "type": "nitrogen-dioxide",
-              "measurement": 270.238,
-              "trend": "Rising",
-              "band": "Moderate",
-              "aqi": 5
-          },
-        {
-            "type": "particulate-matter10",
-            "measurement": 35.7,
-            "trend": "Falling",
-            "band": "Low",
-            "aqi": 3
-        },
-      ]
-  }
 ]
 
 // Pollutant reference data
@@ -127,12 +75,12 @@ const pollutantTypes = {
 // Used to populate toggletips on monitoring sites
 
 const siteTypeDescriptions = {
-    "urban-site": "This monitoring site is based in an urban area. An urban area is a city or a town, where there are many 2-storey buildings.",
-    "suburban-site": "This monitoring site is based in a suburban location. Suburban areas are located either on their own or on the outskirts of a city or urban area. They are areas of different-sized buildings that may be close to farms, ales and woods.",
-    "traffic-site": "This monitoring site is based near vehicle traffic. It is located close to a road, motorway or highway. This means we know that recorded pollutants come from this source.",
-    "rural-site": "This monitoring site is in rural location. A rural site can be in a small settlement or area with natural ecosystems, forests or crops. The sites are more than 20 kilometres from cities and towns and more than 5 kilometres away from industrial sites, motorways and major roads.",
-    "industrial-site": "This monitoring site is based in an industrial location. The pollutants are measured downwind of the industrial source and the nearest residential area.",
-    "background-site": "This monitoring site is based in a background location. It is located to make sure pollutant measurements do not come from one specific source. The site is upwind from pollution sources in cities, industrial sources and rural areas."
+    "urban-site": "Urban monitoring sites are located in a city or a town, which can include parks, residential houses and commercial buildings.",
+    "suburban-site": "Suburban monitoring sites can be on the outskirts of an urban area or in an area of their own. They will have buildings and may be close to farms, lakes and woods.",
+    "traffic-site": "Traffic monitoring sites are located close to roads, motorways or highways. This means that recorded pollutants will mainly come from nearby traffic.",
+    "rural-site": "Rural monitoring sites are in small settlements or areas with natural ecosystems, forests or crops. The sites are away from cities, towns, industrial sites and major roads.",
+    "industrial-site": "Industrial monitoring sites measure pollutants downwind of an industrial source and the nearest residential area.",
+    "background-site": "Background monitoring sites are located so pollutant measurements do not come from one specific source. The sites are upwind from pollution sources in cities, industrial sources and rural areas. "
   }
 
   module.exports = { monitoringSites, siteTypeDescriptions, pollutantTypes };

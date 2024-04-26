@@ -7,6 +7,9 @@
 {% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
 {% from "/" + folder + "/components/cards/macro.njk" import appCards %}
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/aq-svg-graph/macro.njk" import svgGraph %}
+{% from  "/" + folder + "/components/aq-svg-pointplotter/macro.njk" import svgPointPlotter %}
+
 
 {% set caption = "" %}
 {% set title = result.GAZETTEER_ENTRY.NAME1 + ", " + (result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH) %}
@@ -37,7 +40,7 @@
 <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
       {% include "/" + folder + "/includes/health-advice.html" %}
 <hr class="govuk-section-break govuk-!-margin-bottom-6">
-      {% include "/" + folder + "/includes/monitoring-sites-new.html" %}
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
       {% include "/" + folder + "/includes/pollutants.html" %}
     </div>
   </div>

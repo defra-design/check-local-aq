@@ -1,0 +1,12 @@
+ {% set points = "12.75," ~ (30 + (chartHeight - 30) * (dataPoints[0].value / scaleMax)) %}
+  {% for i in range(1, dataPoints|length) %}
+    {% set x = 12.75 + i * 24.75 %}
+    {% set cy = 30 + (chartHeight - 30) * (dataPoints[i].value / scaleMax) %}
+    {% set points = points ~ " " ~ x ~ "," ~ cy %}
+  {% endfor %}
+
+  <!-- Polygon to fill the area under the graph -->
+  <polygon class="chart__area" points="0,42 {{ points }} 581.625,30 0,30" />
+
+  <!-- Polyline to outline the top of the graph -->
+  <polyline class="chart__line" fill="none" points="0,42 {{ points }}" />

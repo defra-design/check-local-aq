@@ -18,11 +18,13 @@
         opacity: 0;
         &:last-of-type {
             opacity: 1;
+            transition: opacity 0.3s ease; 
         }
     }
 
     &__hover {
         opacity: 0;
+        will-change: opacity; 
         &:hover {
             & + .chart__data {
                 opacity: 1;
@@ -34,29 +36,36 @@
     }
 
     &__labels {
-        @include govuk-font($size: 14);
-        color: $govuk-text-colour;
+        @include govuk-font($size: 16);
+        color: $govuk-secondary-text-colour;
     }
+}
+
+.chart__hover:focus + .chart__data {
+    opacity: 1;
+}
+.chart__hover:focus ~ .current-reading {
+    opacity: 0; 
 }
 
 .current-reading, .threshold {
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease; 
 }
 
 .base_line, .grid_line {
     stroke-width: 1px;
-    stroke: $govuk-border-colour; // Use for base_line
+    stroke: $govuk-border-colour; 
     &.grid_line {
-        stroke: rgba($govuk-text-colour, 0.1); // Specific to grid_line
+        stroke: rgba($govuk-text-colour, 0.1); 
     }
 }
 
 .threshold_line {
     stroke: $govuk-text-colour;
     stroke-width: 3px;
-    opacity: 1; // Default opacity
-    transition: opacity 0.5s ease; // Transition for smooth opacity change
+    opacity: 1; 
+    transition: opacity 3s ease; 
 }
 
 .tooltip {

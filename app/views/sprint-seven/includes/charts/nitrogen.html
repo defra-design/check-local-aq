@@ -1,0 +1,82 @@
+<svg width="100%" height="auto" viewBox="0 0 630 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <g transform="scale(1,-1) translate(0, -190)">
+
+  <!-- Polygon fill and line -->
+  {% set dataPoints = [
+    {value: 12}, 
+    {value: 14}, 
+    {value: 11}, 
+    {value: 21}, 
+    {value: 68}, 
+    {value: 37}, 
+    {value: 23}, 
+    {value: 16}, 
+    {value: 17}, 
+    {value: 12}, 
+    {value: 8}, 
+    {value: 7}, 
+    {value: 8}, 
+    {value: 6}, 
+    {value: 9},
+    {value: 11},
+    {value: 23},
+    {value: 45},
+    {value: 62},
+    {value: 32},
+    {value: 27},
+    {value: 19},
+    {value: 12},
+    {value: 8}
+  ] %}
+  {% set chartHeight = 180 %}
+  {% set scaleMax = 250 %}
+
+  {{ svgGraph(dataPoints, chartHeight, scaleMax, 12) }}
+
+  <!-- Y axis labels -->
+  <g class="chart__labels" transform="translate(600, 165)">
+    {# Axis labels generated in a loop with adjustable scale #}
+    {% set scale = 1 %} {# Set the scale here #}
+    {% set startValue = 0 %} {# Set the starting value here #}
+    {% set increment = 50 %} {# Set the value increment here #}
+    {% set startY = 140 %} {# Set the starting y position here #}
+    {% set stepY = -30 %} {# Set the step in y position (negative for moving up) #}
+    
+    {% for i in range(6) %}
+      <text y="{{ startY + i * stepY }}" text-anchor="start" transform="scale({{ scale }},-{{ scale }})">
+        {{ startValue + i * increment }}
+      </text>
+    {% endfor %}
+  </g>
+
+  <!-- X axis labels -->
+  <text x="12.325" y="-10" class="chart__labels" text-anchor="start" transform="scale(-1, 1) rotate(180)">{{ "now" | date("Y-m-d") | minusHours(24) }}</text>
+  <text x="581.625" y="-10" class="chart__labels" text-anchor="end" transform="scale(-1, 1) rotate(180)">{{ "now" | date("Y-m-d") | minusHours(1) }}</text>
+
+
+   <!-- Gridlines -->
+   {# Base line #}
+   <line class="base_line" x1="0" y1="30" x2="594" y2="30" />
+ 
+   {# Grid lines generated in a loop #}
+   {% for i in range(1, 6) %}
+     <line class="grid_line" x1="0" y1="{{ 30 + i * 30 }}" x2="594" y2="{{ 30 + i * 30 }}" />
+   {% endfor %}
+
+  <!-- DAQI Threshold -->
+  <line class="threshold_line" x1="0" y1="151" x2="594" y2="151" />
+
+  <line class="base_line" x1="581.625" y1="30" x2="581.625" y2="180" />
+  <line class="base_line" x1="12.325" y1="30" x2="12.325" y2="180" />
+  
+  <!-- Circles at data points -->
+  {{ svgPointPlotter(dataPoints, chartHeight, scaleMax) }}
+  <g class="current-reading">
+    <circle cx="581.625" cy="34.5" r="5" class="chart__circle" vector-effect="non-scaling-stroke" />  
+    <g class="tooltip threshold" transform="translate(170.5, 133)">
+      <rect x="0" y="0" width="253" height="36" class="tooltip-bg"/>
+      <text x="10" y="-13" class="tooltip-text" transform="scale(-1, 1) rotate(180)">Moderate levels 201 to 400 μg/㎥</text>
+    </g>
+  </g>
+</g>
+</svg>

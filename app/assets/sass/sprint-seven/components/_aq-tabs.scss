@@ -119,12 +119,12 @@
     }
 }
 
-.aq-forecast-tabs__title, .defra-aq-site__distance {
-    @include mq ($from: tablet) {
-        display: none;
-        @include defra-visually-hidden();
-    }
-} 
+// .aq-forecast-tabs__title, .defra-aq-site__distance {
+//     @include mq ($from: tablet) {
+//         display: none;
+//         @include defra-visually-hidden();
+//     }
+// } 
 
 .defra-aq-site__title {
     @include govuk-responsive-margin(1, 'bottom');

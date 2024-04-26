@@ -1,3 +1,6 @@
+// Import govuk-frontend styles
+@import "node_modules/govuk-frontend/dist/govuk/all";
+
 .sprint-six {
 
   // Tools
@@ -45,16 +48,6 @@
   @import "sprint-seven/components/aq-forecast";
   @import "sprint-seven/components/aq-charts";
 }
-
-
-
-$govuk-suppressed-warnings: (
-  "legacy-colour-param": true
-);
-
-// Import govuk-frontend styles
-@import "node_modules/govuk-frontend/dist/govuk/all";
-
 
 // Tools
 @import "tools/mixins";
