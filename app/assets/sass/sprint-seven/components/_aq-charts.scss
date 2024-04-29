@@ -1,3 +1,4 @@
+/* Regular styles for chart elements */
 .chart {
     &__area {
         fill: #ebf0f7;
@@ -42,6 +43,7 @@
     }
 }
 
+/* Styles for when chart__hover is focused or active */
 .chart__hover:focus + .chart__data,
 .chart__hover:active + .chart__data {
     opacity: 1;
@@ -51,6 +53,15 @@
     opacity: 0; 
 }
 
+/* Additional styles for touch devices */
+@media (pointer: coarse) {
+    .chart__hover:active + .chart__data,
+    .chart__hover:active ~ .current-reading {
+        opacity: 1; /* Apply styles on tap */
+    }
+}
+
+/* Styles for other elements */
 .current-reading, .threshold {
     opacity: 1;
     transition: opacity 0.3s ease; 
