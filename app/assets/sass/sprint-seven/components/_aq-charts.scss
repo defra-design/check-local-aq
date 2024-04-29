@@ -54,7 +54,7 @@
 }
 
 /* Additional styles for touch devices */
-@media (pointer: coarse) {
+@media (hover: none) {
     .chart__hover:active + .chart__data,
     .chart__hover:active ~ .current-reading {
         opacity: 1; /* Apply styles on tap */
