@@ -25,7 +25,8 @@
     &__hover {
         opacity: 0;
         will-change: opacity; 
-        &:hover {
+        &:hover,
+        &:active {
             & + .chart__data {
                 opacity: 1;
             }
@@ -41,10 +42,12 @@
     }
 }
 
-.chart__hover:focus + .chart__data {
+.chart__hover:focus + .chart__data,
+.chart__hover:active + .chart__data {
     opacity: 1;
 }
-.chart__hover:focus ~ .current-reading {
+.chart__hover:focus ~ .current-reading,
+.chart__hover:active ~ .current-reading {
     opacity: 0; 
 }
 

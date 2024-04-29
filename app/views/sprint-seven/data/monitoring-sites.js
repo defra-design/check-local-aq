@@ -8,6 +8,7 @@ const monitoringSites = [
     "site_id": "UKA00528",
     "distance": 2.5,
     "site_type": "urban-site",
+    "site_type-readable": "Urban Background",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -34,6 +35,45 @@ const monitoringSites = [
             "chart" : "pm2-5"
         }
     ]
+}
+]
+
+// Near by monitoring sites
+
+
+const nearBySites = [
+  
+    {
+      "site_name": "Belfast Centre",
+      "site_id": "UKA00528",
+      "distance": 2.5,
+      "site_type": "urban-site",
+      "band": "Low",
+      "aqi": 3
+  },
+  {
+    "site_name": "Belfast Centre",
+    "site_id": "UKA00528",
+    "distance": 2.5,
+    "site_type": "urban-site",
+    "band": "Low",
+    "aqi": 3
+},
+{
+    "site_name": "Belfast Centre",
+    "site_id": "UKA00528",
+    "distance": 2.5,
+    "site_type": "urban-site",
+    "band": "Low",
+    "aqi": 3
+},
+{
+    "site_name": "Belfast Centre",
+    "site_id": "UKA00528",
+    "distance": 2.5,
+    "site_type": "urban-site",
+    "band": "Low",
+    "aqi": 3
 }
 ]
 
@@ -83,7 +123,7 @@ const siteTypeDescriptions = {
     "background-site": "Background monitoring sites are located so pollutant measurements do not come from one specific source. The sites are upwind from pollution sources in cities, industrial sources and rural areas. "
   }
 
-  module.exports = { monitoringSites, siteTypeDescriptions, pollutantTypes };
+  module.exports = { monitoringSites, siteTypeDescriptions, pollutantTypes, nearBySites };
 
 
 

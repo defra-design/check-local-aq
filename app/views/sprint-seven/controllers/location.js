@@ -1,6 +1,6 @@
 const axios = require('axios');
 const airQualityModule = require('../data/air-quality.js');
-const { monitoringSites, siteTypeDescriptions, pollutantTypes } = require('../data/monitoring-sites.js');
+const { monitoringSites, siteTypeDescriptions, pollutantTypes, nearBySites } = require('../data/monitoring-sites.js');
 const apiKey = process.env.OS_API_KEY;
 
 exports.getLocationData = async (req, res, version) => {
@@ -78,6 +78,7 @@ exports.getLocationData = async (req, res, version) => {
                     highestAQDetails: highestAQDetails,
                     airQualityData: airQualityModule.commonMessages,
                     monitoringSites: monitoringSites,
+                    nearBySites: nearBySites,
                     siteTypeDescriptions: siteTypeDescriptions,
                     pollutantTypes: pollutantTypes
                 });
@@ -89,6 +90,7 @@ exports.getLocationData = async (req, res, version) => {
                     highestAQDetails: highestAQDetails,
                     airQualityData: airQualityModule.commonMessages,
                     monitoringSites: monitoringSites,
+                    nearBySites: nearBySites,
                     siteTypeDescriptions: siteTypeDescriptions,
                     pollutantTypes: pollutantTypes
                 });
@@ -120,6 +122,7 @@ exports.getLocationData = async (req, res, version) => {
                 highestAQDetails: highestAQDetails,
                 airQualityData: airQualityModule.commonMessages,
                 monitoringSites: monitoringSites,
+                nearBySites: nearBySites,
                 siteTypeDescriptions: siteTypeDescriptions,
                 pollutantTypes: pollutantTypes
             });
@@ -148,6 +151,7 @@ exports.getLocationDetails = (req, res, version) => {
         highestAQDetails: highestAQDetails,
         airQualityData: airQualityModule.commonMessages,
         monitoringSites: monitoringSites,
+        nearBySites: nearBySites,
         siteTypeDescriptions: siteTypeDescriptions,
         pollutantTypes: pollutantTypes
       });

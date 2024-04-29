@@ -15,6 +15,6 @@
         <text x="15" y="-41" class="tooltip-text__strong" transform="scale(1, -1)">{{ point.value }} μg/㎥</text>
         <text x="15" y="-18" class="tooltip-text" transform="scale(1, -1)">{{ "now" | date("Y-m-d") | minusHours(24 - loop.index0) }}</text>
       </g>
-      <circle cx="{{ 12.375 + loop.index0 * 24.75 }}" cy="{{ cy }}" r="5" class="chart__circle" vector-effect="non-scaling-stroke" />
+      <circle cx="{{ 12.375 + loop.index0 * 24.75 }}" cy="{{ cy }}" r="5" class="chart__circle" vector-effect="non-scaling-stroke"/>
     </g>
     {% endfor %}
