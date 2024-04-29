@@ -6,10 +6,6 @@
     {
       html: '<a href="">' + (sites.site_name | default("Missing Name")) + '</a><span class="govuk-caption-s">' + (sites.distance | default("Missing distance")) + ' miles away</span>',
       classes: "align-middle govuk-!-width-one-half"
-    },
-    {
-      html: ' <strong class="daqi-tag daqi-tag--' + (sites.aqi | default("missing-value")) + '">' + (sites.band | default("Missing data")) + '</strong>',
-      classes: "align-middle govuk-!-width-one-half"
     }
   ] %}
   {% set _ = rows.push(row) %}
@@ -17,16 +13,11 @@
 
 {{ govukTable({
   classes: "govuk-!-margin-bottom-5",
-  caption: "Other areas monitored near by",
   captionClasses: "govuk-table__caption--m govuk-!-margin-top-4 govuk-!-margin-bottom-4",
   firstCellIsHeader: true,
   head: [
     {
-      text: "Area monitored",
-      classes: "govuk-!-width-one-half"
-    },
-    {
-      text: "Level",
+      text: "Other areas monitored near by",
       classes: "govuk-!-width-one-half"
     }
   ],
