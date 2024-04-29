@@ -4,11 +4,11 @@
 const monitoringSites = [
   
   {
-    "site_name": "Belfast Centre",
+    "site_name": "Plymouth Centre",
     "site_id": "UKA00528",
-    "distance": 2.5,
-    "site_type": "urban-site",
-    "site_type-readable": "Urban Background",
+    "distance": 3.5,
+    "site_type": "urban-background",
+    "site_type_readable": "Urban background",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -44,34 +44,38 @@ const monitoringSites = [
 const nearBySites = [
   
     {
-      "site_name": "Belfast Centre",
+      "site_name": "Saltash Callington Road",
       "site_id": "UKA00528",
-      "distance": 2.5,
-      "site_type": "urban-site",
+      "distance": 4.4,
+      "site_type": "urban-traffic",
+      "site_type_readable": "Urban traffic",
       "band": "Low",
       "aqi": 3
   },
   {
-    "site_name": "Belfast Centre",
+    "site_name": "Plymouth Tavistock Road",
     "site_id": "UKA00528",
-    "distance": 2.5,
-    "site_type": "urban-site",
+    "distance": 5.8,
+    "site_type": "urban-traffic",
+    "site_type_readable": "Urban traffic",
+    "band": "Moderate",
+    "aqi": 4
+},
+{
+    "site_name": "Yarner Wood",
+    "site_id": "UKA00528",
+    "distance": 27.6,
+    "site_type": "rural-background",
+    "site_type_readable": "Rural background",
     "band": "Low",
     "aqi": 3
 },
 {
-    "site_name": "Belfast Centre",
+    "site_name": "Exeter Roadside",
     "site_id": "UKA00528",
-    "distance": 2.5,
-    "site_type": "urban-site",
-    "band": "Low",
-    "aqi": 3
-},
-{
-    "site_name": "Belfast Centre",
-    "site_id": "UKA00528",
-    "distance": 2.5,
-    "site_type": "urban-site",
+    "distance": 39.7,
+    "site_type": "urban-traffic",
+    "site_type_readable": "Urban traffic",
     "band": "Low",
     "aqi": 3
 }
@@ -84,19 +88,19 @@ const pollutantTypes = {
         "title": "Nitrogen dioxide",
         "href": "/pollutants/nitrogen-dioxide",
         "low_range": "0 to 200",
-        "description": "A colourless gas mainly produced from burning fossil fuels such as petrol, diesel and gas."
+        "description": "An odourless gas, mainly produced from burning fuels such as wood, petrol, diesel and gas."
     },
     "particulate-matter10": {
         "title": "PM10",
         "href": "/pollutants/particulate-matter10",
         "low_range": "0 to 50",
-        "description": "Small particles of solids mainly produced from from dust, soot and smoke from log burners and vehicles."
+        "description": "Small particles of solids, mainly from industrial and agricultural activities that produce dust, smoke, and pollen."
     },
     "particulate-matter2": {
         "title": "PM2.5",
         "href": "/pollutants/particulate-matter2",
         "low_range": "0 to 35",
-        "description": "Small particles of solids mainly produced from from dust, soot and smoke from log burners and vehicles."
+        "description": "Small particles of solids, mainly produced from burning fuel such as wood, petrol, diesel, oil and gas."
     },
     "ozone": {
         "title": "Ozone",
@@ -115,12 +119,12 @@ const pollutantTypes = {
 // Used to populate toggletips on monitoring sites
 
 const siteTypeDescriptions = {
-    "urban-site": "Urban monitoring sites are located in a city or a town, which can include parks, residential houses and commercial buildings.",
-    "suburban-site": "Suburban monitoring sites can be on the outskirts of an urban area or in an area of their own. They will have buildings and may be close to farms, lakes and woods.",
-    "traffic-site": "Traffic monitoring sites are located close to roads, motorways or highways. This means that recorded pollutants will mainly come from nearby traffic.",
-    "rural-site": "Rural monitoring sites are in small settlements or areas with natural ecosystems, forests or crops. The sites are away from cities, towns, industrial sites and major roads.",
-    "industrial-site": "Industrial monitoring sites measure pollutants downwind of an industrial source and the nearest residential area.",
-    "background-site": "Background monitoring sites are located so pollutant measurements do not come from one specific source. The sites are upwind from pollution sources in cities, industrial sources and rural areas. "
+    "urban-traffic": "This monitoring area is located in a city or a town close to roads, motorways or highways.",
+    "urban-industrial": "This monitoring area is located in a city or a town downwind of an industrial source.",
+    "suburban-industrial": "This monitoring area is on the outskirts of an urban area or in an area of its own and downwind of an industrial source.",
+    "suburban-background": "This monitoring area is on the outskirts of an urban area or in an area of its own. It is located so pollutant measurements do not come from one specific source.",
+    "rural-background": "This monitoring area is in small settlements or areas with natural ecosystems, forests or crops. It is located so pollutant measurements do not come from one specific source.",
+    "urban-background": "This monitoring area is located in a city or a town. It is located so pollutant measurements do not come from one specific source."
   }
 
   module.exports = { monitoringSites, siteTypeDescriptions, pollutantTypes, nearBySites };

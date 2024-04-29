@@ -17,7 +17,7 @@ const commonMessages = {
         },
         ukToday: "Strong winds for many areas during today will help to keep air pollution levels low across the whole of the UK.",
         ukTomorrow: "The unsettled weather will continue resulting in low levels of air pollution across the whole of the UK.",
-        ukOutlook: "Low levels of air pollution are forecast across the country as unsettled weather conditions continue."
+        ukOutlook: "An influx of warm air from the continent may result in moderate air pollution across many areas."
     },
     moderate: {
         values: [4, 5, 6],
@@ -89,7 +89,7 @@ function getDetailedInfo(aqValue) {
         readableBand: bandInfo.readableBand,
         advice: message.advice,
         atrisk: message.atrisk,
-        ukToday: message.ukToday, // Consider updating these messages to be relevant for each day
+        ukToday: message.ukToday, 
         ukTomorrow: message.ukTomorrow,
         ukOutlook: message.ukOutlook
     };
