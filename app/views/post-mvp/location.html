@@ -1,5 +1,6 @@
 {% extends "layouts/post-mvp.html" %}
 {% set displayBacklink = true %}
+{% set displayLanguageToggle = true %}
 
 {% from "/" + folder + "/components/pollutant/macro.njk" import appPollutant %}
 {% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
@@ -20,7 +21,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+      <h1 class="govuk-heading-{{ pageHeadingSize }} govuk-!-margin-top-5">
 {% if caption %}
         <span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
         {% endif %}
