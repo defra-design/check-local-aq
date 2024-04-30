@@ -105,3 +105,10 @@
         @include govuk-font($size: 19, $weight: bold);
     }
 }
+
+.aq-measurements {
+    @include mq ($until: tablet) {
+        display: block;
+        margin-bottom: govuk-spacing(2);
+      }
+}

@@ -12,7 +12,7 @@
           </h4>
           <p>{{ pollutantDetail.description }}</p>
           <h5 class="govuk-heading-s govuk-!-margin-bottom-1">Latest at {{ "now" | date | minusHours(1) }}</h5>
-          <p><span class="govuk-!-margin-right-2">{{ pollutant.measurement | int }} micrograms per cubic metre (μg/㎥)</span>
+          <p><span class="aq-measurements govuk-!-margin-right-2">{{ pollutant.measurement | int }} micrograms per cubic metre (μg/㎥)</span>
             <strong class="daqi-tag daqi-tag--{{ pollutant.aqi }}">{{ pollutant.band }}</strong>
           </p>
         </div>

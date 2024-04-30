@@ -17,4 +17,9 @@
     border-right: 2px solid white; /* Add a 3px white vertical border to data cells */
 }
 
+.daqi-scale-hidden {
+    @include defra-visually-hidden();
+} 
+
+
 

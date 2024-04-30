@@ -1,0 +1,30 @@
+{% extends "layouts/post-mvp.html" %}
+{% set displayBreadcrumbs = false %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>check air quality in a local area</li>
+        <li>find information on air pollutants</li>
+       <!-- That this is not required for the MVP <li>access the local authority website to find out what is being done to improve air quality</li> -->
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/" + version + "/where",
+        isStartButton: true
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
