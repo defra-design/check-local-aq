@@ -6,7 +6,7 @@ const monitoringSites = [
   {
     "site_name": "Plymouth Centre",
     "site_id": "UKA00528",
-    "distance": 3.5,
+    "distance": 0.5,
     "site_type": "urban-background",
     "site_type_readable": "Urban background",
     "pollutants": [
@@ -44,7 +44,7 @@ const monitoringSites = [
 const nearBySites = [
   
     {
-      "site_name": "Saltash Callington Road",
+      "site_name": "Plymouth Tavistock Road",
       "site_id": "UKA00528",
       "distance": 4.4,
       "site_type": "urban-traffic",
@@ -53,9 +53,9 @@ const nearBySites = [
       "aqi": 3
   },
   {
-    "site_name": "Plymouth Tavistock Road",
+    "site_name": "Saltash Callington Road",
     "site_id": "UKA00528",
-    "distance": 5.8,
+    "distance": 2.9,
     "site_type": "urban-traffic",
     "site_type_readable": "Urban traffic",
     "band": "Moderate",
@@ -64,7 +64,7 @@ const nearBySites = [
 {
     "site_name": "Yarner Wood",
     "site_id": "UKA00528",
-    "distance": 27.6,
+    "distance": 24.8,
     "site_type": "rural-background",
     "site_type_readable": "Rural background",
     "band": "Low",
@@ -73,7 +73,7 @@ const nearBySites = [
 {
     "site_name": "Exeter Roadside",
     "site_id": "UKA00528",
-    "distance": 39.7,
+    "distance": 36.7,
     "site_type": "urban-traffic",
     "site_type_readable": "Urban traffic",
     "band": "Low",
