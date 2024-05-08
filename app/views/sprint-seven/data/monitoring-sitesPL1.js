@@ -4,11 +4,11 @@
 const monitoringSites = [
   
   {
-    "site_name": "Bristol Temple Way",
+    "site_name": "Plymouth Centre",
     "site_id": "UKA00528",
-    "distance": 1.5,
-    "site_type": "urban-traffic",
-    "site_type_readable": "Urban traffic",
+    "distance": 0.5,
+    "site_type": "urban-background",
+    "site_type_readable": "Urban background",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -44,38 +44,38 @@ const monitoringSites = [
 const nearBySites = [
   
     {
-      "site_name": "Bristol St Paul's",
+      "site_name": "Plymouth Tavistock Road",
       "site_id": "UKA00528",
-      "distance": 1.8,
-      "site_type": "urban-background",
-      "site_type_readable": "Urban background",
+      "distance": 4.4,
+      "site_type": "urban-traffic",
+      "site_type_readable": "Urban traffic",
       "band": "Low",
       "aqi": 3
   },
   {
-    "site_name": "Bath A4 Roadside",
+    "site_name": "Saltash Callington Road",
     "site_id": "UKA00528",
-    "distance": 11,
+    "distance": 2.9,
     "site_type": "urban-traffic",
     "site_type_readable": "Urban traffic",
     "band": "Moderate",
     "aqi": 4
 },
 {
-    "site_name": "Chepstow A48",
+    "site_name": "Yarner Wood",
     "site_id": "UKA00528",
-    "distance": 14.2,
-    "site_type": "urban-traffic",
-    "site_type_readable": "Urban traffic",
+    "distance": 24.8,
+    "site_type": "rural-background",
+    "site_type_readable": "Rural background",
     "band": "Low",
     "aqi": 3
 },
 {
-    "site_name": "Newport",
+    "site_name": "Exeter Roadside",
     "site_id": "UKA00528",
-    "distance": 19.7,
-    "site_type": "urban-background",
-    "site_type_readable": "Urban background",
+    "distance": 36.7,
+    "site_type": "urban-traffic",
+    "site_type_readable": "Urban traffic",
     "band": "Low",
     "aqi": 3
 }
