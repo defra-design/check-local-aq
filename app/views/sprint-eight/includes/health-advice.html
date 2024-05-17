@@ -1,0 +1,17 @@
+{% if highestAQDetails.value >= 4 %}
+    <h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+    <p>{{ highestAQDetails.advice }}</p>
+        {% set adultsText = highestAQDetails.atrisk.adults %}
+        {% set asthmaText = highestAQDetails.atrisk.asthma %}
+        {% set oldPeopleText = highestAQDetails.atrisk.oldPeople %}
+        {{ govukInsetText({
+            classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+            html: "<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+        }) }}
+        <p>Long term exposure to air pollution can result in heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>
+    {% else %}
+    <h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+        <p>You can enjoy your usual activities, however long term exposure to air pollution can result in heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>
+{% endif %}
+<p><a href="/{{ version }}/health-effects">Find out how air pollution may affect health</a></p>
+

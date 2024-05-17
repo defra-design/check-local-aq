@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{% set version = "sprint-eight" %}
+{% set bodyClasses = "sprint-eight" %}
+
+
+{% block headIcons %}{% endblock %}
+
+{% block pageTitle %}
+{% if title %}{{ title }} – {% endif %}
+{{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/" + version,
+    serviceName: serviceName,
+    serviceUrl: "/" + version,
+    containerClasses: "govuk-width-container",
+    useTudorCrown: true
+  }) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<div class="header-links">
+    <div class="back-link">
+      {% if displayBacklink %}
+        {{ govukBackLink({
+          text: "Change location",
+          href: "/" + version + "/where"
+        }) }}
+        {% endif %}
+    </div>
+    <div class="language-toggle">
+      {% if displayLanguageToggle %}
+        <nav aria-label="Language switcher">
+          <ul class="language-toggle govuk-list">
+          <li><span aria-current="true">English</span></li>
+          <li><a href="?lang=cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"> <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span> <span aria-hidden="true">Cymraeg</span> </a></li>
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+      {% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Change version"
+       },
+       {
+        href: "/",
+        text: version
+      }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
