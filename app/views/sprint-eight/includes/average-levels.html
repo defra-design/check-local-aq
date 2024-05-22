@@ -1,0 +1,55 @@
+<h2 class="govuk-heading-m">Average levels for 2023 in {{ result.GAZETTEER_ENTRY.NAME1 }}</h2>
+<p>The pollutant data is the is the average level measured over the year. It is a combination of real measured data and mathematically modelled data.</p>
+<p class="govuk-!-margin-bottom-1">We measure pollutants by micrograms per cubic metre (μg/㎥). A microgram is 1 millionth of a gram.</p>
+<div class="aq-levels-container">
+  {{ appPollutantLevels({
+    href: "/" + version + "/pollutants/nitrogen-dioxide",
+    pollutant: "Nitrogen dioxide",
+    legend: "Average in calendar year",
+    value: "12",
+    unit: "μg/㎥",
+    tagText: "Below threshold",
+    tagClass: "govuk-tag--green",
+    threshold: "No more than 40 μg/㎥ on average in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/ozone",
+  pollutant: "Ozone",
+  legend: "Days above 120 μg/㎥",
+  value: "16",
+  unit: "days",
+  tagText: "Above threshold",
+  tagClass: "govuk-tag--red",
+  threshold: "No more than 10 days above 120 μg/㎥ in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/particulate-matter2",
+  pollutant: "PM2.5",
+  legend: "Average in calendar year",
+  value: "9",
+  unit: "μg/㎥",
+  tagText: "Below threshold",
+  tagClass: "govuk-tag--green",
+  threshold: "No more than 20 μg/㎥ on average in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/particulate-matter10",
+  pollutant: "PM10",
+  legend: "Average in calendar year",
+  value: "11",
+  unit: "μg/㎥",
+  tagText: "Below threshold",
+  tagClass: "govuk-tag--green",
+  threshold: "No more than 40 μg/㎥ on average in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/sulphur-dioxide",
+  pollutant: "Sulphur dioxide",
+  legend: "Average in calendar year",
+  value: "2",
+  unit: "μg/㎥",
+  tagText: "Below threshold",
+  tagClass: "govuk-tag--green",
+  threshold: "No more than 20 μg/㎥ on average in a calendar year"
+}) }}
+</div>
