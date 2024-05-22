@@ -14,7 +14,7 @@
 </p>
 <p>We measure pollutants by micrograms per cubic metre (μg/㎥). A microgram is 1 millionth of a gram.</p>
 
-<h3 class="govuk-heading-s">The average levels for 2023 in {{ result.GAZETTEER_ENTRY.NAME1 }} were:</h3>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">The average levels for 2023 in {{ result.GAZETTEER_ENTRY.NAME1 }} were:</h3>
 <div class="aq-levels-container">
   {{ appPollutantLevels({
     href: "/" + version + "/pollutants/nitrogen-dioxide",
@@ -67,9 +67,10 @@
   threshold: "No more than 20 μg/㎥ on average in a calendar year"
 }) }}
 <div>
-<p>
-  The pollutant data is the  is the average level measured over the year. It is a combination of real measured data and mathematically modelled data.
-</p>
+  {{ govukDetails({
+    summaryText: "How do we calculate this pollutant data?",
+    text: "The pollutant data is the is the average level measured over the year. It is a combination of real measured data and mathematically modelled data."
+}) }}
 <h3 class="govuk-heading-s">Potential for air pollution</h3>
 <p>
   The main pollutant measured in {{ result.GAZETTEER_ENTRY.NAME1 }} during 2023 was <a href="/{{ version }}/pollutants/ozone">ozone</a>. 
