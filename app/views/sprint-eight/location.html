@@ -1,13 +1,12 @@
-{% extends "layouts/post-mvp.html" %}
+{% extends "layouts/sprint-eight.html" %}
 {% set displayBacklink = true %}
 {% set displayLanguageToggle = true %}
 
-{% from "/" + folder + "/components/pollutant/macro.njk" import appPollutant %}
 {% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
 {% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
 {% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
-{% from "/" + folder + "/components/cards/macro.njk" import appCards %}
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
 
 {% set caption = "" %}
 {% set title = result.GAZETTEER_ENTRY.NAME1 + ", " + (result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH) %}
@@ -37,12 +36,14 @@
       <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
 <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
       {% include "/" + folder + "/includes/health-advice.html" %}
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/pollutants.html" %}
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/local-air-quality.html" %}
 <hr class="govuk-section-break govuk-!-margin-bottom-6">
       {% include "/" + folder + "/includes/monitoring-sites.html" %}
-      {% include "/" + folder + "/includes/pollutants.html" %}
     </div>
   </div>
-
 {% endblock %}
 
 

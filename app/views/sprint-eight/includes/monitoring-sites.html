@@ -10,16 +10,6 @@
       'Latest'
     )}}
   {% endset %}
-
-  {% set trendToggletip %}
-    {{ toggletip(
-      '',
-      'More information about the trend',
-      'The trend is taken from the last 3 readings which are updated hourly',
-      'Trend'
-    )}}
-  {% endset %}
-
   {% set levelToggletip %}
     {{ toggletip(
       '',
@@ -58,8 +48,9 @@
   {% endfor %}
 
   {% set panelHtml %}
-    <h3 class="defra-aq-site__title govuk-heading-s">{{ siteNameToggletip | safe }}</h3>
+    <h3 class="defra-aq-site__title govuk-heading-s">{{ site.site_name }}</h3>
     <p class="defra-aq-site__distance govuk-caption-m govuk-!-margin-bottom-3">{{ site.distance }} miles away</p>
+    <p>{{ siteTypeDescriptions[site.site_type] }}</p>
     {{ aqLevelsTable({
         classes: "govuk-!-margin-bottom-2",
         firstCellIsHeader: false,

@@ -25,7 +25,7 @@ const commonMessages = {
         atrisk: {
             adults: "Adults who have heart problems and feel unwell should consider doing less strenuous exercise, especially outside.",
             asthma: "People with asthma should be prepared to use their reliever inhaler.",
-            oldPeople: "Older people should consider doing less strenuous activity, especially outside."
+            oldPeople: "Older people can be more susceptible to the effects of poor air quality and should consider doing less strenuous activity, especially outside."
         },
         ukToday: "The influx of warm air from the continent is resulting in moderate air pollution levels throughout many areas today.",
         ukTomorrow: "Light winds and warm temperatures could result in moderate air pollution levels throughout many areas tomorrow.",
@@ -37,7 +37,7 @@ const commonMessages = {
         atrisk: {
             adults: "Adults with heart problems should reduce strenuous physical exertion, particularly outdoors, especially if they experience symptoms.",
             asthma: "People with asthma may find they need to use their reliever inhaler more often.",
-            oldPeople: "Older people should reduce physical exertion."
+            oldPeople: "Older people can be more susceptible to the effects of poor air quality and should reduce physical exertion."
         },
         ukToday: "Warm temperatures are expected to increase pollution levels to high across many areas today.",
         ukTomorrow: "Test tomorrrow",
@@ -49,7 +49,7 @@ const commonMessages = {
         atrisk: {
             adults: "Adults with heart problems should avoid strenuous physical activity.",
             asthma: "People with asthma may need to use their reliever inhaler more often.",
-            oldPeople: "Older people should avoid strenuous physical activity."
+            oldPeople: "Older people can be more susceptible to the effects of poor air quality and should avoid strenuous physical activity."
         },
         ukToday: "The current heatwave shows no signs of relenting, causing air pollution levels to remain very high across many areas today.",
         ukTomorrow: "Test tomorrrow",

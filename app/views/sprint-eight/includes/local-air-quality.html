@@ -1,0 +1,82 @@
+<h2 class="govuk-heading-m">Air quality in this area</h2>
+<p>{{ result.GAZETTEER_ENTRY.NAME1 }} is within {% if result.GAZETTEER_ENTRY.COUNTY_UNITARY %}
+  the unitary authority of
+  {{ result.GAZETTEER_ENTRY.COUNTY_UNITARY }}
+{% else %}
+  the local authority of
+  {{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}
+{% endif %}.
+{% if result.localType == "hamlet" or result.localType == "village" %}
+  It's classed as a rural location because it has a population below 10,000.
+{% else %}
+  It's classed as an urban location because it has a population above 10,000.
+{% endif %}
+</p>
+<p>We measure pollutants by micrograms per cubic metre (μg/㎥). A microgram is 1 millionth of a gram.</p>
+
+<h3 class="govuk-heading-s">The average levels for 2023 in {{ result.GAZETTEER_ENTRY.NAME1 }} were:</h3>
+<div class="aq-levels-container">
+  {{ appPollutantLevels({
+    href: "/" + version + "/pollutants/nitrogen-dioxide",
+    pollutant: "Nitrogen dioxide",
+    legend: "Average in calendar year",
+    value: "12",
+    unit: "μg/㎥",
+    tagText: "Below threshold",
+    tagClass: "govuk-tag--green",
+    threshold: "No more than 40 μg/㎥ on average in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/ozone",
+  pollutant: "Ozone",
+  legend: "Days above 120 μg/㎥",
+  value: "16",
+  unit: "days",
+  tagText: "Above threshold",
+  tagClass: "govuk-tag--red",
+  threshold: "No more than 10 days above 120 μg/㎥ in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/particulate-matter2",
+  pollutant: "PM2.5",
+  legend: "Average in calendar year",
+  value: "9",
+  unit: "μg/㎥",
+  tagText: "Below threshold",
+  tagClass: "govuk-tag--green",
+  threshold: "No more than 20 μg/㎥ on average in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/particulate-matter10",
+  pollutant: "PM10",
+  legend: "Average in calendar year",
+  value: "11",
+  unit: "μg/㎥",
+  tagText: "Below threshold",
+  tagClass: "govuk-tag--green",
+  threshold: "No more than 40 μg/㎥ on average in a calendar year"
+}) }}
+{{ appPollutantLevels({
+  href: "/" + version + "/pollutants/sulphur-dioxide",
+  pollutant: "Sulphur dioxide",
+  legend: "Average in calendar year",
+  value: "2",
+  unit: "μg/㎥",
+  tagText: "Below threshold",
+  tagClass: "govuk-tag--green",
+  threshold: "No more than 20 μg/㎥ on average in a calendar year"
+}) }}
+<div>
+<p>
+  The pollutant data is the  is the average level measured over the year. It is a combination of real measured data and mathematically modelled data.
+</p>
+<h3 class="govuk-heading-s">Potential for air pollution</h3>
+<p>
+  The main pollutant measured in {{ result.GAZETTEER_ENTRY.NAME1 }} during 2023 was <a href="/{{ version }}/pollutants/ozone">ozone</a>. 
+</p>
+<p>
+  The long term health effects of ground level ozone can include heart issues, cancer and an increase in respiratory illnesses.
+</p>
+<p>
+  <a href="/{{ version }}/health-effects">Find out more about the health effects of air pollution.</a>
+</p> 

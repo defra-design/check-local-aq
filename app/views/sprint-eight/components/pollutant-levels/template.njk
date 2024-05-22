@@ -1,0 +1,24 @@
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+<div class="aq-levels">
+    <dl class="aq-levels-list govuk-!-margin-bottom-2">
+      <dt class="govuk-!-padding-bottom-2">
+        <a class="govuk-link govuk-!-font-weight-bold" href="{{ params.href }}">{{ params.pollutant | safe }}</a>
+      </dt>
+      <dd class="govuk-body">
+        {{ params.legend | safe }}
+      </dd>
+      <dd class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-80 govuk-!-padding-bottom-2">
+        {{ params.value | safe }}<span class="govuk-body govuk-!-font-weight-bold govuk-!-margin-left-1">{{ params.unit | safe }}</span>
+      </dd>
+      <dd class="govuk-!-padding-bottom-2">
+        {{govukTag({
+          text: params.tagText,
+          classes: params.tagClass
+        })}}
+      </dd>
+      <dd class="govuk-body-s">
+        {{ params.threshold | safe }}
+      </dd>
+    </dl>
+  </div>

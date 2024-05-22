@@ -1,19 +1,4 @@
-{% extends "layouts/post-mvp.html" %}
-{% set caption = "" %}
-{% set title = "How air pollution may affect health" %}
-{% set displayBacklink = false %}
-{% set displayLanguageToggle = true %}
-{% set pageHeadingSize = pageHeadingSize or "xl" %}
-
-
-{% block content %}
-  <div class="govuk-grid-row govuk-!-margin-bottom-8">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
-        {% endif %}
-        {{ title | safe }}</h1>
-        <h2 class="govuk-heading-m">Long term exposure to air pollution</h2>
-      <p>
+  <p>
         Long term exposure to air pollution, even if it's low, can increase the risk of getting certain health conditions.
         The extent of this risk depends on what's in the air and how long you breathe it.
       </p>
@@ -49,5 +34,3 @@
         <dd class="">{{ airQualityData['veryHigh'].atrisk.asthma }}</dd>
         <dd class="">{{ airQualityData['veryHigh'].atrisk.oldPeople }}</dd>
       </dl>
-      
-{% endblock %}
