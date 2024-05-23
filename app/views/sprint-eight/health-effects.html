@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Health effects of poor air quality " %}
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <p>Poor air quality is the largest environmental risk to public health in the UK.</p>
+      <p>Long term exposure to air pollution (over years) reduces life expectancy. Short-term exposure (over hours or days) can also cause a range of health impacts.</p>
+      <h2 class="govuk-heading-m">Short term effects of air pollution can include:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>worsening of asthma symptoms</li>
+        <li>worsening of chronic obstructive pulmonary disease (COPD)</li>
+        <li>difficulty breathing</li>
+        <li>coughing</li>
+        <li>eye, nose, and throat irritation</li>
+        <li>chest tightness and pain</li>
+      </ul>
+      <h2 class="govuk-heading-m">
+        Long term health effects of air pollution can include: 
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>heart disease</li>
+        <li>stroke</li>
+        <li>diabetes</li>
+        <li>cancer</li>
+        <li>chronic obstructive pulmonary disease (COPD)</li>
+        <li>Alzheimer's and Parkinson's disease</li>
+        <li>dementia</li>
+        <li>poorer lung function in children</li>
+        <li>increase in respiratory illnesses</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
