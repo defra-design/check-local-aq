@@ -7,12 +7,10 @@
   {{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}.
 {% endif %}
 {% if result.localType == "hamlet" or result.localType == "village" %}
-  It's classed as a rural location because it has a population below 10,000.</p><p>Whilst rural locations are percieved as areas of low air pollution
+  It's classed as a rural location because it has a population below 10,000.</p><p>Rural areas are often thought to have clean air, but in {{ result.GAZETTEER_ENTRY.NAME1 }} during 2023, the main air pollutant was <a href="/{{ version }}/pollutants/ozone">ozone</a>.</p>
 {% else %}
-  It's classed as an urban location because it has a population above 10,000.</p><p>Whilst urban locations can be affected by air pollution from transport or household heating
+  It's classed as an urban location because it has a population above 10,000.</p><p>Urban locations can be affected by air pollution from transport, industry or household heating. The main pollutant measured in {{ result.GAZETTEER_ENTRY.NAME1 }} during 2023 was <a href="/{{ version }}/pollutants/ozone">ozone</a>.</p>
 {% endif %}
-the main pollutant measured in {{ result.GAZETTEER_ENTRY.NAME1 }} during 2023 was <a href="/{{ version }}/pollutants/ozone">ozone</a>.
-</p>
 <p>
   There are no major emission sources of ground level ozone itself. Reactions between other pollutants form ozone in the air. For example, when pollutants from vehicle emissions and industry react with sunlight.
 </p>
