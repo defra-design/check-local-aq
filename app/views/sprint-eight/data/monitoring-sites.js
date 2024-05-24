@@ -4,10 +4,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Belfast Centre",
-    "site_id": "UKA00528",
-    "distance": 2.5,
-    "site_type": "urban-background",
+    "site_name": "Wicken Fen",
+    "site_id": "UKA00362",
+    "distance": 7.8,
+    "site_type": "rural-background",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -16,6 +16,13 @@ const monitoringSites = [
               "band": "Low",
               "aqi": 3
           },
+          {
+            "type": "ozone",
+            "measurement": 63.264,
+            "trend": "Rising",
+            "band": "Low",
+            "aqi": 2
+        },
         {
             "type": "particulate-matter10",
             "measurement": 7.623,
@@ -33,9 +40,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Belfast Stockman's Lane",
-    "site_id": "UKA00503",
-    "distance": 4.3,
+    "site_name": "Cambridge Roadside",
+    "site_id": "UKA00396",
+    "distance": 14.6,
     "site_type": "urban-traffic",
     "pollutants": [
   {
@@ -63,10 +70,10 @@ const monitoringSites = [
 },
 
   {
-      "site_name": "Ballymena Ballykeel",
+      "site_name": "Sandy Roadside",
       "site_id": "UKA00594",
-      "distance": 24.2,
-      "site_type": "urban-background",
+      "distance": 29.1,
+      "site_type": "urban-traffic",
       "pollutants": [
           {
               "type": "nitrogen-dioxide",
