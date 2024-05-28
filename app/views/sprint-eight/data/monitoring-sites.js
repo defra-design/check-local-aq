@@ -4,10 +4,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Wicken Fen",
+    "site_name": "Norwich Lakenfields",
     "site_id": "UKA00362",
-    "distance": 7.8,
-    "site_type": "rural-background",
+    "distance": 19.6,
+    "site_type": "urban-background",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -40,55 +40,76 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Cambridge Roadside",
-    "site_id": "UKA00396",
-    "distance": 14.6,
-    "site_type": "urban-traffic",
+    "site_name": "Weybourne",
+    "site_id": "UKA00433",
+    "distance": 27.8,
+    "site_type": "rural-background",
     "pollutants": [
-  {
-    "type": "ozone",
-    "measurement": 39.914,
-    "trend": "Rising",
-    "band": "Low",
-    "aqi": 2
-},
-{
-    "type": "particulate-matter10",
-    "measurement": 7.623,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 1
-},
-{
-    "type": "particulate-matter2",
-    "measurement": 30.2,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 3
-}
+        {
+            "type": "nitrogen-dioxide",
+            "measurement": 89.7,
+            "trend": "Rising",
+            "band": "Low",
+            "aqi": 3
+        },
+        {
+          "type": "ozone",
+          "measurement": 80.3,
+          "trend": "Rising",
+          "band": "Low",
+          "aqi": 3
+      },
+      {
+          "type": "particulate-matter10",
+          "measurement": 17.623,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 2
+      },
+      {
+          "type": "particulate-matter2",
+          "measurement": 2.7,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 1
+      }
     ]
 },
 
   {
-      "site_name": "Sandy Roadside",
+      "site_name": "Wicken Fen",
       "site_id": "UKA00594",
-      "distance": 29.1,
-      "site_type": "urban-traffic",
+      "distance": 30.5,
+      "site_type": "rural-background",
       "pollutants": [
-          {
-              "type": "nitrogen-dioxide",
-              "measurement": 270.238,
-              "trend": "Rising",
-              "band": "Moderate",
-              "aqi": 5
-          },
         {
-            "type": "particulate-matter10",
-            "measurement": 35.7,
-            "trend": "Falling",
+            "type": "nitrogen-dioxide",
+            "measurement": 89.7,
+            "trend": "Rising",
             "band": "Low",
             "aqi": 3
         },
+        {
+          "type": "ozone",
+          "measurement": 150.3,
+          "trend": "Rising",
+          "band": "Moderate",
+          "aqi": 4
+      },
+      {
+          "type": "particulate-matter10",
+          "measurement": 11.623,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 2
+      },
+      {
+          "type": "particulate-matter2",
+          "measurement": 8.7,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 1
+      },
       ]
   }
 ]
