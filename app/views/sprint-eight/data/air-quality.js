@@ -17,7 +17,7 @@ const commonMessages = {
         },
         ukToday: "Strong winds for many areas during today will help to keep air pollution levels low across the whole of the UK.",
         ukTomorrow: "The unsettled weather will continue resulting in low levels of air pollution across the whole of the UK.",
-        ukOutlook: "Low levels of air pollution are forecast across the country as unsettled weather conditions continue."
+        ukOutlook: "Strong winds for many areas will help to keep air pollution levels low at the beginning of the period. Later on an influx of warm air from the continent may result in moderate air pollution."
     },
     moderate: {
         values: [4, 5, 6],

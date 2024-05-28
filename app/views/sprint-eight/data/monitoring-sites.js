@@ -4,10 +4,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Norwich Lakenfields",
+    "site_name": "Sibton",
     "site_id": "UKA00362",
-    "distance": 19.6,
-    "site_type": "urban-background",
+    "distance": 19.1,
+    "site_type": "rurL-background",
     "pollutants": [
           {
               "type": "nitrogen-dioxide",
@@ -40,9 +40,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Weybourne",
+    "site_name": "St Osyth",
     "site_id": "UKA00433",
-    "distance": 27.8,
+    "distance": 29.6,
     "site_type": "rural-background",
     "pollutants": [
         {
@@ -77,7 +77,7 @@ const monitoringSites = [
 },
 
   {
-      "site_name": "Wicken Fen",
+      "site_name": "Norwich Lakenfields",
       "site_id": "UKA00594",
       "distance": 30.5,
       "site_type": "rural-background",
