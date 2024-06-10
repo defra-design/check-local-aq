@@ -1,10 +1,10 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit');
-const router = govukPrototypeKit.requests.setupRouter('/post-mvp'); 
+const router = govukPrototypeKit.requests.setupRouter('/sprint-6'); 
 const locationController = require('./controllers/location.js'); 
 const airQualityModule = require('./data/air-quality.js');
 
-const version = 'post-mvp';
+const version = 'sprint-6';
 
 // Location search
 router.get('/' + version + '/where', (req, res) => {

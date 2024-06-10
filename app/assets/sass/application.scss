@@ -1,52 +1,52 @@
 // Import govuk-frontend styles
 @import "node_modules/govuk-frontend/dist/govuk/all";
 
-.sprint-six {
+.sprint-6 {
 
   // Tools
-  @import "sprint-six/tools/mixins";
+  @import "sprint-6/tools/mixins";
 
   // Elements
-  @import "sprint-six/elements/colour";
-  @import "sprint-six/elements/layout";
-  @import "sprint-six/elements/typography";
-  @import "sprint-six/elements/tables";
+  @import "sprint-6/elements/colour";
+  @import "sprint-6/elements/layout";
+  @import "sprint-6/elements/typography";
+  @import "sprint-6/elements/tables";
 
   // Components
-  @import "sprint-six/components/daqitag";
-  @import "sprint-six/components/daqitable";
-  @import "sprint-six/components/toggletips";
-  @import "sprint-six/components/aq-levels-table";
-  @import "sprint-six/components/aq-tabs";
-  @import "sprint-six/components/cards";
-  @import "sprint-six/components/inset-text-colour";
-  @import "sprint-six/components/aq-definition-list";
-  @import "sprint-six/components/aq-forecast";
+  @import "sprint-6/components/daqitag";
+  @import "sprint-6/components/daqitable";
+  @import "sprint-6/components/toggletips";
+  @import "sprint-6/components/aq-levels-table";
+  @import "sprint-6/components/aq-tabs";
+  @import "sprint-6/components/cards";
+  @import "sprint-6/components/inset-text-colour";
+  @import "sprint-6/components/aq-definition-list";
+  @import "sprint-6/components/aq-forecast";
 }
 
-.sprint-seven {
+.sprint-8 {
 
   // Tools
-  @import "sprint-seven/tools/mixins";
+  @import "sprint-8/tools/mixins";
 
   // Elements
-  @import "sprint-seven/elements/colour";
-  @import "sprint-seven/elements/layout";
-  @import "sprint-seven/elements/typography";
-  @import "sprint-seven/elements/tables";
+  @import "sprint-8/elements/colour";
+  @import "sprint-8/elements/layout";
+  @import "sprint-8/elements/typography";
+  @import "sprint-8/elements/tables";
 
   // Components
-  @import "sprint-seven/components/daqitag";
-  @import "sprint-seven/components/daqitable";
-  @import "sprint-seven/components/toggletips";
-  @import "sprint-seven/components/aq-levels-table";
-  @import "sprint-seven/components/aq-pollutant-levels";
-  @import "sprint-seven/components/aq-tabs";
-  @import "sprint-seven/components/cards";
-  @import "sprint-seven/components/inset-text-colour";
-  @import "sprint-seven/components/aq-definition-list";
-  @import "sprint-seven/components/aq-forecast";
-  @import "sprint-seven/components/aq-charts";
+  @import "sprint-8/components/daqitag";
+  @import "sprint-8/components/daqitable";
+  @import "sprint-8/components/toggletips";
+  @import "sprint-8/components/aq-levels-table";
+  @import "sprint-8/components/aq-pollutant-levels";
+  @import "sprint-8/components/aq-tabs";
+  @import "sprint-8/components/cards";
+  @import "sprint-8/components/inset-text-colour";
+  @import "sprint-8/components/aq-definition-list";
+  @import "sprint-8/components/aq-forecast";
+  @import "sprint-8/components/aq-charts";
 }
 
 .post-mvp {
@@ -73,28 +73,28 @@
   @import "post-mvp/components/language-toggle";
 }
 
-.sprint-eight {
+.sprint-9 {
 
   // Tools
-  @import "sprint-eight/tools/mixins";
+  @import "sprint-9/tools/mixins";
 
   // Elements
-  @import "sprint-eight/elements/colour";
-  @import "sprint-eight/elements/layout";
-  @import "sprint-eight/elements/typography";
-  @import "sprint-eight/elements/tables";
+  @import "sprint-9/elements/colour";
+  @import "sprint-9/elements/layout";
+  @import "sprint-9/elements/typography";
+  @import "sprint-9/elements/tables";
 
   // Components
-  @import "sprint-eight/components/daqitag";
-  @import "sprint-eight/components/daqitable";
-  @import "sprint-eight/components/toggletips";
-  @import "sprint-eight/components/aq-levels-table";
-  @import "sprint-eight/components/aq-tabs";
-  @import "sprint-eight/components/cards";
-  @import "sprint-eight/components/inset-text-colour";
-  @import "sprint-eight/components/aq-definition-list";
-  @import "sprint-eight/components/aq-levels-list";
-  @import "sprint-eight/components/aq-forecast";
+  @import "sprint-9/components/daqitag";
+  @import "sprint-9/components/daqitable";
+  @import "sprint-9/components/toggletips";
+  @import "sprint-9/components/aq-levels-table";
+  @import "sprint-9/components/aq-tabs";
+  @import "sprint-9/components/cards";
+  @import "sprint-9/components/inset-text-colour";
+  @import "sprint-9/components/aq-definition-list";
+  @import "sprint-9/components/aq-levels-list";
+  @import "sprint-9/components/aq-forecast";
 }
 
 

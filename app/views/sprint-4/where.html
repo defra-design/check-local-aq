@@ -1,0 +1,28 @@
+{% extends "layouts/sprint-4.html" %}
+{% set displayBreadcrumbs = false %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="/{{ version }}/location" method="post">
+      {{ appSearch({
+          label: {
+              text: "Where do you want to check?",
+              classes: "govuk-label--l govuk-!-margin-bottom-6",
+              isPageHeading: true
+          },
+          hint: {
+              text: "Enter a location or postcode"
+          },
+          id: "location",
+          name: 'location'
+      }) }}
+      <!-- Hidden input to pass the air quality value -->
+      <input type="hidden" name="aq" value="{{ airQuality.value }}" />
+  </form>
+  </div>
+</div>
+{% endblock %}
+

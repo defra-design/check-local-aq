@@ -1,6 +1,5 @@
-{% extends "layouts/post-mvp.html" %}
+{% extends "layouts/sprint-4.html" %}
 {% set displayBacklink = true %}
-{% set displayLanguageToggle = true %}
 
 {% from "/" + folder + "/components/pollutant/macro.njk" import appPollutant %}
 {% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
@@ -21,7 +20,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-{{ pageHeadingSize }} govuk-!-margin-top-5">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
 {% if caption %}
         <span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
         {% endif %}
@@ -31,13 +30,11 @@
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
-      {% include "/" + folder + "/includes/daqi.html" %}
       {% include "/" + folder + "/includes/forecast.html" %}
-      {% include "/" + folder + "/includes/uk-forecast.html" %}
-      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
-<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-      {% include "/" + folder + "/includes/health-advice.html" %}
-<hr class="govuk-section-break govuk-!-margin-bottom-6">
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Updated at 5am on {{ "today" | govukDate }}</p>
+      
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4">
+      {% include "/" + folder + "/includes/daqi-index.html" %}
       {% include "/" + folder + "/includes/monitoring-sites.html" %}
       {% include "/" + folder + "/includes/pollutants.html" %}
     </div>

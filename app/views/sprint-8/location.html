@@ -1,6 +1,5 @@
-{% extends "layouts/post-mvp.html" %}
+{% extends "layouts/sprint-8.html" %}
 {% set displayBacklink = true %}
-{% set displayLanguageToggle = true %}
 
 {% from "/" + folder + "/components/pollutant/macro.njk" import appPollutant %}
 {% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
@@ -8,6 +7,9 @@
 {% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
 {% from "/" + folder + "/components/cards/macro.njk" import appCards %}
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/aq-svg-graph/macro.njk" import svgGraph %}
+{% from  "/" + folder + "/components/aq-svg-pointplotter/macro.njk" import svgPointPlotter %}
+
 
 {% set caption = "" %}
 {% set title = result.GAZETTEER_ENTRY.NAME1 + ", " + (result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH) %}
@@ -21,7 +23,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-{{ pageHeadingSize }} govuk-!-margin-top-5">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
 {% if caption %}
         <span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
         {% endif %}
@@ -39,9 +41,12 @@
       {% include "/" + folder + "/includes/health-advice.html" %}
 <hr class="govuk-section-break govuk-!-margin-bottom-6">
       {% include "/" + folder + "/includes/monitoring-sites.html" %}
+      {% include "/" + folder + "/includes/nearby-monitoring-sites.html" %}
       {% include "/" + folder + "/includes/pollutants.html" %}
     </div>
   </div>
+  <!-- <p><strong>Local Type:</strong> {{ result.localType }}</p>
+  <p><strong>Region:</strong> {{ result.region }}</p> -->
 
 {% endblock %}
 

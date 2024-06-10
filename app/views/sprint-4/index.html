@@ -1,11 +1,12 @@
-{% extends "layouts/post-mvp.html" %}
+{% extends "layouts/sprint-4.html" %}
 {% set displayBreadcrumbs = false %}
+
 
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-top-7">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
         {{ serviceName }}
@@ -18,10 +19,6 @@
         <li>find information on air pollutants</li>
        <!-- That this is not required for the MVP <li>access the local authority website to find out what is being done to improve air quality</li> -->
       </ul>
-
-      {{ govukInsetText({
-        html: "This page is also available in <a href='#'>Welsh (Cymraeg)</a>."
-      }) }}
 
       {{ govukButton({
         text: "Start now",

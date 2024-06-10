@@ -1,15 +1,16 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit');
-const router = govukPrototypeKit.requests.setupRouter('/post-mvp'); 
+const router = govukPrototypeKit.requests.setupRouter('/sprint-4'); 
 const locationController = require('./controllers/location.js'); 
 const airQualityModule = require('./data/air-quality.js');
 
-const version = 'post-mvp';
+const version = 'sprint-4';
+
 
 // Location search
 router.get('/' + version + '/where', (req, res) => {
   res.render('where', {
-    airQuality: airQualityModule.airQuality, 
+    airQuality: airQuality, 
   });
 });
 
@@ -23,11 +24,8 @@ router.get('/location/:id', (req, res) => {
   locationController.getLocationDetails(req, res, version);
 });
 
-router.get('/health-effects', (req, res) => {
-  res.render('/' + version + '/health-effects', {
-    airQualityData: airQualityModule.commonMessages,
-  });
-});
+
+
 
 
   
