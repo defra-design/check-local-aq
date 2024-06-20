@@ -1,0 +1,92 @@
+{% extends "layouts/sprint-10.html" %}
+{% set caption = "" %}
+{% set title = "Air pollutants we measure" %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      <p>Air pollutants can be solids (particulate matter), liquids or gases. We legally set limits and monitor specific air pollutants that are known to harm our health, quality of life, and the environment.</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      <h2 id="pm2_5" class="govuk-heading-m">Particulate matter (PM2.5)</h2>
+      <p>Particulate matter (PM) are small particles of solids or liquids that are in the air. The particles are only 2.5 micrometres in diameter. For context, the width of a human hair is 50 to 70 micrometres.
+        PM2.5 particles may include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>dust</li>
+        <li>soot</li>
+        <li>smoke</li>
+        <li>drops of liquid</li>
+      </ul>
+      <p>The main sources of particulate matter are from:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>burning of fuel by vehicles, industry and domestic properties</li>
+        <li>wear of tyres and brakes</li>
+        <li>wind blown soil and dust</li>
+        <li>sea spray particles</li>
+        <li>burning vegetation</li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      <h2 id="pm10" class="govuk-heading-m">Particulate matter (PM10)</h2>
+      <p>Particulate matter (PM) are small particles of solids or liquids that are in the air. The particles are only 10 micrometres in diameter. For context, the width of a human hair is 50 to 70 micrometres.</p>
+      <p>The main sources of particulate matter are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>dust from construction sites</li>
+        <li>dust from landfills</li>
+        <li>dust from agriculture</li>
+        <li>wildfires</li>
+        <li>pollen</li>
+        <li>power stations</li>
+        <li>vehicles</li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      <h2 id="nitrogen_dioxide" class="govuk-heading-m">Nitrogen dioxide (N02)</h2>
+      <p>Nitrogen dioxide is a colourless gas. It's mainly produced during:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Burning of petrol or diesel in a car engine</li>
+        <li>Burning natural gas in a central-heating boiler or power station</li>
+        <li>Welding</li>
+        <li>The use of explosives</li>
+        <li>Commercial manufacturing</li>
+        <li>Food manufacturing</li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      <h2 id="ozone" class="govuk-heading-m">Ozone (03)</h2>
+      <p>There are no major emission sources of ozone itself. Reactions between other pollutants form ground level ozone. For example, when pollutants from cars, power stations, and factories react with sunlight.</p>
+      <p>Ground level ozone can be at unhealthy levels on both hot and cold days. It can travel by the wind, affecting both urban and rural areas.</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      <h2 id="sulphur_dioxide" class="govuk-heading-m">Sulphur dioxide (S02)</h2>
+      <p>Sulphur dioxide is a colourless gas with a strong odour. It's mainly produced from:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Burning petrol or diesel in vehicles</li>
+        <li>Gas boilers</li>
+        <li>Coal burning power stations</li>
+        <li>Commercial manufacturing</li>
+        <li>Food manufacturing</li>
+      </ul>
+  </div>
+<div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Check local air quality",
+            href: "/" + version + "/"
+          }, {
+            text: "Health effects of air pollution",
+            href: "/" + version + "/health-effects"
+          },
+          {
+            text: "Why we monitor air pollution",
+            href: "/" + version + "/why-we-monitor-air-pollution"
+          }]
+        }]
+      }) }}
+    </div>
+</div>
+{% endblock %}

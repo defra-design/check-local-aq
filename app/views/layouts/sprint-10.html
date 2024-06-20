@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{% set version = "sprint-10" %}
+{% set bodyClasses = "sprint-10" %}
+
+
+{% block headIcons %}{% endblock %}
+
+{% block pageTitle %}
+{% if title %}{{ title }} – {% endif %}
+{{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+  {% if servicePage %}
+    {{ govukHeader({
+      homepageUrl: "/" + version,
+      serviceName: serviceName,
+      serviceUrl: "/" + version,
+      containerClasses: "govuk-width-container",
+      useTudorCrown: true
+    }) }}
+  {% else %}
+    {{ govukHeader({
+      homepageUrl: "/" + version,
+      containerClasses: "govuk-width-container",
+      useTudorCrown: true
+    }) }}
+  {% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% if servicePage %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {% if displayBacklink %}
+    {{ govukBackLink({
+      text: "Change location",
+      href: "/" + version + "/where"
+    }) }}
+    {% endif %}
+  {% else %}
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+    {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Environment and countryside",
+          href: "#"
+        },
+        {
+          text: "Air pollution",
+          href: "#"
+        }
+      ]
+    }) }}
+  {% endif %}
+{% endblock %}
+
+      
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/",
+         text: "Change version"
+       },
+       {
+        href: "/",
+        text: version
+      }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
