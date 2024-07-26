@@ -4,27 +4,27 @@
 const monitoringSites = [
   
   {
-    "site_name": "Sibton",
+    "site_name": "Edinburgh St Leonards",
     "site_id": "UKA00362",
-    "distance": 19.1,
-    "site_type": "rural-background",
+    "distance": 1.78,
+    "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "St Osyth",
+    "site_name": "Edinburgh Nicolson Street",
     "site_id": "UKA00433",
-    "distance": 29.6,
-    "site_type": "rural-background",
+    "distance": 1.9,
+    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
 
   {
-      "site_name": "Norwich Lakenfields",
+      "site_name": "Bush Estate",
       "site_id": "UKA00594",
-      "distance": 30.4,
-      "site_type": "urban-background",
+      "distance": 7.6,
+      "site_type": "rual-background",
       "site_band": "Low",
       "site_aqi": 3
   }
