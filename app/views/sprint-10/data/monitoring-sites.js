@@ -4,27 +4,27 @@
 const monitoringSites = [
   
   {
-    "site_name": "Bush Estate",
+    "site_name": "Edinburgh St Leonards",
     "site_id": "UKA00362",
-    "distance": 2.9,
-    "site_type": "rural-background",
+    "distance": 2.4,
+    "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Auchencorth Moss",
+    "site_name": "Edinburgh Nicolson Street",
     "site_id": "UKA00433",
-    "distance": 5.9,
-    "site_type": "rural-background",
+    "distance": 2.5,
+    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
 
   {
-      "site_name": "Edinburgh Nicolson Street",
+      "site_name": "Bush Estate",
       "site_id": "UKA00594",
-      "distance": 6.7,
-      "site_type": "urban-traffic",
+      "distance": 7.8,
+      "site_type": "rural-background",
       "site_band": "Low",
       "site_aqi": 3
   }
