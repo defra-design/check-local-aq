@@ -2,7 +2,7 @@
 {% set showAnotherService = true %}
 {% set anotherServiceName = "Air quality alerts" %}
 {% set serviceNameSlug = "alerts" %}
-{% set title = alert.stationName %}
+{% set title = alert.stationName + ', ' + alert.localAuthority %}
 
 {% if alert.status == 'active' %}
   {% set alertDescription %}
