@@ -20,7 +20,7 @@ const alerts = [
     stationName: "Bush Estate",
     slug: 'bush-estate',
     localAuthority: "Midlothian",
-    mapUrl: "https://maps.app.goo.gl/MFMxSBmJURwZnaZTA",
+    mapUrl: "https://maps.app.goo.gl/vACXQPF6uAcxoEwr8",
     timeStamp: "23:00",
     date: "2024-08-19",
     pollutant: {
@@ -37,7 +37,7 @@ const alerts = [
     stationName: "Doncaster A630 Cleveland Street",
     slug: 'doncaster-a630-cleveland-street',
     localAuthority: "Doncaster",
-    mapUrl: "https://maps.app.goo.gl/MFMxSBmJURwZnaZTA",
+    mapUrl: "https://maps.app.goo.gl/MJS4u4TMifcB1HbF8",
     timeStamp: "12:00",
     date: "2024-08-19",
     pollutant: {
@@ -54,7 +54,7 @@ const alerts = [
     stationName: "Newport",
     slug: 'newport',
     localAuthority: "Casnewydd - Newport",
-    mapUrl: "https://maps.app.goo.gl/MFMxSBmJURwZnaZTA",
+    mapUrl: "https://maps.app.goo.gl/5kfYiZrXBCDiKSKp7",
     timeStamp: "19:00",
     date: "2024-08-18",
     pollutant: {
@@ -71,7 +71,7 @@ const alerts = [
     stationName: "Port Talbot",
     slug: 'port-talbot',
     localAuthority: "Castell-nedd Port Talbot - Neath Port Talbot",
-    mapUrl: "https://maps.app.goo.gl/MFMxSBmJURwZnaZTA",
+    mapUrl: "https://maps.app.goo.gl/c2V82axbUBGE33rH6",
     timeStamp: "15:00",
     date: "2024-08-18",
     pollutant: {
