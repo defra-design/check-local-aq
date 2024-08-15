@@ -13,7 +13,7 @@
     <div class="gem-c-cards">
       {% if activeCount > 0 %}
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">{{ activeCount }} active air quality alerts</h2>
-        <p>In the last 24 hours</p>
+        <p>In the past 24 hours</p>
         <ul class="gem-c-cards__list">
         {% for alert in alerts %}
           {% if alert.status == 'active' %}
