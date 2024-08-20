@@ -4,28 +4,28 @@
 const monitoringSites = [
   
   {
-    "site_name": "Edinburgh Nicolson Street",
-    "site_id": "UKA00594",
-    "distance": 0.8,
+    "site_name": "Cardiff Centre",
+    "site_id": "UKA00217",
+    "distance": 2.7,
     "site_type": "urban-background",
-    "site_band": "Low",
-    "site_aqi": 3
-},
-{
-    "site_name": "Edinburgh St Leonards",
-    "site_id": "UKA00433",
-    "distance": 0.9,
-    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
-  {
-    "site_name": "Bush Estate",
-    "site_id": "UKA00362",
-    "distance": 6.1,
-    "site_type": "rural-background",
+{
+    "site_name": "Cardiff Newport Road",
+    "site_id": "UKA00433",
+    "distance": 2.9,
+    "site_type": "urban-traffic",
     "site_band": "Low",
     "site_aqi": 3
+},
+  {
+    "site_name": "	Newport",
+    "site_id": "UKA00380",
+    "distance": 11.2,
+    "site_type": "urban-background",
+    "site_band": "High",
+    "site_aqi": 7
 }
 
 ]

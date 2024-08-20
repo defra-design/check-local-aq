@@ -1,16 +1,16 @@
 const alerts = [
   {
-    stationName: "Yarner Wood",
-    slug: 'yarner-wood',
-    localAuthority: "Devon",
-    mapUrl: "https://maps.app.goo.gl/EFiMUYRakcfVqEaL6",
+    stationName: "Newport",
+    slug: 'newport',
+    localAuthority: "Casnewydd - Newport",
+    mapUrl: "https://maps.app.goo.gl/5kfYiZrXBCDiKSKp7",
     timeStamp: "08:00",
     date: "2024-08-20",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
       maxLevel: 510,
-      currentLevel: 380,
+      currentLevel: 425,
       threshold: 400,
       method: "Measured consecutively over 3 hours"
     },
@@ -51,17 +51,17 @@ const alerts = [
     status: "active"
   },
   {
-    stationName: "Newport",
-    slug: 'newport',
-    localAuthority: "Casnewydd - Newport",
-    mapUrl: "https://maps.app.goo.gl/5kfYiZrXBCDiKSKp7",
-    timeStamp: "19:00",
-    date: "2024-08-18",
+    stationName: "Yarner Wood",
+    slug: 'yarner-wood',
+    localAuthority: "Devon",
+    mapUrl: "https://maps.app.goo.gl/EFiMUYRakcfVqEaL6",
+    timeStamp: "08:00",
+    date: "2024-08-19",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
-      maxLevel: 70,
-      currentLevel: 10,
+      maxLevel: 17,
+      currentLevel: 11,
       threshold: 400,
       method: "Measured consecutively over 3 hours"
     },
