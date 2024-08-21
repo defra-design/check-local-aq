@@ -4,25 +4,25 @@
 const monitoringSites = [
   
   {
-    "site_name": "Hafod-yr-ynys Hill Roadside",
-    "site_id": "UKA01037",
-    "distance": 3.7,
-    "site_type": "urban-traffic",
-    "site_band": "Moderate",
-    "site_aqi": 5
+    "site_name": "Cardiff Centre",
+    "site_id": "UKA00217",
+    "distance": 2.7,
+    "site_type": "urban-background",
+    "site_band": "Low",
+    "site_aqi": 3
 },
 {
-    "site_name": "Cwmbran Crownbridge",
-    "site_id": "UKA00819",
-    "distance": 7.9,
-    "site_type": "urban-background",
+    "site_name": "Cardiff Newport Road",
+    "site_id": "UKA00433",
+    "distance": 2.9,
+    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
   {
     "site_name": "	Newport",
-    "site_id": "UKA00380",
-    "distance": 11.5,
+    "site_id": "UKA00362",
+    "distance": 6.1,
     "site_type": "urban-background",
     "site_band": "High",
     "site_aqi": 7
