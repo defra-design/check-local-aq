@@ -1,0 +1,44 @@
+{% if highestAQDetails.value >= 4 %}
+    <h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+    <p>{{ highestAQDetails.advice }}</p>
+        {% set adultsText = highestAQDetails.atrisk.adults %}
+        {% set asthmaText = highestAQDetails.atrisk.asthma %}
+        {% set oldPeopleText = highestAQDetails.atrisk.oldPeople %}
+        {{ govukInsetText({
+            classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+            html: "<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+        }) }}
+        <p>Long term exposure to air pollution can result in heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>
+    {% else %}
+    <h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+        <p>You can enjoy your usual activities.</p>
+        <p>Long term exposure to air pollution (over years) can lead to many different health conditions and can reduce life expectancy.</p>
+{% endif %}
+{{ govukDetails({
+    summaryText: "Actions and health advice for different levels of air pollution",
+    html: "<p>
+                Adults and children with heart or lung problems are at greater risk of the short term effects of air pollution. Follow your doctor's usual advice about exercising and managing your condition. Some vulnerable people may experience symptoms on low air pollution days. Anyone experiencing symptoms should follow our guidance.
+            </p>
+
+            <h2 class='govuk-heading-s'>Health advice for short term exposure to air pollution</h2>
+            <dl class='aq-definition-list'>
+                <dt class='aq-defintion-term'><strong class='daqi-tag daqi-tag--1'>Low</strong></dt>
+                <dd class=''>" + airQualityData['low'].advice + "</dd>
+                <dt class='aq-defintion-term'><strong class='daqi-tag daqi-tag--4'>Moderate</strong></dt>
+                <dd class=''>" + airQualityData['moderate'].advice + "</dd>
+                <dd class=''>" + airQualityData['moderate'].atrisk.adults + "</dd>
+                <dd class=''>" + airQualityData['moderate'].atrisk.asthma + "</dd>
+                <dd class=''>" + airQualityData['moderate'].atrisk.oldPeople + "</dd>
+                <dt class='aq-defintion-term'><strong class='daqi-tag daqi-tag--7'>High</strong></dt>
+                <dd class=''>" + airQualityData['high'].advice + "</dd>
+                <dd class=''>" + airQualityData['high'].atrisk.adults + "</dd>
+                <dd class=''>" + airQualityData['high'].atrisk.asthma + "</dd>
+                <dd class=''>" + airQualityData['high'].atrisk.oldPeople + "</dd>
+                <dt class='aq-defintion-term'><strong class='daqi-tag daqi-tag--10'>Very high</strong></dt>
+                <dd class=''>" + airQualityData['veryHigh'].advice + "</dd>
+                <dd class=''>" + airQualityData['veryHigh'].atrisk.adults + "</dd>
+                <dd class=''>" + airQualityData['veryHigh'].atrisk.asthma + "</dd>
+                <dd class=''>" + airQualityData['veryHigh'].atrisk.oldPeople + "</dd>
+            </dl>"
+}) }}
+
