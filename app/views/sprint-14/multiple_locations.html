@@ -7,10 +7,9 @@
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-l">Locations matching '{{ userLocation }}'</h1>
     <p>More than one match was found for your location. Choose the correct location from the following options:</p>
-
+  <ul class="govuk-list">
     {% for item in results %}
-    <ul class="govuk-list govuk-!-margin-bottom-2">
-      <li>
+      <li class="govuk-!-margin-bottom-2">
         <a href="/{{ version }}/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
         <mark>{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
         {% if item.GAZETTEER_ENTRY.COUNTY_UNITARY %}
@@ -20,8 +19,8 @@
         {% endif %}
         </a>
       </li>
-    </ul>
         {% endfor %}
+    </ul>
     <p class="govuk-body govuk-!-margin-top-6">Alternatively, <a href="/{{ version }}/where">try searching again</a></p>
   </div>
 </div>

@@ -15,48 +15,45 @@ What types of notifications would you like to receive? – {{ serviceName }} –
 {% endblock %}
 
 {% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"
-
-      <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post">
         
-        {{ govukCheckboxes({
-          name: "waste",
-          fieldset: {
-            legend: {
-              text: "What types of notifications would you like to receive?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
-            }
-          },
-          hint: {
-            text: "Select all that apply."
-          },
-          items: [
-            {
-              value: "threshold-breaches",
-              text: "When a monitoring area nearby breaches it's threshold"
-            },
-            {
-              value: "forecast-pollution",
-              text: "When pollution levels are forecast to be moderate or above"
-            },
-            {
-              value: "expired-alerts",
-              text: "When an air quality alert is no longer a concern"
-            }
-          ]
-        }) }}
+    {{ govukCheckboxes({
+      name: "air-quality-alerts", 
+      fieldset: {
+        legend: {
+          text: "What type of alert would you like to receive?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "When a pollutant measured nearby goes above the legal limit",
+          text: "When a pollutant measured nearby goes above the legal limit"
+        },
+        {
+          value: "When pollution levels are forecast to be moderate or above",
+          text: "When pollution levels are forecast to be moderate or above"
+        },
+        {
+          value: "When an air quality alert has ended",
+          text: "When an air quality alert has ended"
+        }
+      ]
+    }) }}
 
-        {{ govukButton({
-          text: "Continue",
-          href: "/" + version + "/sign-up-for-alerts/method-of-notification"
-        }) }}
-
-      </form>
-
-    </div>
-  </div>
-
+    {{ govukButton({
+      text: "Continue",
+      attributes: {
+        id: "notificationContinueButton"
+      }
+    }) }}
+  </form>
+</div>
+</div>
 {% endblock %}

@@ -2,7 +2,6 @@
 {% set showAnotherService = true %}
 {% set anotherServiceName = "Sign up for quality alerts" %}
 
-
 {% block pageTitle %}
 Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -33,7 +32,7 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
           items: [
             {
               value: "/" + version + "/sign-up-for-alerts/type-of-notifications",
-              text: "Yes, create an alert for " + locationString,
+              text: "Yes",
               checked: true
               },
               {
@@ -49,7 +48,7 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
 
       </form>
       <p class="govuk-body">
-        Do you need to <a class="govuk-link" href="#">unsubscribe from air quality alerts</a>?
+        <a class="govuk-link" href="#">Manage or unsubscribe from air quality alerts</a>
       </p>
 
     </div>

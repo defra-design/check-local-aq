@@ -1,0 +1,28 @@
+{% extends "layouts/sprint-14.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for quality alerts" %}
+
+{% block pageTitle %}
+{% if contactMethod == 'email' %}
+  Check your email
+{% else %}
+  Check your messages
+{% endif %}
+– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your messages</h1>
+      <p class="govuk-body">
+        We've sent a message to the mobile number <strong>{{ text }}</strong>
+      </p>
+      <p class="govuk-body">
+        Reply YES to confirm you want text notifications about air quality in <strong>{{ locationString }}</strong>.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

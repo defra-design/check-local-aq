@@ -20,10 +20,10 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your email</h1>
       <p class="govuk-body">
-        We’ve sent an email to <strong>john.smith@email.com</strong>
+        We’ve sent an email to <strong>{{ email }}</strong>
       </p>
       <p class="govuk-body">
-        Click the link in the email to confirm you want email notifications about air quality in <strong>Menheniot</strong>.
+        Click the link in the email to confirm you want email notifications about air quality in <strong>{{ locationString }}</strong>.
       </p>
       <p class="govuk-body">
         The link will stop working in 7 days.
@@ -32,6 +32,11 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
         summaryText: "Not received an email?",
         html: "<p>Emails sometimes take a few minutes to arrive.</p><p>If you do not receive an email soon, check your spam or junk folder.</p>"
       }) }}
+      <ul class="govuk-list govuk-list--bullet">
+          {% for notification in selectedNotifications %}
+            <li>{{ notification }}</li>
+          {% endfor %}
+      </ul>
 
     </div>
   </div>

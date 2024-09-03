@@ -2,7 +2,6 @@
 {% set showAnotherService = true %}
 {% set anotherServiceName = "Sign up for quality alerts" %}
 
-
 {% block pageTitle %}
 How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -17,7 +16,7 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"
+    <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/{{ version }}/sign-up-for-alerts/check-your-email" method="post">
         
@@ -28,26 +27,16 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
           type: "email",
           autocomplete: "email",
           spellcheck: false,
-          classes: "govuk-!-width-one-third",
+          classes: "govuk-!-width-one-half",
           label: {
             text: "Email address"
           }
         }) }}
-        {% endset -%}
-        
+        {% endset %}
         
         {% set textHtml %}
-        {{ govukInput({
-          id: "notify-by-text",
-          name: "notifyByText",
-          type: "tel",
-          autocomplete: "tel",
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Mobile phone number"
-          }
-        }) }}
-        {% endset -%}
+        <p>This part of the prototype does not exist yet</p>
+        {% endset %}
         
         {{ govukRadios({
           name: "contact",
@@ -80,8 +69,7 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
         }) }}
 
         {{ govukButton({
-          text: "Continue",
-          href: "/" + version + "/sign-up-for-alerts/check-your-email"
+          text: "Continue"
         }) }}
 
       </form>
