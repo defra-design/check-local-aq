@@ -111,6 +111,19 @@ router.get('/sign-up-for-alerts/check-your-email', function(req, res) {
   });
 });
 
+router.get('/sign-up-for-alerts/confirm-email', function(req, res) {
+  const email = req.session.data['notifyByEmail'];
+  const locationString = req.session.data['locationString'];
+  const selectedNotifications = req.session.data['selectedNotifications']; 
+  
+  res.render(version + '/sign-up-for-alerts/confirm-email', {
+    email: email,
+    locationString: locationString,
+    selectedNotifications: selectedNotifications,
+  });
+});
+
+
 
 
 module.exports = router;

@@ -1,0 +1,26 @@
+body.email {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: govuk-colour("light-grey");
+}
+
+.email .email-container {
+  margin-top: govuk-spacing(6);
+  margin-bottom: govuk-spacing(6);
+  max-width: 560px;
+  background-color: govuk-colour("white");
+  border: 2px solid govuk-colour("mid-grey");
+}
+
+.email-content {
+  padding: govuk-spacing(6);;
+}
+
+.govuk-header__container {
+  margin-left: govuk-spacing(6);
+  margin-right: govuk-spacing(6);
+}
+
+

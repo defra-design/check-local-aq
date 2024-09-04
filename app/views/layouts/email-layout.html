@@ -1,0 +1,24 @@
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="/public/stylesheets/application.css">
+</head>
+<body class="email">
+    <div class="email-container">
+        <div class="email-header">
+            {{ govukHeader({ homepageUrl: "#" }) }}
+        </div>
+        <div class="email-content">
+        {% block content %}
+            <h1 class="govuk-heading-m">Default heading</h1>
+            <p>This is the default content if none is provided.</p>
+        {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

@@ -32,12 +32,6 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
         summaryText: "Not received an email?",
         html: "<p>Emails sometimes take a few minutes to arrive.</p><p>If you do not receive an email soon, check your spam or junk folder.</p>"
       }) }}
-      <ul class="govuk-list govuk-list--bullet">
-          {% for notification in selectedNotifications %}
-            <li>{{ notification }}</li>
-          {% endfor %}
-      </ul>
-
     </div>
   </div>
 
