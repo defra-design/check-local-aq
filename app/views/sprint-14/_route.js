@@ -159,6 +159,15 @@ router.get('/sign-up-for-alerts/confirmation-email', function(req, res) {
   });
 });
 
+router.get('/sign-up-for-alerts/email-alert/:status', function(req, res) {
+  const locationString = req.session.data['locationString'];
+  const status = req.params.status; 
+
+  res.render(version + '/sign-up-for-alerts/email-alert', {
+    locationString: locationString,
+    status: status  
+  });
+});
 
 
 
