@@ -2,7 +2,8 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 const router = govukPrototypeKit.requests.setupRouter('/sprint-14');
 const locationController = require('./controllers/location.js'); 
 const airQualityModule = require('./data/air-quality.js');
-const alertsController = require('./controllers/alerts.js');  
+const alertsController = require('./controllers/alerts.js');
+const { monitoringSites, siteTypeDescriptions } = require('./data/monitoring-sites.js');  
 
 const version = 'sprint-14';
 
@@ -172,6 +173,47 @@ router.get('/sign-up-for-alerts/email-alert/:status', function(req, res) {
 });
 
 
+router.get('/location-forecast', function(req, res) {
+  const locationName = req.session.data['locationName'] || 'Missing name';
+  const localAuthority = req.session.data['localAuthority'] || 'Missing name';
+
+  const airQuality = {
+    today: {
+      value: req.query.todayValue || 3,
+      readableBand: req.query.todayBand || 'low'
+    },
+    day2: {
+      value: req.query.day2Value || 3,
+      readableBand: req.query.day2Band || 'low'
+    },
+    day3: {
+      value: req.query.day3Value || 4,
+      readableBand: req.query.day3Band || 'moderate'
+    },
+    day4: {
+      value: req.query.day4Value || 5,
+      readableBand: req.query.day4Band || 'moderate'
+    },
+    day5: {
+      value: req.query.day5Value || 3,
+      readableBand: req.query.day5Band || 'low'
+    }
+  };
+
+  const result = {
+    GAZETTEER_ENTRY: {
+      NAME1: locationName,
+      COUNTY_UNITARY: localAuthority
+    }
+  };
+
+  res.render(version + '/location-forecast', {
+    airQuality: airQuality,
+    result: result,
+    monitoringSites: monitoringSites, // Pass monitoring sites here
+    version: version
+  });
+});
 
 
 module.exports = router;

@@ -1,0 +1,91 @@
+{% extends "layouts/sprint-14.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+{% set title = result.GAZETTEER_ENTRY.NAME1 %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {{ title }}
+        <span class="govuk-caption-{{ pageHeadingSize }} govuk-!-margin-top-2">{{ result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      {% include "/" + folder + "/includes/daqi.html" %}
+      {% include "/" + folder + "/includes/forecast.html" %}
+      <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">UK forecast</h2>
+      <p>
+        Today and tomorrow air pollution levels will be predominantly low across the UK. Light winds may allow isolated pockets of moderate air pollution to form near busy roads and urban centres.
+      </p>
+      <p>
+        Later on an influx of warm air from the continent may result in moderate air pollution.
+      </p>
+
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+      <p class="defra-icon-divider">
+        <a href="/{{ version }}/sign-up-for-alerts/confirm-location?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&localAuthority={{ result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}" class="defra-link-icon">
+          <svg viewBox="0 0 14 20" width="14" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" fill="currentColor">
+              <path d="M9.27 15.747C9.27 16.99 8.26 18 7.016 18s-2.253-1.01-2.253-2.253H9.27zM6.015 1.86v-.859A1 1 0 0 1 7.016 0c.553 0 1.002.449 1.002 1.001v.859c2.284.465 4.006 2.487 4.006 4.907v4.357l1.628 1.661c.488.489.488 1.282 0 1.771a1.25 1.25 0 0 1-.886.366H1.252a1.25 1.25 0 0 1-.886-.366c-.488-.489-.488-1.282 0-1.771l1.643-1.661V6.767c0-2.42 1.721-4.442 4.006-4.907z"></path>
+          </svg>
+          Get air quality alerts by email or text
+      </a>
+      </p>
+      <h2 class="govuk-heading-m">Health advice for moderate levels of air pollution</h2>
+      <p>For most people, short term exposure to moderate levels of air pollution is not an issue.</p>
+          {% set adultsText = "Adults who have heart problems and feel unwell should consider doing less strenuous exercise, especially outside." %}
+          {% set asthmaText = "People with asthma should be prepared to use their reliever inhaler." %}
+          {% set oldPeopleText = "Older people can be more susceptible to the effects of poor air quality and should consider doing less strenuous activity, especially outside." %}
+          {{ govukInsetText({
+              classes: "govuk-inset-text--5",
+              html: "<p>" + adultsText + "</p><p>" + asthmaText + "</p><p>" + oldPeopleText + "</p>" 
+          }) }}
+          <p>Long term exposure to air pollution can result in heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>
+          {% include "/" + folder + "/includes/health-advice-details.html" %}
+ <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/local-air-quality.html" %}
+      {% include "/" + folder + "/includes/average-levels.html" %}
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+    </div>
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Health effects of air pollution",
+            href: "/" + version + "/health-effects"
+          }, {
+            text: "Air pollutants we measure",
+            href: "/" + version + "/air-pollutants-we-measure"
+          },
+          {
+            text: "Why we monitor air pollution",
+            href: "/" + version + "/why-we-monitor-air-pollution"
+          },
+          {
+            text: "Air quality alerts",
+            href: "/" + version + "/alerts"
+          }
+          ]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
+
+
