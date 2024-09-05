@@ -123,6 +123,43 @@ router.get('/sign-up-for-alerts/confirm-email', function(req, res) {
   });
 });
 
+router.get('/sign-up-for-alerts/confirmation', function(req, res) {
+  const email = req.session.data['notifyByEmail'];
+  const locationString = req.session.data['locationString'];
+  const selectedNotifications = req.session.data['selectedNotifications']; 
+  
+  res.render(version + '/sign-up-for-alerts/confirmation', {
+    email: email,
+    locationString: locationString,
+    selectedNotifications: selectedNotifications,
+  });
+});
+
+router.get('/sign-up-for-alerts/check-details', function(req, res) {
+  const email = req.session.data['notifyByEmail'];
+  const locationString = req.session.data['locationString'];
+  const selectedNotifications = req.session.data['selectedNotifications']; 
+  
+  res.render(version + '/sign-up-for-alerts/check-details', {
+    email: email,
+    locationString: locationString,
+    selectedNotifications: selectedNotifications,
+  });
+});
+
+router.get('/sign-up-for-alerts/confirmation-email', function(req, res) {
+  const email = req.session.data['notifyByEmail'];
+  const locationString = req.session.data['locationString'];
+  const selectedNotifications = req.session.data['selectedNotifications']; 
+  
+  res.render(version + '/sign-up-for-alerts/confirmation-email', {
+    email: email,
+    locationString: locationString,
+    selectedNotifications: selectedNotifications,
+  });
+});
+
+
 
 
 

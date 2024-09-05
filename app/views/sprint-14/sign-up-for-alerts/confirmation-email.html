@@ -1,0 +1,23 @@
+{% extends "layouts/email-layout.html" %}
+
+{% block content %}
+      <h1 class="govuk-heading-m">You have signed up to air quality alerts for {{ locationString }}</h1>
+      <p class="govuk-body">
+        You will receive an email when:
+      </p>
+      {% if selectedNotifications.length == 1 %}
+      <p class="govuk-body govuk-!-margin-bottom-4">{{ selectedNotifications[0] }}</p>
+        {% else %}
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+            {% for notification in selectedNotifications %}
+              <li>{{ notification }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <p class="govuk-body">
+          <a href="#">Unsubscribe</a>
+        </p>
+        <p class="govuk-body">
+          <a href="#">Make changes to your air quality alerts</a>
+        </p>
+{% endblock %}

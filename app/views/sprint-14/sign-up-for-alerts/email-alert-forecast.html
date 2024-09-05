@@ -1,0 +1,12 @@
+{% extends "layouts/email-layout.html" %}
+
+{% block content %}
+      <h1 class="govuk-heading-m">Moderate levels of air pollution have been forecast for {{ LocationString }}.</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/sign-up-for-alerts/confirmation">View air pollution forecast</a></h1>
+      <p class="govuk-body">
+        <a href="#">Unsubscribe</a>
+      </p>
+      <p class="govuk-body">
+        <a href="#">Make changes to your air quality alerts</a>
+      </p>
+{% endblock %}
