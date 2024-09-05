@@ -2,7 +2,7 @@
 {% block content %}
   {% if status == 'expired' %}
           <h1 class="govuk-heading-m">An air quality alert has expired near {{ locationString }}.</h1>
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/sign-up-for-alerts/confirmation">View expired air quality alert</a></h1>
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/alerts/port-talbot">View expired air quality alert</a></h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>
@@ -11,7 +11,7 @@
           </p>
   {% elif status == 'forecast' %}
           <h1 class="govuk-heading-m">Moderate levels of air pollution have been forecast for {{ locationString }}.</h1>
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/sign-up-for-alerts/confirmation">View air pollution forecast</a></h1>
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/location">View air pollution forecast</a></h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>
@@ -20,7 +20,7 @@
           </p>
   {% elif status == 'threshold' %}
           <h1 class="govuk-heading-m">Nitrogen dioxide levels near {{ locationString }} have exceeded the legal threshold.</h1>
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/sign-up-for-alerts/confirmation">View air quality alert</a></h1>
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/alerts/newport">View air quality alert</a></h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>

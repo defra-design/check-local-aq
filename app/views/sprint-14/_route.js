@@ -48,6 +48,8 @@ router.get('/sign-up-for-alerts/confirm-location', (req, res) => {
 
   // Store the locationString in the session
   req.session.data['locationString'] = locationString;
+  req.session.data['locationName'] = locationName;
+  req.session.data['localAuthority'] = localAuthority;
 
   res.render(version + '/sign-up-for-alerts/confirm-location', {
     locationName: locationName,
