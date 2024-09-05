@@ -1,6 +1,6 @@
 {% extends "layouts/sprint-14.html" %}
 {% set showAnotherService = true %}
-{% set anotherServiceName = "Sign up for quality alerts" %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
 
 {% block pageTitle %}
 Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
@@ -18,14 +18,15 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Check your details</h1>
-    <p class="govuk-body govuk-!-margin-bottom-4">Air quality alerts for <strong>{{ email }}</strong></p>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Air quality alerts will be sent to:</h2>
+    <p class="govuk-body govuk-!-margin-bottom-2">{{ email }}</p>
     <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">Change email adress</a></p>
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-4">You will receive an email when:</h2>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">You will receive an email when:</h2>
     {% if selectedNotifications.length == 1 %}
-    <p class="govuk-body govuk-!-margin-bottom-4">{{ selectedNotifications[0] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-2">{{ selectedNotifications[0] }}</p>
       {% else %}
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2">
           {% for notification in selectedNotifications %}
             <li>{{ notification }}</li>
           {% endfor %}
@@ -33,8 +34,8 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
       {% endif %}
     <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">Change notifications</a></p>
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-4">You will receive alerts for:</h2>
-    <p class="govuk-body govuk-!-margin-bottom-4">{{ locationString }}</p>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">You will receive alerts for:</h2>
+    <p class="govuk-body govuk-!-margin-bottom-2">{{ locationString }}</p>
     <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">Change this location</a></p>
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {{ govukButton({
