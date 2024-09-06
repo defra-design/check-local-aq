@@ -19,6 +19,9 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/{{ version }}/sign-up-for-alerts/type-of-notifications" method="post">
+        {% set noHtml %}
+        <p>This part of the prototype does not exist yet</p>
+        {% endset %}
         
         {{ govukRadios({
           name: "where",
@@ -36,8 +39,11 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
               checked: true
               },
               {
-              value: "/" + version + "/sign-up-for-alerts/where-do-you-want-alerts-for",
-              text: "No, I would like to choose a different location"
+              value: "#",
+              text: "No, I would like to choose a different location",
+              conditional: {
+                html: noHtml
+              }
             }
           ]
         }) }}
