@@ -59,45 +59,30 @@ router.get('/sign-up-for-alerts/confirm-location', (req, res) => {
 });
 
 
-router.post('/sign-up-for-alerts/type-of-notifications', function(req, res) {
-  const selectedOption = req.body.where;
+// router.post('/sign-up-for-alerts/type-of-notifications', function(req, res) {
+//   const selectedOption = req.body.where;
 
-  if (selectedOption === '/' + version + '/sign-up-for-alerts/type-of-notifications') {
-    const locationString = req.session.data['locationString'];
-    req.session.data['locationString'] = locationString;
-    res.redirect(selectedOption);
-  } else if (selectedOption === '/' + version + '/sign-up-for-alerts/where-do-you-want-alerts-for') {
-    res.redirect(selectedOption);
-  } 
-});
+//   if (selectedOption === '/' + version + '/sign-up-for-alerts/type-of-notifications') {
+//     const locationString = req.session.data['locationString'];
+//     req.session.data['locationString'] = locationString;
+//     res.redirect(selectedOption);
+//   } else if (selectedOption === '/' + version + '/sign-up-for-alerts/where-do-you-want-alerts-for') {
+//     res.redirect(selectedOption);
+//   } 
+// });
 
-router.post('/sign-up-for-alerts/method-of-notification', function(req, res) {
-  let selectedNotifications = req.body['air-quality-alerts'];
+// router.post('/sign-up-for-alerts/method-of-notification', function(req, res) {
+//   let selectedNotifications = req.body['air-quality-alerts'];
 
-  if (!Array.isArray(selectedNotifications)) {
-    selectedNotifications = selectedNotifications ? [selectedNotifications] : [];
-  }
-  selectedNotifications = selectedNotifications.filter(notification => !notification.includes('_unchecked'));
+//   if (!Array.isArray(selectedNotifications)) {
+//     selectedNotifications = selectedNotifications ? [selectedNotifications] : [];
+//   }
+//   selectedNotifications = selectedNotifications.filter(notification => !notification.includes('_unchecked'));
 
-  req.session.data['selectedNotifications'] = selectedNotifications;
+//   req.session.data['selectedNotifications'] = selectedNotifications;
 
-  res.redirect('/' + version + '/sign-up-for-alerts/method-of-notification');
-});
-
-
-router.post('/sign-up-for-alerts/check-your-email', function(req, res) {
-  const contactMethod = req.body.contact;
-
-  req.session.data['contactMethod'] = contactMethod;
-
-  if (contactMethod === 'email') {
-    req.session.data['notifyByEmail'] = req.body.notifyByEmail;
-    res.redirect('/' + version + '/sign-up-for-alerts/check-your-email');
-  } else if (contactMethod === 'text') {
-    req.session.data['notifyByText'] = req.body.notifyByText;
-    res.redirect('/' + version + '/sign-up-for-alerts/check-your-messages');
-  } 
-});
+//   res.redirect('/' + version + '/sign-up-for-alerts/method-of-notification');
+// });
 
 
 
@@ -113,39 +98,19 @@ router.get('/sign-up-for-alerts/check-your-email', function(req, res) {
   });
 });
 
-router.get('/sign-up-for-alerts/confirm-email', function(req, res) {
-  const email = req.session.data['notifyByEmail'];
-  const locationString = req.session.data['locationString'];
-  const selectedNotifications = req.session.data['selectedNotifications']; 
-  
-  res.render(version + '/sign-up-for-alerts/confirm-email', {
-    email: email,
-    locationString: locationString,
-    selectedNotifications: selectedNotifications,
-  });
-});
 
-router.get('/sign-up-for-alerts/confirmation', function(req, res) {
+// Manage air quality alerts (This is used for a number of screens)
+router.get('/sign-up-for-alerts/manage-alerts/:status', function(req, res) {
   const email = req.session.data['notifyByEmail'];
   const locationString = req.session.data['locationString'];
-  const selectedNotifications = req.session.data['selectedNotifications']; 
-  
-  res.render(version + '/sign-up-for-alerts/confirmation', {
-    email: email,
-    locationString: locationString,
-    selectedNotifications: selectedNotifications,
-  });
-});
+  const selectedNotifications = req.session.data['selectedNotifications'];
+  const status = req.params.status;  
 
-router.get('/sign-up-for-alerts/check-details', function(req, res) {
-  const email = req.session.data['notifyByEmail'];
-  const locationString = req.session.data['locationString'];
-  const selectedNotifications = req.session.data['selectedNotifications']; 
-  
-  res.render(version + '/sign-up-for-alerts/check-details', {
+  res.render(version + '/sign-up-for-alerts/manage-alerts', {
     email: email,
     locationString: locationString,
     selectedNotifications: selectedNotifications,
+    status: status
   });
 });
 

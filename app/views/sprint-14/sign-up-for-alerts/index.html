@@ -1,6 +1,10 @@
 {% extends "layouts/sprint-14.html" %}
 {% set anotherServiceName = "Sign up for air quality alerts" %}
 
+{% block pageTitle %}
+{{ anotherServiceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
 
 {% block content %}
 
@@ -17,9 +21,9 @@
       <p>Use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>make pasties and cream</li>
-        <li>pan for tin in a stream</li>
-        <li>catch pilchards and herrings that sparkle and gleam</li>
+        <li>get email or text notficiations about air pollution in a local area</li>
+        <li>be notfiied when a pollutant goes above the legal threshold</li>
+        <li>be notified when pollution levels are forecast to be moderate or above</li>
       </ul>
       {{ govukButton({
         text: "Start now",
@@ -27,15 +31,7 @@
         href: "/" + version + "/where",
         isStartButton: true
       }) }}
-      <h2 class="govuk-heading-m">
-        How to change your air quality alerts
-      </h1>
-      <p>You can <a class="govuk-link" href="#">unsubscribe or make changes to your air quality alerts</a> at any time.</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-        <li>eat your pasties and cream</li>
-        <li>sell your tin from the stream</li>
-        <li>grill your pilchards and herrings that sparkle and gleam</li>
-      </ul>
+      <p><a href="">Unsubscribe or make changes to your air quality alerts</a></p>
     </div>
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-9">
       {{ xGovukRelatedNavigation({
