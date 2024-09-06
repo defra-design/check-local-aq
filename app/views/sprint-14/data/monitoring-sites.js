@@ -4,28 +4,28 @@
 const monitoringSites = [
   
   {
-    "site_name": "Cardiff Centre",
+    "site_name": "London Westminster",
     "site_id": "UKA00217",
-    "distance": 2.7,
+    "distance": 2.4,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Cardiff Newport Road",
+    "site_name": "Southwark A2 Old Kent Road",
     "site_id": "UKA00433",
-    "distance": 2.9,
+    "distance": 4.0,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
   {
-    "site_name": "	Newport",
+    "site_name": "London Marylebone Road",
     "site_id": "UKA00362",
-    "distance": 6.1,
+    "distance": 4.3,
     "site_type": "urban-background",
-    "site_band": "High",
-    "site_aqi": 7
+    "site_band": "Low",
+    "site_aqi": 3
 }
 
 ]

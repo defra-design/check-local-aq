@@ -1,11 +1,11 @@
 const alerts = [
   {
-    stationName: "Newport",
-    slug: 'newport',
-    localAuthority: "Casnewydd - Newport",
-    mapUrl: "https://maps.app.goo.gl/5kfYiZrXBCDiKSKp7",
+    stationName: "London Westmister",
+    slug: 'london-westminster',
+    localAuthority: "Greater London",
+    mapUrl: "https://maps.app.goo.gl/8vc5fTWJZbz8zCAb6",
     timeStamp: "08:00",
-    date: "2024-08-20",
+    date: "2024-09-09",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
@@ -51,12 +51,12 @@ const alerts = [
     status: "active"
   },
   {
-    stationName: "Yarner Wood",
-    slug: 'yarner-wood',
-    localAuthority: "Devon",
-    mapUrl: "https://maps.app.goo.gl/EFiMUYRakcfVqEaL6",
+    stationName: "Southwark A2 Old Kent Road",
+    slug: 'southwark-a2-old-kent-road',
+    localAuthority: "Greater London",
+    mapUrl: "https://maps.app.goo.gl/S3RjJ4Xub6mFSrYr7",
     timeStamp: "08:00",
-    date: "2024-08-19",
+    date: "2024-09-08",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
