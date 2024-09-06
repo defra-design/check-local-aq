@@ -59,30 +59,18 @@ router.get('/sign-up-for-alerts/confirm-location', (req, res) => {
 });
 
 
-// router.post('/sign-up-for-alerts/type-of-notifications', function(req, res) {
-//   const selectedOption = req.body.where;
+router.post('/sign-up-for-alerts/method-of-notification', function(req, res) {
+  let selectedNotifications = req.body['air-quality-alerts'];
 
-//   if (selectedOption === '/' + version + '/sign-up-for-alerts/type-of-notifications') {
-//     const locationString = req.session.data['locationString'];
-//     req.session.data['locationString'] = locationString;
-//     res.redirect(selectedOption);
-//   } else if (selectedOption === '/' + version + '/sign-up-for-alerts/where-do-you-want-alerts-for') {
-//     res.redirect(selectedOption);
-//   } 
-// });
+  if (!Array.isArray(selectedNotifications)) {
+    selectedNotifications = selectedNotifications ? [selectedNotifications] : [];
+  }
+  selectedNotifications = selectedNotifications.filter(notification => !notification.includes('_unchecked'));
 
-// router.post('/sign-up-for-alerts/method-of-notification', function(req, res) {
-//   let selectedNotifications = req.body['air-quality-alerts'];
+  req.session.data['selectedNotifications'] = selectedNotifications;
 
-//   if (!Array.isArray(selectedNotifications)) {
-//     selectedNotifications = selectedNotifications ? [selectedNotifications] : [];
-//   }
-//   selectedNotifications = selectedNotifications.filter(notification => !notification.includes('_unchecked'));
-
-//   req.session.data['selectedNotifications'] = selectedNotifications;
-
-//   res.redirect('/' + version + '/sign-up-for-alerts/method-of-notification');
-// });
+  res.redirect('/' + version + '/sign-up-for-alerts/method-of-notification');
+});
 
 
 

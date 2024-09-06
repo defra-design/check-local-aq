@@ -1,11 +1,20 @@
 {% extends "layouts/sprint-14.html" %}
-{% set servicePage = true %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-margin-bottom-9">
-    <form action="/{{ version }}/location" method="post">
+    <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    <form action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post">
       <!-- Conditional HTML for UK location input -->
       {% set ukHtml %}
       {{ govukInput({
@@ -35,7 +44,7 @@
         name: "locationType",
         fieldset: {
           legend: {
-            text: "Where do you want to check?",
+            text: "Where do you want to an air quality alert for?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l govuk-label--l govuk-!-margin-bottom-6"
           }
