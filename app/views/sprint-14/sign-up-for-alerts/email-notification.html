@@ -1,6 +1,35 @@
 {% extends "layouts/email-layout.html" %}
 {% block content %}
-  {% if status == 'expired' %}
+  {% if status == 'activate' %}
+        <h1 class="govuk-heading-m">Click the link to confirm you want to get air quality alerts for {{ locationString }}</h1>
+        <h1 class="govuk-heading-m"><a href="/{{ version }}/sign-up-for-alerts/confirmation">Activate your air quality alert</a></h1>
+        <p class="govuk-body">
+          This link will stop working after 7 days.
+        </p>
+        <p class="govuk-body">
+          If you did not request this email, you can ignore it.
+        </p>
+  {% elif status == 'confirmation' %}
+        <h1 class="govuk-heading-m">You have signed up to air quality alerts for {{ locationString }}</h1>
+        <p class="govuk-body">
+          You will receive an email when:
+        </p>
+        {% if selectedNotifications.length == 1 %}
+        <p class="govuk-body govuk-!-margin-bottom-4">{{ selectedNotifications[0] | capitalize }}</p>
+          {% else %}
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+              {% for notification in selectedNotifications %}
+                <li>{{ notification }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <p class="govuk-body">
+            <a href="#">Unsubscribe</a>
+          </p>
+          <p class="govuk-body">
+            <a href="#">Make changes to your air quality alerts</a>
+          </p>
+  {% elif status == 'expired' %}
           <h1 class="govuk-heading-m">An air quality alert has expired near {{ locationString }}.</h1>
           <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/alerts/port-talbot">View expired air quality alert</a></h1>
           <p class="govuk-body">
@@ -18,7 +47,7 @@
           <p class="govuk-body">
             <a href="#">Make changes to your air quality alerts</a>
           </p>
-  {% elif status == 'threshold' %}
+  {% elif status == 'alert' %}
           <h1 class="govuk-heading-m">Nitrogen dioxide levels near {{ locationString }} have exceeded the legal threshold.</h1>
           <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/alerts/newport">View air quality alert</a></h1>
           <p class="govuk-body">

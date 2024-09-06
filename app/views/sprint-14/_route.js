@@ -41,7 +41,6 @@ router.get('/alerts/:slug', (req, res) => {
 });
 
 // Confirm location post location forecast
-
 router.get('/sign-up-for-alerts/confirm-location', (req, res) => {
   const locationName = req.query.locationName;
   const localAuthority = req.query.localAuthority;
@@ -150,29 +149,22 @@ router.get('/sign-up-for-alerts/check-details', function(req, res) {
   });
 });
 
-router.get('/sign-up-for-alerts/confirmation-email', function(req, res) {
+// Email notifications
+router.get('/sign-up-for-alerts/email-notification/:status', function(req, res) {
   const email = req.session.data['notifyByEmail'];
   const locationString = req.session.data['locationString'];
-  const selectedNotifications = req.session.data['selectedNotifications']; 
-  
-  res.render(version + '/sign-up-for-alerts/confirmation-email', {
+  const selectedNotifications = req.session.data['selectedNotifications'];
+  const status = req.params.status;  
+
+  res.render(version + '/sign-up-for-alerts/email-notification', {
     email: email,
     locationString: locationString,
     selectedNotifications: selectedNotifications,
+    status: status
   });
 });
 
-router.get('/sign-up-for-alerts/email-alert/:status', function(req, res) {
-  const locationString = req.session.data['locationString'];
-  const status = req.params.status; 
-
-  res.render(version + '/sign-up-for-alerts/email-alert', {
-    locationString: locationString,
-    status: status  
-  });
-});
-
-
+// Hardcoing the location page so it can be linked to from an email alert
 router.get('/location-forecast', function(req, res) {
   const locationName = req.session.data['locationName'] || 'Missing name';
   const localAuthority = req.session.data['localAuthority'] || 'Missing name';
