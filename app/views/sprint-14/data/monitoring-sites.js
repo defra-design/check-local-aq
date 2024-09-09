@@ -4,28 +4,20 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Westminster",
+    "site_name": "London Haringey Priory Park",
     "site_id": "UKA00217",
-    "distance": 2.4,
+    "distance": 5.1,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Southwark A2 Old Kent Road",
+    "site_name": "Boreham Meadow Park",
     "site_id": "UKA00433",
-    "distance": 4.0,
+    "distance": 8.4,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
-},
-  {
-    "site_name": "London Marylebone Road",
-    "site_id": "UKA00362",
-    "distance": 4.3,
-    "site_type": "urban-background",
-    "site_band": "Low",
-    "site_aqi": 3
 }
 
 ]
