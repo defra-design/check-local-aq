@@ -21,7 +21,7 @@
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-{{ pageHeadingSize }}">
         {{ title }}
-        <span class="govuk-caption-{{ pageHeadingSize }} govuk-!-margin-top-2">{{ result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}</span>
+        <span class="govuk-caption-{{ pageHeadingSize }} govuk-!-margin-top-2">{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}</span>
       </h1>
     </div>
   </div>

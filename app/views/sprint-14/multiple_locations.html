@@ -12,10 +12,10 @@
       <li class="govuk-!-margin-bottom-2">
         <a href="/{{ version }}/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
         <mark>{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
-        {% if item.GAZETTEER_ENTRY.COUNTY_UNITARY %}
-          {{ item.GAZETTEER_ENTRY.COUNTY_UNITARY }}
-        {% else %}
+        {% if item.GAZETTEER_ENTRY.DISTRICT_BOROUGH %}
           {{ item.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}
+        {% else %}
+          {{ item.GAZETTEER_ENTRY.COUNTY_UNITARY }}
         {% endif %}
         </a>
       </li>
