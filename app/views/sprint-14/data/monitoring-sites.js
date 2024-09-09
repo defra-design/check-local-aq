@@ -4,18 +4,18 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Haringey Priory Park",
+    "site_name": "London Harlington",
     "site_id": "UKA00217",
-    "distance": 5.1,
+    "distance": 13.7,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Boreham Meadow Park",
+    "site_name": "London Hillingdon",
     "site_id": "UKA00433",
-    "distance": 8.4,
-    "site_type": "urban-traffic",
+    "distance": 13.8,
+    "site_type": "urban-background",
     "site_band": "Moderate",
     "site_aqi": 5
 }

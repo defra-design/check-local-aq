@@ -1,9 +1,9 @@
 const alerts = [
   {
-    stationName: "London Westmister",
-    slug: 'london-westminster',
-    localAuthority: "Greater London",
-    mapUrl: "https://maps.app.goo.gl/8vc5fTWJZbz8zCAb6",
+    stationName: "London Harlington",
+    slug: 'london-harlington',
+    localAuthority: "Hillingdon",
+    mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "08:00",
     date: "2024-09-09",
     pollutant: {
@@ -53,7 +53,7 @@ const alerts = [
   {
     stationName: "Southwark A2 Old Kent Road",
     slug: 'southwark-a2-old-kent-road',
-    localAuthority: "Greater London",
+    localAuthority: "Southwark",
     mapUrl: "https://maps.app.goo.gl/S3RjJ4Xub6mFSrYr7",
     timeStamp: "08:00",
     date: "2024-09-08",
