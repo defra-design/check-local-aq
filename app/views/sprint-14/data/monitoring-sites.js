@@ -4,20 +4,28 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Harlington",
+    "site_name": "Bournemouth",
+    "site_id": "UKA00433",
+    "distance": 4.3,
+    "site_type": "urban-background",
+    "site_band": "Moderate",
+    "site_aqi": 5
+},
+  {
+    "site_name": "Christchurch Barrack Road",
     "site_id": "UKA00217",
-    "distance": 13.7,
+    "distance": 5.6,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "London Hillingdon",
-    "site_id": "UKA00433",
-    "distance": 13.8,
-    "site_type": "urban-background",
-    "site_band": "Moderate",
-    "site_aqi": 5
+  "site_name": "Southhampton A33",
+  "site_id": "UKA00433",
+  "distance": 24.0,
+  "site_type": "urban-background",
+  "site_band": "Low",
+  "site_aqi": 2
 }
 
 ]
