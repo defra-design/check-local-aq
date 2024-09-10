@@ -1,11 +1,11 @@
 const alerts = [
   {
-    stationName: "Christchurch Barrack Road",
-    slug: 'christchurch-barrack-road',
-    localAuthority: "Bournemouth, Christchurch and Poole",
-    mapUrl: "https://maps.app.goo.gl/JUBFLWv2eimrd7oZA",
+    stationName: "London Harlington",
+    slug: 'london-harlington',
+    localAuthority: "Hillingdon",
+    mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "08:00",
-    date: "2024-09-10",
+    date: "2024-09-09",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
@@ -51,12 +51,12 @@ const alerts = [
     status: "active"
   },
   {
-    stationName: "Bournemouth",
-    slug: 'bournemouth',
-    localAuthority: "Bournemouth, Christchurch and Poole",
+    stationName: "Southwark A2 Old Kent Road",
+    slug: 'southwark-a2-old-kent-road',
+    localAuthority: "Southwark",
     mapUrl: "https://maps.app.goo.gl/S3RjJ4Xub6mFSrYr7",
     timeStamp: "08:00",
-    date: "2024-09-09",
+    date: "2024-09-08",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",

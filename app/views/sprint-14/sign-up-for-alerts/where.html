@@ -2,6 +2,10 @@
 {% set showAnotherService = true %}
 {% set anotherServiceName = "Sign up for air quality alerts" %}
 
+{% block pageTitle %}
+Where do you want to an air quality alert for?– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
 
 {% block beforeContent %}

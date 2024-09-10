@@ -2,6 +2,10 @@
 {% set servicePage = true %}
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
 
+{% block pageTitle %}
+Where do you want to check?– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-margin-bottom-9">
