@@ -1,14 +1,12 @@
-{% extends "layouts/sprint-14.html" %}
-{% set servicePage = true %}
+{% extends "layouts/post-mvp-fixes.html" %}
+{% set displayBreadcrumbs = false %}
+{% set displayLanguageToggle = true %}
+{% set title = "Where do you want to check?" %}
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
-
-{% block pageTitle %}
-Where do you want to check? – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full">
     <form action="/{{ version }}/location" method="post">
       <!-- Conditional HTML for UK location input -->
       {% set ukHtml %}

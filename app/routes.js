@@ -7,6 +7,7 @@ require('./views/sprint-13/_route.js');
 require('./views/sprint-10/_route.js');
 require('./views/sprint-9/_route.js');
 require('./views/post-mvp/_route.js');
+require('./views/post-mvp-fixes/_route.js');
 require('./views/sprint-8/_route.js');
 require('./views/sprint-6/_route.js');
 require('./views/sprint-5/_route.js');

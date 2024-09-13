@@ -1,12 +1,9 @@
-{% extends "layouts/sprint-14.html" %}
+{% extends "layouts/post-mvp-fixes.html" %}
 {% set displayBreadcrumbs = false %}
-{% set servicePage = true %}
+{% set displayLanguageToggle = true %}
+{% set title = "Error: Where do you want to check?" %}
 {% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
 {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-
-{% block pageTitle %}
-Error: Where do you want to check? – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
