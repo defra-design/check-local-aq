@@ -1,0 +1,74 @@
+{% extends "layouts/private-beta-fixes.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/pollutant/macro.njk" import appPollutant %}
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from "/" + folder + "/components/cards/macro.njk" import appCards %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+
+{% set caption = "" %}
+{% set title = result.GAZETTEER_ENTRY.NAME1 + ", " + (result.GAZETTEER_ENTRY.COUNTY_UNITARY if result.GAZETTEER_ENTRY.COUNTY_UNITARY else result.GAZETTEER_ENTRY.DISTRICT_BOROUGH) %}
+
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+{% if caption %}
+        <span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title }}
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      {% include "/" + folder + "/includes/daqi.html" %}
+      {% if airQuality.value >= 1 and airQuality.value <= 3 %}
+          <h2 class="govuk-heading-m">Health advice for {{ airQuality.readableBand }} levels of air pollution</h2>
+          <p>{{ airQuality.advice }}</p>
+      {% elseif airQuality.value >= 4 %}
+          <h2 class="govuk-heading-m">Health advice for {{ airQuality.readableBand }} levels of air pollution</h2>
+          <p>{{ airQuality.advice }}</p>
+          {% set adultsText %}
+            {{ (airQuality.atrisk.adults) }}
+          {% endset %}
+          {% set asthmaText %}
+            {{ (airQuality.atrisk.asthma) }}
+          {% endset %}
+          {% set oldPeopleText %}
+          {{ (airQuality.atrisk.oldPeople) }}
+          {% endset %}
+          {{ govukInsetText({
+            html: 
+              "<p>" + adultsText + "</p>" + 
+              "<p>" + asthmaText + "</p>" +
+              "<p>" + oldPeopleText + "</p>" 
+          }) }}
+      {% endif %}    
+      {% include "/" + folder + "/includes/daqi-index.html" %}
+      <h2 class="govuk-heading-m">UK air pollution summary</h2>
+      <p class="govuk-!-margin-bottom-6">
+        {{ airQuality.outlook }}
+      </p>
+      <p class="govuk-caption-s govuk-!-margin-bottom-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">How air pollutants can affect your health</h2>
+      {% include "/" + folder + "/includes/pollutants.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+      <h2 class="govuk-heading-m">Air pollutants monitored near by</h2>
+      <p>Readings are measured every hour. The unit µg/&#13221; stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+    </div>
+  </div>
+
+{% endblock %}
+
+

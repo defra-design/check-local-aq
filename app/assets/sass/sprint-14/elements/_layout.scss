@@ -12,6 +12,7 @@
 
 .govuk-main-wrapper {
   display: block;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  @include govuk-responsive-padding(8, 'top');
+  @include govuk-responsive-padding(8, 'bottom');
 }
+

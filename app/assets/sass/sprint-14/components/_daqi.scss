@@ -3,8 +3,8 @@
 
   .daqi-labels {
     display: flex;
-    justify-content: space-between;
     white-space: nowrap;
+    justify-content: space-between; 
   }
 
   .daqi-bar {
@@ -24,16 +24,14 @@
     border: 0;
     vertical-align: top;
     text-align: left;
-    width: 10%;
     border-right: 3px solid white;
   }
-  
+
+
   .daqi-band:last-child {
     text-align: right;
   }
 
-   
-  
   .daqi-selected {
       font-weight: bold; 
    }

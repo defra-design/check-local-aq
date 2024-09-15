@@ -1,0 +1,66 @@
+{% for site in monitoringSites %}
+{% set time %}
+    {{ "now" | date | minusOneHour }}
+{% endset %}
+
+{% set measurementToggletip %}
+  {{ toggletip(
+    '',
+    'More information about measurement',
+    'Readings are measured every hour. The unit µg/&#13221; stands for micrograms (one millionth of a gram) per cubic metre of air.',
+    'Latest'
+  )}}
+{% endset %}
+
+{% set levelToggletip %}
+  {{ toggletip(
+    '',
+    'More information about the level',
+    'There are 4 levels: low, moderate, high and very high. The level is determined by the highest reading of a single pollutant.
+    ',
+    'Level'
+  )}}
+{% endset %}
+
+{% set siteNameToggletip %}
+  {{ toggletip(
+    '',
+    'More information about ' + site.site_name,
+    siteTypeDescriptions[site.site_type],
+    site.site_name
+  )}}
+{% endset %}
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ site.site_name }}</h3>
+  <p class="govuk-caption-m govuk-!-margin-bottom-3">{{ site.distance }} miles away</p>
+  <p>{{ siteTypeDescriptions[site.site_type] }}</p>
+  {% set rows = [] %}
+  {% for pollutant in site.pollutants %}
+      {% set pollutantDetail = pollutantTypes[pollutant.type] %}
+      {% set row = [
+          { 
+              html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " + pollutantDetail.low_range + "</span>",
+              classes: "defra-aq-levels-table__cell--pollutant" 
+          },
+          { 
+              html: (pollutant.measurement | int) +  " <span class='govuk-!-font-size-16 govuk-!-font-weight-regular'>μg/&#13221;</span>",
+              classes: "defra-aq-levels-table__cell--reading" 
+          },
+          { 
+              html: "<strong class='daqi-tag daqi-tag--" + (pollutant.aqi if pollutant.aqi else "default-aqi-value") + "'>" + pollutant.band + "</strong>",
+              classes: "defra-aq-levels-table__cell--level" 
+          }
+      ] %}
+      {% set _ = rows.push(row) %}
+  {% endfor %}
+  {{ aqLevelsTable({
+      classes: "govuk-!-margin-bottom-2",
+      firstCellIsHeader: false,
+      head: [
+        { text: "Pollutant", classes: "defra-aq-levels-table__cell--pollutant"},
+        { text: "Latest" },
+        { html: "Level" }
+      ],
+      rows: rows
+  }) }}
+  <p class='govuk-caption-s govuk-!-margin-bottom-6'>Latest measurement {{ "now" | date | minusOneHour | lower }} on {{ "today" | govukDate }}</p>
+{% endfor %}

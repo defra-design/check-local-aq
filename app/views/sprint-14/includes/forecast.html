@@ -4,51 +4,32 @@
 {% set day4 = 3 | addDaysToTodayAbrev %}
 {% set day5 = 4 | addDaysToTodayAbrev %}
 
-{{ govukTable({
-  caption: "The forecast for the next 4 days",
-  captionClasses: "govuk-table__caption--m govuk-!-margin-bottom-4",
-  classes: "aq-forecast-table",
-  firstCellIsHeader: false,
-  head: [
-    {
-      text: day2,
-      classes: "aq-forecast-table__cell"
-    },
-    {
-      text: day3,
-      classes: "aq-forecast-table__cell"
-    },
-    {
-      text: day4,
-      classes: "aq-forecast-table__cell"
-    },
-    {
-      text: day5,
-      classes: "aq-forecast-table__cell"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: airQuality.day2.readableBand | capitalize,
-        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day2.value
-      },
-      {
-        text: airQuality.day3.readableBand  | capitalize,
-        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day3.value
-      },
-      {
-        text: airQuality.day4.readableBand  | capitalize,
-        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day4.value
-      },
-      {
-        text: airQuality.day5.readableBand  | capitalize,
-        classes: "aq-daqi-table__cell daqi-tag--" + airQuality.day5.value
-      }
-    ]
-  ]
-}) }}
 
+<h2 class="govuk-heading-m govuk-!-margin-bottom-4">The forecast for the next 4 days</h2>
 
-
-
+<dl class="aq-forecast-dl">
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day2 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day2.value }}">
+      {{ airQuality.day2.readableBand | capitalize }}
+    </dd>
+  </div>
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day3 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day3.value }}">
+      {{ airQuality.day3.readableBand | capitalize }}
+    </dd>
+  </div>
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day4 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day4.value }}">
+      {{ airQuality.day4.readableBand | capitalize }}
+    </dd>
+  </div>
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day5 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day5.value }}">
+      {{ airQuality.day5.readableBand | capitalize }}
+    </dd>
+  </div>
+</dl>
