@@ -1,0 +1,25 @@
+.aq-forecast-table {
+    @include govuk-responsive-margin(8, 'bottom');
+}
+
+
+.aq-forecast-table__cell {
+    @extend .daqi-table__cell;
+    @include govuk-font($size: 19);
+    width: 20%;
+}
+
+.aq-daqi-table__cell {
+    @include govuk-font($size: 16, $weight: regular, $line-height: 1);
+    padding: 6px 0 6px 0;
+    border:0;
+    text-align: center;
+    border-right: 2px solid white; /* Add a 3px white vertical border to data cells */
+}
+
+.daqi-scale-hidden {
+    @include defra-visually-hidden();
+} 
+
+
+

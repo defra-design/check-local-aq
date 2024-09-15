@@ -205,6 +205,29 @@
   @import "sprint-14/components/aq-browse-section";
 }
 
+.private-beta-fixes {
+// Tools
+@import "private-beta-fixes/tools/mixins";
+
+// Elements
+@import "private-beta-fixes/elements/colour";
+@import "private-beta-fixes/elements/layout";
+@import "private-beta-fixes/elements/typography";
+@import "private-beta-fixes/elements/tables";
+
+// Components
+@import "private-beta-fixes/components/daqitag";
+@import "private-beta-fixes/components/daqi";
+@import "private-beta-fixes/components/toggletips";
+@import "private-beta-fixes/components/aq-levels-table";
+@import "private-beta-fixes/components/aq-tabs";
+@import "private-beta-fixes/components/cards";
+@import "private-beta-fixes/components/inset-text-colour";
+@import "private-beta-fixes/components/aq-definition-list";
+@import "private-beta-fixes/components/aq-forecast";
+
+}
+
 
 // Tools
 @import "tools/mixins";
