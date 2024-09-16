@@ -22,7 +22,8 @@
   }
 
   .daqi-bar-segment:last-child {
-    border: 0;
+    border-right: none;
+    margin-right: 0;
   }
   
   .daqi-band {
