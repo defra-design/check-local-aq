@@ -14,8 +14,7 @@
 .daqi-bar-segment {
   width: 10%;
   height: 100%;
-  margin-right: 2px;
-  border-right: 1px solid transparent;
+  border-right: 2px solid white;
   @include govuk-font($size: 16, $weight: regular);
   padding: govuk-spacing(2) 0;
 }
@@ -45,6 +44,8 @@
 .daqi-selected {
     font-weight: 700;
     border: 5px solid transparent;
+    padding: 5px 0px;
+    width: 8.69%;
 }
 
 .daqi-0 {
