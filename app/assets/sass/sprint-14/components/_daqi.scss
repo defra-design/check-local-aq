@@ -44,8 +44,8 @@
 
   .daqi-selected {
       font-weight: bold;
-      border: 5px solid transparent; 
-   }
+      box-shadow: 0 0 0 5px blue;
+  }
   
   .daqi-0 {
     background-color: $daqi-colour-0;
