@@ -1,3 +1,4 @@
+
 .daqi-labels {
   display: flex;
   white-space: nowrap;
@@ -7,14 +8,21 @@
 .daqi-bar {
   display: flex;
   margin-bottom: govuk-spacing(2);
+  border: 1px solid transparent;
 }
 
 .daqi-bar-segment {
   width: 10%;
   height: 100%;
   margin-right: 2px;
+  border-right: 1px solid transparent;
   @include govuk-font($size: 16, $weight: regular);
   padding: govuk-spacing(2) 0;
+}
+
+.daqi-bar-segment:last-child {
+  border-right: none;
+  margin-right: 0;
 }
 
 .daqi-band {
@@ -23,7 +31,6 @@
   width: 30%;
   vertical-align: top;
   text-align: left;
-  border-right: 3px solid white;
 }
 
 
@@ -33,6 +40,10 @@
 
 .daqi-band:nth-child(3) {
   width: 20%;
+}
+
+.daqi-selected {
+    font-weight: 700;
 }
 
 .daqi-0 {
