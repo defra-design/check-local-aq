@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: stretch;
     @include govuk-responsive-margin(8, 'bottom');
-    border-right: 2px solid transparent;
+    border: 2px solid transparent;
 }
   
 .aq-forecast-item {
@@ -25,6 +25,10 @@
     text-align: center;
     border-right: 2px solid white; 
     padding: 6px 0 6px 0;
+}
+
+.aq-forecast-dd:last-child {
+    border: 0; 
 }
   
 .aq-forecast-dl dt:not(:last-child), .aq-forecast-dl dd:not(:last-child) {
