@@ -9,12 +9,12 @@
 
   .daqi-bar {
     display: flex;
-    height: 20px;
+    height: govuk-spacing(4);
     margin-bottom: govuk-spacing(2);
   }
 
   .daqi-bar-segment {
-    flex: 1;
+    width: 10%;
     height: 100%;
     margin-right: 2px;
   }
@@ -22,6 +22,7 @@
   .daqi-band {
     @include govuk-font($size: 16, $weight: regular);
     border: 0;
+    width: 30%;
     vertical-align: top;
     text-align: left;
     border-right: 3px solid white;
@@ -29,8 +30,13 @@
 
 
   .daqi-band:last-child {
-    text-align: right;
+    width: 20%;
   }
+
+  .daqi-band:nth-child(3) {
+    width: 20%;
+  }
+
 
   .daqi-selected {
       font-weight: bold; 
