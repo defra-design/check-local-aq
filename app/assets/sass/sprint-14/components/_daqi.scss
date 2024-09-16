@@ -29,12 +29,10 @@
 
   @media (inverted-colors: inverted) {
     .daqi-bar-segment {
-      border: 2px;
+      border: 2px solid govuk-colour("white");
     }
   }
   
-
-
   .daqi-band:last-child {
     width: 20%;
   }
