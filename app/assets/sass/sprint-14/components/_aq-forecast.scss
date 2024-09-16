@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: stretch;
     @include govuk-responsive-margin(8, 'bottom');
+    border-right: 2px solid transparent;
 }
   
 .aq-forecast-item {

@@ -20,6 +20,10 @@
     margin-right: 2px;
     border-right: 1px solid transparent;
   }
+
+  .daqi-bar-segment:last-child {
+    border: 0;
+  }
   
   .daqi-band {
     @include govuk-font($size: 16, $weight: regular);
@@ -39,7 +43,8 @@
   }
 
   .daqi-selected {
-      font-weight: bold; 
+      font-weight: bold;
+      border: 5px solid transparent; 
    }
   
   .daqi-0 {
