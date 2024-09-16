@@ -13,4 +13,10 @@ dt, dd {
   margin-left: 0;
 }
 
+@media (forced-colors: active) {
+  mark {
+    color: linkText;
+  }
+}
+
   
