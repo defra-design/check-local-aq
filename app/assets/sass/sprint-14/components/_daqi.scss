@@ -27,18 +27,43 @@
     text-align: left;
   }
 
-  @media (inverted-colors: inverted) {
-    .daqi-bar-segment {
-      border: 2px solid govuk-colour("white");
-    }
-  }
-  
+
   .daqi-band:last-child {
     width: 20%;
   }
 
   .daqi-band:nth-child(3) {
     width: 20%;
+  }
+
+  @media (inverted-colors: inverted) {
+    body {
+      background-color: black;
+      color: white;
+    }
+  
+
+    .daqi-labels {
+      color: white; 
+    }
+  
+    .daqi-bar-segment {
+      background-color: grey; 
+  
+ 
+    .daqi-bar-segment:nth-child(1),
+    .daqi-bar-segment:nth-child(2) {
+      background-color: lightgreen; 
+    }
+
+    
+    .daqi-band {
+      color: white; 
+    }
+    
+    .daqi-band:last-child, .daqi-band:nth-child(3) {
+      color: lightgrey; 
+    }
   }
 
 
