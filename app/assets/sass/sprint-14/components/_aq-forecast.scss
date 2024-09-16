@@ -32,7 +32,10 @@
 }
 
 @media screen and (forced-colours:active) {
-    .aq-forecast-dd,.aq-forecast-dt {
-        border-right: 0; 
+    .aq-forecast-dd, .aq-forecast-dt {
+        border: 0; 
+    }
+    .aq-forecast-dd {
+        border-top: 1px solid white;
     }
 }
