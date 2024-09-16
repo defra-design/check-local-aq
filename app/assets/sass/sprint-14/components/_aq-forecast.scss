@@ -24,10 +24,10 @@
     @include govuk-font($size: 16, $weight: regular, $line-height: 1);
     text-align: center;
     border-right: 2px solid white;
-    border-top: 1px solid transparent; 
+    border-top: 2px solid white; 
     padding: 6px 0 6px 0;
 }
-  
+
 .aq-forecast-dl dt:not(:last-child), .aq-forecast-dl dd:not(:last-child) {
     border-right: 2px solid white; 
 }
