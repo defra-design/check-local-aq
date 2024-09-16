@@ -27,7 +27,13 @@
 }
   
 .aq-forecast-dl dt:not(:last-child), .aq-forecast-dl dd:not(:last-child) {
-    border-right: 2px solid white; // White vertical border between elements
+    border-right: 2px solid white; 
 }
 
 
+@media (inverted-colors: inverted) {
+    .dt:first-child .dd:first-child {
+      border-left: 2px solid govuk-colour("white");
+    }
+  }
+  
