@@ -11,7 +11,7 @@
     {% for item in results %}
       <li class="govuk-!-margin-bottom-2">
         <a href="/{{ version }}/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
-        <mark>{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
+        <mark class="govuk-!-font-weight-bold govuk-link">{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
         {% if item.GAZETTEER_ENTRY.DISTRICT_BOROUGH %}
           {{ item.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}
         {% else %}
