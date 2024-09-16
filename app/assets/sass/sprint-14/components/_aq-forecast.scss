@@ -31,4 +31,8 @@
     border-right: 2px solid white; 
 }
 
-  
+@media screen and (forced-colours:active) {
+    .aq-forecast-dd,.aq-forecast-dt {
+        border-right: 0; 
+    }
+}
