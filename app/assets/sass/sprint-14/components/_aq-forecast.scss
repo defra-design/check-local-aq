@@ -23,7 +23,8 @@
 .aq-forecast-dd {
     @include govuk-font($size: 16, $weight: regular, $line-height: 1);
     text-align: center;
-    border-right: 2px solid white; 
+    border-right: 2px solid white;
+    border-top: 1px solid transparent; 
     padding: 6px 0 6px 0;
 }
   
@@ -34,8 +35,5 @@
 @media screen and (forced-colours:active) {
     .aq-forecast-dd, .aq-forecast-dt {
         border: 0; 
-    }
-    .aq-forecast-dd {
-        border-top: 1px solid white;
     }
 }
