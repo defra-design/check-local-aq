@@ -11,12 +11,14 @@
     display: flex;
     height: govuk-spacing(4);
     margin-bottom: govuk-spacing(2);
+    border: 1px solid transparent;
   }
 
   .daqi-bar-segment {
     width: 10%;
     height: 100%;
     margin-right: 2px;
+    border: 1px solid transparent;
   }
   
   .daqi-band {
@@ -35,38 +37,6 @@
   .daqi-band:nth-child(3) {
     width: 20%;
   }
-
-  @media (inverted-colors: inverted) {
-    body {
-      background-color: black;
-      color: white;
-    }
-  
-
-    .daqi-labels {
-      color: white; 
-    }
-  
-    .daqi-bar-segment {
-      background-color: grey;
-    } 
-  
- 
-    .daqi-bar-segment:nth-child(1),
-    .daqi-bar-segment:nth-child(2) {
-      background-color: lightgreen; 
-    }
-
-    
-    .daqi-band {
-      color: white; 
-    }
-    
-    .daqi-band:last-child, .daqi-band:nth-child(3) {
-      color: lightgrey; 
-    }
-  }
-
 
   .daqi-selected {
       font-weight: bold; 
