@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    @include govuk-responsive-margin(8, 'bottom');
-    border: 2px solid transparent;
+    @include govuk-responsive-margin(8, 'bottom')
 }
   
 .aq-forecast-item {
@@ -18,6 +17,7 @@
     @include govuk-font($size: 19);
     padding: govuk-spacing(2) 0 govuk-spacing(2) 0;
     background-color: govuk-colour("light-grey");
+    border: 2px solid transparent;
 }
   
 .aq-forecast-dd {
