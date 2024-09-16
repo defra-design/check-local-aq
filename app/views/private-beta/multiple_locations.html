@@ -11,7 +11,7 @@
     <ul class="govuk-list govuk-!-margin-bottom-2">
       <li>
         <a href="/private-beta/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
-        <mark>{{ item.GAZETTEER_ENTRY.NAME1 }}</mark>, 
+        <span class="govuk-!-font-weight-bold">{{ item.GAZETTEER_ENTRY.NAME1 }}</span>,
         {% if item.GAZETTEER_ENTRY.COUNTY_UNITARY %}
           {{ item.GAZETTEER_ENTRY.COUNTY_UNITARY }}
         {% else %}
