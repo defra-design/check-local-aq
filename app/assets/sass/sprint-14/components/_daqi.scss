@@ -25,8 +25,14 @@
     width: 30%;
     vertical-align: top;
     text-align: left;
-    border-right: 3px solid white;
   }
+
+  @media (inverted-colors: inverted) {
+    .daqi-bar-segment {
+      border: 2px;
+    }
+  }
+  
 
 
   .daqi-band:last-child {
