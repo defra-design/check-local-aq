@@ -1,0 +1,64 @@
+{% extends "layouts/sprint-15.html" %}
+{% set caption = "" %}
+{% set title = "Air quality alerts" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">{{ title | safe }}</h1>
+  </div>
+</div>
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full">
+    <div class="gem-c-cards">
+      {% if activeCount > 0 %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">{{ activeCount }} active air quality alerts</h2>
+        <p>In the past 24 hours</p>
+        <ul class="gem-c-cards__list">
+        {% for alert in alerts %}
+          {% if alert.status == 'active' %}
+            <li class="gem-c-cards__list-item">
+              <div class="gem-c-cards__list-item-wrapper">
+                <h3 class="gem-c-cards__sub-heading govuk-heading-s">
+                  <a class="govuk-link gem-c-cards__link" href="/{{ version }}/alerts/{{ alert.slug }}">{{ alert.stationName }}, {{ alert.localAuthority }}</a>
+                </h3>
+                <p class="govuk-body gem-c-cards__description">{{ alert.pollutant.title | capitalize }} levels levels measured in this area have exceeded the legal threshold.</p>
+                <p class="govuk-caption-s gem-c-cards__timestamp">Updated at {{ alert.timeStamp | govukTime }} on {{ alert.date | govukDate }}</p>
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      {% else %}
+        <h2 class="govuk-heading-m">There are no active air quality alerts</h2>
+      {% endif %}
+    </div>
+    <p class="defra-icon-divider">
+      <a href="#" class="defra-link-icon">
+          <svg viewBox="0 0 14 20" width="14" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" fill="currentColor"><path d="M9.27 15.747C9.27 16.99 8.26 18 7.016 18s-2.253-1.01-2.253-2.253H9.27zM6.015 1.86v-.859A1 1 0 0 1 7.016 0c.553 0 1.002.449 1.002 1.001v.859c2.284.465 4.006 2.487 4.006 4.907v4.357l1.628 1.661c.488.489.488 1.282 0 1.771a1.25 1.25 0 0 1-.886.366H1.252a1.25 1.25 0 0 1-.886-.366c-.488-.489-.488-1.282 0-1.771l1.643-1.661V6.767c0-2.42 1.721-4.442 4.006-4.907z"></path></svg>Get air quality alerts by text message or email
+      </a>
+    </p>
+    {% if expiredCount > 0 %}
+    <div class="gem-c-cards govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">{{ expiredCount }} air quality alerts have expired</h2>
+      <p>After 24 hours</p>
+      <ul class="gem-c-cards__list">
+      {% for alert in alerts %}
+        {% if alert.status == 'expired' %}
+          <li class="gem-c-cards__list-item">
+            <div class="gem-c-cards__list-item-wrapper">
+              <h3 class="gem-c-cards__sub-heading govuk-heading-s">
+                <a class="govuk-link gem-c-cards__link" href="/{{ version }}/alerts/{{ alert.slug }}">{{ alert.stationName }}, {{ alert.localAuthority }}</a>
+              </h3>
+              <p class="govuk-body gem-c-cards__description">{{ alert.description }}</p>
+              <p class="govuk-caption-s gem-c-cards__timestamp">Updated at {{ alert.timeStamp }} on {{ alert.date | govukDate }}</p>
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layouts/sprint-15.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+
+{% block pageTitle %}
+Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your email</h1>
+      <p class="govuk-body">
+        We’ve sent an email to <strong>{{ email }}</strong>
+      </p>
+      <p class="govuk-body">
+        Click the link in the email to confirm you want email notifications about air quality in <strong>{{ locationString }}</strong>.
+      </p>
+      <p class="govuk-body">
+        The link will stop working in 7 days.
+      </p>
+      {{ govukDetails({
+        summaryText: "Not received an email?",
+        html: "<p>Emails sometimes take a few minutes to arrive.</p><p>If you do not receive an email soon, check your spam or junk folder.</p>"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

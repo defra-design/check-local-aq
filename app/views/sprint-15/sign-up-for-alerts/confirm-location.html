@@ -1,0 +1,63 @@
+{% extends "layouts/sprint-15.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+{% block pageTitle %}
+Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post">
+        {% set noHtml %}
+        <p>This part of the prototype does not exist yet</p>
+        {% endset %}
+        
+        {{ govukRadios({
+          name: "where",
+          fieldset: {
+            legend: {
+              text: "Do you want to create an alert for " + locationString + "?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "/" + version + "/sign-up-for-alerts/type-of-notifications",
+              text: "Yes",
+              checked: true
+              },
+              {
+              value: "#",
+              text: "No, I would like to choose a different location",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+      <p class="govuk-body">
+        <a class="govuk-link" href="#">Unsubscribe or make changes to your air quality alerts</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

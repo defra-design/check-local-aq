@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Ozone (O₃)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+        <p>There are no major emission sources of ozone itself. Reactions between other pollutants form ozone in the air. For example, when pollutants from cars, power plants, and factories react with sunlight.
+        </p>
+        <p>
+          Ground level ozone can be at unhealthy levels on both hot and cold days. It can travel by the wind, affecting both urban and rural areas.
+        </p> 
+        <h2 class="govuk-heading-s">
+          Short term exposure to air pollution can cause:
+        </h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>worsening of asthma symptoms</li>
+          <li>worsening of chronic obstructive pulmonary disease (COPD)</li>
+          <li>difficulty breathing</li>
+          <li>coughing</li>
+          <li>eye, nose, and throat irritation</li>
+          <li>chest tightness and pain</li>
+        </ul>
+        <h2 class="govuk-heading-s">
+          Long term health effects of air pollution can include:
+        </h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>heart disease</li>
+          <li>diabetes</li>
+          <li>cancer</li>
+          <li>chronic obstructive pulmonary disease (COPD)</li>
+          <li>Alzheimer's and Parkinson's disease</li>
+          <li>dementia</li>
+        </ul>
+    </div>
+  </div>
+{% endblock %}
+

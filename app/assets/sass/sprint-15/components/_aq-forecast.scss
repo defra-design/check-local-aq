@@ -1,0 +1,41 @@
+.aq-forecast-dl {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    @include govuk-responsive-margin(8, 'bottom');
+    border: 1px solid transparent;
+}
+  
+.aq-forecast-item {
+    width: 25%; 
+    border-right: 2px solid white;
+}
+
+.aq-forecast-item:last-child {
+    border-right: none;
+}
+
+.aq-forecast-dt, .aq-forecast-dd {
+    text-align: center;
+}
+  
+.aq-forecast-dt {
+    @include govuk-font($size: 19);
+    padding: govuk-spacing(2) 0 govuk-spacing(2) 0;
+    background-color: govuk-colour("light-grey");
+}
+
+ 
+.aq-forecast-dd {
+    @include govuk-font($size: 16, $weight: regular, $line-height: 1);
+    text-align: center;
+    padding: 6px 0 6px 0;
+    border-top: 1px solid white;
+}
+
+
+@media screen and (forced-colours:active) {
+    .aq-forecast-dd, .aq-forecast-dt {
+        border: 0; 
+    }
+}

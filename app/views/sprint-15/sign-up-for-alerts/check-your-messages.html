@@ -1,0 +1,38 @@
+{% extends "layouts/sprint-15.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+
+{% block pageTitle %}
+Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your text messages</h1>
+      <p class="govuk-body">
+        We've sent a text message to <strong>{{ text }}</strong> with a 5 digit activiation code which expires in 24 hours. Enter the code on this page to activate your air quality alert.
+      </p>
+      {{ govukInput({
+        label: {
+          text: "Your activation code"
+        },
+        classes: "govuk-!-width-one-third",
+        id: "activation-code",
+        name: "activation-code"
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Not received a text message?",
+        html: "<p>Text messages sometimes take a few minutes to arrive.</p><p>If you do not receive a text message soon, check that you have enough mobile coverage or that you have entered the correct mobile telephone number.</p>"
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "/" + version + "/sign-up-for-alerts/manage-alerts/confirmation"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
