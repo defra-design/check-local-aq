@@ -98,13 +98,26 @@ router.get('/sign-up-for-alerts/manage-alerts/:status', function(req, res) {
 });
 
 // Email notifications
-router.get('/sign-up-for-alerts/email-notification/:status', function(req, res) {
+router.get('/email-notification/:status', function(req, res) {
   const email = req.session.data['notifyByEmail'];
   const locationString = req.session.data['locationString'];
   const status = req.params.status;  
 
-  res.render(version + '/sign-up-for-alerts/email-notification', {
+  res.render(version + '/email-notification', {
     email: email,
+    locationString: locationString,
+    status: status
+  });
+});
+
+// Text notifications
+router.get('/text-notification/:status', function(req, res) {
+  const text = req.session.data['notifyByText'];
+  const locationString = req.session.data['locationString'];
+  const status = req.params.status;  
+
+  res.render(version + '/text-notification', {
+    text: text,
     locationString: locationString,
     status: status
   });
