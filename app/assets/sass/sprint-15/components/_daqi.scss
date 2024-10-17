@@ -44,6 +44,13 @@
 
   .daqi-selected {
       font-weight: bold;
+      svg {
+        display: none;
+    }
+    @media (forced-colours:active) {
+      svg {
+          display: block; 
+    }
   }
   
   .daqi-0 {
