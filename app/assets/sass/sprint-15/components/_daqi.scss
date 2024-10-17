@@ -47,9 +47,10 @@
       svg {
         display: none;
     }
-    @media (forced-colours:active) {
+    @media (forced-colors: active) {
       svg {
-          display: block; 
+          display: block;
+      }
     }
   }
   
