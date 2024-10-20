@@ -4,20 +4,28 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Harlington",
+    "site_name": "Birmingham Ladywood",
     "site_id": "UKA00217",
-    "distance": 15.3,
+    "distance": 5,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "London Hillingdon",
+    "site_name": "Birmingham A4540 Roadside",
     "site_id": "UKA00433",
-    "distance": 15.6,
-    "site_type": "urban-background",
+    "distance": 5.4,
+    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
+},
+{
+    "site_name": "West Bromwich Kenrick Park",
+    "site_id": "UKA00433",
+    "distance": 5.6,
+    "site_type": "urban-background",
+    "site_band": "Low",
+    "site_aqi": 3
 }
 
 ]

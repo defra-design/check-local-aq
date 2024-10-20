@@ -9,24 +9,8 @@
         <p class="govuk-body">
           If you did not request this email, you can ignore it.
         </p>
-  {% elif status == 'confirmation' %}
-        <h1 class="govuk-heading-m">You have signed up to air quality alerts for {{ locationString }}</h1>
-        <p class="govuk-body">
-          You will receive an email when:
-        </p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
-              <li>the air quality forecast is high or very high</li>
-              <li>a nearby monitoring area detects high pollution levels</li>
-            </ul>
-          <p class="govuk-body">
-            <a href="#">Unsubscribe</a>
-          </p>
-          <p class="govuk-body">
-            <a href="#">Make changes to your air quality alerts</a>
-          </p>
   {% elif status == 'expired' %}
-          <h1 class="govuk-heading-m">An air quality alert has expired near {{ locationString }}.</h1>
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/alerts/southwark-a2-old-kent-road">View expired air quality alert</a></h1>
+          <h1 class="govuk-heading-m">There is no longer an air quality alert near {{ locationString }}.</h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>
@@ -34,8 +18,7 @@
             <a href="#">Make changes to your air quality alerts</a>
           </p>
   {% elif status == 'forecast' %}
-          <h1 class="govuk-heading-m">High levels of air pollution have been forecast for {{ locationString }}.</h1>
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/location-forecast">View air pollution forecast</a></h1>
+          <h1 class="govuk-heading-m">High levels of air pollution are forecast in the next 5 days for {{ locationString }} for further advice go to <a href="/{{ version }}/location-forecast">check-air-quality.service.gov.uk/forecast</a>.</h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>
@@ -43,8 +26,7 @@
             <a href="#">Make changes to your air quality alerts</a>
           </p>
   {% elif status == 'alert' %}
-          <h1 class="govuk-heading-m">Nitrogen dioxide levels near {{ locationString }} have exceeded the legal threshold.</h1>
-          <h1 class="govuk-heading-m govuk-!-margin-bottom-6"><a href="/{{ version }}/alerts/london-harlington">View air quality alert</a></h1>
+          <h1 class="govuk-heading-m">There is an air quality alert 5 miles from {{ locationString }} for further information go to <a href="/{{ version }}/alerts/birmingham-ladywood">check-air-quality.service.gov.uk/alert</a>.</h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>

@@ -1,18 +1,18 @@
 const alerts = [
   {
-    stationName: "London Harlington",
-    slug: 'london-harlington',
-    localAuthority: "Hillingdon",
+    stationName: "Birmingham Ladywood",
+    slug: 'birmingham-ladywood',
+    localAuthority: "Birmingham",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
-    timeStamp: "08:00",
-    date: "2024-09-09",
+    timeStamp: "07:00",
+    date: "2024-10-21",
     pollutant: {
-      title: "nitrogen dioxide",
-      slug: "nitrogen-dioxide",
-      maxLevel: 510,
-      currentLevel: 425,
-      threshold: 400,
-      method: "Measured consecutively over 3 hours"
+      title: "ozone",
+      slug: "ozone",
+      maxLevel: 318,
+      currentLevel: 310,
+      threshold: 300,
+      method: "Measured over an hour"
     },
     status: "active"
   },
@@ -22,7 +22,7 @@ const alerts = [
     localAuthority: "Midlothian",
     mapUrl: "https://maps.app.goo.gl/vACXQPF6uAcxoEwr8",
     timeStamp: "23:00",
-    date: "2024-08-19",
+    date: "2024-10-20",
     pollutant: {
       title: "ozone",
       slug: "ozone",
@@ -39,7 +39,7 @@ const alerts = [
     localAuthority: "Doncaster",
     mapUrl: "https://maps.app.goo.gl/MJS4u4TMifcB1HbF8",
     timeStamp: "12:00",
-    date: "2024-08-19",
+    date: "2024-10-20",
     pollutant: {
       title: "Ozone",
       slug: "ozone",
@@ -56,7 +56,7 @@ const alerts = [
     localAuthority: "Southwark",
     mapUrl: "https://maps.app.goo.gl/S3RjJ4Xub6mFSrYr7",
     timeStamp: "08:00",
-    date: "2024-09-08",
+    date: "2024-10-18",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
@@ -73,7 +73,7 @@ const alerts = [
     localAuthority: "Castell-nedd Port Talbot - Neath Port Talbot",
     mapUrl: "https://maps.app.goo.gl/c2V82axbUBGE33rH6",
     timeStamp: "15:00",
-    date: "2024-08-18",
+    date: "2024-10-18",
     pollutant: {
       title: "ozone",
       slug: "ozone",
