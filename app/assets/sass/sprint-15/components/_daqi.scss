@@ -14,8 +14,8 @@
 .daqi-bar-segment {
   width: 10%;
   height: 100%;
-  margin-right: 2px;
-  border-right: 1px solid transparent;
+  margin-right: 0.125rem;
+  border-right: 0.0625rem solid transparent;
 
   &:last-child {
     border-right: none;
