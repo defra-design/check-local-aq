@@ -63,7 +63,5 @@
       10: $daqi-colour-10
     ), $i); 
     color: if($i == 0 or $i == 4 or $i == 5 or $i == 6, govuk-colour("black"), govuk-colour("white"));
-    font-weight: bold;
-    text-align: center;
   }
 }
