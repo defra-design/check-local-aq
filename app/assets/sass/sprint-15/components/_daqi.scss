@@ -36,19 +36,14 @@
 }
 
 .daqi-selected {
-  font-weight: bold;
-
+  border-right: 0px;
   svg {
     display: none;
   }
-
   @media (forced-colors: active) {
+    margin-right: 0px;
     svg {
       display: block;
-    }
-    .daqi-selected {
-      margin-right: 0;
-      border-right: 0;
     }
   }
 }
