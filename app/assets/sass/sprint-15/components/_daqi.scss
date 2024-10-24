@@ -1,75 +1,128 @@
-.daqi-labels {
-  display: flex;
-  white-space: nowrap;
-  justify-content: space-between;
-}
 
-.daqi-bar {
-  display: flex;
-  height: govuk-spacing(4);
-  margin-bottom: govuk-spacing(2);
-  border: 1px solid transparent;
-}
 
-.daqi-bar-segment {
-  width: 10%;
-  height: 100%;
-  margin-right: 2px;
-  border-right: 1px solid transparent;
+  .daqi-labels {
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between; 
+  }
 
-  &:last-child {
+  .daqi-bar {
+    display: flex;
+    height: govuk-spacing(4);
+    margin-bottom: govuk-spacing(2);
+    border: 1px solid transparent;
+  }
+
+  .daqi-bar-segment {
+    width: 10%;
+    height: 100%;
+    margin-right: 2px;
+    border-right: 1px solid transparent;
+  }
+
+  .daqi-bar-segment:last-child {
     border-right: none;
     margin-right: 0;
   }
-}
+  
+  .daqi-band {
+    @include govuk-font($size: 16, $weight: regular);
+    border: 0;
+    width: 30%;
+    vertical-align: top;
+    text-align: left;
+  }
 
-.daqi-band {
-  @include govuk-font($size: 16, $weight: regular);
-  border: 0;
-  width: 30%;
-  vertical-align: top;
-  text-align: left;
 
-  &:last-child, &:nth-child(3) {
+  .daqi-band:last-child {
     width: 20%;
   }
-}
 
-.daqi-selected {
-  font-weight: bold;
-
-  svg {
-    display: none;
+  .daqi-band:nth-child(3) {
+    width: 20%;
   }
 
-  @media (forced-colors: active) {
-    svg {
-      display: block;
+  .daqi-selected {
+      font-weight: bold;
+      svg {
+        display: none;
     }
-    .daqi-selected {
-      margin-right: 0;
-      border-right: 0;
+    @media (forced-colors: active) {
+      svg {
+          display: block;
+      }
     }
   }
-}
-
-@for $i from 0 through 10 {
-  .daqi-#{$i} {
-    background-color: map-get((
-      0: $daqi-colour-0,
-      1: $daqi-colour-1,
-      2: $daqi-colour-2,
-      3: $daqi-colour-3,
-      4: $daqi-colour-4,
-      5: $daqi-colour-5,
-      6: $daqi-colour-6,
-      7: $daqi-colour-7,
-      8: $daqi-colour-8,
-      9: $daqi-colour-9,
-      10: $daqi-colour-10
-    ), $i); 
-    color: if($i == 0 or $i == 4 or $i == 5 or $i == 6, govuk-colour("black"), govuk-colour("white"));
-    font-weight: bold;
-    text-align: center;
+  
+  .daqi-0 {
+    background-color: $daqi-colour-0;
+    color: govuk-colour("black");
   }
-}
+  
+  .daqi-1 {
+    background-color: $daqi-colour-1;
+    color: govuk-colour("white");
+    font-weight: bold; 
+  }
+    
+  .daqi-2 {
+    background-color: $daqi-colour-2;
+    color: govuk-colour("white");
+    font-weight: bold; 
+  }
+    
+  .daqi-3 {
+    background-color: $daqi-colour-3;
+    color: govuk-colour("white");
+    font-weight: bold; 
+  }
+    
+  .daqi-4 {
+    background-color: $daqi-colour-4;
+    color: govuk-colour("black");
+    font-weight: bold; 
+  }
+    
+  .daqi-5 {
+    background-color: $daqi-colour-5;
+    color: govuk-colour("black");
+    font-weight: bold; 
+  }
+    
+  .daqi-6 {
+    background-color: $daqi-colour-6;
+    color: govuk-colour("black");
+    font-weight: bold; 
+  }
+    
+  .daqi-7 {
+    background-color: $daqi-colour-7;
+    color: govuk-colour("white");
+    font-weight: bold; 
+  }
+    
+  .daqi-8 {
+    background-color: $daqi-colour-8;
+    color: govuk-colour("white");
+    font-weight: bold; 
+  }
+    
+  .daqi-9 {
+    background-color: $daqi-colour-9;
+    color: govuk-colour("white");
+    font-weight: bold; 
+   }
+    
+  .daqi-10 {
+    background-color: $daqi-colour-10;
+    color: govuk-colour("white");
+    font-weight: bold; 
+  }
+  
+  
+  @for $i from 0 through 10 {
+    .daqi-#{$i} {
+      text-align: center;
+    }
+  }
+  
