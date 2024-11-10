@@ -4,25 +4,25 @@
 const monitoringSites = [
   
   {
-    "site_name": "Birmingham Ladywood",
+    "site_name": "Brighton Preston Park",
     "site_id": "UKA00217",
-    "distance": 5,
+    "distance": 1.5,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Birmingham A4540 Roadside",
+    "site_name": "Worthing East Ten Acres",
     "site_id": "UKA00433",
-    "distance": 5.4,
+    "distance": 7.7,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
 {
-    "site_name": "West Bromwich Kenrick Park",
+    "site_name": "Worthing A27 Roadside",
     "site_id": "UKA00433",
-    "distance": 5.6,
+    "distance": 8.8,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
