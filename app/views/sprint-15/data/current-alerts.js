@@ -1,11 +1,11 @@
 const alerts = [
   {
-    stationName: "Brighton Preston Park",
-    slug: 'brighton-preston-park',
-    localAuthority: "The City of Brighton and Hove",
+    stationName: "Eastbourne",
+    slug: 'eastbourne',
+    localAuthority: "Eastbourne",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
-    date: "2024-10-21",
+    date: "2024-11-11",
     pollutant: {
       title: "ozone",
       slug: "ozone",

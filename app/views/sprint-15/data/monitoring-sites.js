@@ -4,25 +4,25 @@
 const monitoringSites = [
   
   {
-    "site_name": "Brighton Preston Park",
+    "site_name": "Eastbourne",
     "site_id": "UKA00217",
-    "distance": 1.5,
+    "distance": 15.3,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Worthing East Ten Acres",
+    "site_name": "Lullington Heath",
     "site_id": "UKA00433",
-    "distance": 7.7,
+    "distance": 19.3,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
 {
-    "site_name": "Worthing A27 Roadside",
+    "site_name": "Brighton Preston Park",
     "site_id": "UKA00433",
-    "distance": 8.8,
+    "distance": 33,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
