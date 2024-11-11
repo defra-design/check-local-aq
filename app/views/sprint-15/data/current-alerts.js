@@ -1,11 +1,11 @@
 const alerts = [
   {
-    stationName: "Eastbourne",
-    slug: 'eastbourne',
+    stationName: "Lullington Heath",
+    slug: 'lullington-heath',
     localAuthority: "Eastbourne",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
-    date: "2024-11-11",
+    date: "2024-11-12",
     pollutant: {
       title: "ozone",
       slug: "ozone",
