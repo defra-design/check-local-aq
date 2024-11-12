@@ -4,25 +4,25 @@
 const monitoringSites = [
   
   {
-    "site_name": "Horley",
+    "site_name": "Southwark A2 Old Kent Road",
     "site_id": "UKA00217",
-    "distance": 4.5,
+    "distance": 0.4,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Storrington Roadside",
+    "site_name": "London Honor Oak Park",
     "site_id": "UKA00433",
-    "distance": 17.4,
+    "distance": 2.2,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
 {
-    "site_name": "Brighton Preston Park",
+    "site_name": "London Westminster",
     "site_id": "UKA00433",
-    "distance": 18.1,
+    "distance": 3.1,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3

@@ -1,18 +1,18 @@
 const alerts = [
   {
-    stationName: "Horley",
-    slug: 'horley',
-    localAuthority: "Reigate and Banstead",
+    stationName: "Southwark A2 Old Kent Road",
+    slug: 'southwark-a2-old-kent-road',
+    localAuthority: "Southwark",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2024-11-12",
     pollutant: {
-      title: "ozone",
-      slug: "ozone",
-      maxLevel: 318,
-      currentLevel: 310,
-      threshold: 300,
-      method: "Measured over an hour"
+      title: "nitrogen dioxide",
+      slug: "nitrogen-dioxide",
+      maxLevel: 478,
+      currentLevel: 418,
+      threshold: 400,
+      method: "Measured consecutively over 3 hours"
     },
     status: "active"
   },
