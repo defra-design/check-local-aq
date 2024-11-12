@@ -4,25 +4,25 @@
 const monitoringSites = [
   
   {
-    "site_name": "Lullington Heath",
+    "site_name": "Horley",
     "site_id": "UKA00217",
-    "distance": 6.4,
+    "distance": 4.5,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
 {
-    "site_name": "Brighton Preston Park",
+    "site_name": "Storrington Roadside",
     "site_id": "UKA00433",
-    "distance": 8.4,
+    "distance": 17.4,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 },
 {
-    "site_name": "Eastbourne",
+    "site_name": "Brighton Preston Park",
     "site_id": "UKA00433",
-    "distance": 10.2,
+    "distance": 18.1,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3

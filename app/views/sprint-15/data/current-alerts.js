@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Lullington Heath",
-    slug: 'lullington-heath',
-    localAuthority: "Eastbourne",
+    stationName: "Horley",
+    slug: 'horley',
+    localAuthority: "Reigate and Banstead",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2024-11-12",
