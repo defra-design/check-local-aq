@@ -9,6 +9,9 @@
 .aq-forecast-item {
     flex: 1;
     border-right: 2px solid white;
+    @media screen and (forced-colours:active) {
+        border-right: 1px WindowText !important;
+    }
 }
 
 .aq-forecast-item:last-child {
