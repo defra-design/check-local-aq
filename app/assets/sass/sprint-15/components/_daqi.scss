@@ -14,8 +14,11 @@
 .daqi-bar-segment {
   width: 10%;
   height: 100%;
-  margin-right: 0.125rem;
-  border-right: 0.0625rem solid transparent;
+  margin-right: 2px;
+  @media (forced-colors: active) {
+    margin-right: 1px;
+  }
+  border-right: 1px solid transparent;
 
   &:last-child {
     border-right: none;
@@ -36,14 +39,9 @@
 }
 
 .daqi-selected {
-  svg {
-    display: none;
-  }
   @media (forced-colors: active) {
     border-right: 0px;
-    svg {
-      display: block;
-    }
+    background-color: WindowText !important;
   }
 }
 
