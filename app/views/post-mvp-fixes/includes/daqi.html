@@ -10,9 +10,6 @@
       {% for i in range(1, 11) %}
           {% if i <= daqiValue %}
               <div class="daqi-bar-segment daqi-selected daqi-{{ daqiValue }}">
-                <svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <rect width="100%" height="100%" fill="white"/>
-                </svg>
               </div>
           {% else %}
               <div class="daqi-bar-segment daqi-0">
