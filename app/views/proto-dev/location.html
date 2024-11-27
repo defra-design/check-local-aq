@@ -1,5 +1,6 @@
 {% extends "layouts/proto-dev.html" %}
 {% set displayBacklink = true %}
+{% set displayLanguageToggle = true %}
 
 {% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
 {% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
@@ -24,7 +25,7 @@
 {% block content %}
   <div class="govuk-grid-row" data-module="edge">
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+      <h1 class="govuk-heading-{{ pageHeadingSize }} govuk-!-margin-top-4">
           {{ title }}      
     </div>
   </div>
@@ -40,28 +41,6 @@
       {% include "/" + folder + "/includes/pollutants.html" %}
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
       {% include "/" + folder + "/includes/monitoring-sites.html" %}
-    </div>
-    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
-      {{ xGovukRelatedNavigation({
-        sections: [{
-          items: [{
-            text: "Health effects of air pollution",
-            href: "/" + version + "/health-effects"
-          }, {
-            text: "Air pollutants we measure",
-            href: "/" + version + "/air-pollutants-we-measure"
-          },
-          {
-            text: "Why we monitor air pollution",
-            href: "/" + version + "/why-we-monitor-air-pollution"
-          },
-          {
-            text: "Air quality alerts",
-            href: "/" + version + "/alerts"
-          }
-          ]
-        }]
-      }) }}
     </div>
   </div>
 {% endblock %}

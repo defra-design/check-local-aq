@@ -1,8 +1,8 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/proto-dev.html" %}
 {% set caption = "" %}
 {% set title = "Particulate matter (PM2.5)" %}
-
 {% set displayBacklink = false %}
+{% set displayLanguageToggle = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
 
 
@@ -12,15 +12,16 @@
       <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
         {% endif %}
         {{ title | safe }}</h1>
+      <h2 class="govuk-heading-m">Sources of PM2.5</h2>
       <p>Particulate matter (PM) are small particles of solids or liquids that are in the air. The particles are only 2.5 micrometres in diameter. For context, the width of a human hair is 50 to 70 micrometres.</p>
-      <h2 class="govuk-heading-s">PM2.5 particles may include:</h2>
+      <p>PM2.5 particles may include:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>dust</li>
         <li>soot</li>
         <li>smoke</li>
         <li>drops of liquid</li>
       </ul>
-      <h2 class="govuk-heading-s">The main sources of particulate matter are from:</h2>
+      <p>The main sources of particulate matter are from:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>burning of fuel by vehicles, industry and domestic properties</li>
         <li>wear of tyres and brakes</li>
@@ -28,27 +29,19 @@
         <li>sea spray particles</li>
         <li>burning vegetation</li>
       </ul>
-      <h2 class="govuk-heading-s">
-        Short term exposure to air pollution can cause:
-      </h2>
+      <h2 class="govuk-heading-m">Health effects </h2>
+      <p>Short term health impacts of PM2.5 can include worsening of conditions such as:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>worsening of asthma symptoms</li>
-        <li>worsening of chronic obstructive pulmonary disease (COPD)</li>
-        <li>difficulty breathing</li>
-        <li>coughing</li>
-        <li>eye, nose, and throat irritation</li>
-        <li>chest tightness and pain</li>
-      </ul>
-      <h2 class="govuk-heading-s">
-        Long term health effects of air pollution can include:
-      </h2>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>heart disease</li>
-        <li>diabetes</li>
-        <li>cancer</li>
+        <li>asthma</li>
         <li>chronic obstructive pulmonary disease (COPD)</li>
+        </ul>
+      <p>Long term health impacts of PM2.5 can include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>stroke</li>
+        <li>lung cancer</li>
+        <li>diabetes</li>
         <li>Alzheimer's and Parkinson's disease</li>
-        <li>dementia</li>
+        <li>poor lung health in children</li>
       </ul>
     </div>
   </div>

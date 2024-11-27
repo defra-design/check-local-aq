@@ -1,9 +1,8 @@
-{% extends "layouts/main.html" %}
-
+{% extends "layouts/proto-dev.html" %}
 {% set displayBacklink = false %}
 {% set caption = "" %}
 {% set title = "Sulphur dioxide (SO₂)" %}
-
+{% set displayLanguageToggle = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
 
 
@@ -13,7 +12,8 @@
       <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
         {% endif %}
         {{ title | safe }}</h1>
-      <h2 class="govuk-heading-s">Sulphur dioxide is a colourless gas with a strong odour. It's mainly produced from:</h2>
+      <h2 class="govuk-heading-m">Sources of sulphur dioxide</h2>
+      <p>Sulphur dioxide is a colourless gas with a strong odour. It's mainly produced from:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>burning petrol or diesel in vehicles</li>
         <li>gas boilers</li>
@@ -21,27 +21,22 @@
         <li>commercial manufacturing</li>
         <li>food manufacturing</li>
       </ul>
-      <h2 class="govuk-heading-s">
-        Short term exposure to air pollution can cause:
-      </h2>
+      <h2 class="govuk-heading-m">Health effects</h2>
+      <p>
+      Short term exposure can cause irritation to the:
+      </p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>worsening of asthma symptoms</li>
-        <li>worsening of chronic obstructive pulmonary disease (COPD)</li>
-        <li>difficulty breathing</li>
-        <li>coughing</li>
-        <li>eye, nose, and throat irritation</li>
-        <li>chest tightness and pain</li>
+        <li>eyes</li>
+        <li>nose</li>
+        <li>throat</li>
       </ul>
-      <h2 class="govuk-heading-s">
-        Long term health effects of air pollution can include:
-      </h2>
+      <p>
+        Long term exposure at high levels may lead to:
+      </p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>heart disease</li>
-        <li>diabetes</li>
-        <li>cancer</li>
-        <li>chronic obstructive pulmonary disease (COPD)</li>
-        <li>Alzheimer's and Parkinson's disease</li>
-        <li>dementia</li>
+        <li>reduced lung function</li>
+        <li>altered sense of smell</li>
+        <li>increased respiratory infections</li>
       </ul>
     </div>
   </div>

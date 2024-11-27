@@ -1,10 +1,13 @@
-
+{% set day2 = 1 | addDaysToTodayFull %}
+{% set day3 = 2 | addDaysToTodayFull %}
+{% set day4 = 3 | addDaysToTodayFull %}
+{% set day5 = 4 | addDaysToTodayFull %}
 
 
 <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">UK forecast</h2>
-<p>
-  Today and tomorrow air pollution levels will be predominantly low across the UK. Light winds may allow isolated pockets of moderate air pollution to form near busy roads and urban centres.
-</p>
-<p>
-  The air pollution outlook will remain low throughout the period. 
-</p>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">Today</h3>
+<p>{{ airQuality.today.ukToday }}</p>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ day2 }}</h3>
+<p>{{ airQuality.today.ukTomorrow }}</p>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ day3 }} to {{ day5 }}</h3>
+<p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
