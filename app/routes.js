@@ -3,6 +3,7 @@ const router = govukPrototypeKit.requests.setupRouter();
 
 require('./views/private-beta/_route.js');
 require('./views/private-beta-fixes/_route.js');
+require('./views/proto-dev/_route.js');
 require('./views/sprint-15/_route.js');
 require('./views/sprint-14/_route.js');
 require('./views/sprint-13/_route.js');

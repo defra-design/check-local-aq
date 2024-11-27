@@ -1,0 +1,111 @@
+{% extends "layouts/proto-dev.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+{% block pageTitle %}
+Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% if status == 'check-your-details' %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% else %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% set notification %}
+  <h3 class="govuk-notification-banner__heading">
+    You have signed up to air quality alerts for {{ locationString }}
+  </h3>
+  <p class="govuk-body">
+    We have also sent you a 
+    {% if text %}
+      text message
+    {% else %}
+      email
+    {% endif %}
+    to confirm this.
+  </p>
+{% endset %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    {% if status == 'confirmation' %}
+      {{ govukNotificationBanner({
+        html: notification,
+        type: "success"
+      }) }}
+    {% endif %}
+
+    <h1 class="govuk-heading-l">
+      {% if status == 'check-your-details' %}
+        Check your details
+      {% else %}
+        Manage air quality alerts
+      {% endif %}
+    </h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Air quality alerts will be sent to:</h2>
+        </dt>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{ email }}{{ text }}</p>
+        </dd>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">Change</a></p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt>
+          <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">You will receive alerts for:</h2>
+        </dt>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{ locationString }}</p>
+        </dd>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">Change</a></p>
+        </dd>
+        {% if status != 'check-your-details' %}
+          <dd>
+            <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">Add another location</a></p>
+          </dd>
+        {% endif %}
+      </div>
+    </dl>
+
+  {% if status == 'check-your-details' %}
+    {% if email %}
+      {% set href = "/" + version + "/sign-up-for-alerts/check-your-email" %}
+    {% else %}
+      {% set href = "/" + version + "/sign-up-for-alerts/check-your-messages" %}
+    {% endif %}
+    {{ govukButton({
+      text: "Continue",
+      href: href,
+      classes: "govuk-button--primary govuk-!-margin-bottom-8"
+    }) }}
+  {% else %}
+    {{ govukButton({
+      text: "Unsubscribe from all alerts",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-8"
+    }) }}
+  {% endif %}
+  
+  
+  
+  
+  
+
+  </div>
+</div>
+
+{% endblock %}
