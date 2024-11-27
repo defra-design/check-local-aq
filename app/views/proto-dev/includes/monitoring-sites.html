@@ -1,8 +1,7 @@
 <h2 class="govuk-heading-m">Air pollutants monitored nearby</h2>
-<p>Air pollution information in {{ result.GAZETTEER_ENTRY.NAME1 }} is based upon data from the nearest monitoring areas.  Readings are measured every hour.</p>
-<p class="govuk-!-margin-bottom-6">
-  <a href="/{{ version }}/why-we-monitor-air-pollution">Find out more about why we monitor air pollution</a>
-</p>
+<p>Air pollution information in {{ result.GAZETTEER_ENTRY.NAME1 }} is based upon data from the nearest monitoring areas.  Readings are measured every hour.
+The unit µg/m<sup>3</sup> stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
+
 {% set tabItems = [] %} {# Initialize an empty array to hold tab items #}
 
 {% for site in monitoringSites %}
@@ -86,4 +85,3 @@
   items: tabItems
 }) }}
 
-<p>The unit µg/m<sup>3</sup> stands for micrograms (one millionth of a gram) per cubic metre of air.<p>
