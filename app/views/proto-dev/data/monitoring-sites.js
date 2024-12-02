@@ -4,11 +4,26 @@
 const monitoringSites = [
   
   {
-    "site_name": "Belfast Centre",
+    "site_name": "Plymouth Centre",
     "site_id": "UKA00528",
-    "distance": 2.5,
+    "distance": 3.7,
     "site_type": "urban-background",
     "pollutants": [
+          
+            {
+              "type": "particulate-matter2",
+              "measurement": 41.8,
+              "trend": "Falling",
+              "band": "Moderate",
+              "aqi": 4
+            },
+            {
+              "type": "particulate-matter10",
+              "measurement": 7.623,
+              "trend": "Falling",
+              "band": "Low",
+              "aqi": 1
+            },
           {
               "type": "nitrogen-dioxide",
               "measurement": 150.289,
@@ -16,65 +31,52 @@ const monitoringSites = [
               "band": "Low",
               "aqi": 3
           },
-        {
-            "type": "particulate-matter10",
-            "measurement": 7.623,
+          {
+            "type": "ozone",
+            "measurement": 65.623,
             "trend": "Falling",
             "band": "Low",
             "aqi": 1
-        },
-        {
-            "type": "particulate-matter2",
-            "measurement": 41.8,
-            "trend": "Falling",
-            "band": "Moderate",
-            "aqi": 4
-        }
+          }
     ]
 },
 {
-    "site_name": "Belfast Stockman's Lane",
+    "site_name": "Saltash Callington Road",
     "site_id": "UKA00503",
-    "distance": 4.3,
+    "distance": 4.5,
     "site_type": "urban-traffic",
     "pollutants": [
   {
-    "type": "ozone",
-    "measurement": 39.914,
-    "trend": "Rising",
+    "type": "particulate-matter2",
+    "measurement": 30.2,
+    "trend": "Falling",
     "band": "Low",
-    "aqi": 2
-},
+    "aqi": 3
+  },
 {
     "type": "particulate-matter10",
     "measurement": 7.623,
     "trend": "Falling",
     "band": "Low",
     "aqi": 1
-},
-{
-    "type": "particulate-matter2",
-    "measurement": 30.2,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 3
 }
+
     ]
 },
 
   {
-      "site_name": "Ballymena Ballykeel",
+      "site_name": "Plymouth Tavistock Road",
       "site_id": "UKA00594",
-      "distance": 24.2,
+      "distance": 5.79,
       "site_type": "urban-background",
       "pollutants": [
           {
-              "type": "nitrogen-dioxide",
-              "measurement": 270.238,
-              "trend": "Rising",
-              "band": "Moderate",
-              "aqi": 5
-          },
+            "type": "particulate-matter2",
+            "measurement": 18.2,
+            "trend": "Falling",
+            "band": "Low",
+            "aqi": 3
+        },
         {
             "type": "particulate-matter10",
             "measurement": 35.7,
