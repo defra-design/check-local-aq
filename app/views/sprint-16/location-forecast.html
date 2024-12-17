@@ -1,0 +1,87 @@
+{% extends "layouts/sprint-16.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+{% set title = "Air quality in" + locationString %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        Air quality in {{ locationString }}
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      {% include "/" + folder + "/includes/daqi.html" %}
+      {% include "/" + folder + "/includes/forecast.html" %}
+      <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">UK forecast</h2>
+      <p>
+        Today and tomorrow air pollution levels will be predominantly low across the UK. Light winds may allow high levels of air pollution to form near busy roads and urban centres.
+      </p>
+      <p>
+        Later in the period warm air from the continent may result in prolonged levels of moderate air pollution.
+      </p>
+
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      <h2 id="health-advice" class="govuk-heading-m">Health advice for for high levels of air pollution</h2>
+      {{ govukInsetText({
+        classes: "govuk-inset-text--9",
+        html: "
+                <p>Adults and children with heart or lung problems are at greater risk of the short term effects of air pollution. Follow your doctor's usual advice about exercising and managing your condition.</p>
+                <p>Anyone experiencing discomfort such as sore eyes, cough or sore throat should consider reducing activity, particularly outdoors.</p>
+                <p>Adults with heart problems should reduce strenuous physical exertion, particularly outdoors, especially if they experience symptoms.</p>
+                <p>People with asthma may find they need to use their reliever inhaler more often.</p>
+                <p>Older people can be more susceptible to the effects of poor air quality and should reduce physical exertion.</p>
+              " 
+    }) }}
+          <p>Long term exposure to air pollution can result in heart and lung conditions, as well as cognitive disorders like Parkinson's disease and dementia.</p>
+          {% include "/" + folder + "/includes/health-advice-details.html" %}
+  <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+          {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+ <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/local-air-quality.html" %}
+      {% include "/" + folder + "/includes/average-levels.html" %}
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+    </div>
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Health effects of air pollution",
+            href: "#"
+          }, {
+            text: "Air pollutants we measure",
+            href: "#"
+          },
+          {
+            text: "Why we monitor air pollution",
+            href: "#"
+          },
+          {
+            text: "Air quality alerts",
+            href: "#"
+          }
+          ]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
+
+

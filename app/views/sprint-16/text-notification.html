@@ -1,0 +1,36 @@
+{% extends "layouts/text-layout-15.html" %}
+
+{% block content %}
+  {% if status == 'activate' %}
+        <h1 class="govuk-heading-m">404090 is your air quality activation code.</h1>
+        <p class="govuk-body">
+          This code will stop working after 24 hours.
+        </p>
+  {% elif status == 'expired' %}
+          <h1 class="govuk-heading-m">There is no longer an air quality alert near {{ locationString }}.</h1>
+          <p class="govuk-body">
+            <a href="#">Unsubscribe</a>
+          </p>
+          <p class="govuk-body">
+            <a href="#">Make changes to your air quality alerts</a>
+          </p>
+  {% elif status == 'forecast' %}
+          <h1 class="govuk-heading-m">High levels of air pollution are forecast in the next 5 days for {{ locationString }} for further advice go to <a href="/{{ version }}/location-forecast">check-air-quality.service.gov.uk/forecast</a>.</h1>
+          <p class="govuk-body">
+            <a href="#">Unsubscribe</a>
+          </p>
+          <p class="govuk-body">
+            <a href="#">Make changes to your air quality alerts</a>
+          </p>
+  {% elif status == 'alert' %}
+          <h1 class="govuk-heading-m">There is an air quality alert 0.4 miles from {{ locationString }} for further information go to <a href="/{{ version }}/alerts/southwark-a2-old-kent-road">check-air-quality.service.gov.uk/alert</a>.</h1>
+          <p class="govuk-body">
+            <a href="#">Unsubscribe</a>
+          </p>
+          <p class="govuk-body">
+            <a href="#">Make changes to your air quality alerts</a>
+          </p>
+  {% else %}
+        <h1 class="govuk-heading-m">An error has occured</h1>
+  {% endif %}
+{% endblock %}

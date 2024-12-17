@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Particulate matter (PM10)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <p>Particulate matter (PM) are small particles of solids or liquids that are in the air. The particles are only 10 micrometres in diameter. For context, the width of a human hair is 50 to 70 micrometres.
+      </p>
+      <h2 class="govuk-heading-s">The main sources of particulate matter are:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>dust from construction sites</li>
+        <li>dust from landfills</li>
+        <li>dust from agriculture</li>
+        <li>wildfires</li>
+        <li>pollen</li>
+        <li>power plants</li>
+        <li>vehicles</li>
+      </ul>
+      <h2 class="govuk-heading-s">
+        Short term exposure to air pollution can cause:
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>worsening of asthma symptoms</li>
+        <li>worsening of chronic obstructive pulmonary disease (COPD)</li>
+        <li>difficulty breathing</li>
+        <li>coughing</li>
+        <li>eye, nose, and throat irritation</li>
+        <li>chest tightness and pain</li>
+      </ul>
+      <h2 class="govuk-heading-s">
+        Long term health effects of air pollution can include:
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>heart disease</li>
+        <li>diabetes</li>
+        <li>cancer</li>
+        <li>chronic obstructive pulmonary disease (COPD)</li>
+        <li>Alzheimer's and Parkinson's disease</li>
+        <li>dementia</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

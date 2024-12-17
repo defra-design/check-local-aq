@@ -1,0 +1,37 @@
+
+{% set healthDetails = true %}
+{% set health_levels = [
+    {'level': 'low', 'advice': 'advice-low.html', 'atrisk': 'atrisk-low.html', 'tag': '1'},
+    {'level': 'moderate', 'advice': 'advice-moderate.html', 'atrisk': 'atrisk-moderate.html', 'tag': '4'},
+    {'level': 'high', 'advice': 'advice-high.html', 'atrisk': 'atrisk-high.html', 'tag': '7'},
+    {'level': 'very high', 'advice': 'advice-veryhigh.html', 'atrisk': 'atrisk-veryhigh.html', 'tag': '10'}
+] %}
+
+{% set details_content = "" %}
+{% for item in health_levels %}
+    {# Hide the section if it matches highestAQDetails.readableBand #}
+    {% if item.level != highestAQDetails.readableBand %}
+        {% set adviceContent %}
+            {% include '/' + folder + '/includes/health-advice/' + item.advice %}
+        {% endset %}
+        {% set atriskContent %}
+            {% include '/' + folder + '/includes/health-advice/' + item.atrisk %}
+        {% endset %}
+
+        {% set details_content = details_content + "
+            <dt class='aq-defintion-term'>
+                <strong class='daqi-tag daqi-tag--" + item.tag + "'>" + item.level | capitalize + "</strong>
+            </dt>
+            <dd class=''>" + adviceContent + "</dd>
+            <dd class=''>
+                <h3 class='govuk-heading-s'>Health advice for people with lung or heart conditions</h3>
+                " + atriskContent + "
+            </dd>
+        " %}
+    {% endif %}
+{% endfor %}
+
+{{ govukDetails({
+    summaryText: "Health advice for other levels of air pollution",
+    html: "<dl class='aq-definition-list'>" + details_content + "</dl>"
+}) }}

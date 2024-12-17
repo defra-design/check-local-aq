@@ -1,0 +1,84 @@
+{% extends "layouts/sprint-16.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+{% block pageTitle %}
+Where do you want to an air quality alert for?– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    <form action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post">
+      <!-- Conditional HTML for UK location input -->
+      {% set ukHtml %}
+      {{ govukInput({
+        id: "engScoWal",  
+        name: "engScoWal",
+        classes: "govuk-!-width-one-half",
+        label: {
+          text: "Enter a location or postcode"
+        }
+      }) }}
+      {% endset %}
+      
+      <!-- Conditional HTML for Northern Ireland input -->
+      {% set niHtml %}
+      {{ govukInput({
+        id: "ni",
+        name: "ni",
+        classes: "govuk-!-width-one-half",
+        label: {
+          text: "Enter a postcode"
+        }
+      }) }}
+      {% endset %}
+      
+      <!-- Radio buttons to select location type -->
+      {{ govukRadios({
+        name: "locationType",
+        fieldset: {
+          legend: {
+            text: "Where do you want to an air quality alert for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l govuk-label--l govuk-!-margin-bottom-6"
+          }
+        },
+        items: [
+          {
+            value: "uk-location",
+            text: "England, Scotland or Wales",
+            conditional: {
+              html: ukHtml
+            }
+          },
+          {
+            value: "ni-location",
+            text: "Northern Ireland",
+            conditional: {
+              html: niHtml
+            }
+          }
+        ]
+      }) }}
+
+      <!-- Continue button -->
+      {{ govukButton({
+        classes: "app-search__button",
+        text: "Continue"
+      }) }}
+      <!-- Hidden input to pass the air quality value -->
+      <input type="hidden" name="aq" value="{{ airQuality.value }}" />
+    </form>
+  </div>
+</div>
+{% endblock %}

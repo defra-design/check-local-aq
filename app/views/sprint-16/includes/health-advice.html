@@ -1,0 +1,22 @@
+{% set advice %}
+{% include "/" + folder + "/includes/health-advice/advice-" + highestAQDetails.band + ".html" %}
+{% endset %}
+{% set atrisk %}
+{% include "/" + folder + "/includes/health-advice/atrisk-" + highestAQDetails.band + ".html" %}
+{% endset %}
+
+<h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+{{ govukInsetText({
+    classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+    html: advice
+}) }}
+<p>Long-term exposure to air pollution (over years) can lead to many different health conditions and can reduce life expectancy.</p>
+{% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+<h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
+
+{{ govukInsetText({
+    classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+    html: atrisk
+}) }}
+<p>People with asthma and other lung conditions should continue to follow their agreed management plan - for example, an asthma action plan. If you do not have an agreed management plan, ask your healthcare professional for one.</p>
+{% include "/" + folder + "/includes/health-advice-details.html" %}
