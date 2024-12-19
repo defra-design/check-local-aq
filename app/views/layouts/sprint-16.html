@@ -32,7 +32,7 @@
       containerClasses: "govuk-width-container",
       useTudorCrown: true
     }) }}
-  {% else %}
+  {% elif startPage %}
     {{ govukHeader({
       homepageUrl: "/" + version,
       containerClasses: "govuk-width-container",
@@ -42,7 +42,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {% if servicePage %}
+  {% if servicePage or startPage %}
     {{ govukPhaseBanner({
       tag: {
         text: "Beta"
