@@ -10,9 +10,15 @@
     classes: "govuk-inset-text--" + (highestAQDetails.value | string),
     html: advice
 }) }}
+<p>Air pollution levels may be higher close to roads or town centres.</p>
 <p>Long-term exposure to air pollution (over years) can lead to many different health conditions and can reduce life expectancy.</p>
 {% include "/" + folder + "/includes/reduce-your-exposure-details.html" %}
-<h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
+
+{% if highestAQDetails.value >= 1 and highestAQDetails.value <= 6 %}
+    <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
+{% elseif highestAQDetails.value >= 7 and highestAQDetails.value <= 10 %}
+    <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions and older people</h3>
+{% endif %}
 
 {{ govukInsetText({
     classes: "govuk-inset-text--" + (highestAQDetails.value | string),
