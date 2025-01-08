@@ -32,9 +32,13 @@
   {% set rows = [] %}
   {% for pollutant in site.pollutants %}
     {% set pollutantDetail = pollutantTypes[pollutant.type] %}
+    {% set queryString = "?locationName=" ~ result.GAZETTEER_ENTRY.NAME1 ~ "&parentArea=" ~ 
+        (result.GAZETTEER_ENTRY.POPULATED_PLACE if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' 
+        else (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH 
+        else result.GAZETTEER_ENTRY.COUNTY_UNITARY)) %}
     {% set row = [
         { 
-            html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
+            html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + queryString + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
             classes: "defra-aq-levels-table__cell--pollutant" 
         },
         { 
@@ -47,7 +51,7 @@
         }
     ] %}
     {% set _ = rows.push(row) %}
-  {% endfor %}
+{% endfor %}
 
   {% set panelHtml %}
     <h3 class="defra-aq-site__title govuk-heading-s">{{ site.site_name }}</h3>

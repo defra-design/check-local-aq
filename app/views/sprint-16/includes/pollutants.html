@@ -11,19 +11,19 @@
 <ul class="govuk-list govuk-list--bullet">
 
   <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter2">Particulate matter (PM2.5)</a>
+    <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter2?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Particulate matter (PM2.5)</a>
   </li>
   <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter10">Particulate matter (PM10)</a>
+    <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter10?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Particulate matter (PM10)</a>
   </li>
   <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/nitrogen-dioxide">Nitrogen dioxide (NO2)</a>
+    <a class="govuk-link" href="/{{ version }}/pollutants/nitrogen-dioxide?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Nitrogen dioxide (NO2)</a>
   </li>
   <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/ozone">Ozone (O3)</a>
+    <a class="govuk-link" href="/{{ version }}/pollutants/ozone?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Ozone (O3)</a>
   </li>
   <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/sulphur-dioxide">Sulphur dioxide (SO2)</a>
+    <a class="govuk-link" href="/{{ version }}/pollutants/sulphur-dioxide?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Sulphur dioxide (SO2)</a>
   </li>
 </ul>
 <p class="govuk-!-margin-bottom-6">Air pollution is present in all areas of the UK and can impact our <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">short and long term health</a>.</p>

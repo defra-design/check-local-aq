@@ -5,6 +5,13 @@
 {% set displayBacklink = false %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 
 {% block content %}
   <div class="govuk-grid-row govuk-!-margin-bottom-8">

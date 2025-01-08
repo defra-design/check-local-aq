@@ -24,12 +24,6 @@ router.get('/location/:id', (req, res) => {
   locationController.getLocationDetails(req, res, version);
 });
 
-// router.get('/health-effects', (req, res) => {
-//   res.render('/' + version + '/health-effects', {
-//     airQualityData: airQualityModule.commonMessages,
-//   });
-// });
-
 // Alerts route
 router.get('/alerts', (req, res) => {
   alertsController.getAlerts(req, res, version);
@@ -45,8 +39,10 @@ const routeTemplateMap = {
   '/sign-up-for-alerts/confirm-location': '/sign-up-for-alerts/confirm-location',
   '/health-effects': '/health-effects',
   '/pollutants/nitrogen-dioxide': '/pollutants/nitrogen-dioxide',
-  '/air-pollution': '/air-pollution',
-  '/environmental-issues': '/environmental-issues',
+  '/pollutants/particulate-matter2': '/pollutants/particulate-matter2',
+  '/pollutants/particulate-matter10': '/pollutants/particulate-matter10',
+  '/pollutants/ozone': '/pollutants/ozone',
+  '/pollutants/sulphur-dioxide': '/pollutants/sulphur-dioxide',
 };
 
 // Handle all routes dynamically
