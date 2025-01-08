@@ -11,8 +11,7 @@
     html: advice
 }) }}
 <p>Air pollution levels may be higher close to roads or town centres.</p>
-<p>Air pollution is present in all areas of the UK and can impact our <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">short and long term health</a>.</p>
-<p>Long term exposure to air pollution (over years) can lead to many different health conditions and can reduce life expectancy.</p>
+<p>Long term exposure to air pollution (over years) can lead to many different <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">health conditions</a> and can reduce life expectancy.</p>
 {% include "/" + folder + "/includes/reduce-your-exposure-details.html" %}
 
 {% if highestAQDetails.value >= 1 and highestAQDetails.value <= 6 %}
