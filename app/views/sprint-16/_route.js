@@ -24,11 +24,11 @@ router.get('/location/:id', (req, res) => {
   locationController.getLocationDetails(req, res, version);
 });
 
-router.get('/health-effects', (req, res) => {
-  res.render('/' + version + '/health-effects', {
-    airQualityData: airQualityModule.commonMessages,
-  });
-});
+// router.get('/health-effects', (req, res) => {
+//   res.render('/' + version + '/health-effects', {
+//     airQualityData: airQualityModule.commonMessages,
+//   });
+// });
 
 // Alerts route
 router.get('/alerts', (req, res) => {
@@ -40,24 +40,36 @@ router.get('/alerts/:slug', (req, res) => {
   alertsController.getAlertBySlug(req, res, version);
 });
 
-// Confirm location post location forecast
-router.get('/sign-up-for-alerts/confirm-location', (req, res) => {
+// Store the location name and parent from page to page
+const routeTemplateMap = {
+  '/sign-up-for-alerts/confirm-location': '/sign-up-for-alerts/confirm-location',
+  '/health-effects': '/health-effects',
+  '/pollutants/nitrogen-dioxide': '/pollutants/nitrogen-dioxide',
+  '/air-pollution': '/air-pollution',
+  '/environmental-issues': '/environmental-issues',
+};
+
+// Handle all routes dynamically
+router.get(Object.keys(routeTemplateMap), (req, res) => {
   const locationName = req.query.locationName;
   const parentArea = req.query.parentArea;
   const locationString = `${locationName}, ${parentArea}`;
 
-  // Store the locationString in the session
+  // Store session data
   req.session.data['locationString'] = locationString;
   req.session.data['locationName'] = locationName;
   req.session.data['parentArea'] = parentArea;
 
-  res.render(version + '/sign-up-for-alerts/confirm-location', {
+  // Get the template corresponding to the current route
+  const template = version + routeTemplateMap[req.path];
+
+  // Render the appropriate template
+  res.render(template, {
     locationName: locationName,
     parentArea: parentArea,
-    locationString: locationString
+    locationString: locationString,
   });
 });
-
 
 
 

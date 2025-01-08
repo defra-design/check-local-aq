@@ -3,6 +3,12 @@
 {% set caption = "" %}
 {% set title = "Health effects of poor air quality" %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationString,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 
 {% block content %}
