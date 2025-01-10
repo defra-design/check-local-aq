@@ -1,4 +1,4 @@
-{% extends "layouts/email-layout-15.html" %}
+{% extends "layouts/email-layout-16.html" %}
 {% block content %}
   {% if status == 'activate' %}
         <h1 class="govuk-heading-m">Click the link to confirm you want to get air quality alerts for {{ locationString }}</h1>
@@ -18,7 +18,7 @@
             <a href="#">Make changes to your air quality alerts</a>
           </p>
   {% elif status == 'forecast' %}
-          <h1 class="govuk-heading-m">High levels of air pollution are forecast in the next 5 days for {{ locationString }} for further advice go to <a href="/{{ version }}/location-forecast">check-air-quality.service.gov.uk/forecast</a>.</h1>
+          <h1 class="govuk-heading-m">High levels of air pollution are forecast in the next 5 days for {{ locationString }} for further advice go to <a href="/{{ version }}/location-high">check-air-quality.service.gov.uk/forecast</a>.</h1>
           <p class="govuk-body">
             <a href="#">Unsubscribe</a>
           </p>

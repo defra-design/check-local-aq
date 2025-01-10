@@ -1,29 +1,28 @@
 <h2 class="govuk-heading-m">What makes up air pollution</h2>
 <p>There are many sources of air pollution, including:</p>
-<ul class='govuk-list govuk-list--bullet'>
-  <li>power stations</li>
-  <li>transport</li>
-  <li>agriculture</li>
-  <li>marine shipping</li>
-  <li>industrial processes</li>
+<ul class="govuk-list govuk-list--bullet">
+  {% for source in ["power stations", "transport", "agriculture", "marine shipping", "industrial processes"] %}
+    <li>{{ source }}</li>
+  {% endfor %}
 </ul>
 <p>The air pollutants thought to have the greatest health and environmental impacts are:</p>
 <ul class="govuk-list govuk-list--bullet">
-
-  <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter2?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Particulate matter (PM2.5)</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter10?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Particulate matter (PM10)</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/nitrogen-dioxide?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Nitrogen dioxide (NO2)</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/ozone?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Ozone (O3)</a>
-  </li>
-  <li>
-    <a class="govuk-link" href="/{{ version }}/pollutants/sulphur-dioxide?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">Sulphur dioxide (SO2)</a>
-  </li>
+  {% set pollutants = [
+      { "name": "Particulate matter (PM2.5)", "href": "pollutants/particulate-matter2" },
+      { "name": "Particulate matter (PM10)", "href": "pollutants/particulate-matter10" },
+      { "name": "Nitrogen dioxide (NO2)", "href": "pollutants/nitrogen-dioxide" },
+      { "name": "Ozone (O3)", "href": "pollutants/ozone" },
+      { "name": "Sulphur dioxide (SO2)", "href": "pollutants/sulphur-dioxide" }
+  ] %}
+  {% for pollutant in pollutants %}
+    <li>
+      <a class="govuk-link" href="/{{ version }}/{{ pollutant.href }}?locationName={{ locationName }}&parentArea={{ parentArea }}">{{ pollutant.name }}</a>
+    </li>
+  {% endfor %}
 </ul>
-<p class="govuk-!-margin-bottom-6">Air pollution is present in all areas of the UK and can impact our <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ result.GAZETTEER_ENTRY.NAME1 }}&parentArea={% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}{{ result.GAZETTEER_ENTRY.POPULATED_PLACE }}{% else %}{{ result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY }}{% endif %}">short and long term health</a>.</p>
+<p class="govuk-!-margin-bottom-6">
+  Air pollution is present in all areas of the UK and can impact our 
+  <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ locationName }}&parentArea={{ parentArea }}">
+    short and long term health
+  </a>.
+</p>

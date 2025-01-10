@@ -8,12 +8,17 @@
 {% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
 
 {% set caption = "" %}
-{% set title = "Air quality in " ~ result.GAZETTEER_ENTRY.NAME1 ~ ", " %}
-{% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}
-  {% set title = title ~ result.populatedPlace %}
-{% else %}
-  {% set title = title ~ (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY) %}
-{% endif %}
+{% macro getParentArea(result) %}
+  {% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}
+    {{ result.populatedPlace | default("", true) | trim }}
+  {% else %}
+    {{ (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY) | default("", true) | trim }}
+  {% endif %}
+{% endmacro %}
+
+{% set locationName = result.GAZETTEER_ENTRY.NAME1 | default("", true) | trim %}
+{% set parentArea = getParentArea(result) %}
+{% set title = "Air quality in " ~ locationName ~ (", " ~ parentArea if parentArea else "") %}
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
 
@@ -66,6 +71,7 @@
       }) }} -->
     </div>
   </div>
+  <p><a class="govuk-link" href="/{{ version }}/email-high?locationName={{ locationName }}&parentArea={{ parentArea }}">Link for alert message</a></p>
 {% endblock %}
 
 

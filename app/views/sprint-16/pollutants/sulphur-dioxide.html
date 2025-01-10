@@ -26,11 +26,9 @@
       </h2>
       <p>Sulphur dioxide can be emitted both by natural processes (for example, forest fires) and from human activities (for example, burning fuels). It's mainly produced from:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>burning petrol or diesel in vehicles</li>
-        <li>gas boilers</li>
-        <li>coal burning power stations</li>
-        <li>commercial manufacturing</li>
-        <li>food manufacturing</li>
+        {% for sources in ["burning petrol or diesel in vehicles", "gas boilers", "coal burning power stations", "commercial manufacturing", "food manufacturing"] %}
+        <li>{{ sources }}</li>
+      {% endfor %}
       </ul>
     </div>
   </div>

@@ -1,44 +1,15 @@
 <h2 class="govuk-heading-m">Air pollutants monitored nearby</h2>
 <p class="govuk-!-margin-bottom-6">Readings are measured every hour. The unit µg/m<sup>3</sup> stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
 
-{% set tabItems = [] %} {# Initialize an empty array to hold tab items #}
-
+{% set tabItems = [] %} 
 {% for site in monitoringSites %}
-  {% set measurementToggletip %}
-    {{ toggletip(
-      '',
-      'More information about measurement',
-      'Readings are measured every hour. The unit µg/&#13221; stands for micrograms (one millionth of a gram) per cubic metre of air.',
-      'Latest'
-    )}}
-  {% endset %}
-  {% set levelToggletip %}
-    {{ toggletip(
-      '',
-      'More information about the level',
-      'The level is calculated based on the daily air quality index (DAQI). There are 4 levels: low, moderate, high and very high.',
-      'Level'
-    )}}
-  {% endset %}
-  {% set siteNameToggletip %}
-  {{ toggletip(
-    '',
-    'More information about ' + site.site_name,
-    siteTypeDescriptions[site.site_type],
-    site.site_name
-  )}}
-{% endset %}
-
   {% set rows = [] %}
   {% for pollutant in site.pollutants %}
     {% set pollutantDetail = pollutantTypes[pollutant.type] %}
-    {% set queryString = "?locationName=" ~ result.GAZETTEER_ENTRY.NAME1 ~ "&parentArea=" ~ 
-        (result.GAZETTEER_ENTRY.POPULATED_PLACE if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' 
-        else (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH 
-        else result.GAZETTEER_ENTRY.COUNTY_UNITARY)) %}
+    {% set urlString = "?locationName=" + locationName + parentArea %}
     {% set row = [
         { 
-            html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + queryString + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
+            html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + urlString + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
             classes: "defra-aq-levels-table__cell--pollutant" 
         },
         { 

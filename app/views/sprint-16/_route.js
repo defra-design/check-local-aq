@@ -3,7 +3,7 @@ const router = govukPrototypeKit.requests.setupRouter('/sprint-16');
 const locationController = require('./controllers/location.js'); 
 const airQualityModule = require('./data/air-quality.js');
 const alertsController = require('./controllers/alerts.js');
-const { monitoringSites, siteTypeDescriptions } = require('./data/monitoring-sites.js');  
+const { monitoringSites, pollutantTypes, siteTypeDescriptions } = require('./data/monitoring-sites.js');  
 
 const version = 'sprint-16';
 
@@ -19,17 +19,17 @@ router.post('/location', (req, res) => {
   locationController.getLocationData(req, res, version);
 });
 
-// Disambiguation
+// Disambiguation (Multiple results)
 router.get('/location/:id', (req, res) => {
   locationController.getLocationDetails(req, res, version);
 });
 
-// Alerts route
+// Published aggregated alerts
 router.get('/alerts', (req, res) => {
   alertsController.getAlerts(req, res, version);
 });
 
-// Individual alert route
+// Published alert
 router.get('/alerts/:slug', (req, res) => {
   alertsController.getAlertBySlug(req, res, version);
 });
@@ -43,6 +43,7 @@ const routeTemplateMap = {
   '/pollutants/particulate-matter10': '/pollutants/particulate-matter10',
   '/pollutants/ozone': '/pollutants/ozone',
   '/pollutants/sulphur-dioxide': '/pollutants/sulphur-dioxide',
+  '/email-high': '/email-high', 
 };
 
 // Handle all routes dynamically
@@ -67,95 +68,66 @@ router.get(Object.keys(routeTemplateMap), (req, res) => {
   });
 });
 
+// Alerts sign up
+function renderPage(req, res, view, additionalData = {}) {
+  const data = {
+    email: req.session.data['notifyByEmail'],
+    text: req.session.data['notifyByText'],
+    locationString: req.session.data['locationString'],
+    status: req.params.status, // This will be undefined if not present
+    ...additionalData, // Allow passing additional properties specific to the route
+  };
 
+  res.render(`${version}/${view}`, data);
+}
 
+// Individual screens for sign up
 router.get('/sign-up-for-alerts/check-your-email', function(req, res) {
-  const email = req.session.data['notifyByEmail'];
-  const locationString = req.session.data['locationString'];
-  
-  res.render(version + '/sign-up-for-alerts/check-your-email', {
-    email: email,
-    locationString: locationString,
-  });
+  renderPage(req, res, 'sign-up-for-alerts/check-your-email');
 });
 
 router.get('/sign-up-for-alerts/check-your-messages', function(req, res) {
-  const text = req.session.data['notifyByText'];
-  const locationString = req.session.data['locationString'];
-  
-  res.render(version + '/sign-up-for-alerts/check-your-messages', {
-    text: text,
-    locationString: locationString,
-  });
+  renderPage(req, res, 'sign-up-for-alerts/check-your-messages');
 });
 
-
-// Manage air quality alerts (This is used for a number of screens)
 router.get('/sign-up-for-alerts/manage-alerts/:status', function(req, res) {
-  const email = req.session.data['notifyByEmail'];
-  const text = req.session.data['notifyByText'];
-  const locationString = req.session.data['locationString'];
-  const status = req.params.status;  
-
-  res.render(version + '/sign-up-for-alerts/manage-alerts', {
-    email: email,
-    text: text,
-    locationString: locationString,
-    status: status
-  });
+  renderPage(req, res, 'sign-up-for-alerts/manage-alerts');
 });
 
-// Email notifications
 router.get('/email-notification/:status', function(req, res) {
-  const email = req.session.data['notifyByEmail'];
-  const locationString = req.session.data['locationString'];
-  const status = req.params.status;  
-
-  res.render(version + '/email-notification', {
-    email: email,
-    locationString: locationString,
-    status: status
-  });
+  renderPage(req, res, 'email-notification');
 });
 
-// Text notifications
 router.get('/text-notification/:status', function(req, res) {
-  const text = req.session.data['notifyByText'];
-  const locationString = req.session.data['locationString'];
-  const status = req.params.status;  
-
-  res.render(version + '/text-notification', {
-    text: text,
-    locationString: locationString,
-    status: status
-  });
+  renderPage(req, res, 'text-notification');
 });
 
-// Hardcoding the location page so it can be linked to from an email alert
-router.get('/location-forecast', function(req, res) {
+
+// Hardcoding the location page so it can be linked to from an email or text notification
+router.get('/location-high', function(req, res) {
   const locationString = req.session.data['locationString'];
   const locationName = req.session.data['locationName'] || 'Missing name';
 
   const airQuality = {
     today: {
-      value: req.query.todayValue || 3,
-      readableBand: req.query.todayBand || 'low'
+      value: req.query.todayValue || 8,
+      readableBand: req.query.todayBand || 'high'
     },
     day2: {
-      value: req.query.day2Value || 3,
-      readableBand: req.query.day2Band || 'low'
+      value: req.query.day2Value || 8,
+      readableBand: req.query.day2Band || 'high'
     },
     day3: {
-      value: req.query.day3Value || 9,
-      readableBand: req.query.day3Band || 'high'
+      value: req.query.day3Value || 5,
+      readableBand: req.query.day3Band || 'moderate'
     },
     day4: {
-      value: req.query.day4Value || 9,
-      readableBand: req.query.day4Band || 'high'
+      value: req.query.day4Value || 3,
+      readableBand: req.query.day4Band || 'low'
     },
     day5: {
-      value: req.query.day5Value || 5,
-      readableBand: req.query.day5Band || 'moderate'
+      value: req.query.day5Value || 2,
+      readableBand: req.query.day5Band || 'low'
     }
   };
 
@@ -166,11 +138,12 @@ router.get('/location-forecast', function(req, res) {
   };
 
 
-  res.render(version + '/location-forecast', {
+  res.render(version + '/location-high', {
     airQuality: airQuality,
     locationName: locationName,
     locationString: locationString,
     monitoringSites: monitoringSites,
+    pollutantTypes: pollutantTypes,
     result: result,
     version: version
   });

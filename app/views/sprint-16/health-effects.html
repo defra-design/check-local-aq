@@ -25,27 +25,18 @@
       <h2 class="govuk-heading-s">Short term air pollution exposure</h2>
       <p>Short term exposure (over hours or days) can cause a range of health impacts, including:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>worsening of asthma symptoms</li>
-        <li>worsening of chronic obstructive pulmonary disease (COPD)</li>
-        <li>difficulty breathing</li>
-        <li>coughing</li>
-        <li>eye, nose, and throat irritation</li>
-        <li>chest tightness and pain</li>
+        {% for symptoms in ["worsening of asthma symptoms", "worsening of chronic obstructive pulmonary disease (COPD)", "difficulty breathing", "coughing", "eye, nose, and throat irritation", "chest tightness and pain"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
       </ul>
       <h2 class="govuk-heading-s">
         Long term air pollution exposure
       </h2>
       <p>Long term exposure to air pollution (over years) reduces life expectancy. Long term health effects of air pollution can include:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>heart disease</li>
-        <li>stroke</li>
-        <li>diabetes</li>
-        <li>cancer</li>
-        <li>chronic obstructive pulmonary disease (COPD)</li>
-        <li>Alzheimer's and Parkinson's disease</li>
-        <li>dementia</li>
-        <li>poorer lung function in children</li>
-        <li>increase in respiratory illnesses</li>
+        {% for conditions in ["heart disease", "stroke", "diabetes", "cancer", "chronic obstructive pulmonary disease (COPD)", "Alzheimer's and Parkinson's disease", "dementia", "poorer lung function in children", "increase in respiratory illnesses"] %}
+          <li>{{ conditions }}</li>
+        {% endfor %}
       </ul>
     </div>
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">

@@ -10,8 +10,8 @@ const commonMessages = {
     low: {
         values: [1, 2, 3],
         ukToday: "Strong winds for many areas during today will help to keep air pollution levels low across the whole of the UK.",
-        ukTomorrow: "The unsettled weather will continue resulting in low levels of air pollution across the whole of the UK.",
-        ukOutlook: "Strong winds for many areas will help to keep air pollution levels low at the beginning of the period. Later on an influx of warm air from the continent may result in moderate air pollution."
+        ukTomorrow: "The heatwave will cause air pollution levels to remain high across many areas tomorrow.",
+        ukOutlook: "The air pollution outlook will remain low throughout the period."
     },
     moderate: {
         values: [4, 5, 6],
@@ -22,8 +22,8 @@ const commonMessages = {
     high: {
         values: [7, 8, 9],
         ukToday: "Warm temperatures are expected to increase pollution levels to high across many areas today.",
-        ukTomorrow: "Test tomorrrow",
-        ukOutlook: "Test outlook"
+        ukTomorrow: "The current heatwave shows no signs of relenting, causing air pollution levels to remain high across many areas tomorrow.",
+        ukOutlook: "As unsettled weather returns, the air pollution outlook will likely return to low levels."
     },
     veryHigh: {
         values: [10],

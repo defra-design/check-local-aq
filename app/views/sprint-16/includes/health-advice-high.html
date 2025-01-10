@@ -1,27 +1,25 @@
 {% set advice %}
-{% include "/" + folder + "/includes/health-advice/advice-" + highestAQDetails.band + ".html" %}
+{% include "/" + folder + "/includes/health-advice/advice-high.html" %}
 {% endset %}
 {% set atrisk %}
-{% include "/" + folder + "/includes/health-advice/atrisk-" + highestAQDetails.band + ".html" %}
+{% include "/" + folder + "/includes/health-advice/atrisk-high.html" %}
 {% endset %}
 
-<h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+<h2 class="govuk-heading-m">Health advice for high levels of air pollution</h2>
 {{ govukInsetText({
-    classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+    classes: "govuk-inset-text--9",
     html: advice
 }) }}
 <p>Air pollution levels may be higher close to roads or town centres.</p>
 <p>Long term exposure to air pollution (over years) can lead to many different <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ locationName }}&parentArea={{ parentArea }}">health conditions</a> and can reduce life expectancy.</p>
 {% include "/" + folder + "/includes/reduce-your-exposure-details.html" %}
 
-{% if highestAQDetails.value >= 1 and highestAQDetails.value <= 6 %}
-    <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
-{% elseif highestAQDetails.value >= 7 and highestAQDetails.value <= 10 %}
-    <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions and older people</h3>
-{% endif %}
+
+<h3 class="govuk-heading-s">Health advice for people with lung or heart conditions and older people</h3>
+
 
 {{ govukInsetText({
-    classes: "govuk-inset-text--" + (highestAQDetails.value | string),
+    classes: "govuk-inset-text--9",
     html: atrisk
 }) }}
 <p>People with asthma and other lung conditions should continue to follow their agreed management plan - for example, an asthma action plan. If you do not have an agreed management plan, ask your healthcare professional for one.</p>

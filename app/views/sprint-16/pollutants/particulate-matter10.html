@@ -25,13 +25,9 @@
       <h2 class="govuk-heading-s">Sources of PM10</h2>
       <p>Particulate matter can come from nature, human activity, and industrial processes. The main sources of particulate matter are:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>dust from construction sites</li>
-        <li>dust from landfills</li>
-        <li>dust from agriculture</li>
-        <li>wildfires</li>
-        <li>pollen</li>
-        <li>power plants</li>
-        <li>vehicles</li>
+        {% for sources in ["dust from construction sites", "dust from landfills", "dust from agriculture", "wildfires", "pollen", "power plants", "vehicles"] %}
+        <li>{{ sources }}</li>
+        {% endfor %}
       </ul>
       <p>In 2022, 16 per cent of total PM10 emissions in the UK were from road transport. Road transport emissions are made up of both exhaust emissions and non-exhaust emissions (brake, tyre and road wear).</p>
     </div>
