@@ -4,86 +4,99 @@
 const monitoringSites = [
   
   {
-    "site_name": "Plymouth Centre",
+    "site_name": "Birkenhead Borough Road",
     "site_id": "UKA00528",
-    "distance": 3.7,
-    "site_type": "urban-background",
+    "distance": 4.1,
+    "site_type": "urban-traffic",
     "pollutants": [
-          
-            {
-              "type": "particulate-matter2",
-              "measurement": 41.8,
-              "trend": "Falling",
-              "band": "Moderate",
-              "aqi": 4
-            },
-            {
-              "type": "particulate-matter10",
-              "measurement": 7.623,
-              "trend": "Falling",
-              "band": "Low",
-              "aqi": 1
-            },
           {
               "type": "nitrogen-dioxide",
-              "measurement": 150.289,
+              "measurement": 	20,
               "trend": "Rising",
               "band": "Low",
               "aqi": 3
-          },
-          {
-            "type": "ozone",
-            "measurement": 65.623,
-            "trend": "Falling",
-            "band": "Low",
-            "aqi": 1
           }
     ]
 },
 {
-    "site_name": "Saltash Callington Road",
+    "site_name": "Wirral Tranmere",
     "site_id": "UKA00503",
-    "distance": 4.5,
-    "site_type": "urban-traffic",
+    "distance": 4.2,
+    "site_type": "urban-background",
     "pollutants": [
   {
     "type": "particulate-matter2",
-    "measurement": 30.2,
+    "measurement": 8,
     "trend": "Falling",
     "band": "Low",
     "aqi": 3
-  },
+  },        
 {
-    "type": "particulate-matter10",
-    "measurement": 7.623,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 1
+  "type": "nitrogen-dioxide",
+  "measurement": 	17,
+  "trend": "Rising",
+  "band": "Low",
+  "aqi": 3
+},
+{
+  "type": "ozone",
+  "measurement": 	14,
+  "trend": "Rising",
+  "band": "Low",
+  "aqi": 3
+},
+{
+  "type": "sulphur-dioxide",
+  "measurement": 	21,
+  "trend": "Rising",
+  "band": "Low",
+  "aqi": 3
 }
 
     ]
 },
 
   {
-      "site_name": "Plymouth Tavistock Road",
+      "site_name": "Liverpool Speke",
       "site_id": "UKA00594",
-      "distance": 5.79,
-      "site_type": "urban-background",
+      "distance": 4.6,
+      "site_type": "urban-industrial",
       "pollutants": [
-          {
-            "type": "particulate-matter2",
-            "measurement": 18.2,
-            "trend": "Falling",
-            "band": "Low",
-            "aqi": 3
+        {
+          "type": "particulate-matter2",
+          "measurement": 12,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 3
         },
         {
-            "type": "particulate-matter10",
-            "measurement": 35.7,
-            "trend": "Falling",
-            "band": "Low",
-            "aqi": 3
-        },
+          "type": "particulate-matter10",
+          "measurement": 17,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 3
+        },         
+      {
+        "type": "nitrogen-dioxide",
+        "measurement": 	17,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "ozone",
+        "measurement": 	28,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "sulphur-dioxide",
+        "measurement": 	3,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      }
       ]
   }
 ]
