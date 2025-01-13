@@ -10,7 +10,7 @@ const commonMessages = {
     low: {
         values: [1, 2, 3],
         ukToday: "Strong winds for many areas during today will help to keep air pollution levels low across the whole of the UK.",
-        ukTomorrow: "The heatwave will cause air pollution levels to remain high across many areas tomorrow.",
+        ukTomorrow: "The unsettled weather will continue resulting in low levels of air pollution across the whole of the UK.",
         ukOutlook: "The air pollution outlook will remain low throughout the period."
     },
     moderate: {
