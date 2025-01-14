@@ -9,7 +9,7 @@
 {% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
 
 {% set caption = "" %}
-{% set title = "Air quality in " ~ result.GAZETTEER_ENTRY.NAME1 ~ ", " %}
+{% set title = "Air quality – " ~ result.GAZETTEER_ENTRY.NAME1 ~ ", " %}
 {% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}
   {% set title = title ~ result.populatedPlace %}
 {% else %}
