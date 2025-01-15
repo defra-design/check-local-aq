@@ -4,50 +4,50 @@
 const monitoringSites = [
   
   {
-    "site_name": "Birkenhead Borough Road",
+    "site_name": "Bristol St Paul's",
     "site_id": "UKA00528",
-    "distance": 4.1,
-    "site_type": "urban-traffic",
+    "distance": 3.2,
+    "site_type": "urban-background",
     "pollutants": [
-          {
-              "type": "nitrogen-dioxide",
-              "measurement": 	20,
-              "trend": "Rising",
-              "band": "Low",
-              "aqi": 3
-          }
+      {
+        "type": "particulate-matter2",
+        "measurement": 8,
+        "trend": "Falling",
+        "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "particulate-matter10",
+        "measurement": 14,
+        "trend": "Falling",
+        "band": "Low",
+        "aqi": 3
+      },         
+    {
+      "type": "nitrogen-dioxide",
+      "measurement": 	17,
+      "trend": "Rising",
+      "band": "Low",
+      "aqi": 3
+    },
+    {
+      "type": "ozone",
+      "measurement": 	14,
+      "trend": "Rising",
+      "band": "Low",
+      "aqi": 3
+    }
     ]
 },
 {
-    "site_name": "Wirral Tranmere",
+    "site_name": "Bristol Temple Way",
     "site_id": "UKA00503",
-    "distance": 4.2,
-    "site_type": "urban-background",
-    "pollutants": [
-  {
-    "type": "particulate-matter2",
-    "measurement": 8,
-    "trend": "Falling",
-    "band": "Low",
-    "aqi": 3
-  },        
+    "distance": 3.4,
+    "site_type": "urban-traffic",
+    "pollutants": [      
 {
   "type": "nitrogen-dioxide",
   "measurement": 	17,
-  "trend": "Rising",
-  "band": "Low",
-  "aqi": 3
-},
-{
-  "type": "ozone",
-  "measurement": 	14,
-  "trend": "Rising",
-  "band": "Low",
-  "aqi": 3
-},
-{
-  "type": "sulphur-dioxide",
-  "measurement": 	21,
   "trend": "Rising",
   "band": "Low",
   "aqi": 3
@@ -57,42 +57,14 @@ const monitoringSites = [
 },
 
   {
-      "site_name": "Liverpool Speke",
+      "site_name": "Bath A4 Roadside",
       "site_id": "UKA00594",
-      "distance": 4.6,
-      "site_type": "urban-industrial",
-      "pollutants": [
-        {
-          "type": "particulate-matter2",
-          "measurement": 12,
-          "trend": "Falling",
-          "band": "Low",
-          "aqi": 3
-        },
-        {
-          "type": "particulate-matter10",
-          "measurement": 17,
-          "trend": "Falling",
-          "band": "Low",
-          "aqi": 3
-        },         
+      "distance": 10.3,
+      "site_type": "urban-traffic",
+      "pollutants": [        
       {
         "type": "nitrogen-dioxide",
-        "measurement": 	17,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      },
-      {
-        "type": "ozone",
-        "measurement": 	28,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      },
-      {
-        "type": "sulphur-dioxide",
-        "measurement": 	3,
+        "measurement": 	20,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
