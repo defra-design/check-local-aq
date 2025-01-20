@@ -6,7 +6,7 @@ const monitoringSites = [
   {
     "site_name": "Bristol St Paul's",
     "site_id": "UKA00528",
-    "distance": 3.2,
+    "distance": 8.7,
     "site_type": "urban-background",
     "pollutants": [
       {
@@ -42,7 +42,7 @@ const monitoringSites = [
 {
     "site_name": "Bristol Temple Way",
     "site_id": "UKA00503",
-    "distance": 3.4,
+    "distance": 8.9,
     "site_type": "urban-traffic",
     "pollutants": [      
 {
@@ -59,7 +59,7 @@ const monitoringSites = [
   {
       "site_name": "Bath A4 Roadside",
       "site_id": "UKA00594",
-      "distance": 10.3,
+      "distance": 10.5,
       "site_type": "urban-traffic",
       "pollutants": [        
       {
