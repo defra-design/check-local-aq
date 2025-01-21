@@ -5,13 +5,8 @@ const monitoringSites = [
   {
     "site_name": "St Helens Linkway",
     "site_id": "UKA00528",
-<<<<<<< HEAD
     "distance": 6.3,
     "site_type": "urban-traffic",
-=======
-    "distance": 8.7,
-    "site_type": "urban-background",
->>>>>>> afb27046cc60c80823e1ca58d0717bc8835f24bd
     "pollutants": [
           {
             "type": "particulate-matter2",
@@ -32,11 +27,7 @@ const monitoringSites = [
 {
     "site_name": "Birkenhead Borough Road",
     "site_id": "UKA00503",
-<<<<<<< HEAD
     "distance": 6.4,
-=======
-    "distance": 8.9,
->>>>>>> afb27046cc60c80823e1ca58d0717bc8835f24bd
     "site_type": "urban-traffic",
     "pollutants": [      
 {
@@ -53,7 +44,6 @@ const monitoringSites = [
   {
       "site_name": "Liverpool Speke",
       "site_id": "UKA00594",
-<<<<<<< HEAD
       "distance": 6.5,
       "site_type": "urban-industrial",
       "pollutants": [
@@ -71,11 +61,6 @@ const monitoringSites = [
           "band": "Low",
           "aqi": 3
         },         
-=======
-      "distance": 10.5,
-      "site_type": "urban-traffic",
-      "pollutants": [        
->>>>>>> afb27046cc60c80823e1ca58d0717bc8835f24bd
       {
         "type": "nitrogen-dioxide",
         "measurement": 	17,
