@@ -5,7 +5,7 @@ const monitoringSites = [
   {
     "site_name": "Edinburgh St Leonards",
     "site_id": "UKA00528",
-    "distance": 3.1,
+    "distance": 7,
     "site_type": "urban-background",
     "pollutants": [
       {
@@ -49,7 +49,7 @@ const monitoringSites = [
 {
     "site_name": "Bush Estate",
     "site_id": "UKA00503",
-    "distance": 7.7,
+    "distance": 9.3,
     "site_type": "rural-background",
     "pollutants": [      
 {
