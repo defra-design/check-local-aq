@@ -1,4 +1,3 @@
-
 // Content for monitoring sites
 
 const monitoringSites = [
@@ -119,7 +118,3 @@ const siteTypeDescriptions = {
   }
 
   module.exports = { monitoringSites, siteTypeDescriptions, pollutantTypes };
-
-
-
-
