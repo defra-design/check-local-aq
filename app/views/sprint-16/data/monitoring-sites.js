@@ -4,9 +4,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "Bristol St Paul's",
+    "site_name": "Edinburgh St Leonards",
     "site_id": "UKA00528",
-    "distance": 8.7,
+    "distance": 3.1,
     "site_type": "urban-background",
     "pollutants": [
       {
@@ -37,40 +37,39 @@ const monitoringSites = [
       "band": "Low",
       "aqi": 3
     }
+    ,
+    {
+      "type": "sulphur-dioxide",
+      "measurement": 	2,
+      "trend": "Rising",
+      "band": "Low",
+      "aqi": 1
+    }
     ]
 },
 {
-    "site_name": "Bristol Temple Way",
+    "site_name": "Bush Estate",
     "site_id": "UKA00503",
-    "distance": 8.9,
-    "site_type": "urban-traffic",
+    "distance": 7.7,
+    "site_type": "rural-background",
     "pollutants": [      
 {
   "type": "nitrogen-dioxide",
-  "measurement": 	17,
+  "measurement": 	5,
+  "trend": "Rising",
+  "band": "Low",
+  "aqi": 3
+},
+{
+  "type": "ozone",
+  "measurement": 	41,
   "trend": "Rising",
   "band": "Low",
   "aqi": 3
 }
 
     ]
-},
-
-  {
-      "site_name": "Bath A4 Roadside",
-      "site_id": "UKA00594",
-      "distance": 10.5,
-      "site_type": "urban-traffic",
-      "pollutants": [        
-      {
-        "type": "nitrogen-dioxide",
-        "measurement": 	20,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      }
-      ]
-  }
+}
 ]
 
 // Pollutant reference data
