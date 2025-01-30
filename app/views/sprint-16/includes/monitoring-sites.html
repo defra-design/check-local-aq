@@ -10,15 +10,15 @@
     {% set row = [
         { 
             html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + urlString + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
-            classes: "defra-aq-levels-table__cell--pollutant" 
+            classes: "align-middle" 
         },
         { 
             html: (pollutant.measurement | int) + "<span class='govuk-!-font-size-16 govuk-!-font-weight-regular'> μg/m<sup>3</sup></span>",
-            classes: "defra-aq-levels-table__cell--reading" 
+            classes: "align-middle" 
         },
         { 
             html: "<strong class='daqi-tag daqi-tag--" ~ (pollutant.aqi if pollutant.aqi else "default-aqi-value") ~ "'>" + pollutant.band + "</strong>",
-            classes: "defra-aq-levels-table__cell--level" 
+            classes: "align-middle" 
         }
     ] %}
     {% set _ = rows.push(row) %}
@@ -28,13 +28,13 @@
     <h3 class="defra-aq-site__title govuk-heading-s">{{ site.site_name }}</h3>
     <p class="defra-aq-site__distance govuk-caption-m govuk-!-margin-bottom-3">{{ site.distance }} miles away</p>
     <p>{{ siteTypeDescriptions[site.site_type] }}</p>
-    {{ aqLevelsTable({
+    {{ govukTable({
         classes: "govuk-!-margin-bottom-2",
         firstCellIsHeader: false,
         head: [
-          { text: "Pollutant", classes: "defra-aq-levels-table__cell--pollutant"},
-          { text: "Latest",  classes: "defra-aq-levels-table__cell--reading" },
-          { text: "Level", classes: "defra-aq-levels-table__cell--level" }
+          { text: "Pollutant" },
+          { text: "Latest" },
+          { text: "Level" }
         ],
         rows: rows
     }) }}
