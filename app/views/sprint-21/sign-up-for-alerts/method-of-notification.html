@@ -1,0 +1,90 @@
+{% extends "layouts/sprint-21.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+{% block pageTitle %}
+How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/manage-alerts/check-your-details" method="post">
+        
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "notify-by-email",
+          name: "notifyByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Email address"
+          }
+        }) }}
+        {% endset %}
+        
+        {% set textHtml %}
+        {{ govukInput({
+          id: "notify-by-text",
+          name: "notifyByText",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Mobile phone number"
+          }
+        }) }}
+        {% endset %}
+        
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "How would you like to be notified?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "text",
+              text: "Text to a mobile phone",
+              conditional: {
+                html: textHtml
+              }
+            },
+            {
+              value: "email",
+              text: "Email",
+              conditional: {
+                html: emailHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
