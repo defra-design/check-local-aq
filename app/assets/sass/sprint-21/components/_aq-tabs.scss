@@ -1,0 +1,167 @@
+
+.govuk-tabs__list {
+    @include mq ($until: tablet) {
+        display: none;
+        @include defra-visually-hidden();
+    }
+}
+
+.govuk-tabs__title {
+        display: none;
+}
+
+
+.defra-aq-tabs {
+    margin-bottom: 0;
+    padding: 0;
+    .govuk-tabs__list {
+        display: none; 
+    }
+    
+    .govuk-tabs__list-item {
+        text-align: left;
+    }
+
+    .govuk-tabs__list-item--forecast {
+        text-align: center;
+    }
+
+
+.govuk-tabs__panel h3 {
+    position: relative;
+    margin-top: govuk-spacing(0);
+    @include mq ($from: tablet) {
+        padding: 0;
+        @include govuk-responsive-margin(4, 'bottom');
+        }
+    }
+}
+
+
+    .govuk-tabs__panel:last-child {
+        margin-bottom: govuk-spacing(4);
+    }
+
+    .govuk-tabs__panel--forecast {
+        margin-bottom: govuk-spacing(0);
+        padding-bottom: govuk-spacing(0);
+        border-bottom:1px solid $govuk-border-colour;
+        @include mq ($from: tablet) {
+            margin-bottom: govuk-spacing(6);
+            padding-bottom: 0;
+            border: 0;
+        }
+    }
+
+    .govuk-tabs__panel--forecast:last-child {
+        border: 0;
+        margin-bottom: govuk-spacing(4);
+        padding-bottom: 0;
+    }
+
+    .govuk-tabs__tab {
+        display: block;
+    }
+
+    .govuk-tabs__tab--forecast {
+        text-align: center;
+        display: block;
+    }
+
+    .govuk-tabs__title {
+        display: none;
+        @include mq ($from: tablet) {
+            display: block;
+            @include defra-visually-hidden();
+        }
+    }
+    @include mq ($from: tablet) {
+        border-bottom:0px;
+        margin-bottom:0px;
+    }
+    &__label {
+        text-decoration: underline;
+    }
+    &__label-status {
+        padding-top: govuk-spacing(1);
+        display:block;
+        @include govuk-font($size: 16);
+        text-decoration: none;
+    }
+    &__label-distance {
+        padding-top: govuk-spacing(1);
+        display:block;
+        @include govuk-font($size: 16);
+        text-decoration: none;
+    }
+    &__label-daqi {
+        display:block;
+        padding: govuk-spacing(1) 0 0 0;
+        @include govuk-font($size: 24);
+        text-decoration: none;
+    }
+    // button {
+    //     display: none;
+    //     @include mq ($from: tablet) {
+    //         display: block;
+    //     }
+    // }
+
+.defra-aq-tabs-status {
+    display: block;
+    position: absolute;
+}
+
+.defra-aq-tabs .govuk-tabs__list-item--selected {
+    .defra-aq-tabs-status {
+        display: none;
+    }
+}
+
+.aq-forecast-tabs__title, .defra-aq-site__distance {
+    @include mq ($from: tablet) {
+        display: none;
+        @include defra-visually-hidden();
+    }
+} 
+
+.defra-aq-site__title {
+    @include govuk-responsive-margin(1, 'bottom');
+    @include mq ($from: tablet) {
+        @include govuk-responsive-margin(4, 'bottom');
+    }
+} 
+
+
+
+
+.js-enabled {
+    .defra-aq-tabs .govuk-tabs__tab:active .defra-aq-tabs__label,
+    .defra-aq-tabs .govuk-tabs__tab:focus .defra-aq-tabs__label,
+    .govuk-tabs__list-item--selected .defra-aq-tabs__label {
+        text-decoration: none;
+    }
+}
+.js-enabled .defra-aq-tabs {
+    > h3 {
+        @include mq ($from: tablet) {
+            display: block;
+        }
+    }
+
+
+    .govuk-tabs__list {
+        @include mq ($from: tablet) {
+            display: block;
+        }  
+    }
+
+    .govuk-tabs__panel--sites {
+        @include mq ($from: tablet) {
+            padding-top: govuk-spacing(1);
+            padding-left: 0;
+            padding-right: 0;
+            border: 0;
+        }
+    } 
+}
