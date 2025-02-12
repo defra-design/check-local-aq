@@ -11,8 +11,12 @@
     html: advice
 }) }}
 <p>Air pollution levels may be higher close to roads or town centres.</p>
+<!--
 <p>Long term exposure to air pollution (over years) can lead to many different <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ locationName }}&parentArea={{ parentArea }}">health conditions</a> and can reduce life expectancy.</p>
-{% include "/" + folder + "/includes/reduce-your-exposure-details.html" %}
+-->
+
+<!-- REDUCE EXPOSURE DETAILS
+{% include "/" + folder + "/includes/reduce-your-exposure-details.html" %} -->
 
 {% if highestAQDetails.value >= 1 and highestAQDetails.value <= 6 %}
     <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
@@ -24,5 +28,8 @@
     classes: "govuk-inset-text--" + (highestAQDetails.value | string),
     html: atrisk
 }) }}
-<p>People with asthma and other lung conditions should continue to follow their agreed management plan - for example, an asthma action plan. If you do not have an agreed management plan, ask your healthcare professional for one.</p>
-{% include "/" + folder + "/includes/health-advice-details.html" %}
+<p>People with asthma and other lung conditions should continue to follow their agreed management plan - for example, an asthma action plan.</p> 
+<p>If you do not have an agreed management plan, ask your healthcare professional for one.</p>
+
+<!-- HEALTH ADVICE LEVELS DETAILS
+{% include "/" + folder + "/includes/health-advice-details.html" %}-->

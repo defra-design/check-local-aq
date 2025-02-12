@@ -23,6 +23,24 @@
     <h1 class="govuk-heading-{{ pageHeadingSize }}">
         {{ title }}      
   </div>
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {{ xGovukRelatedNavigation({
+      sections: [{
+        items: [{
+          text: "Health effects of air pollution",
+          href: "/" + version + "/health-effects"
+        }, {
+          text: "Health advice for air pollution levels",
+          href: "/" + version + "/health-advice-levels"
+        }
+        ]
+      }]
+    }) }}
+  </div>
+  <!-- END RELATED CONTENT -->
+
 </div>
 <div class="govuk-grid-row" data-module="edge">
   <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
@@ -33,6 +51,8 @@
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/health-advice-high.html" %}
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/air-quality-alerts.html" %}
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/pollutants.html" %}
