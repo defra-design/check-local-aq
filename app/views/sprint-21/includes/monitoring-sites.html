@@ -1,6 +1,7 @@
 <h2 class="govuk-heading-m">Air pollutants monitored nearby</h2>
 <p class="govuk-!-margin-bottom-6">Readings are measured every hour. The unit µg/m<sup>3</sup> stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
 
+<!-- TABS -->
 {% set tabItems = [] %} 
 {% for site in monitoringSites %}
   {% set rows = [] %}
@@ -22,7 +23,7 @@
         }
     ] %}
     {% set _ = rows.push(row) %}
-{% endfor %}
+{% endfor %} <!-- END TABS -->
 
   {% set panelHtml %}
     <h3 class="defra-aq-site__title govuk-heading-s">{{ site.site_name }}</h3>

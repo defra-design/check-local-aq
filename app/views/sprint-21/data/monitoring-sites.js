@@ -3,18 +3,33 @@
 const monitoringSites = [
   
   {
-    "site_name": "Edinburgh St Leonards",
+    "site_name": "Newcastle Cradlewell Roadside",
     "site_id": "UKA00528",
-    "distance": 7,
-    "site_type": "urban-background",
+    "distance": 6.3,
+    "site_type": "urban-traffic",
     "pollutants": [
       {
-        "type": "particulate-matter2",
-        "measurement": 8,
+        "type": "particulate-matter10",
+        "measurement": 10,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },
+      },         
+    {
+      "type": "nitrogen-dioxide",
+      "measurement": 	31,
+      "trend": "Rising",
+      "band": "Low",
+      "aqi": 3
+    }
+    ]
+},
+{
+    "site_name": "Newcastle Centre",
+    "site_id": "UKA00213",
+    "distance": 6.9,
+    "site_type": "urban-background",
+    "pollutants": [      
       {
         "type": "particulate-matter10",
         "measurement": 14,
@@ -24,49 +39,26 @@ const monitoringSites = [
       },         
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	17,
+      "measurement": 	28,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
     },
     {
+      "type": "particulate-matter2",
+      "measurement": 8,
+      "trend": "Falling",
+      "band": "Low",
+      "aqi": 3
+    },
+    {
       "type": "ozone",
-      "measurement": 	14,
+      "measurement": 	55,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
     }
-    ,
-    {
-      "type": "sulphur-dioxide",
-      "measurement": 	2,
-      "trend": "Rising",
-      "band": "Low",
-      "aqi": 1
-    }
-    ]
-},
-{
-    "site_name": "Bush Estate",
-    "site_id": "UKA00503",
-    "distance": 9.3,
-    "site_type": "rural-background",
-    "pollutants": [      
-{
-  "type": "nitrogen-dioxide",
-  "measurement": 	5,
-  "trend": "Rising",
-  "band": "Low",
-  "aqi": 3
-},
-{
-  "type": "ozone",
-  "measurement": 	41,
-  "trend": "Rising",
-  "band": "Low",
-  "aqi": 3
-}
-
+    
     ]
 }
 ]
