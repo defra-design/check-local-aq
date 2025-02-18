@@ -3,21 +3,21 @@
 const monitoringSites = [
   
   {
-    "site_name": "Newcastle Cradlewell Roadside",
-    "site_id": "UKA00528",
-    "distance": 6.3,
-    "site_type": "urban-traffic",
+    "site_name": "London Teddington Bushy Park",
+    "site_id": "UKA00572",
+    "distance": 6.9,
+    "site_type": "urban-background",
     "pollutants": [
       {
-        "type": "particulate-matter10",
-        "measurement": 10,
+        "type": "particulate-matter2",
+        "measurement": 22,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },         
     {
-      "type": "nitrogen-dioxide",
-      "measurement": 	31,
+      "type": "particulate-matter10",
+      "measurement": 	27,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
@@ -25,13 +25,13 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Newcastle Centre",
-    "site_id": "UKA00213",
-    "distance": 6.9,
-    "site_type": "urban-background",
+    "site_name": "London Harlington",
+    "site_id": "UKA00472",
+    "distance": 7.3,
+    "site_type": "urban-industrial",
     "pollutants": [      
       {
-        "type": "particulate-matter10",
+        "type": "particulate-matter2",
         "measurement": 14,
         "trend": "Falling",
         "band": "Low",
@@ -39,21 +39,21 @@ const monitoringSites = [
       },         
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	28,
+      "measurement": 	32,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
     },
     {
-      "type": "particulate-matter2",
-      "measurement": 8,
+      "type": "particulate-matter10",
+      "measurement": 27,
       "trend": "Falling",
       "band": "Low",
       "aqi": 3
     },
     {
       "type": "ozone",
-      "measurement": 	55,
+      "measurement": 	35,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
