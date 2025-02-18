@@ -3,58 +3,59 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Teddington Bushy Park",
-    "site_id": "UKA00572",
-    "distance": 6.9,
+    "site_name": "Norwich Lakenfields",
+    "site_id": "UKA00549",
+    "distance": 0.5,
     "site_type": "urban-background",
     "pollutants": [
       {
-        "type": "particulate-matter2",
-        "measurement": 22,
+        "type": "particulate-matter10",
+        "measurement": 17,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },         
-    {
-      "type": "particulate-matter10",
-      "measurement": 	27,
-      "trend": "Rising",
-      "band": "Low",
-      "aqi": 3
-    }
-    ]
-},
-{
-    "site_name": "London Harlington",
-    "site_id": "UKA00472",
-    "distance": 7.3,
-    "site_type": "urban-industrial",
-    "pollutants": [      
+      },
       {
-        "type": "particulate-matter2",
-        "measurement": 14,
-        "trend": "Falling",
+        "type": "nitrogen-dioxide",
+        "measurement": 	12,
+        "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      },         
+      },           
     {
-      "type": "nitrogen-dioxide",
-      "measurement": 	32,
+      "type": "particulate-matter2",
+      "measurement": 	15,
       "trend": "Rising",
-      "band": "Low",
-      "aqi": 3
-    },
-    {
-      "type": "particulate-matter10",
-      "measurement": 27,
-      "trend": "Falling",
       "band": "Low",
       "aqi": 3
     },
     {
       "type": "ozone",
-      "measurement": 	35,
+      "measurement": 	50,
       "trend": "Rising",
+      "band": "Low",
+      "aqi": 3
+    }
+    
+    ]
+},
+{
+    "site_name": "Sibton",
+    "site_id": "UKA00012",
+    "distance": 7.3,
+    "site_type": "rural-background",
+    "pollutants": [      
+      {
+        "type": "particulate-matter10",
+        "measurement": 15,
+        "trend": "Falling",
+        "band": "Low",
+        "aqi": 3
+      },         
+    {
+      "type": "particulate-matter2",
+      "measurement": 13,
+      "trend": "Falling",
       "band": "Low",
       "aqi": 3
     }
