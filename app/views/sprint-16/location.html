@@ -10,13 +10,13 @@
 {% set caption = "" %}
 {% macro getParentArea(result) %}
   {% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}
-    {{ result.populatedPlace | default("", true) | trim }}
+    {{ result.populatedPlace | default("", true) | trim | safe }}
   {% else %}
-    {{ (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY) | default("", true) | trim }}
+    {{ (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY) | default("", true) | trim | safe }}
   {% endif %}
 {% endmacro %}
 
-{% set locationName = result.GAZETTEER_ENTRY.NAME1 | default("", true) | trim %}
+{% set locationName = result.GAZETTEER_ENTRY.NAME1 | default("", true) | trim | safe %}
 {% set parentArea = getParentArea(result) %}
 {% set title = "Air quality in " ~ locationName ~ (", " ~ parentArea if parentArea else "") %}
 {% set servicePage = true %}
