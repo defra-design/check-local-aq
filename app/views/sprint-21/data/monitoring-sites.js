@@ -3,35 +3,21 @@
 const monitoringSites = [
   
   {
-    "site_name": "Norwich Lakenfields",
-    "site_id": "UKA00549",
-    "distance": 0.5,
-    "site_type": "urban-background",
+    "site_name": "Weybourne",
+    "site_id": "UKA00433",
+    "distance": 30.8,
+    "site_type": "rural-background",
     "pollutants": [
       {
         "type": "particulate-matter10",
-        "measurement": 17,
+        "measurement": 15,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },
-      {
-        "type": "nitrogen-dioxide",
-        "measurement": 	12,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      },           
+      },          
     {
       "type": "particulate-matter2",
-      "measurement": 	15,
-      "trend": "Rising",
-      "band": "Low",
-      "aqi": 3
-    },
-    {
-      "type": "ozone",
-      "measurement": 	50,
+      "measurement": 	13,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
@@ -40,15 +26,36 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Sibton",
-    "site_id": "UKA00012",
-    "distance": 7.3,
+    "site_name": "Wicken Fen",
+    "site_id": "UKA00362",
+    "distance": 33.6,
     "site_type": "rural-background",
     "pollutants": [      
       {
+        "type": "nitrogen-dioxide",
+        "measurement": 	8,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      }, 
+      {
         "type": "particulate-matter10",
-        "measurement": 15,
+        "measurement": 14,
         "trend": "Falling",
+        "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "sulphur-dioxide",
+        "measurement": 	2,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "ozone",
+        "measurement": 	45,
+        "trend": "Rising",
         "band": "Low",
         "aqi": 3
       },         
