@@ -3,21 +3,21 @@
 const monitoringSites = [
   
   {
-    "site_name": "Weybourne",
-    "site_id": "UKA00433",
-    "distance": 30.8,
-    "site_type": "rural-background",
+    "site_name": "London Teddington Bushy Park",
+    "site_id": "UKA00572",
+    "distance": 4.2,
+    "site_type": "urban-background",
     "pollutants": [
       {
-        "type": "particulate-matter10",
-        "measurement": 15,
+        "type": "particulate-matter2",
+        "measurement": 30,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },          
     {
-      "type": "particulate-matter2",
-      "measurement": 	13,
+      "type": "particulate-matter10",
+      "measurement": 	42,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
@@ -26,47 +26,39 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Wicken Fen",
-    "site_id": "UKA00362",
-    "distance": 33.6,
-    "site_type": "rural-background",
-    "pollutants": [      
+    "site_name": "London Harlington",
+    "site_id": "UKA00472",
+    "distance": 7.3,
+    "site_type": "urban-industrial",
+    "pollutants": [        
       {
-        "type": "nitrogen-dioxide",
-        "measurement": 	8,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      }, 
-      {
-        "type": "particulate-matter10",
-        "measurement": 14,
+        "type": "particulate-matter2",
+        "measurement": 34,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
       {
-        "type": "sulphur-dioxide",
-        "measurement": 	2,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      },
-      {
         "type": "ozone",
-        "measurement": 	45,
+        "measurement": 	37,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      },         
-    {
-      "type": "particulate-matter2",
-      "measurement": 13,
+      }, 
+      {
+      "type": "particulate-matter10",
+      "measurement": 46,
       "trend": "Falling",
       "band": "Low",
       "aqi": 3
+    },
+    {
+      "type": "nitrogen-dioxide",
+      "measurement": 	40,
+      "trend": "Rising",
+      "band": "Low",
+      "aqi": 3
     }
-    
     ]
 }
 ]
