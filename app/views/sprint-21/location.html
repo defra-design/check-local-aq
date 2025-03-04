@@ -36,18 +36,19 @@
 
     <!-- RELATED CONTENT -->
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
       {{ xGovukRelatedNavigation({
         sections: [{
-          items: [{
-            text: "Health effects of air pollution",
-            href: "/" + version + "/health-effects"
-          }, {
-            text: "Health advice for air pollution levels",
-            href: "/" + version + "/health-advice-levels"
-          }
-          ]
+            items: [{
+                text: "Health effects of air pollution",
+                href: "/" + version + "/health-effects?locationName=" + locationName
+            }, {
+                text: "Health advice for air pollution levels",
+                href: "/" + version + "/health-advice-levels?locationName=" + locationName
+            }]
         }]
-      }) }}
+    }) }}
+    
     </div>
     <!-- END RELATED CONTENT -->
   </div>

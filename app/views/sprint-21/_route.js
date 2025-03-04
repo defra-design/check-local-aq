@@ -38,6 +38,7 @@ router.get('/alerts/:slug', (req, res) => {
 const routeTemplateMap = {
   '/sign-up-for-alerts/confirm-location': '/sign-up-for-alerts/confirm-location',
   '/health-effects': '/health-effects',
+  '/health-advice-levels': '/health-advice-levels',
   '/pollutants/nitrogen-dioxide': '/pollutants/nitrogen-dioxide',
   '/pollutants/particulate-matter2': '/pollutants/particulate-matter2',
   '/pollutants/particulate-matter10': '/pollutants/particulate-matter10',
