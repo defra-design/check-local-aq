@@ -37,7 +37,6 @@ router.get('/alerts/:slug', (req, res) => {
 // Store the location name and parent from page to page
 const routeTemplateMap = {
   '/sign-up-for-alerts/setup-or-manage': '/sign-up-for-alerts/setup-or-manage',
-  '/sign-up-for-alerts/confirm-location': '/sign-up-for-alerts/confirm-location',
   '/health-effects': '/health-effects',
   '/health-advice-levels': '/health-advice-levels',
   '/pollutants/nitrogen-dioxide': '/pollutants/nitrogen-dioxide',
@@ -48,20 +47,6 @@ const routeTemplateMap = {
   '/email-high': '/email-high', 
 };
 
-//------------------------
-
-
-
-// Routing for alerts location change 
-router.post('/sign-up-for-alerts/confirm-location', function(req, res) {
-  if (req.session.data['alert-location'] == 'yes') {
-      res.redirect('method-of-notification');
-  } else if (req.session.data['alert-location'] == 'different-location') {
-      res.redirect('change-alert-location');
-  } 
-})
-
-//-------------------------
 
 // Handle all routes dynamically
 router.get(Object.keys(routeTemplateMap), (req, res) => {
@@ -85,6 +70,19 @@ router.get(Object.keys(routeTemplateMap), (req, res) => {
   });
 });
 
+// Routing for setup or manage
+router.post('/sign-up-for-alerts/setup-or-manage', function(request, response) {
+  var createManageAlerts = request.session.data['create-manage-alerts'];
+  var locationName = request.session.data['locationName'];
+  var parentArea = request.session.data['parentArea'];
+
+  if (createManageAlerts === "create-alert") {
+      response.redirect(`/${version}/sign-up-for-alerts/confirm-location`);
+  } else {
+      response.redirect(`/${version}/sign-up-for-alerts/manage-alerts`);
+  }
+});
+
 // Alerts sign up
 function renderPage(req, res, view, additionalData = {}) {
   const data = {
@@ -105,6 +103,14 @@ router.get('/sign-up-for-alerts/check-your-email', function(req, res) {
 
 router.get('/sign-up-for-alerts/check-your-messages', function(req, res) {
   renderPage(req, res, 'sign-up-for-alerts/check-your-messages');
+});
+
+router.get('/sign-up-for-alerts/confirm-location', function(req, res) {
+  renderPage(req, res, 'sign-up-for-alerts/confirm-location');
+});
+
+router.get('/sign-up-for-alerts/check-your-details', function(req, res) {
+  renderPage(req, res, 'sign-up-for-alerts/check-your-details');
 });
 
 router.get('/sign-up-for-alerts/manage-alerts/:status', function(req, res) {

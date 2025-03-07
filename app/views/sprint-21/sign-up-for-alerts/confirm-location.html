@@ -22,51 +22,46 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <form method="post">
-
-        <!-- RADIOS -->
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="alert-location-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--l">
-              Do you want to create an alert for {{ locationString }} ?
-            </legend>
-
-            <div class="govuk-radios">
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="alert-location" name="alert-location" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="alert-location">
-                  Yes
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="alert-location" name="alert-location" type="radio" value="different-location">
-                <label class="govuk-label govuk-radios__label" for="alert-location">
-                  No, I would like to choose a different location
-                </label>
-              </div>
-
-            </div>
-          </fieldset>
-        </div>
-
-      <div class="govuk-!-padding-bottom-6"></div>
-
-      <!----- BUTTONS ----->
-      <div class="govuk-button-group">
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification?locationName={{ locationName }}&parentArea={{ parentArea }}" method="post">
+      <!-- <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post"> -->
+        {% set noHtml %}
+        <p>This part of the prototype does not exist yet</p>
+        {% endset %}
         
-          {{ govukButton({
+        {{ govukRadios({
+          name: "where",
+          fieldset: {
+            legend: {
+              text: "Do you want to create an alert for " + locationString + "?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "/" + version + "/sign-up-for-alerts/type-of-notifications",
+              text: "Yes",
+              checked: true
+              },
+              {
+              value: "/" + version + "/sign-up-for-alerts/change-alert-location",
+              text: "No, I would like to choose a different location",
+              checked: true
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
           text: "Continue"
-          }) }}
-      </div>
+        }) }}
 
-    </form>
+      </form>
 
+
+    </div>
   </div>
-</div>
 
 {% endblock %}
