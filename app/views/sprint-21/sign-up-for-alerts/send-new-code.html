@@ -22,7 +22,7 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your text messages</h1>
       <p class="govuk-body">
-        We've sent a text message to <strong>{{ text }}</strong> with a 5 digit activiation code.
+        We’ve sent a new 5-digit activation code to <strong>{{ text }}</strong>.
       </p>
       {{ govukInput({
         label: {
@@ -34,7 +34,7 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       }) }}
 
       <p>
-        The code expires in 24 hours.
+        The code expires in 24 hours and replaces previous activation codes you may have received.
       </p>
 
       {{ govukDetails({
@@ -47,7 +47,7 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       }) }}
 
       <p>
-      <a href="send-new-code.html">Send a new activation code</a>
+      <a href=""">Send a new activation code</a>
     </p>
 
     </div>

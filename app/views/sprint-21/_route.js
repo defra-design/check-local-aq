@@ -36,6 +36,7 @@ router.get('/alerts/:slug', (req, res) => {
 
 // Store the location name and parent from page to page
 const routeTemplateMap = {
+  '/sign-up-for-alerts/setup-or-manage': '/sign-up-for-alerts/setup-or-manage',
   '/sign-up-for-alerts/confirm-location': '/sign-up-for-alerts/confirm-location',
   '/health-effects': '/health-effects',
   '/health-advice-levels': '/health-advice-levels',
@@ -46,6 +47,21 @@ const routeTemplateMap = {
   '/pollutants/sulphur-dioxide': '/pollutants/sulphur-dioxide',
   '/email-high': '/email-high', 
 };
+
+//------------------------
+
+
+
+// Routing for alerts location change 
+router.post('/sign-up-for-alerts/confirm-location', function(req, res) {
+  if (req.session.data['alert-location'] == 'yes') {
+      res.redirect('method-of-notification');
+  } else if (req.session.data['alert-location'] == 'different-location') {
+      res.redirect('change-alert-location');
+  } 
+})
+
+//-------------------------
 
 // Handle all routes dynamically
 router.get(Object.keys(routeTemplateMap), (req, res) => {

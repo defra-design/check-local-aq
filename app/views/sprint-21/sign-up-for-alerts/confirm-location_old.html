@@ -1,0 +1,67 @@
+{% extends "layouts/sprint-21.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification?locationName={{ locationName }}&parentArea={{ parentArea }}" method="post">
+      <!-- <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post"> -->
+        {% set noHtml %}
+        <p>This part of the prototype does not exist yet</p>
+        {% endset %}
+        
+        {{ govukRadios({
+          name: "where",
+          fieldset: {
+            legend: {
+              text: "Do you want to create an alert for " + locationString + "?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "/" + version + "/sign-up-for-alerts/type-of-notifications",
+              text: "Yes",
+              checked: true
+              },
+              {
+              value: "/" + version + "/sign-up-for-alerts/change-alert-location",
+              text: "No, I would like to choose a different location",
+              checked: true
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

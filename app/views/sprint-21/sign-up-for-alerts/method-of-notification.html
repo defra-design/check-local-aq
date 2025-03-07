@@ -1,12 +1,19 @@
 {% extends "layouts/sprint-21.html" %}
 {% set showAnotherService = true %}
-{% set anotherServiceName = "Sign up for air quality alerts" %}
+{% set anotherServiceName = "Check air quality" %}
 
 {% block pageTitle %}
-How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Kit
+How would you like to receive your alert? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -18,7 +25,7 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/{{ version }}/sign-up-for-alerts/manage-alerts/check-your-details" method="post">
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/check-your-details" method="post">
         
         {% set emailHtml %}
         {{ govukInput({
@@ -29,7 +36,7 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
           spellcheck: false,
           classes: "govuk-!-width-one-half",
           label: {
-            text: "Email address"
+            text: "Enter email address"
           }
         }) }}
         {% endset %}
@@ -43,7 +50,7 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
           spellcheck: false,
           classes: "govuk-!-width-one-half",
           label: {
-            text: "Mobile phone number"
+            text: "Enter mobile phone number"
           }
         }) }}
         {% endset %}
@@ -52,7 +59,7 @@ How would you like to be notified? – {{ serviceName }} – GOV.UK Prototype Ki
           name: "contact",
           fieldset: {
             legend: {
-              text: "How would you like to be notified?",
+              text: "How would you like to receive your alert?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
