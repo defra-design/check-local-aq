@@ -34,96 +34,61 @@ router.get('/alerts/:slug', (req, res) => {
   alertsController.getAlertBySlug(req, res, version);
 });
 
-// Store the location name and parent from page to page
-const routeTemplateMap = {
-  '/sign-up-for-alerts/setup-or-manage': '/sign-up-for-alerts/setup-or-manage',
-  '/health-effects': '/health-effects',
-  '/health-advice-levels': '/health-advice-levels',
-  '/pollutants/nitrogen-dioxide': '/pollutants/nitrogen-dioxide',
-  '/pollutants/particulate-matter2': '/pollutants/particulate-matter2',
-  '/pollutants/particulate-matter10': '/pollutants/particulate-matter10',
-  '/pollutants/ozone': '/pollutants/ozone',
-  '/pollutants/sulphur-dioxide': '/pollutants/sulphur-dioxide',
-  '/email-high': '/email-high', 
-};
+// Templates that display session data
+const locationRequiredRoutes = [
+  '/sign-up-for-alerts/setup-or-manage',
+  '/sign-up-for-alerts/check-your-email',
+  '/sign-up-for-alerts/check-your-messages',
+  '/sign-up-for-alerts/confirm-location',
+  '/sign-up-for-alerts/check-your-details',
+  '/sign-up-for-alerts/manage-alerts/:status',
+  '/sign-up-for-alerts/email-notification/:status',
+  '/sign-up-for-alerts/text-notification/:status',
+  '/health-effects',
+  '/health-advice-levels',
+  '/pollutants/nitrogen-dioxide',
+  '/pollutants/particulate-matter2',
+  '/pollutants/particulate-matter10',
+  '/pollutants/ozone',
+  '/pollutants/sulphur-dioxide',
+  '/email-high'
+];
 
+// Storing location data in the session 
+router.use((req, res, next) => {
+  if (req.query.locationName && req.query.parentArea) {
+    req.session.data['locationName'] = req.query.locationName;
+    req.session.data['parentArea'] = req.query.parentArea;
+    req.session.data['locationString'] = `${req.query.locationName}, ${req.query.parentArea}`;
+  }
+  next();
+});
 
-// Handle all routes dynamically
-router.get(Object.keys(routeTemplateMap), (req, res) => {
-  const locationName = req.query.locationName;
-  const parentArea = req.query.parentArea;
-  const locationString = `${locationName}, ${parentArea}`;
-
-  // Store session data
-  req.session.data['locationString'] = locationString;
-  req.session.data['locationName'] = locationName;
-  req.session.data['parentArea'] = parentArea;
-
-  // Get the template corresponding to the current route
-  const template = version + routeTemplateMap[req.path];
-
-  // Render the appropriate template
-  res.render(template, {
-    locationName: locationName,
-    parentArea: parentArea,
-    locationString: locationString,
+// Get session data to display within templates
+router.get(locationRequiredRoutes, (req, res) => {
+  const viewPath = req.path.replace(/\/:status/, ''); 
+  res.render(`${version}${viewPath}`, {
+    locationName: req.session.data['locationName'],
+    parentArea: req.session.data['parentArea'],
+    locationString: req.session.data['locationString'] || "Unknown location",
+    email: req.session.data['notifyByEmail'],
+    text: req.session.data['notifyByText'],
+    status: req.params.status
   });
 });
 
-// Routing for setup or manage
-router.post('/sign-up-for-alerts/setup-or-manage', function(request, response) {
-  var createManageAlerts = request.session.data['create-manage-alerts'];
-  var locationName = request.session.data['locationName'];
-  var parentArea = request.session.data['parentArea'];
+// Routing for set or manage alerts
+router.post('/sign-up-for-alerts/setup-or-manage', (req, res) => {
+  req.session.data['createManageAlerts'] = req.body['create-manage-alerts'];
 
-  if (createManageAlerts === "create-alert") {
-      response.redirect(`/${version}/sign-up-for-alerts/confirm-location`);
-  } else {
-      response.redirect(`/${version}/sign-up-for-alerts/manage-alerts`);
-  }
+  const redirectPath = req.session.data['createManageAlerts'] === "create-alert"
+    ? `/${version}/sign-up-for-alerts/confirm-location`
+    : `/${version}/sign-up-for-alerts/manage-alerts`;
+
+  res.redirect(redirectPath);
 });
 
-// Alerts sign up
-function renderPage(req, res, view, additionalData = {}) {
-  const data = {
-    email: req.session.data['notifyByEmail'],
-    text: req.session.data['notifyByText'],
-    locationString: req.session.data['locationString'],
-    status: req.params.status, // This will be undefined if not present
-    ...additionalData, // Allow passing additional properties specific to the route
-  };
 
-  res.render(`${version}/${view}`, data);
-}
-
-// Individual screens for sign up
-router.get('/sign-up-for-alerts/check-your-email', function(req, res) {
-  renderPage(req, res, 'sign-up-for-alerts/check-your-email');
-});
-
-router.get('/sign-up-for-alerts/check-your-messages', function(req, res) {
-  renderPage(req, res, 'sign-up-for-alerts/check-your-messages');
-});
-
-router.get('/sign-up-for-alerts/confirm-location', function(req, res) {
-  renderPage(req, res, 'sign-up-for-alerts/confirm-location');
-});
-
-router.get('/sign-up-for-alerts/check-your-details', function(req, res) {
-  renderPage(req, res, 'sign-up-for-alerts/check-your-details');
-});
-
-router.get('/sign-up-for-alerts/manage-alerts/:status', function(req, res) {
-  renderPage(req, res, 'sign-up-for-alerts/manage-alerts');
-});
-
-router.get('/email-notification/:status', function(req, res) {
-  renderPage(req, res, 'email-notification');
-});
-
-router.get('/text-notification/:status', function(req, res) {
-  renderPage(req, res, 'text-notification');
-});
 
 
 // Hardcoding the location page so it can be linked to from an email or text notification
