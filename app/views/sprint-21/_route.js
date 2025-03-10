@@ -41,9 +41,9 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/check-your-messages',
   '/sign-up-for-alerts/confirm-location',
   '/sign-up-for-alerts/check-your-details',
-  '/sign-up-for-alerts/manage-alerts/:status',
-  '/sign-up-for-alerts/email-notification/:status',
-  '/sign-up-for-alerts/text-notification/:status',
+  '/sign-up-for-alerts/manage-alerts',
+  '/sign-up-for-alerts/email-notification',
+  '/sign-up-for-alerts/text-notification',
   '/health-effects',
   '/health-advice-levels',
   '/pollutants/nitrogen-dioxide',
@@ -53,6 +53,7 @@ const locationRequiredRoutes = [
   '/pollutants/sulphur-dioxide',
   '/email-high'
 ];
+
 
 // Storing location data in the session 
 router.use((req, res, next) => {
@@ -66,14 +67,12 @@ router.use((req, res, next) => {
 
 // Get session data to display within templates
 router.get(locationRequiredRoutes, (req, res) => {
-  const viewPath = req.path.replace(/\/:status/, ''); 
-  res.render(`${version}${viewPath}`, {
+  res.render(`${version}${req.path}`, {
     locationName: req.session.data['locationName'],
     parentArea: req.session.data['parentArea'],
     locationString: req.session.data['locationString'] || "Unknown location",
     email: req.session.data['notifyByEmail'],
-    text: req.session.data['notifyByText'],
-    status: req.params.status
+    text: req.session.data['notifyByText']
   });
 });
 
