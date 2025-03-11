@@ -3,7 +3,7 @@
 {% set anotherServiceName = "Check air quality" %}
 
 {% block pageTitle %}
-How would you like to receive your alert? – {{ serviceName }} – GOV.UK Prototype Kit
+Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +25,7 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/{{ version }}/sign-up-for-alerts/check-your-details" method="post">
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/manage-check-messages" method="post">
         
         {% set emailHtml %}
         {{ govukInput({
@@ -59,7 +59,7 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
           name: "contact",
           fieldset: {
             legend: {
-              text: "How would you like to receive your alert?",
+              text: "Enter your contact details for air quality alerts",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -90,7 +90,6 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
         }) }}
 
       </form>
-      {{ locationString }}
 
     </div>
   </div>

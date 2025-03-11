@@ -42,6 +42,7 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/confirm-location',
   '/sign-up-for-alerts/check-your-details',
   '/sign-up-for-alerts/manage-alerts',
+  '/sign-up-for-alerts/manage-alerts-success',
   '/sign-up-for-alerts/email-notification',
   '/sign-up-for-alerts/text-notification',
   '/health-effects',
@@ -82,11 +83,34 @@ router.post('/sign-up-for-alerts/setup-or-manage', (req, res) => {
 
   const redirectPath = req.session.data['createManageAlerts'] === "create-alert"
     ? `/${version}/sign-up-for-alerts/confirm-location`
-    : `/${version}/sign-up-for-alerts/manage-alerts`;
+    : `/${version}/sign-up-for-alerts/manage-alerts-contact`;
 
   res.redirect(redirectPath);
 });
 
+
+// Routing for create alerts for location
+router.post('/sign-up-for-alerts/confirm-location', (req, res) => {
+  req.session.data['changeAlertLocation'] = req.body['change-alert-location'];
+
+  const redirectPath = req.session.data['changeAlertLocation'] === "same-location"
+    ? `/${version}/sign-up-for-alerts/method-of-notification`
+    : `/${version}/sign-up-for-alerts/change-alert-location`;
+
+  res.redirect(redirectPath);
+});
+
+
+// Routing for unsubscribe alerts
+router.post('/sign-up-for-alerts/unsubscribe-alerts', (req, res) => {
+  req.session.data['unsubscribeAlerts'] = req.body['unsubscribe-all-alerts'];
+
+  const redirectPath = req.session.data['unsubscribeAlerts'] === "unsubscribe"
+    ? `/${version}/sign-up-for-alerts/unsubscribe-confirmation`
+    : `/${version}/sign-up-for-alerts/manage-alerts`;
+
+  res.redirect(redirectPath);
+});
 
 
 

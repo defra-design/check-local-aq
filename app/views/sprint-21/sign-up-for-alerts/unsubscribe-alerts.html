@@ -3,7 +3,7 @@
 {% set anotherServiceName = "Check air quality" %}
 
 {% block pageTitle %}
-Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+Do you want to unsubscribe from all air quality alerts?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,39 +26,31 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="" method="post">
-        {% set noHtml %}
-        <p>This part of the prototype does not exist yet</p>
-        {% endset %}
-        
         {{ govukRadios({
-          name: "change-alert-location",
+          name: "unsubscribe-all-alerts",
           fieldset: {
             legend: {
-              text: "Do you want to create an alert for " + locationString + "?",
+              text: "Do you want to unsubscribe from all air quality alerts?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
             }
           },
           items: [
             {
-              value: "same-location",
-              text: "Yes",
-              checked: false
-              },
-              {
-              value: "change-location",
-              text: "No, I would like to choose a different location",
-              checked: false
+              value: "unsubscribe", 
+              text: "Yes"
+            },
+            {
+              value: "manage",
+              text: "No, return to manage my air quality alerts"
             }
           ]
         }) }}
-
+      
         {{ govukButton({
           text: "Continue"
         }) }}
-
       </form>
-
 
     </div>
   </div>

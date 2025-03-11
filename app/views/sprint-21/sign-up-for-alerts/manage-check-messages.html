@@ -22,15 +22,15 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your text messages</h1>
       <p class="govuk-body">
-        We've sent a text message to <strong>{{ text }}</strong> with a 5 digit activiation code.
+        We've sent a text message to <strong>{{ text }}</strong> with a 5 digit security code.
       </p>
       {{ govukInput({
         label: {
-          text: "Enter the code to activate your air quality alert."
+          text: "Enter the code to access and manage your air quality alerts."
         },
         classes: "govuk-!-width-one-third",
-        id: "activation-code",
-        name: "activation-code"
+        id: "security-code",
+        name: "security-code"
       }) }}
 
       <p>
@@ -43,14 +43,14 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       }) }}
       {{ govukButton({
         text: "Confim code",
-        href: "/" + version + "/sign-up-for-alerts/manage-alerts-success"
+        href: "/" + version + "/sign-up-for-alerts/manage-alerts"
       }) }}
 
       <p>
       <a href="send-new-code.html">Send a new activation code</a>
     </p>
 
-    <!--{{ locationString }}-->
+    <!-- {{ locationString }} -->
 
     </div>
   </div>
