@@ -38,7 +38,7 @@ router.get('/alerts/:slug', (req, res) => {
 const locationRequiredRoutes = [
   '/sign-up-for-alerts/setup-or-manage',
   '/sign-up-for-alerts/check-your-email',
-  '/sign-up-for-alerts/mange-check-email',
+  '/sign-up-for-alerts/manage-check-email',
   '/sign-up-for-alerts/check-your-messages',
   '/sign-up-for-alerts/manage-check-messages',
   '/sign-up-for-alerts/confirm-location',
