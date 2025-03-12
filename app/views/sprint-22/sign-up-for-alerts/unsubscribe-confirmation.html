@@ -1,0 +1,31 @@
+{% extends "layouts/sprint-22.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to unsubscribe from all air quality alerts?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">You have unsubscribed from air quality alerts</h1>
+
+        <p class="govuk-body">You will no longer receive air quality alerts to 07123456789</p>
+
+    </div>
+  </div>
+
+{% endblock %}

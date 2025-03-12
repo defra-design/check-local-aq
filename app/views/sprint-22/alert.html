@@ -1,0 +1,111 @@
+{% extends "layouts/sprint-22.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Air quality alerts" %}
+{% set serviceNameSlug = "alerts" %}
+{% set displayBacklink = true %}
+{% set title = "Air quality alert " + alert.stationName + "," + alert.localAuthority %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+    {% if alert.status == 'expired' %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      There is no longer an air quality alert in this area  
+    </h1>
+    <p class="govuk-caption-s">Updated at {{ alert.timeStamp | govukTime }} on {{ alert.date | govukDate }}</p>
+    <p>The monitoring area in {{ alert.stationName }}, {{ alert.localAuthority }} is currently measuring low levels of air pollution.</p>
+    {% else %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Air quality alert {{ alert.stationName }}, {{ alert.localAuthority }}
+    </h1>
+    <p class="govuk-caption-s">Updated at {{ alert.timeStamp | govukTime }} on {{ alert.date | govukDate }}</p>
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-9" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    <p>A monitoring area in {{ alert.stationName }}, {{ alert.localAuthority }} has measured high levels of {{ alert.pollutant.title }}.</p>
+    <h2 id="health-advice" class="govuk-heading-m">Health advice for for high levels of air pollution</h2>
+    {{ govukInsetText({
+      classes: "govuk-inset-text--9",
+      html: "
+              <p>Adults and children with heart or lung problems are at greater risk of the Short term effects of air pollution. Follow your doctor's usual advice about exercising and managing your condition.</p>
+              <p>Anyone experiencing discomfort such as sore eyes, cough or sore throat should consider reducing activity, particularly outdoors.</p>
+              <p>Adults with heart problems should reduce strenuous physical exertion, particularly outdoors, especially if they experience symptoms.</p>
+              <p>People with asthma may find they need to use their reliever inhaler more often.</p>
+              <p>Older people can be more susceptible to the effects of poor air quality and should reduce physical exertion.</p>
+            " 
+  }) }}
+  <p class="govuk-!-margin-bottom-6">
+    <a href="/{{ version }}/sign-up-for-alerts/confirm-location?locationName={{ locationName }}&parentArea={{ parentArea }}" class="defra-link-icon">
+      <svg viewBox="0 0 14 20" width="14" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" fill="currentColor">
+          <path d="M9.27 15.747C9.27 16.99 8.26 18 7.016 18s-2.253-1.01-2.253-2.253H9.27zM6.015 1.86v-.859A1 1 0 0 1 7.016 0c.553 0 1.002.449 1.002 1.001v.859c2.284.465 4.006 2.487 4.006 4.907v4.357l1.628 1.661c.488.489.488 1.282 0 1.771a1.25 1.25 0 0 1-.886.366H1.252a1.25 1.25 0 0 1-.886-.366c-.488-.489-.488-1.282 0-1.771l1.643-1.661V6.767c0-2.42 1.721-4.442 4.006-4.907z"></path>
+      </svg>Get air quality alerts by text message or email
+  </a>
+  </p>
+  <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">{{ alert.pollutant.title | capitalize }} levels in {{ alert.stationName }}</h2>
+    <p>{{ alert.pollutant.method | capitalize }}</p>
+    {{ govukTable({
+      firstCellIsHeader: true,
+      classes: "govuk-!-margin-bottom-3",
+      rows: [
+        [
+          {
+            text: "Maximum level last 24 hours"
+          },
+          {
+            text: alert.pollutant.maxLevel + " μg/㎥",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Current level"
+          },
+          {
+            text: alert.pollutant.currentLevel + " μg/㎥",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Legal threshold"
+          },
+          {
+            text: alert.pollutant.threshold + " μg/㎥",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+    <p class="govuk-body-s govuk-!-margin-bottom-6">We measure pollutants by micrograms per cubic metre (μg/㎥). A microgram is 1 millionth of a gram.</p>
+    <h2 class="govuk-heading-m">
+      Sources of {{ alert.pollutant.title }}
+    </h2>
+    {% include "/" + folder + "/includes/pollutant-sources/" + alert.pollutant.slug + ".html" %}
+  </div>
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {{ xGovukRelatedNavigation({
+      sections: [{
+        items: [{
+          text: "Check air quality",
+          href: "/" + version + "/"
+        }, {
+          text: "Air pollutants we measure",
+          href: "/"
+        },
+        {
+          text: "Why we monitor air pollution",
+          href: "/" + version + "/why-we-monitor-air-pollution"
+        },
+        {
+          text: "Air quality alerts",
+          href: "/" + version + "/alerts"
+        }]
+      }]
+    }) }}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

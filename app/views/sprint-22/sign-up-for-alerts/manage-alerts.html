@@ -1,0 +1,134 @@
+{% extends "layouts/sprint-22.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{% if status == 'check-your-details' %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% else %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-------- NOTIFICATION BANNER -------->
+
+{% set notification %}
+  <h3 class="govuk-notification-banner__heading">
+    You have signed up to air quality alerts for {{ locationString }}
+  </h3>
+  <p class="govuk-body">
+    We have also sent you a confirmation
+    {% if text %}
+      text message.
+    {% else %}
+      email.
+    {% endif %}
+  </p>
+{% endset %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    {% if status == 'confirmation' %}
+      {{ govukNotificationBanner({
+        html: notification,
+        type: "success"
+      }) }}
+    {% endif %}
+
+    <!-------- H1 -------->
+
+    <h1 class="govuk-heading-l">
+        Manage air quality alerts
+
+    </h1>
+
+
+    <!--------- MANAGE ALERTS body content -------->
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Alerts are being sent to:</h2>
+        </dt>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{ email }}{{ text }}</p>
+        </dd>
+        <dd>
+
+          <div class="govuk-grid-row govuk-!-margin-bottom-3">
+            <div class="govuk-grid-column-one-quarter">
+              <p class="govuk-body"><a href="change-alert-method.html">Change</a></p>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body"><a href="unsubscribe-alerts.html">Unsubscribe</a></p>
+            </div>
+          </div>
+           
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt>
+          <h2 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2">Your alert locations</h2>
+          <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+        </dt>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">LS29 6JX, Menston</p>
+        </dd>
+        <dd>
+
+          <div class="govuk-grid-row govuk-!-margin-bottom-3">
+            <div class="govuk-grid-column-one-quarter">
+              <p class="govuk-body"><a href="#">Change</a></p>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body"><a href="#">Remove</a></p>
+            </div>
+          </div>
+           
+        </dd>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{ locationString }}</p>
+        </dd>
+        <dd>
+          <div class="govuk-grid-row govuk-!-margin-bottom-3">
+            <div class="govuk-grid-column-one-quarter">
+              <p class="govuk-body"><a href="#">Change</a></p>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body"><a href="#">Remove</a></p>
+            </div>
+          </div>
+        </dd>
+      </div>
+    </dl>
+
+<!-- MANAGE ALERTS button -->
+{% set href = "/" + version + "/sign-up-for-alerts/add-alert-location" %}
+    {{ govukButton({
+      text: "Add another location",
+      href: href,
+      classes: "govuk-button--secondary govuk-!-margin-bottom-8"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

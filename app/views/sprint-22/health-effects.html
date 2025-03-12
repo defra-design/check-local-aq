@@ -1,0 +1,64 @@
+{% extends "layouts/sprint-22.html" %}
+{% set caption = "" %}
+{% set title = "Health effects of poor air quality" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      <p>Poor air quality is the largest environmental risk to public health in the UK.</p>
+      <p>It is a particular threat to vulnerable groups, including people with heart or lung conditions and older people.</p>
+      <h2 class="govuk-heading-s">Short term air pollution exposure</h2>
+      <p>Short term exposure (over hours or days) can cause a range of health impacts, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["worsening of asthma symptoms", "worsening of chronic obstructive pulmonary disease (COPD)", "difficulty breathing", "coughing", "eye, nose, and throat irritation", "chest tightness and pain"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+      <h2 class="govuk-heading-s">
+        Long term air pollution exposure
+      </h2>
+      <p>Long term exposure to air pollution (over years) reduces life expectancy. Long term health effects of air pollution can include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for conditions in ["heart disease", "stroke", "diabetes", "cancer", "chronic obstructive pulmonary disease (COPD)", "Alzheimer's and Parkinson's disease", "dementia", "poorer lung function in children", "increase in respiratory illnesses"] %}
+          <li>{{ conditions }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      <!-- {{ xGovukRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Check air quality",
+            href: "/" + version + "/"
+          }, {
+            text: "Air pollutants we measure",
+            href: "/" + version + "/air-pollutants-we-measure"
+          },
+          {
+            text: "Why we monitor air pollution",
+            href: "/" + version + "/why-we-monitor-air-pollution"
+          },
+          {
+            text: "Air quality alerts",
+            href: "/" + version + "/alerts"
+          }
+          ]
+        }]
+      }) }} -->
+    </div>
+  </div>
+{% endblock %}

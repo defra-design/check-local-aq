@@ -1,0 +1,79 @@
+{% extends "layouts/sprint-22.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Check your details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+        Check your details
+    </h1>
+
+    <!--------- CHECK DETAILS body content -------->
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Air quality alerts will be sent to:</h2>
+        </dt>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{ email }}{{ text }}</p>
+        </dd>
+        <dd>
+          <p class="govuk-body"><a href="method-of-notification.html">Change</a></p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt>
+          <h2 class="govuk-heading-s govuk-!-margin-top-4 govuk-!-margin-bottom-2">You will receive alerts for:</h2>
+        </dt>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{ locationString }}</p>
+        </dd>
+        <dd>
+          <p class="govuk-body govuk-!-margin-bottom-6"><a href="change-alert-location.html">Change</a></p>
+        </dd>
+      </div>
+    </dl>
+
+
+<!-- CHECK DETAILS button -->
+
+    {% if email %}
+      {% set href = "/" + version + "/sign-up-for-alerts/check-your-email" %}
+    {% else %}
+      {% set href = "/" + version + "/sign-up-for-alerts/check-your-messages" %}
+    {% endif %}
+
+    {{ govukButton({
+      text: "Continue",
+      href: href,
+      classes: "govuk-button--primary govuk-!-margin-bottom-8"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
