@@ -13,8 +13,18 @@ dt, dd {
   margin-left: 0;
 }
 
-.hidden-link {
+a.hidden-link:link {
   text-decoration: none;
-  text-decoration-color: black;
+  color: black;
+}
+
+a.hidden-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a.hidden-link:hover {
+  text-decoration: none;
+  color: black;
 }
   

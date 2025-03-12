@@ -38,11 +38,14 @@ router.get('/alerts/:slug', (req, res) => {
 const locationRequiredRoutes = [
   '/sign-up-for-alerts/setup-or-manage',
   '/sign-up-for-alerts/check-your-email',
+  '/sign-up-for-alerts/mange-check-email',
   '/sign-up-for-alerts/check-your-messages',
+  '/sign-up-for-alerts/manage-check-messages',
   '/sign-up-for-alerts/confirm-location',
   '/sign-up-for-alerts/check-your-details',
   '/sign-up-for-alerts/manage-alerts',
   '/sign-up-for-alerts/manage-alerts-success',
+  '/sign-up-for-alerts/manage-alerts-added',
   '/sign-up-for-alerts/email-notification',
   '/sign-up-for-alerts/text-notification',
   '/health-effects',
@@ -77,13 +80,25 @@ router.get(locationRequiredRoutes, (req, res) => {
   });
 });
 
-// Routing for set or manage alerts
+// Routing for SETUP or manage alerts
 router.post('/sign-up-for-alerts/setup-or-manage', (req, res) => {
   req.session.data['createManageAlerts'] = req.body['create-manage-alerts'];
 
   const redirectPath = req.session.data['createManageAlerts'] === "create-alert"
     ? `/${version}/sign-up-for-alerts/confirm-location`
     : `/${version}/sign-up-for-alerts/manage-alerts-contact`;
+
+  res.redirect(redirectPath);
+});
+
+
+// Routing for ACCESS manage alerts
+router.post('/sign-up-for-alerts/manage-alerts-contact', (req, res) => {
+  req.session.data['accessManageAlerts'] = req.body['contact-manage-alerts'];
+
+  const redirectPath = req.session.data['accessManageAlerts'] === "check-text"
+    ? `/${version}/sign-up-for-alerts/manage-check-messages`
+    : `/${version}/sign-up-for-alerts/manage-check-email`;
 
   res.redirect(redirectPath);
 });

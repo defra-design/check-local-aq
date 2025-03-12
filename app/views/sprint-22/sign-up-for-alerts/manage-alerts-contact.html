@@ -25,7 +25,7 @@ Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototyp
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/{{ version }}/sign-up-for-alerts/manage-check-messages" method="post">
+      <form class="form" action="" method="post">
         
         {% set emailHtml %}
         {{ govukInput({
@@ -56,7 +56,7 @@ Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototyp
         {% endset %}
         
         {{ govukRadios({
-          name: "contact",
+          name: "contact-manage-alerts",
           fieldset: {
             legend: {
               text: "Enter your contact details for air quality alerts",
@@ -69,14 +69,14 @@ Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototyp
           },
           items: [
             {
-              value: "text",
+              value: "check-text",
               text: "Text to a mobile phone",
               conditional: {
                 html: textHtml
               }
             },
             {
-              value: "email",
+              value: "check-email",
               text: "Email",
               conditional: {
                 html: emailHtml

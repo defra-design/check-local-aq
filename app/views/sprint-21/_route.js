@@ -89,13 +89,25 @@ router.post('/sign-up-for-alerts/setup-or-manage', (req, res) => {
 });
 
 
-// Routing for create alerts for location
+// Routing for create alerts for different location
 router.post('/sign-up-for-alerts/confirm-location', (req, res) => {
   req.session.data['changeAlertLocation'] = req.body['change-alert-location'];
 
   const redirectPath = req.session.data['changeAlertLocation'] === "same-location"
     ? `/${version}/sign-up-for-alerts/method-of-notification`
     : `/${version}/sign-up-for-alerts/change-alert-location`;
+
+  res.redirect(redirectPath);
+});
+
+
+// Routing for access manage alerts
+router.post('/sign-up-for-alerts/manage-alerts-contact', (req, res) => {
+  req.session.data['accessManageAlerts'] = req.body['contact-manage-alerts'];
+
+  const redirectPath = req.session.data['createManageAlerts'] === "text"
+    ? `/${version}/sign-up-for-alerts/manage-check-messages`
+    : `/${version}/sign-up-for-alerts/manage-check-email`;
 
   res.redirect(redirectPath);
 });
