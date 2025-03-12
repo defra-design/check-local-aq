@@ -3,58 +3,58 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Teddington Bushy Park",
-    "site_id": "UKA00572",
-    "distance": 4.2,
+    "site_name": "London Haringey Priory Park South",
+    "site_id": "UKA00568",
+    "distance": 2.8,
     "site_type": "urban-background",
     "pollutants": [
       {
-        "type": "particulate-matter2",
-        "measurement": 30,
-        "trend": "Falling",
+        "type": "nitrogen-dioxide",
+        "measurement": 	6,
+        "trend": "Rising",
         "band": "Low",
         "aqi": 3
       },          
-    {
-      "type": "particulate-matter10",
-      "measurement": 	42,
-      "trend": "Rising",
-      "band": "Low",
-      "aqi": 3
-    }
+      {
+        "type": "ozone",
+        "measurement": 	75,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      }
     
     ]
 },
 {
-    "site_name": "London Harlington",
-    "site_id": "UKA00472",
-    "distance": 7.3,
-    "site_type": "urban-industrial",
+    "site_name": "Haringey Roadside",
+    "site_id": "UKA00260",
+    "distance": 3.1,
+    "site_type": "urban-traffic",
     "pollutants": [        
-      {
-        "type": "particulate-matter2",
-        "measurement": 34,
-        "trend": "Falling",
-        "band": "Low",
-        "aqi": 3
-      },
-      {
-        "type": "ozone",
-        "measurement": 	37,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      }, 
-      {
-      "type": "particulate-matter10",
-      "measurement": 46,
-      "trend": "Falling",
-      "band": "Low",
-      "aqi": 3
-    },
+      //{
+      //  "type": "particulate-matter2",
+      //  "measurement": 34,
+      //  "trend": "Falling",
+      //  "band": "Low",
+      //  "aqi": 3
+      //},
+      //{
+      //  "type": "ozone",
+      //  "measurement": 	37,
+      //  "trend": "Rising",
+      //  "band": "Low",
+      //  "aqi": 3
+      //}, 
+     // {
+     // "type": "particulate-matter10",
+     // "measurement": 46,
+     // "trend": "Falling",
+     // "band": "Low",
+     // "aqi": 3
+    //},
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	40,
+      "measurement": 	22,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
