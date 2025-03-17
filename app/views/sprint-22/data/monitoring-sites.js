@@ -1,12 +1,12 @@
- Content for monitoring sites
+// Content for monitoring sites
 
 const monitoringSites = [
   
   {
-    "site_name": "Saltash Callington Road",
-    "site_id": "UKA00569",
-    "distance": 41.8,
-    "site_type": "urban-traffic",
+    "site_name": "Manchester Piccadilly",
+    "site_id": "UKA00248",
+    "distance": 2.8,
+    "site_type": "urban-background",
     "pollutants": [
       {
         "type": "particulate-matter2",
@@ -17,18 +17,33 @@ const monitoringSites = [
       },          
       {
         "type": "particulate-matter10",
-        "measurement": 14,
+        "measurement": 12,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
+      },
+    {
+        "type": "ozone",
+        "measurement": 	66,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      }, 
+    
+    {
+      "type": "nitrogen-dioxide",
+      "measurement": 	17,
+      "trend": "Rising",
+      "band": "Low",
+      "aqi": 3
       }
     
     ]
 },
 {
-    "site_name": "Plymouth Centre",
-    "site_id": "UKA00360",
-    "distance": 44.4,
+    "site_name": "Manchester Sharston",
+    "site_id": "UKA00617",
+    "distance": 6.0,
     "site_type": "urban-background",
     "pollutants": [        
       {
@@ -47,7 +62,7 @@ const monitoringSites = [
       },
       {
         "type": "ozone",
-        "measurement": 	59,
+        "measurement": 	74,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
@@ -55,7 +70,7 @@ const monitoringSites = [
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	12,
+      "measurement": 	5,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
@@ -64,7 +79,7 @@ const monitoringSites = [
 }
 ]
 
- Pollutant reference data
+// Pollutant reference data
 
 const pollutantTypes = {
     "nitrogen-dioxide": {
@@ -99,7 +114,7 @@ const pollutantTypes = {
     }
   };
 
- Used to populate toggletips on monitoring sites
+// Used to populate toggletips on monitoring sites
 
 const siteTypeDescriptions = {
     "urban-traffic": "This monitoring area is located in a city or a town close to roads, motorways or highways.",
