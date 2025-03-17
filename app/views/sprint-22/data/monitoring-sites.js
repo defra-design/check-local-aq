@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Manchester Piccadilly",
-    "site_id": "UKA00248",
-    "distance": 2.8,
-    "site_type": "urban-background",
+    "site_name": "Haringey Roadside",
+    "site_id": "UKA00260",
+    "distance": 2.1,
+    "site_type": "urban-traffic",
     "pollutants": [
       {
         "type": "particulate-matter2",
@@ -41,9 +41,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Manchester Sharston",
+    "site_name": "London Haringey Priory Park South",
     "site_id": "UKA00617",
-    "distance": 6.0,
+    "distance": 3.1,
     "site_type": "urban-background",
     "pollutants": [        
       {
