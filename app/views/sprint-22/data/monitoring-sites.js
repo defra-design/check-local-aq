@@ -1,24 +1,24 @@
-// Content for monitoring sites
+ Content for monitoring sites
 
 const monitoringSites = [
   
   {
-    "site_name": "London Haringey Priory Park South",
-    "site_id": "UKA00568",
-    "distance": 2.8,
-    "site_type": "urban-background",
+    "site_name": "Saltash Callington Road",
+    "site_id": "UKA00569",
+    "distance": 41.8,
+    "site_type": "urban-traffic",
     "pollutants": [
       {
-        "type": "nitrogen-dioxide",
-        "measurement": 	6,
-        "trend": "Rising",
+        "type": "particulate-matter2",
+        "measurement": 7,
+        "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },          
       {
-        "type": "ozone",
-        "measurement": 	75,
-        "trend": "Rising",
+        "type": "particulate-matter10",
+        "measurement": 14,
+        "trend": "Falling",
         "band": "Low",
         "aqi": 3
       }
@@ -26,35 +26,36 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Haringey Roadside",
-    "site_id": "UKA00260",
-    "distance": 3.1,
-    "site_type": "urban-traffic",
+    "site_name": "Plymouth Centre",
+    "site_id": "UKA00360",
+    "distance": 44.4,
+    "site_type": "urban-background",
     "pollutants": [        
-      //{
-      //  "type": "particulate-matter2",
-      //  "measurement": 34,
-      //  "trend": "Falling",
-      //  "band": "Low",
-      //  "aqi": 3
-      //},
-      //{
-      //  "type": "ozone",
-      //  "measurement": 	37,
-      //  "trend": "Rising",
-      //  "band": "Low",
-      //  "aqi": 3
-      //}, 
-     // {
-     // "type": "particulate-matter10",
-     // "measurement": 46,
-     // "trend": "Falling",
-     // "band": "Low",
-     // "aqi": 3
-    //},
+      {
+      "type": "particulate-matter2",
+      "measurement": 6,
+      "trend": "Falling",
+      "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "particulate-matter10",
+        "measurement": 8,
+        "trend": "Falling",
+        "band": "Low",
+        "aqi": 3
+      },
+      {
+        "type": "ozone",
+        "measurement": 	59,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      }, 
+      
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	22,
+      "measurement": 	12,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
@@ -63,7 +64,7 @@ const monitoringSites = [
 }
 ]
 
-// Pollutant reference data
+ Pollutant reference data
 
 const pollutantTypes = {
     "nitrogen-dioxide": {
@@ -98,7 +99,7 @@ const pollutantTypes = {
     }
   };
 
-// Used to populate toggletips on monitoring sites
+ Used to populate toggletips on monitoring sites
 
 const siteTypeDescriptions = {
     "urban-traffic": "This monitoring area is located in a city or a town close to roads, motorways or highways.",
