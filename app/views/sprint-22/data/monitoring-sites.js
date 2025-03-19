@@ -5,7 +5,7 @@ const monitoringSites = [
   {
     "site_name": "Haringey Roadside",
     "site_id": "UKA00260",
-    "distance": 2.1,
+    "distance": 0.5,
     "site_type": "urban-traffic",
     "pollutants": [
       {
@@ -43,7 +43,7 @@ const monitoringSites = [
 {
     "site_name": "London Haringey Priory Park South",
     "site_id": "UKA00617",
-    "distance": 3.1,
+    "distance": 2.4,
     "site_type": "urban-background",
     "pollutants": [        
       {
