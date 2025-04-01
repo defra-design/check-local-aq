@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Particulate matter (PM10)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <p>Particulate matter (PM) are small particles of solids or liquids that are in the air. The particles are only 10 micrometres in diameter. For context, the width of a human hair is 50 to 70 micrometres.
+      </p>
+      <p>Due to the small size of these particles, some may enter the bloodstream and travel around the body. For example, entering the heart, lungs and other organs.</p>
+      <h2 class="govuk-heading-s">Sources of PM10</h2>
+      <p>Particulate matter can come from nature, human activity, and industrial processes. The main sources of particulate matter are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for sources in ["dust from construction sites", "dust from landfills", "dust from agriculture", "wildfires", "pollen", "power plants", "vehicles"] %}
+        <li>{{ sources }}</li>
+        {% endfor %}
+      </ul>
+      <p>In 2022, 16 per cent of total PM10 emissions in the UK were from road transport. Road transport emissions are made up of both exhaust emissions and non-exhaust emissions (brake, tyre and road wear).</p>
+    </div>
+  </div>
+{% endblock %}

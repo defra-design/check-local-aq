@@ -1,0 +1,8 @@
+//Creates coloured bands for the govuk-inset-text
+
+@for $i from 0 through 10 {
+  .govuk-inset-text--#{$i} {
+    border-left: 10px solid nth($daqi-colour, $i + 1);
+    margin-top: 0;
+  }
+}

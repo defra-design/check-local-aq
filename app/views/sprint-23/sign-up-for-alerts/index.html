@@ -1,0 +1,61 @@
+{% extends "layouts/sprint-23.html" %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+{% block pageTitle %}
+{{ anotherServiceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        {{ anotherServiceName }}
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>get email or text alerts about air pollution in a local area</li>
+        <li>be notfiied when a pollutant goes above the legal threshold</li>
+        <li>be notified when pollution levels are forecast to be moderate or above</li>
+      </ul>
+      {{ govukButton({
+        text: "Start now",
+        classes: "govuk-!-margin-bottom-8",
+        href: "/" + version + "/sign-up-for-alerts/where",
+        isStartButton: true
+      }) }}
+      <p><a href="">Unsubscribe or make changes to your air quality alerts</a></p>
+    </div>
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-9">
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          items: [
+          {
+            text: "Check air quality",
+            href: "/" + version + "/"
+          },
+          {
+            text: "Health effects of air pollution",
+            href: "/" + version + "/health-effects"
+          }, {
+            text: "Air pollutants we measure",
+            href: "/" + version + "/air-pollutants-we-measure"
+          },
+          {
+            text: "Why we monitor air pollution",
+            href: "/" + version + "/why-we-monitor-air-pollution"
+          }
+          ]
+        }]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
