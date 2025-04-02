@@ -3,36 +3,15 @@
 const monitoringSites = [
   
   {
-    "site_name": "Haringey Roadside",
-    "site_id": "UKA00260",
-    "distance": 0.5,
-    "site_type": "urban-traffic",
+    "site_name": "Horley",
+    "site_id": "UKA00511",
+    "distance": 10.5,
+    "site_type": "surban-industrial",
     "pollutants": [
-      {
-        "type": "particulate-matter2",
-        "measurement": 7,
-        "trend": "Falling",
-        "band": "Low",
-        "aqi": 3
-      },          
-      {
-        "type": "particulate-matter10",
-        "measurement": 12,
-        "trend": "Falling",
-        "band": "Low",
-        "aqi": 3
-      },
-    {
-        "type": "ozone",
-        "measurement": 	66,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      }, 
-    
+
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	17,
+      "measurement": 	12,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
@@ -41,21 +20,21 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "London Haringey Priory Park South",
-    "site_id": "UKA00617",
-    "distance": 2.4,
+    "site_name": "London Honor Oak Park ",
+    "site_id": "UKA00656",
+    "distance": 10.5,
     "site_type": "urban-background",
     "pollutants": [        
       {
       "type": "particulate-matter2",
-      "measurement": 6,
+      "measurement": 12,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
       },
       {
         "type": "particulate-matter10",
-        "measurement": 8,
+        "measurement": 18,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
