@@ -38,6 +38,7 @@ router.get('/alerts/:slug', (req, res) => {
 const locationRequiredRoutes = [
   '/sign-up-for-alerts/setup-or-manage',
   '/sign-up-for-alerts/change-location-check',
+  '/sign-up-for-alerts/change-alert-method',
   '/sign-up-for-alerts/check-your-email',
   '/sign-up-for-alerts/check-your-messages',
   '/sign-up-for-alerts/check-your-details',
@@ -99,6 +100,18 @@ router.post('/sign-up-for-alerts/setup-or-manage', (req, res) => {
 // Routing for ACCESS manage alerts
 router.post('/sign-up-for-alerts/manage-alerts-contact', (req, res) => {
   req.session.data['accessManageAlerts'] = req.body['contact-manage-alerts'];
+
+  const redirectPath = req.session.data['accessManageAlerts'] === "check-text"
+    ? `/${version}/sign-up-for-alerts/manage-check-messages`
+    : `/${version}/sign-up-for-alerts/manage-check-email`;
+
+  res.redirect(redirectPath);
+});
+
+
+// Routing for change contact method
+router.post('/sign-up-for-alerts/change-alert-method', (req, res) => {
+  req.session.data['changeAlertMethod'] = req.body['alert-method-change'];
 
   const redirectPath = req.session.data['accessManageAlerts'] === "check-text"
     ? `/${version}/sign-up-for-alerts/manage-check-messages`

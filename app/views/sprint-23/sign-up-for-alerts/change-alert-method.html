@@ -25,7 +25,7 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/{{ version }}/sign-up-for-alerts/change-method-messages" method="post">
+      <form class="form" action="" method="post">
         
         {% set emailHtml %}
         {{ govukInput({
@@ -56,7 +56,7 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
         {% endset %}
         
         {{ govukRadios({
-          name: "contact",
+          name: "alert-method-change",
           fieldset: {
             legend: {
               text: "How would you like to receive your alert?",
@@ -69,14 +69,14 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
           },
           items: [
             {
-              value: "text",
+              value: "check-text",
               text: "Text to a mobile phone",
               conditional: {
                 html: textHtml
               }
             },
             {
-              value: "email",
+              value: "check-email",
               text: "Email",
               conditional: {
                 html: emailHtml
@@ -90,7 +90,6 @@ How would you like to receive your alert? – {{ serviceName }} – GOV.UK Proto
         }) }}
 
       </form>
-      {{ locationString }}
 
     </div>
   </div>
