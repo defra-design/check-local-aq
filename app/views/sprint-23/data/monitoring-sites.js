@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Horley",
+    "site_name": "Glasgow Great Western Road",
     "site_id": "UKA00511",
     "distance": 10.5,
-    "site_type": "surban-industrial",
+    "site_type": "urban-traffic",
     "pollutants": [
 
     {
@@ -20,7 +20,7 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "London Honor Oak Park ",
+    "site_name": "Glasgow High Street",
     "site_id": "UKA00656",
     "distance": 10.5,
     "site_type": "urban-background",
