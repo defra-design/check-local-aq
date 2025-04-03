@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Glasgow Great Western Road",
-    "site_id": "UKA00511",
-    "distance": 10.5,
-    "site_type": "urban-traffic",
+    "site_name": "Eastbourne",
+    "site_id": "UKA00546",
+    "distance": 16.8,
+    "site_type": "urban-background",
     "pollutants": [
 
     {
@@ -20,10 +20,10 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Glasgow High Street",
-    "site_id": "UKA00656",
-    "distance": 10.5,
-    "site_type": "urban-background",
+    "site_name": "Lullington Heath ",
+    "site_id": "UKA00152",
+    "distance": 17.3,
+    "site_type": "Rural-background",
     "pollutants": [        
       {
       "type": "particulate-matter2",
