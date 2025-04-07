@@ -3,22 +3,22 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Teddington Bushy Park",
+    "site_name": "Saltash Callington Road",
     "site_id": "UKA00546",
-    "distance": 6.4,
-    "site_type": "urban-background",
+    "distance": 21.4,
+    "site_type": "urban-traffic",
     "pollutants": [
 
       {
         "type": "particulate-matter2",
-        "measurement": 6,
+        "measurement": 11,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 13,
+          "measurement": 25,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
@@ -27,28 +27,28 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "London Westminster",
+    "site_name": "Plymouth Centre",
     "site_id": "UKA00152",
-    "distance": 11.4,
-    "site_type": "Rural-background",
+    "distance": 25.7,
+    "site_type": "urban-background",
     "pollutants": [        
       {
       "type": "particulate-matter2",
-      "measurement": 12,
+      "measurement": 10,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
       },
       {
         "type": "particulate-matter10",
-        "measurement": 3,
+        "measurement": 17,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
       {
         "type": "ozone",
-        "measurement": 	74,
+        "measurement": 	62,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
@@ -56,7 +56,7 @@ const monitoringSites = [
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	18,
+      "measurement": 	30,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
