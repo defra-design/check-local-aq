@@ -3,26 +3,33 @@
 const monitoringSites = [
   
   {
-    "site_name": "Eastbourne",
+    "site_name": "London Teddington Bushy Park",
     "site_id": "UKA00546",
-    "distance": 16.8,
+    "distance": 6.4,
     "site_type": "urban-background",
     "pollutants": [
 
-    {
-      "type": "nitrogen-dioxide",
-      "measurement": 	12,
-      "trend": "Rising",
-      "band": "Low",
-      "aqi": 3
-      }
+      {
+        "type": "particulate-matter2",
+        "measurement": 6,
+        "trend": "Falling",
+        "band": "Low",
+          "aqi": 3
+        },
+        {
+          "type": "particulate-matter10",
+          "measurement": 13,
+          "trend": "Falling",
+          "band": "Low",
+          "aqi": 3
+        }
     
     ]
 },
 {
-    "site_name": "Lullington Heath ",
+    "site_name": "London Westminster",
     "site_id": "UKA00152",
-    "distance": 17.3,
+    "distance": 11.4,
     "site_type": "Rural-background",
     "pollutants": [        
       {
@@ -34,7 +41,7 @@ const monitoringSites = [
       },
       {
         "type": "particulate-matter10",
-        "measurement": 18,
+        "measurement": 3,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
@@ -49,7 +56,7 @@ const monitoringSites = [
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	5,
+      "measurement": 	18,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
