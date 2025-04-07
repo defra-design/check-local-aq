@@ -3,22 +3,22 @@
 const monitoringSites = [
   
   {
-    "site_name": "Saltash Callington Road",
+    "site_name": "London Honor Oak Park",
     "site_id": "UKA00546",
-    "distance": 21.4,
-    "site_type": "urban-traffic",
+    "distance": 8.3,
+    "site_type": "urban-background",
     "pollutants": [
 
       {
         "type": "particulate-matter2",
-        "measurement": 11,
+        "measurement": 4,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 25,
+          "measurement": 9,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
@@ -27,10 +27,10 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Plymouth Centre",
+    "site_name": "Southwark A2 Old Kent Road",
     "site_id": "UKA00152",
-    "distance": 25.7,
-    "site_type": "urban-background",
+    "distance": 10.0,
+    "site_type": "urban-traffic",
     "pollutants": [        
       {
       "type": "particulate-matter2",
@@ -56,7 +56,7 @@ const monitoringSites = [
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	30,
+      "measurement": 	21,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
