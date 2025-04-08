@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Honor Oak Park",
-    "site_id": "UKA00546",
-    "distance": 8.3,
-    "site_type": "urban-background",
+    "site_name": "Shaw Crompton Way",
+    "site_id": "UKA00579",
+    "distance": 4.0,
+    "site_type": "urban-traffic",
     "pollutants": [
 
-      {
+      /* {
         "type": "particulate-matter2",
         "measurement": 4,
         "trend": "Falling",
@@ -22,41 +22,48 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
+        }, */
+        {
+          "type": "nitrogen-dioxide",
+          "measurement": 	12,
+          "trend": "Rising",
+          "band": "Low",
+          "aqi": 3
         }
     
     ]
 },
 {
-    "site_name": "Southwark A2 Old Kent Road",
+    "site_name": "Bury Whitefield Roadside",
     "site_id": "UKA00152",
-    "distance": 10.0,
+    "distance": 8.5,
     "site_type": "urban-traffic",
     "pollutants": [        
-      {
+     /*  {
       "type": "particulate-matter2",
       "measurement": 10,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      },
+      }, */
       {
         "type": "particulate-matter10",
-        "measurement": 17,
+        "measurement": 18,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
-      {
+      /* {
         "type": "ozone",
         "measurement": 	62,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }, 
+      },  */
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	21,
+      "measurement": 	16,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
