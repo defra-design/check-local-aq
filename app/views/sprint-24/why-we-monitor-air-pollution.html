@@ -1,0 +1,50 @@
+{% extends "layouts/sprint-24.html" %}
+{% set caption = "" %}
+{% set title = "Why we monitor air pollution" %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+      <p>Air pollution is present in all areas of the UK and can harm our short and Long term health.</p>
+      <p>There are many sources of air pollution, including power stations, transport, household heating, agriculture, marine shipping and industrial processes.</p>
+      <p>We monitor the air quality in our automatic urban and rural network (AURN) to:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check if statutory air quality standards and targets are met</li>
+        <li>inform the public about air quality</li>
+        <li>provide information for local air quality review and assessments within the UK Air Quality Strategy</li>
+        <li>identify Long term trends in air pollution concentrations</li>
+        <li>assess the effectiveness of policies to control pollution</li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      {{ xGovukRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Check air quality",
+            href: "/" + version + "/"
+          }, {
+            text: "Health effects of air pollution",
+            href: "/" + version + "/health-effects"
+          },
+          {
+            text: "Air pollutants we measure",
+            href: "/"
+          },
+          {
+            text: "Air quality alerts",
+            href: "/" + version + "/alerts"
+          }]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}

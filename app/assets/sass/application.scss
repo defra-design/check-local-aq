@@ -323,7 +323,7 @@
 
 .sprint-23 {
   // Tools
-  @import "sprint-22/tools/mixins";
+  @import "sprint-23/tools/mixins";
 
   // Elements
   @import "sprint-23/elements/colour";
@@ -348,6 +348,35 @@
   @import "sprint-23/components/notfication-banner.scss";
   @import "sprint-23/components/masthead";
   @import "sprint-23/components/aq-browse-section";
+}
+
+.sprint-24 {
+  // Tools
+  @import "sprint-24/tools/mixins";
+
+  // Elements
+  @import "sprint-24/elements/colour";
+  @import "sprint-24/elements/layout";
+  @import "sprint-24/elements/typography";
+  @import "sprint-24/elements/tables";
+  @import "sprint-24/elements/icons";
+  @import "sprint-24/elements/aq-buttons";
+
+  // Components
+  @import "sprint-24/components/daqitag";
+  @import "sprint-24/components/daqi";
+  @import "sprint-24/components/toggletips";
+  @import "sprint-24/components/aq-levels-table";
+  @import "sprint-24/components/aq-tabs";
+  @import "sprint-24/components/cards";
+  @import "sprint-24/components/inset-text-colour";
+  @import "sprint-24/components/aq-definition-list";
+  @import "sprint-24/components/aq-levels-list";
+  @import "sprint-24/components/aq-forecast";
+  @import "sprint-24/components/gem-cards.scss";
+  @import "sprint-24/components/notfication-banner.scss";
+  @import "sprint-24/components/masthead";
+  @import "sprint-24/components/aq-browse-section";
 }
 
 .proto-dev {

@@ -1,0 +1,57 @@
+{% extends "layouts/sprint-24.html" %}
+{% set title = "Air pollution" %}
+
+
+{% block main %}
+{{ xGovukMasthead({
+  classes: "x-govuk-masthead--large",
+  breadcrumbs: {
+      items: [
+          {
+              text: "Home",
+              href: "#"
+          },
+          {
+              text: "Environment and countryside",
+              href: "#"
+          }
+      ]
+  },
+  title: {
+      text: title
+  },
+  description: {
+      text: "Check air quality, understand the health effects of air pollution and what to do when air quality is poor"
+  }
+}) }}
+
+
+  <div class="govuk-width-container" data-module="edge">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row>
+        <div class="govuk-grid-column-two-thirds">
+          <div class="aq-browse__section">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-7">
+              Popular services
+            </h2>
+            <ul class="govuk-list aq-browse__list">
+              <li class="aq-browse__list-item"><a class="gov-link" href="/{{ version }}/">Check air quality</a></li>
+              <li class="aq-browse__list-item"><a class="gov-link" href="/{{ version }}/alerts">Air quality alerts</a></li>
+              <li class="aq-browse__list-item"><a class="gov-link" href="#" data-message="This part of the prototype does not exist yet">Sign up for air quality alerts</a></li>
+            </ul>
+          </div>
+          <div class="aq-browse__section">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-7">
+             Air pollution, sources and effects
+            </h2>
+            <ul class="govuk-list aq-browse__list">
+              <li class="aq-browse__list-item"><a class="gov-link" href="#" data-message="This part of the prototype is out of scope for this research session">Why we monitor air pollution</a></li>
+              <li class="aq-browse__list-item"><a class="gov-link" href="#" data-message="This part of the prototype is out of scope for this research session">Air pollutants we measure</a></li>
+              <li class="aq-browse__list-item"><a class="gov-link" href="#" data-message="This part of the prototype is out of scope for this research session">Health effects of poor air quality</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

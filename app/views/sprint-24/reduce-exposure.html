@@ -1,0 +1,99 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/sprint-24.html" %}
+{% set caption = "" %}
+{% set title = "Actions you can take to reduce your exposure to air pollution" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+
+      <p>There is no safe level of air pollution. But there are actions you can take to reduce your exposure.</p>
+      <p>You should try to reduce your exposure to air pollution where you can, even when levels are low.</p>
+      <p>Long term exposure to air pollution (over years) can lead to many different <a href="health-effects.html">health conditions</a> and reduce life expectancy.</p>
+
+      <h2 class="govuk-heading-s">All areas</h2>
+
+      <p>There are actions you can take regardless of where you live or work. Consider the following actions in any area:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["take roads with less traffic", "avoid roads and town centres at the busiest times", "commute, walk or exercise in parks or other green spaces, if pollen does not trigger your condition ", "if you exercise indoors, make sure the room is well-ventilated"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+
+      <h2 class="govuk-heading-s">Urban areas</h2>
+
+      <p>Urban areas have a population of more than 10,000 residents. For example, a large town or a city.</p>
+      <p>As well as the actions listed under all areas, there are specific actions you can take if you live or work in an urban area. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["xx", "xx"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+
+      <h2 class="govuk-heading-s">Rural areas</h2>
+
+      <p>Rural areas have a population of less than 10,000 residents.  For example, a hamlet, village or small town.</p>
+      <p>There are specific actions you can take if you live or work in a rural area. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["xx", "xx"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+      <p>Some pollutants are higher in the countryside - for example, ozone. </p>
+
+
+      <h2 class="govuk-heading-s">Indoor air pollution</h2>
+
+      <p>The air quality indoors is not always better than outdoors.</p>
+      <p>There are specific actions you can take to improve your indoor air quality. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["xx", "xx"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+      
+
+    </div>
+
+<!-- RELATED CONTENT -->
+<div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+              text: "Health advice for air pollution levels",
+              href: "/" + version + "/health-advice-levels?locationName=" + locationName
+          },
+          {
+            text: "Access air quality alerts",
+            href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+  </div>
+{% endblock %}

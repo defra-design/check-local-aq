@@ -1,0 +1,87 @@
+{% extends "layouts/sprint-24.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+{% set title = "Air quality in " + locationString %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set highestAQDetails = {'readableBand': 'high'} %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {{ title }}      
+  </div>
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {{ xGovukRelatedNavigation({
+      sections: [{
+        items: [{
+          text: "Health effects of air pollution",
+          href: "/" + version + "/health-effects"
+        }, {
+          text: "Health advice for air pollution levels",
+          href: "/" + version + "/health-advice-levels"
+        }
+        ]
+      }]
+    }) }}
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    {% include "/" + folder + "/includes/daqi.html" %}
+    {% include "/" + folder + "/includes/forecast.html" %}
+    {% include "/" + folder + "/includes/uk-forecast-high.html" %}
+    <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/health-advice-high.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/pollutants.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/monitoring-sites.html" %}
+  </div>
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    <!-- {{ xGovukRelatedNavigation({
+      sections: [{
+        items: [{
+          text: "Health effects of air pollution",
+          href: "/" + version + "/health-effects"
+        }, {
+          text: "Air pollutants we measure",
+          href: "/" + version + "/air-pollutants-we-measure"
+        },
+        {
+          text: "Why we monitor air pollution",
+          href: "/" + version + "/why-we-monitor-air-pollution"
+        },
+        {
+          text: "Air quality alerts",
+          href: "/" + version + "/alerts"
+        }
+        ]
+      }]
+    }) }} -->
+  </div>
+</div>
+{% endblock %}
+
+

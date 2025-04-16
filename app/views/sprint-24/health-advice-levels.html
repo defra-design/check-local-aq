@@ -1,0 +1,126 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/sprint-24.html" %}
+{% set caption = "" %}
+{% set title = "Health advice for each level of air pollution" %}
+
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+        
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+      <!-- LOW LEVEL -->
+      <h2 class="govuk-heading-m">Low</h2>
+      <p>Continue your usual outdoor activities.</p>
+      <p>Some people might experience symptoms due to air pollution, even when levels are low.</p>
+      <p>Symptoms could include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["coughing", "wheezing", "shortness of breath"] %}
+        <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+      <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
+      <p>Adults and children with lung or heart conditions are at greater risk of experiencing symptoms of air pollution (even on days air pollution  levels are low).</p>
+      <p>Follow your doctor's usual advice about physically demanding activities and managing your condition.</p>
+      <p>Consider other triggers for your symptoms - for example, pollen or indoor air pollution.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <!-- MODERATE LEVEL -->
+      <h2 class="govuk-heading-m">Moderate</h2>
+      <p>Continue your usual outdoor activities.</p>
+      <p>Some people might experience symptoms due to air pollution, even when levels are moderate</p>
+      <p>Contact your healthcare professional if symptoms continue.</p>
+
+      <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions</h3>
+      <p>Adults and children with lung or heart conditions may find their symptoms get worse due to air pollution.</p>
+      <p>Symptoms could appear within hours or several days later. You should continue to monitor these symptoms for at least a week.</p>
+      <p>Try to adapt physically demanding activities outdoors if you experience symptoms.</p>
+      <p>Consider other triggers for your symptoms - for example, pollen or indoor air pollution.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <!-- HIGH LEVEL -->
+      <h2 class="govuk-heading-m">High</h2>
+      <p>Try and reduce your exposure to air pollution, especially if you experience symptoms of air pollution.</p>
+      <p>Consider other triggers for your symptoms - for example, pollen or indoor air pollution.</p>
+      <p>Contact your healthcare professional if symptoms continue.</p>
+
+      <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions and older people</h3>
+      <p>This advice is for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>adults with lung or heart conditions</li>
+        <li>children with lung or heart conditions</li>
+        <li>older people</li>
+      </ul>
+
+      <p>You should adapt physically demanding activities outdoors, especially if your symptoms get worse.</p>
+      <p>Symptoms could appear within hours or several days later. You should continue to monitor these symptoms for at least a week.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <!-- VERY HIGH LEVEL -->
+      <h2 class="govuk-heading-m">Very high</h2>
+      <p>Try to adapt physically demanding activities outdoors, especially if you experience symptoms of air pollution.</p>
+      <p>Contact your healthcare professional if symptoms continue.</p>
+      <p>Consider other triggers for your symptoms - for example, pollen or indoor air pollution.</p>
+
+      <h3 class="govuk-heading-s">Health advice for people with lung or heart conditions and older people</h3>
+      <p>This advice is for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>adults with lung or heart conditions</li>
+        <li>children with lung or heart conditions</li>
+        <li>older people</li>
+      </ul>
+
+      <p>You should adapt physically demanding activities outdoors.</p>
+
+      <p>Symptoms could appear within hours or several days later. You should continue to monitor these symptoms for at least a week.</p>
+
+    </div>
+
+    <!-- RELATED CONTENT -->
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+      {{ xGovukRelatedNavigation({
+        sections: [{
+            items: [{
+                text: "Health effects of air pollution",
+                href: "/" + version + "/health-effects?locationName=" + locationName
+            },
+            {
+              text: "Actions to reduce your exposure to air pollution",
+              href: "/" + version + "/reduce-exposure?locationName=" + locationName
+            },
+            {
+              text: "Access air quality alerts",
+              href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+            }
+            ]
+        }]
+    }) }}
+    
+    </div>
+    <!-- END RELATED CONTENT -->
+
+
+  </div>
+{% endblock %}
+
+
+

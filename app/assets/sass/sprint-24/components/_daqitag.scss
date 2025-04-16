@@ -1,0 +1,88 @@
+
+//DAQI Tag
+
+.daqi-tag {
+
+  display: inline-block;
+
+  // When a user customises their colours often the background is removed,
+  // by adding a outline we ensure that the tag component still keeps it's meaning.
+  // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+
+  color: govuk-colour("white");
+  background-color: govuk-colour("blue");
+  letter-spacing: 1px;
+
+  text-decoration: none;
+
+
+  @include govuk-font($size: 16, $weight: regular, $line-height: 1);
+  padding-top: 4px;
+  padding-right: 6px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  }
+
+
+.daqi-tag--round {
+  border-radius: 50%; 
+}
+
+mark {
+  background-color: transparent;
+  font-weight: bold;
+  color: inherit;
+}
+
+
+.daqi-tag--1 {
+  color: govuk-colour("white");
+  background: $daqi-colour-1;
+}
+
+.daqi-tag--2 {
+  color: govuk-colour("white");
+  background: $daqi-colour-2;
+}
+
+.daqi-tag--3 {
+  color: govuk-colour("white");
+  background: $daqi-colour-3;
+}
+
+.daqi-tag--4 {
+  color: govuk-colour("black");
+  background: $daqi-colour-4;
+}
+
+.daqi-tag--5 {
+  color: govuk-colour("black");
+  background: $daqi-colour-5;
+}
+
+.daqi-tag--6 {
+  color: govuk-colour("black");
+  background: $daqi-colour-6;
+}
+
+.daqi-tag--7 {
+  color: govuk-colour("white");
+  background: $daqi-colour-7;
+}
+
+.daqi-tag--8 {
+  color: govuk-colour("white");
+  background: $daqi-colour-8;
+}
+
+.daqi-tag--9 {
+  color: govuk-colour("white");
+  background: $daqi-colour-9;
+}
+
+.daqi-tag--10 {
+  color: govuk-colour("white");
+  background: $daqi-colour-10;
+}
