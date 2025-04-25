@@ -25,6 +25,63 @@ Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototyp
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <!------ VALIDATE THE ERROR ------>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.querySelector('form');
+          const mobileInput = document.getElementById('notify-by-text');
+          const errorSummary = document.querySelector('.govuk-error-summary');
+          const errorMessage = document.querySelector('#notify-by-text-error');
+
+          // Hide errors initially
+          if (errorSummary) errorSummary.style.display = 'none';
+          if (errorMessage) errorMessage.style.display = 'none';
+
+          form.addEventListener('submit', function (e) {
+            const enteredNumber = mobileInput?.value.trim();
+
+            // Check if the radio for "With a mobile phone number" is selected
+            const mobileSelected = document.querySelector('input[value="check-text"]')?.checked;
+
+            // Only validate if the mobile option is selected
+            if (mobileSelected && enteredNumber === '07123456789') {
+              e.preventDefault(); // Stop the form from submitting
+
+              // Show error summary and input error message
+              if (errorSummary) {
+                errorSummary.style.display = '';
+                errorSummary.focus(); // Optionally set focus for accessibility
+              }
+              if (errorMessage) errorMessage.style.display = '';
+              mobileInput.classList.add('govuk-input--error');
+            } else {
+              // No error, hide everything
+              if (errorSummary) errorSummary.style.display = 'none';
+              if (errorMessage) errorMessage.style.display = 'none';
+              mobileInput.classList.remove('govuk-input--error');
+            }
+          });
+        });
+      </script>
+    <!---- END VALIDATE ERROR ------>
+
+
+
+    <!------ ERROR SUMMARY ------>
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "There are no alerts set up for 07123456789",
+            href: "#"
+          }
+        ]
+      }) }}
+    <!------ END ERROR SUMMARY ------>
+
       <form class="form" action="" method="post">
         
         {% set textHtml %}
@@ -37,6 +94,9 @@ Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototyp
           classes: "govuk-!-width-one-half",
           label: {
             text: "Enter the mobile number used to setup alerts"
+          },
+          errorMessage: {
+            text: "There are no alerts set up for 07123456789"
           }
         }) }}
         {% endset %}
@@ -51,6 +111,9 @@ Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototyp
           classes: "govuk-!-width-one-half",
           label: {
             text: "Enter the email address used to setup alerts"
+          },
+          errorMessage: {
+            text: "There are no alerts set up for email@email.com"
           }
         }) }}
         {% endset %}

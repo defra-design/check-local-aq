@@ -34,7 +34,7 @@ router.get('/alerts/:slug', (req, res) => {
   alertsController.getAlertBySlug(req, res, version);
 });
 
-// Templates that display session data
+// Screens that display session data need to be listed here
 const locationRequiredRoutes = [
   '/sign-up-for-alerts/setup-or-manage',
   '/sign-up-for-alerts/change-location-check',
