@@ -28,43 +28,12 @@
 
 {% block content %}
   <div class="govuk-grid-row" data-module="edge">
-    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
 
       <h1 class="govuk-heading-{{ pageHeadingSize }}">
           {{ title }}      
-    </div>
-
-    <!-- RELATED CONTENT -->
-    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
-      
-      {{ xGovukRelatedNavigation({
-        sections: [{
-            items: [{
-                text: "Health effects of air pollution",
-                href: "/" + version + "/health-effects?locationName=" + locationName
-            },
-            {
-              text: "Actions to reduce your exposure to air pollution",
-              href: "/" + version + "/reduce-exposure?locationName=" + locationName
-            },
-            {
-                text: "Health advice for air pollution levels",
-                href: "/" + version + "/health-advice-levels?locationName=" + locationName
-            },
-            {
-              text: "Access air quality alerts",
-              href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
-            }
-            ]
-        }]
-    }) }}
     
-    </div>
-    <!-- END RELATED CONTENT -->
-  </div>
-  
-  <div class="govuk-grid-row" data-module="edge">
-    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+
       {% include "/" + folder + "/includes/daqi.html" %}
       {% include "/" + folder + "/includes/forecast.html" %}
       {% include "/" + folder + "/includes/uk-forecast.html" %}
@@ -85,12 +54,41 @@
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
 
       {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+      <p class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-high?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario</a></p>
+    
     </div>
 
-    
-  </div>
-  <p class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-high?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario</a></p>
 
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Health advice for air pollution levels",
+              href: "/" + version + "/health-advice-levels?locationName=" + locationName
+          },
+          {
+            text: "Access air quality alerts",
+            href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
 
 {% endblock %}
 

@@ -3,9 +3,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Teddington Bushy Park",
+    "site_name": "Crewe Coppenhall ",
     "site_id": "UKA00579",
-    "distance": 4.9,
+    "distance": 5.5,
     "site_type": "urban-background",
     "pollutants": [
 
@@ -34,9 +34,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "London Westminster",
+    "site_name": "Warrington",
     "site_id": "UKA00152",
-    "distance": 8.5,
+    "distance": 14.8,
     "site_type": "urban-background",
     "pollutants": [        
        {
