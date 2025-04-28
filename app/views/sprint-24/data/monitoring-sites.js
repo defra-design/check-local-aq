@@ -3,67 +3,67 @@
 const monitoringSites = [
   
   {
-    "site_name": "Shaw Crompton Way",
+    "site_name": "London Teddington Bushy Park",
     "site_id": "UKA00579",
-    "distance": 4.0,
-    "site_type": "urban-traffic",
+    "distance": 4.9,
+    "site_type": "urban-background",
     "pollutants": [
 
-      /* {
+      {
         "type": "particulate-matter2",
-        "measurement": 4,
+        "measurement": 12,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 9,
+          "measurement": 16,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        }, */
-        {
+        }
+        /* {
           "type": "nitrogen-dioxide",
           "measurement": 	12,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }
+        } */
     
     ]
 },
 {
-    "site_name": "Bury Whitefield Roadside",
+    "site_name": "London Westminster",
     "site_id": "UKA00152",
     "distance": 8.5,
-    "site_type": "urban-traffic",
+    "site_type": "urban-background",
     "pollutants": [        
-     /*  {
+       {
       "type": "particulate-matter2",
-      "measurement": 10,
+      "measurement": 16,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      }, */
-      {
+      }, 
+      /* {
         "type": "particulate-matter10",
         "measurement": 18,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },
-      /* {
+      }, */
+       {
         "type": "ozone",
-        "measurement": 	62,
+        "measurement": 	63,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      },  */
+      },
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	16,
+      "measurement": 	23,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
