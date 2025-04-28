@@ -62,7 +62,8 @@ const locationRequiredRoutes = [
   '/pollutants/particulate-matter10',
   '/pollutants/ozone',
   '/pollutants/sulphur-dioxide',
-  '/email-high'
+  '/email-high',
+  '/location-vhigh'
 
 ];
 
