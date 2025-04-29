@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Crewe Coppenhall ",
+    "site_name": "Liverpool Speke",
     "site_id": "UKA00579",
-    "distance": 5.5,
-    "site_type": "urban-background",
+    "distance": 1.1,
+    "site_type": "urban-industrial",
     "pollutants": [
 
       {
@@ -22,22 +22,22 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        }
-        /* {
+        },
+        {
           "type": "nitrogen-dioxide",
           "measurement": 	12,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } */
+        } 
     
     ]
 },
 {
-    "site_name": "Warrington",
+    "site_name": "Widnes Milton Road",
     "site_id": "UKA00152",
-    "distance": 14.8,
-    "site_type": "urban-background",
+    "distance": 6.6,
+    "site_type": "urban-traffic",
     "pollutants": [        
        {
       "type": "particulate-matter2",
@@ -46,13 +46,13 @@ const monitoringSites = [
       "band": "Low",
         "aqi": 3
       }, 
-      /* {
+      {
         "type": "particulate-matter10",
         "measurement": 18,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      }, */
+      },
        {
         "type": "ozone",
         "measurement": 	63,
