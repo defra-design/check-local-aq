@@ -3,67 +3,81 @@
 const monitoringSites = [
   
   {
-    "site_name": "Liverpool Speke",
-    "site_id": "UKA00579",
-    "distance": 1.1,
-    "site_type": "urban-industrial",
+    "site_name": "Narberth",
+    "site_id": "UKA00323",
+    "distance": 7.7,
+    "site_type": "rural-background",
     "pollutants": [
 
       {
         "type": "particulate-matter2",
-        "measurement": 12,
+        "measurement": 11,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 16,
+          "measurement": 18,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	12,
+          "measurement": 	9,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } 
+        },
+        {
+          "type": "ozone",
+          "measurement": 	110,
+          "trend": "Rising",
+          "band": "Moderate",
+          "aqi": 3
+        },
+        {
+          "type": "suphur-dioxide",
+          "measurement": 	1,
+          "trend": "Rising",
+          "band": "Low",
+          "aqi": 3
+        }
     
     ]
 },
 {
-    "site_name": "Widnes Milton Road",
-    "site_id": "UKA00152",
-    "distance": 6.6,
+    "site_name": "Swansea Roadside",
+    "site_id": "UKA00497",
+    "distance": 32.6,
     "site_type": "urban-traffic",
     "pollutants": [        
        {
       "type": "particulate-matter2",
-      "measurement": 16,
+      "measurement": 24,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
       }, 
       {
         "type": "particulate-matter10",
-        "measurement": 18,
+        "measurement": 29,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
-       {
+       /* {
         "type": "ozone",
         "measurement": 	63,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      },
+      }, */
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	23,
+      "measurement": 	26,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
