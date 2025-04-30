@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Narberth",
+    "site_name": "London Harlington ",
     "site_id": "UKA00323",
-    "distance": 7.7,
-    "site_type": "rural-background",
+    "distance": 5.9,
+    "site_type": "urban-background",
     "pollutants": [
 
       {
@@ -32,7 +32,7 @@ const monitoringSites = [
         },
         {
           "type": "ozone",
-          "measurement": 	110,
+          "measurement": 	126,
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 4
@@ -48,9 +48,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Swansea Roadside",
+    "site_name": "London Hillingdon",
     "site_id": "UKA00497",
-    "distance": 32.6,
+    "distance": 6.8,
     "site_type": "urban-traffic",
     "pollutants": [        
        {
