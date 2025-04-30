@@ -35,7 +35,7 @@ const monitoringSites = [
           "measurement": 	110,
           "trend": "Rising",
           "band": "Moderate",
-          "aqi": 3
+          "aqi": 4
         },
         {
           "type": "suphur-dioxide",
