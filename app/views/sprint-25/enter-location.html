@@ -1,0 +1,195 @@
+{% extends "layouts/sprint-25.html" %}
+{% set displayBreadcrumbs = false %}
+{% set servicePage = true %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{% block pageTitle %}
+Error: Where do you want to check? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="/{{ version }}/location" method="post">
+
+    <!-- Error Summary -->
+       {% if locationType === 'uk-location' %}
+       {{ govukErrorSummary({
+           titleText: "There is a problem",
+           errorList: [
+               {
+                   text: "Enter a location or postcode",
+                   href: "#engScoWal"
+               }
+           ]
+       }) }}
+      {% elseif locationType === 'ni-location' %}
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                  {
+                      text: "Enter a postcode",
+                      href: "#ni"
+                  }
+              ]
+          }) }}
+      {% else %}
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                  {
+                      text: "Select where you want to check",
+                      href: "#locationType"
+                  }
+              ]
+          }) }}
+      {% endif %}
+
+
+    <!-- UK Location Input Field -->
+      {% if locationType === 'uk-location' %}
+      {% set ukHtml %}
+      {{ govukInput({
+          id: "engScoWal",
+          name: "engScoWal",
+          classes: "govuk-!-width-one-half",
+          errorMessage: { text: "Enter a location or postcode" }
+      }) }}
+      {% endset %}
+  {% elseif locationType === 'ni-location' %}
+      {% set niHtml %}
+      {{ govukInput({
+          id: "ni",
+          name: "ni",
+          classes: "govuk-!-width-one-half",
+          errorMessage: { text: "Enter a postcode" }
+      }) }}
+      {% endset %}
+  {% else %}
+      {% set ukHtml %}
+      {{ govukInput({
+          id: "engScoWal",
+          name: "engScoWal",
+          classes: "govuk-!-width-one-half",
+          label: { text: "Enter a location or postcode" }
+      }) }}
+      {% endset %}
+  {% endif %}
+
+      <!-- Northern Ireland Input Field -->
+      {% if locationType === 'ni-location' %}
+        {% set niHtml %}
+        {{ govukInput({
+          id: "ni",
+          name: "ni",
+          classes: "govuk-!-width-one-half",
+          errorMessage: { text: "Enter a postcode" }
+        }) }}
+        {% endset %}
+      {% else %}
+        {% set niHtml %}
+        {{ govukInput({
+          id: "ni",
+          name: "ni",
+          classes: "govuk-!-width-one-half",
+          label: { text: "Enter a location or postcode" }
+        }) }}
+        {% endset %}
+      {% endif %}
+
+      <!-- Radio Buttons -->
+      {% if locationType === 'uk-location' %}
+      {{ govukRadios({
+        name: "locationType",
+        fieldset: {
+          legend: {
+            text: "Where do you want to check?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l govuk-label--l govuk-!-margin-bottom-6"
+          }
+        },
+        items: [
+          {
+            value: "uk-location",
+            text: "England, Scotland or Wales",
+            checked: locationType === 'uk-location',
+            conditional: { html: ukHtml }
+          },
+          {
+            value: "ni-location",
+            text: "Northern Ireland",
+            checked: locationType === 'ni-location',
+            conditional: { html: niHtml }
+          }
+          ]
+        }) }}
+        {% elseif locationType === 'ni-location' %}
+        {{ govukRadios({
+          name: "locationType",
+          fieldset: {
+            legend: {
+              text: "Where do you want to check?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-label--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "uk-location",
+              text: "England, Scotland or Wales",
+              checked: locationType === 'uk-location',
+              conditional: { html: ukHtml }
+            },
+            {
+              value: "ni-location",
+              text: "Northern Ireland",
+              checked: locationType === 'ni-location',
+              conditional: { html: niHtml }
+            }
+            ]
+          }) }}
+          {% else %}
+          {{ govukRadios({
+            name: "locationType",
+            fieldset: {
+              legend: {
+                text: "Where do you want to check?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l govuk-label--l govuk-!-margin-bottom-6"
+              }
+            },
+            items: [
+              {
+                value: "uk-location",
+                text: "England, Scotland or Wales",
+                checked: locationType === 'uk-location',
+                conditional: { html: ukHtml }
+              },
+              {
+                value: "ni-location",
+                text: "Northern Ireland",
+                checked: locationType === 'ni-location',
+                conditional: { html: niHtml }
+              }
+              ],
+              errorMessage: {
+                text: "Select where you want to check"
+              }
+            }) }}
+            {% endif %}
+                 
+
+
+      <!-- Continue Button -->
+      {{ govukButton({
+        classes: "app-search__button",
+        text: "Continue"
+      }) }}
+
+      <!-- Hidden Input -->
+      <input type="hidden" name="aq" value="{{ airQuality.value }}" />
+    </form>
+  </div>
+</div>
+{% endblock %}

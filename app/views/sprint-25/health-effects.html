@@ -1,0 +1,85 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/sprint-25.html" %}
+{% set caption = "" %}
+{% set title = "Health effects of air pollution" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+  
+      <p>Poor air quality is the largest environmental risk to public health in the UK.</p>
+      <p>It is a particular threat to vulnerable groups, including people with heart or lung conditions and older people.</p>
+      <p>There is no safe level of air pollution. But there are <a href="reduce-exposure.html">actions you can take to reduce your exposure to air pollution</a>.</p>
+
+      <h2 class="govuk-heading-s">How air pollution impacts the body</h2>
+      <p>Air pollution (particles and gases) enter our bodies and can damage our cells in different ways. They usually enter our lungs first and can then move into our blood to reach our organs, such as the heart and brain.</p>
+      <p>Any amount of pollution can be damaging to our health, but the more that you are exposed to, the bigger the risk and the larger the effect it can have on you. In some cases, damage can be gradual and you may not notice it for many years.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- SHORT TERM -->
+      <h2 class="govuk-heading-s">Short term air pollution exposure</h2>
+      <p>Short term exposure (over hours or days) can cause a range of health impacts, including:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["coughing", "eye, nose, and throat irritation", "chest tightness and pain", "difficulty breathing", "worsening of asthma symptoms", "worsening of chronic obstructive pulmonary disease (COPD)"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- LONG TERM -->
+      <h2 class="govuk-heading-s">
+        Long term air pollution exposure
+      </h2>
+      <p>Long term exposure to air pollution (over years), can increase the risk of getting certain health conditions.</p>
+      <p>The extent of this risk depends on what's in the air and how long you breathe it for.</p>
+
+      <p>Long term exposure, even on days where levels are low, has been linked to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for conditions in ["poorer lung function in children", "increase in respiratory illnesses", "heart disease", "stroke", "cancer", "dementia", "diabetes", "Alzheimer's and Parkinson's disease", "chronic obstructive pulmonary disease (COPD)"] %}
+          <li>{{ conditions }}</li>
+        {% endfor %}
+      </ul>
+
+  </div>
+
+    <!-- RELATED CONTENT -->
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+      {{ xGovukRelatedNavigation({
+        sections: [{
+            items: [
+
+            {
+              text: "Actions to reduce your exposure to air pollution",
+              href: "/" + version + "/reduce-exposure?locationName=" + locationName
+            },
+            {
+                text: "Health advice for air pollution levels",
+                href: "/" + version + "/health-advice-levels?locationName=" + locationName
+            },
+            {
+              text: "Access air quality alerts",
+              href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+            }
+            ]
+        }]
+    }) }}
+    
+    </div>
+    <!-- END RELATED CONTENT -->
+     
+  </div>
+{% endblock %}
