@@ -62,8 +62,7 @@ const locationRequiredRoutes = [
   '/pollutants/particulate-matter10',
   '/pollutants/ozone',
   '/pollutants/sulphur-dioxide',
-  '/email-high',
-  '/location-vhigh'
+  '/email-high'
 
 ];
 
@@ -151,6 +150,8 @@ router.post('/sign-up-for-alerts/unsubscribe-alerts', (req, res) => {
 
 
 // Hardcoding the location page so it can be linked to from an email or text notification
+
+// HIGH LEVEL
 router.get('/location-high', function(req, res) {
   const locationString = req.session.data['locationString'];
   const locationName = req.session.data['locationName'] || 'Missing name';
@@ -186,6 +187,52 @@ router.get('/location-high', function(req, res) {
 
 
   res.render(version + '/location-high', {
+    airQuality: airQuality,
+    locationName: locationName,
+    locationString: locationString,
+    monitoringSites: monitoringSites,
+    pollutantTypes: pollutantTypes,
+    result: result,
+    version: version
+  });
+});
+
+// VERY HIGH LEVEL
+router.get('/location-veryhigh', function(req, res) {
+  const locationString = req.session.data['locationString'];
+  const locationName = req.session.data['locationName'] || 'Missing name';
+
+  const airQuality = {
+    today: {
+      value: req.query.todayValue || 10,
+      readableBand: req.query.todayBand || 'very high'
+    },
+    day2: {
+      value: req.query.day2Value || 8,
+      readableBand: req.query.day2Band || 'high'
+    },
+    day3: {
+      value: req.query.day3Value || 5,
+      readableBand: req.query.day3Band || 'moderate'
+    },
+    day4: {
+      value: req.query.day4Value || 3,
+      readableBand: req.query.day4Band || 'low'
+    },
+    day5: {
+      value: req.query.day5Value || 2,
+      readableBand: req.query.day5Band || 'low'
+    }
+  };
+
+  const result = {
+    GAZETTEER_ENTRY: {
+      NAME1: locationName
+    }
+  };
+
+
+  res.render(version + '/location-veryhigh', {
     airQuality: airQuality,
     locationName: locationName,
     locationString: locationString,

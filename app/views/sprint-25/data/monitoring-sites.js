@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Harlington ",
+    "site_name": "Tower Hamlets Roadside",
     "site_id": "UKA00323",
-    "distance": 5.9,
-    "site_type": "urban-background",
+    "distance": 4.0,
+    "site_type": "urban-traffic",
     "pollutants": [
 
-      {
+      /* {
         "type": "particulate-matter2",
         "measurement": 11,
         "trend": "Falling",
@@ -22,40 +22,40 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        },
+        }, */
         {
           "type": "nitrogen-dioxide",
           "measurement": 	9,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        },
+        }/* ,
         {
           "type": "ozone",
           "measurement": 	126,
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 4
-        }
+        } */
     
     ]
 },
 {
-    "site_name": "London Hillingdon",
-    "site_id": "UKA00497",
-    "distance": 6.8,
+    "site_name": "Southwark A2 Old Kent Road ",
+    "site_id": "UKA00558",
+    "distance": 6.0,
     "site_type": "urban-traffic",
     "pollutants": [        
-       {
+      /*  {
       "type": "particulate-matter2",
       "measurement": 24,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      }, 
+      },  */
       {
         "type": "particulate-matter10",
-        "measurement": 29,
+        "measurement": 11,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
@@ -70,7 +70,7 @@ const monitoringSites = [
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	26,
+      "measurement": 	2,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
