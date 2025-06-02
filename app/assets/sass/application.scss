@@ -408,6 +408,14 @@
   @import "sprint-25/components/aq-browse-section";
 }
 
+//UR links on location page
+.app-contact-panel {
+	margin-top: 40px;
+	padding-top: 15px;
+	border-top: 2px solid #1d70b8;
+  background-color: #f5f5f5;
+}
+
 .proto-dev {
   // Tools
   @import "proto-dev/tools/mixins";
@@ -485,3 +493,4 @@
 
 // Email layout
 @import "email/email"
+

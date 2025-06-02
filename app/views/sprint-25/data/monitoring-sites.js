@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "Tower Hamlets Roadside",
-    "site_id": "UKA00323",
-    "distance": 4.0,
+    "site_name": "Glasgow Great Western Road",
+    "site_id": "UKA00593",
+    "distance": 5.2,
     "site_type": "urban-traffic",
     "pollutants": [
 
-      /* {
+       /* {
         "type": "particulate-matter2",
         "measurement": 11,
         "trend": "Falling",
@@ -22,14 +22,14 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        }, */
+        },  */
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	9,
+          "measurement": 	8,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }/* ,
+        } /* ,
         {
           "type": "ozone",
           "measurement": 	126,
@@ -41,18 +41,18 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Southwark A2 Old Kent Road ",
-    "site_id": "UKA00558",
+    "site_name": "Glasgow Kerbside ",
+    "site_id": "UKA00336",
     "distance": 6.0,
     "site_type": "urban-traffic",
     "pollutants": [        
-      /*  {
+      /* {
       "type": "particulate-matter2",
       "measurement": 24,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      },  */
+      },  
       {
         "type": "particulate-matter10",
         "measurement": 11,
@@ -60,7 +60,7 @@ const monitoringSites = [
         "band": "Low",
         "aqi": 3
       },
-       /* {
+      {
         "type": "ozone",
         "measurement": 	63,
         "trend": "Rising",
@@ -70,7 +70,7 @@ const monitoringSites = [
       
     {
       "type": "nitrogen-dioxide",
-      "measurement": 	2,
+      "measurement": 	13,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
