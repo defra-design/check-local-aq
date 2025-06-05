@@ -3,47 +3,47 @@
 const monitoringSites = [
   
   {
-    "site_name": "Glasgow Great Western Road",
+    "site_name": "Nottingham Kenmore Gardens ",
     "site_id": "UKA00593",
-    "distance": 5.2,
-    "site_type": "urban-traffic",
+    "distance": 2.2,
+    "site_type": "urban-background",
     "pollutants": [
 
-       /* {
+       {
         "type": "particulate-matter2",
-        "measurement": 11,
+        "measurement": 3,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 18,
+          "measurement": 7,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        },  */
+        },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	8,
+          "measurement": 	18,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } /* ,
+        },
         {
           "type": "ozone",
-          "measurement": 	126,
+          "measurement": 	39,
           "trend": "Rising",
-          "band": "Moderate",
-          "aqi": 4
-        } */
+          "band": "Low",
+          "aqi": 3
+        }
     
     ]
 },
 {
-    "site_name": "Glasgow Kerbside ",
+    "site_name": "Nottingham Western Boulevard",
     "site_id": "UKA00336",
-    "distance": 6.0,
+    "distance": 4.4,
     "site_type": "urban-traffic",
     "pollutants": [        
       /* {
@@ -52,21 +52,21 @@ const monitoringSites = [
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      },  
+      }, */ 
       {
         "type": "particulate-matter10",
         "measurement": 11,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },
+      }/*  ,
       {
         "type": "ozone",
         "measurement": 	63,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }, */
+      },
       
     {
       "type": "nitrogen-dioxide",
@@ -74,7 +74,7 @@ const monitoringSites = [
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-    }
+    } */
     ]
 }
 ]
