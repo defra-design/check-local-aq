@@ -3,36 +3,36 @@
 const monitoringSites = [
   
   {
-    "site_name": "Nottingham Kenmore Gardens ",
+    "site_name": "Manchester Piccadilly",
     "site_id": "UKA00593",
-    "distance": 2.2,
+    "distance": 2.6,
     "site_type": "urban-background",
     "pollutants": [
 
        {
         "type": "particulate-matter2",
-        "measurement": 3,
+        "measurement": 4,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 7,
+          "measurement": 8,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	18,
+          "measurement": 	16,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "ozone",
-          "measurement": 	39,
+          "measurement": 	48,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
@@ -41,40 +41,40 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Nottingham Western Boulevard",
+    "site_name": "Salford Eccles ",
     "site_id": "UKA00336",
-    "distance": 4.4,
-    "site_type": "urban-traffic",
+    "distance": 3.1,
+    "site_type": "urban-background",
     "pollutants": [        
-      /* {
+      {
       "type": "particulate-matter2",
-      "measurement": 24,
+      "measurement": 4,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      }, */ 
+      },
       {
         "type": "particulate-matter10",
-        "measurement": 11,
+        "measurement": 7,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      }/*  ,
-      {
-        "type": "ozone",
-        "measurement": 	63,
-        "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
       },
-      
-    {
+      {
       "type": "nitrogen-dioxide",
-      "measurement": 	13,
+      "measurement": 	7,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-    } */
+      },
+      {
+        "type": "ozone",
+        "measurement": 	54,
+        "trend": "Rising",
+        "band": "Low",
+        "aqi": 3
+      }
+      
     ]
 }
 ]
