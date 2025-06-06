@@ -3,15 +3,15 @@
 const monitoringSites = [
   
   {
-    "site_name": "Manchester Piccadilly",
+    "site_name": "Birmingham A4540 Roadside",
     "site_id": "UKA00593",
-    "distance": 2.6,
-    "site_type": "urban-background",
+    "distance": 4.5,
+    "site_type": "urban-traffic",
     "pollutants": [
 
        {
         "type": "particulate-matter2",
-        "measurement": 4,
+        "measurement": 2,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
@@ -25,14 +25,14 @@ const monitoringSites = [
         },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	16,
+          "measurement": 	12,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "ozone",
-          "measurement": 	48,
+          "measurement": 	68,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
@@ -41,14 +41,14 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Salford Eccles ",
+    "site_name": "Birmingham Ladywood ",
     "site_id": "UKA00336",
-    "distance": 3.1,
+    "distance": 5.1,
     "site_type": "urban-background",
     "pollutants": [        
       {
       "type": "particulate-matter2",
-      "measurement": 4,
+      "measurement": 2,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
@@ -62,14 +62,14 @@ const monitoringSites = [
       },
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	7,
+      "measurement": 	6,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
       },
       {
         "type": "ozone",
-        "measurement": 	54,
+        "measurement": 	70,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
