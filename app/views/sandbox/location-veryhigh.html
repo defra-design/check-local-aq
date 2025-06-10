@@ -1,0 +1,78 @@
+{% extends "layouts/sandbox.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+
+{% set title = "Air quality in " + "B23 5QW, Royal Sutton Coldfield" %}
+
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set highestAQDetails = {'readableBand': 'very high'} %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    
+    <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {{ title }}      
+
+
+    {% include "/" + folder + "/includes/daqi.html" %}
+    {% include "/" + folder + "/includes/forecast.html" %}
+    {% include "/" + folder + "/includes/uk-forecast-vhigh.html" %}
+    <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/health-advice-vhigh.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/reduce-your-exposure-high.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/pollutants.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/monitoring-sites.html" %}
+  </div>
+  
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Health advice for air pollution levels",
+              href: "/" + version + "/health-advice-levels?locationName=" + locationName
+          },
+          {
+            text: "Access air quality alerts",
+            href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+{% endblock %}
+
+

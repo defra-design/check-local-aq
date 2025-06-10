@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Ozone (O₃)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+        <p>Ozone is a gas that forms a protective layer shielding us from the sun's radiation. However, at ground level, ozone has adverse effects on human health and the environment.</p>
+        <p>
+          Ground level ozone can be at unhealthy levels on both hot and cold days. It can travel by the wind, affecting both urban and rural areas. Ozone can react with other chemicals in the air to form particulate matter, or smog, which is also harmful to health. 
+        </p>
+        <h2 class="govuk-heading-s">Sources of ozone</h2>
+        <p>There are no major emission sources of ozone itself. Reactions between other pollutants form ozone in the air. For example, when pollutants from cars, power plants, and factories react with sunlight.</p>
+    </div>
+  </div>
+{% endblock %}
+

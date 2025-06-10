@@ -9,7 +9,7 @@
     <div class="govuk-grid-column-full-width">
 
       {{ govukTable({
-        caption: "Prototype version",
+        caption: "User research prototypes",
         captionClasses: "govuk-table__caption--l",
         firstCellIsHeader: false,
         head: [
@@ -184,11 +184,37 @@
                   {
                     html: '<a href="https://defra-design.github.io/aqie-design-history/posts/private-beta/sprint-two/">Design history</a>'
                   }
+                ]
+
+                ]
+    }) }}
+
+    {{ govukTable({
+        caption: "Dev build and experiment prototypes",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Version"
+          }
+          ,
+          {
+            text: "Design history"
+          }
+        ],
+        rows: [
+        [
+                {
+                  html: '<a href="/proto-dev" class="govuk-!-margin-right-2">Prototype for development</a>'
+                },
+                {
+                  html: 'Not applicable'
+                }
                 ],
                 
                 [
                 {
-                  html: '<a href="/proto-dev" class="govuk-!-margin-right-2">Prototype for development</a>'
+                  html: '<a href="/sandbox" class="govuk-!-margin-right-2">Sandbox - experiment area (not for testing or dev build)</a>'
                 },
                 {
                   html: 'Not applicable'

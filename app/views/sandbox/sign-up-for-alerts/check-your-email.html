@@ -1,0 +1,45 @@
+{% extends "layouts/sandbox.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+
+{% block pageTitle %}
+Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your email</h1>
+      <p class="govuk-body">
+        We’ve sent an email to <strong>{{ email }}</strong>
+      </p>
+      <div class="govuk-body">
+        <a href="manage-alerts-success.html" class="hidden-link">Click</a> the link in the email to confirm you want email notifications about air quality in <strong>{{ locationString }}</strong>.
+      </div>
+      <p class="govuk-body">
+        The link will stop working in 7 days.
+      </p>
+      {{ govukDetails({
+        summaryText: "Not received an email?",
+        html: "<p>Emails sometimes take a few minutes to arrive.</p>
+        <p>If you do not receive an email:</p>
+        <ul>
+          <li>your spam or junk folder</li>
+          <li>you entered the correct email address</li>
+        </ul>"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/sandbox.html" %}
+{% set caption = "" %}
+{% set title = "Health advice for each level of air pollution" %}
+
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+        
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+
+      <!-- LOW LEVEL -->
+      <h2 class="govuk-heading-m">Low</h2>
+
+      <p>Some people might experience symptoms due to air pollution, even when levels are low. Short term symptoms could include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["coughing", "eye, nose, and throat irritation", "chest tightness and pain", "difficulty breathing", "worsening of asthma symptoms", "worsening of chronic obstructive pulmonary disease (COPD)"] %}
+        <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+      <p>Adults and children with lung or heart conditions are at greater risk of experiencing symptoms of air pollution.</p>
+      <p>Follow your doctor's usual advice about physically demanding activities and managing your condition.</p>
+      <p>Consider other triggers for your symptoms - for example, high pollen outside or poor air quality indoors.</p>
+      <p>Follow your agreed management plan if you have one - for example, an asthma action plan. Ask your doctor for a plan if you want one.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+
+      <!-- MODERATE LEVEL -->
+      <h2 class="govuk-heading-m">Moderate</h2>
+
+      <p>Try to reduce your exposure to air pollution, especially if you're experiencing symptoms.</p>
+
+      <h3 class="govuk-heading-s">Short term air pollution exposure</h3>
+      <p>Short term exposure (over hours or days) can cause a range of health impacts, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["coughing", "eye, nose, and throat irritation", "chest tightness and pain", "difficulty breathing", "worsening of asthma symptoms", "worsening of chronic obstructive pulmonary disease (COPD)"] %}
+        <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+      <p>Symptoms could appear within hours or several days later.</p>
+      <p>Monitor your symptoms for at least a week and speak to the doctor if you do not feel better.</p>
+
+      <h3 class="govuk-heading-s">Advice for adults and children with lung or heart conditions</h3>
+      <p>Try to adapt physically demanding activities outdoors, especially if your symptoms get worse.</p>
+      <p>Follow your agreed management plan if you have one - for example, an asthma action plan. Ask your doctor for a plan if you want one.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      <!-- HIGH & VERY HIGH LEVEL -->
+      <h2 class="govuk-heading-m">High and very high</h2>
+      <p>Try to reduce your exposure to air pollution, especially if you're experiencing symptoms.</p>
+
+      <h3 class="govuk-heading-s">Short term air pollution exposure</h3>
+      <p>Short term exposure (over hours or days) can cause a range of health impacts, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["coughing", "eye, nose, and throat irritation", "chest tightness and pain", "difficulty breathing", "worsening of asthma symptoms", "worsening of chronic obstructive pulmonary disease (COPD)"] %}
+        <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+      <p>Symptoms could appear within hours or several days later.</p>
+      <p>Monitor your symptoms for at least a week and speak to the doctor if you do not feel better.</p>
+
+      <h3 class="govuk-heading-s">Advice for adults and children with lung or heart conditions, and older people</h3>
+      <p>You should adapt physically demanding activities outdoors, especially if your symptoms get worse. </p>
+      <p>Follow your agreed management plan if you have one - for example, an asthma action plan. Ask your doctor for a plan if you want one.</p>
+
+
+    </div>
+
+    <!-- RELATED CONTENT -->
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+      {{ xGovukRelatedNavigation({
+        sections: [{
+            items: [{
+                text: "Health effects of air pollution",
+                href: "/" + version + "/health-effects?locationName=" + locationName
+            },
+            {
+              text: "Actions to reduce your exposure to air pollution",
+              href: "/" + version + "/reduce-exposure?locationName=" + locationName
+            },
+            {
+              text: "Access air quality alerts",
+              href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+            }
+            ]
+        }]
+    }) }}
+    
+    </div>
+    <!-- END RELATED CONTENT -->
+
+
+  </div>
+{% endblock %}
+
+
+
