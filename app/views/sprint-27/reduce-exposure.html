@@ -1,0 +1,135 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/sprint-27.html" %}
+{% set caption = "" %}
+{% set title = "Actions you can take to reduce your exposure to air pollution" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+
+      <p>There is no safe level of air pollution. But there are actions you can take to reduce your exposure.</p>
+      <p>You should try to reduce your exposure to air pollution where you can, even when levels are low.</p>
+      <p>Long term exposure to air pollution (over years) can lead to <a href="health-effects.html">many different health conditions and reduce life expectancy</a>.</p>
+
+
+      <!-- URBAN -->
+      <h2 class="govuk-heading-s">Urban areas</h2>
+
+      <p>Urban areas have a population of more than 10,000 residents. For example, a large town or a city.</p>
+      <p>As well as the actions listed under all areas, there are specific actions you can take if you live or work in an urban area. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>where possible adapt your travel to avoid the busiest roads at the busiest times</li>
+          <li>re-route travel and exercise to parks and green spaces, if you are not affected by pollen</li>
+          <li>if you need to walk alongside a busy road, keep as far from the edge of the road as you can - putting even a short distance between yourself and the source of pollution reduces the pollution you breathe in</li>
+          <li>avoid driving in heavy congestion - sitting in traffic can expose you to high levels of pollution</li>
+          <li>check pollution forecasts to help you plan outdoor activities</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- RURAL -->
+      <h2 class="govuk-heading-s">Rural areas</h2>
+
+      <p>Rural areas have a population of less than 10,000 residents. For example, a hamlet, village or small town.</p>
+      <p>There are specific actions you can take if you live or work in a rural area. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>check for agricultural activities - ploughing, spreading fertilisers, and pesticide spraying may contribute to pollution levels</li>
+          <li>avoid bonfires or burning garden waste</li>
+          <li>check pollution forecasts - pollution can travel long distances and you cannot always see the sources.</li>
+      </ul>
+      <p>Some pollutants are higher in the countryside - for example, ozone.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- OUTDOOR -->
+      <h2 class="govuk-heading-s">All outdoor areas</h2>
+
+      <p>There are actions you can take regardless of where you live or work. Consider the following actions in any area:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>take routes where there is less traffic</li>
+          <li>try to avoid heavily trafficked areas when they are at their busiest</li>
+          <li>commute, walk or exercise in parks or other green spaces, if you are not affected by pollen</li>
+          <li>if you exercise indoors, make sure the room is well ventilated</li>
+
+      </ul>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- INDOOR -->
+      <h2 class="govuk-heading-s">Indoor air pollution</h2>
+
+      <p>The air quality indoors is not always better than outdoors.</p>
+      <p>There are specific actions you can take to improve your indoor air quality. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>avoid smoking or vaping indoors</li>
+          <li>ventilate when cooking – for example, use an extractor fan or open windows</li>
+          <li>check labels on cleaning products, aerosols and paints – if you need to use these products indoors follow the manufacturer's instructions and use in a ventilated area</li>
+          <li>look for products labelled as low emission – these might be labelled “low VOC”</li>
+          <li>avoid burning on a stove or open fire if you can </li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- REDUCE -->
+      <h2 class="govuk-heading-s">Reduce your contribution to air pollution</h2>
+
+      <p>Everyone can take action to reduce how much they contribute to air pollution. Consider the following actions:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>walk, cycle and use public transport more frequently</li>
+          <li>drive less, and when you do drive, drive smarter – car share if you can, avoid idling, and keep your vehicle well maintained</li>
+          <li>consider switching to a hybrid or electric vehicle</li>
+          <li>avoid unnecessary burning at home – for example, using a wood burner or open fire</li>
+          <li>if you need to burn for heating, make sure you use “ready to burn” fuels and keep your appliance clean and maintained</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-8"></div>
+
+    </div>
+
+
+<!-- RELATED CONTENT -->
+<div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+              text: "Health advice for air pollution levels",
+              href: "/" + version + "/health-advice-levels?locationName=" + locationName
+          },
+          {
+            text: "Access air quality alerts",
+            href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+  </div>
+{% endblock %}

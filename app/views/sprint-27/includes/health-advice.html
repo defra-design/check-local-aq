@@ -1,0 +1,13 @@
+{% set advice %}
+{% include "/" + folder + "/includes/health-advice/advice-" + highestAQDetails.band + ".html" %}
+{% endset %}
+{% set atrisk %}
+{% include "/" + folder + "/includes/health-advice/atrisk-" + highestAQDetails.band + ".html" %}
+{% endset %}
+
+<h2 class="govuk-heading-m">Health advice for {{ highestAQDetails.readableBand }} levels of air pollution</h2>
+{% include "/" + folder + "/includes/health-advice/advice-" + highestAQDetails.band + ".html" %}
+
+<div class="govuk-!-padding-bottom-4"></div>
+
+

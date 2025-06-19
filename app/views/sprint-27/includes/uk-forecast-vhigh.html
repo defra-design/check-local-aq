@@ -1,0 +1,24 @@
+{% set day2 = 1 | addDaysToTodayFull %}
+{% set day3 = 2 | addDaysToTodayFull %}
+{% set day4 = 3 | addDaysToTodayFull %}
+{% set day5 = 4 | addDaysToTodayFull %}
+
+
+<details class="govuk-details" open="">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Forecast for the UK
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+
+       <!-- <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Forecast for the UK</h2>-->
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Today</h3>
+        <p>Warm temperatures are expected to increase pollution levels to very high across many areas today.</p>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ day2 }}</h3>
+        <p>The current heatwave shows no signs of relenting, causing air pollution levels to remain high across many areas tomorrow.</p>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ day3 }} to {{ day5 }}</h3>
+        <p class="govuk-!-margin-bottom-6">As unsettled weather returns, the air pollution outlook will likely return to low levels.</p>
+
+    </div>
+  </details>

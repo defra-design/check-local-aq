@@ -31,11 +31,11 @@
       <p>The air quality information on this service is based on 5 pollutants that can have an impact on your health:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-          <li>ozone</li>
-          <li>nitrogen dioxide </li>
-          <li>sulphur dioxide</li>
-          <li>PM2.5</li>
-          <li>PM10</li>
+          <li><a href="/{{ version }}/pollutants/ozone?locationName={{ locationName }}&parentArea={{ parentArea }}">ozone</a></li>
+          <li><a href="/{{ version }}/pollutants/nitrogen-dioxide?locationName={{ locationName }}&parentArea={{ parentArea }}">nitrogen dioxide</a></li>
+          <li><a href="/{{ version }}/pollutants/sulphur-dioxide?locationName={{ locationName }}&parentArea={{ parentArea }}">sulphur dioxide</a></li>
+          <li><a href="/{{ version }}/pollutants/particulate-matter2?locationName={{ locationName }}&parentArea={{ parentArea }}">PM2.5</a></li>
+          <li><a href="/{{ version }}/pollutants/particulate-matter10?locationName={{ locationName }}&parentArea={{ parentArea }}">PM10</a></li>
       </ul>
 
       <div class="govuk-!-padding-bottom-6"></div>
@@ -46,7 +46,7 @@
       </h2>
 
       <p>The DAQI is a scale that has been designed to help people understand the short-term risk of air pollution.</p>
-      <p>The DAQI communicates pollution levels using words, colours and numbers: </p>
+      <p>The DAQI communicates pollution levels using words, numbers and colours: </p>
       <ul class="govuk-list govuk-list--bullet">
           <li>low pollution (levels 1, 2 and 3), shown in green </li>
           <li>moderate pollution (levels 4, 5 and 6), shown in yellow</li>
