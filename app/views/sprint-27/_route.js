@@ -161,15 +161,15 @@ router.get('/location-moderate', function(req, res) {
   const airQuality = {
     today: {
       value: req.query.todayValue || 6,
-      readableBand: req.query.todayBand || 'high'
+      readableBand: req.query.todayBand || 'moderate'
     },
     day2: {
-      value: req.query.day2Value || 5,
-      readableBand: req.query.day2Band || 'high'
+      value: req.query.day2Value || 4,
+      readableBand: req.query.day2Band || 'moderate'
     },
     day3: {
-      value: req.query.day3Value || 4,
-      readableBand: req.query.day3Band || 'moderate'
+      value: req.query.day3Value || 3,
+      readableBand: req.query.day3Band || 'low'
     },
     day4: {
       value: req.query.day4Value || 3,
