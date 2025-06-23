@@ -54,6 +54,12 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/email-notification',
   '/sign-up-for-alerts/text-notification',
   '/sign-up-for-alerts/unsubscribe-confirmation',
+
+  '/sign-up-for-alerts/mobile-number',
+  '/sign-up-for-alerts/code-presend',
+  '/sign-up-for-alerts/confirm-alert-details',
+  '/sign-up-for-alerts/alerts-success',
+
   '/reduce-exposure',
   '/health-effects',
   '/health-advice-levels',

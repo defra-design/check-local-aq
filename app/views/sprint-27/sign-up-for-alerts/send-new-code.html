@@ -14,43 +14,46 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
   },
   html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
 }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Check your text messages</h1>
+      <h1 class="govuk-heading-l">Request a new activation code</h1>
       <p class="govuk-body">
-        We’ve sent a new 5-digit activation code to <strong>{{ text }}</strong>.
-      </p>
-      {{ govukInput({
-        label: {
-          text: "Enter the code to activate your air quality alert."
-        },
-        classes: "govuk-!-width-one-third",
-        id: "activation-code",
-        name: "activation-code"
-      }) }}
-
-      <p>
-        The code expires in 24 hours and replaces previous activation codes you may have received.
+        Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can request a new one.</strong>
       </p>
 
-      {{ govukDetails({
-        summaryText: "Not received a text message?",
-        html: "<p>Text messages sometimes take a few minutes to arrive.</p><p>If you do not receive a text message after 10 minutes, check that you have entered your number correctly and that you have mobile phone signal.</p>"
-      }) }}
-      {{ govukButton({
-        text: "Confim code",
-        href: "/" + version + "/sign-up-for-alerts/manage-alerts/confirmation"
-      }) }}
+  <div class="govuk-!-padding-bottom-5"></div>
+      
 
-      <p>
-      <a href=""">Send a new activation code</a>
-    </p>
-
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Change where the text is sent
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <label class="govuk-label" for="event-name">
+        Mobile number
+        </label>
+        <input class="govuk-input govuk-input govuk-input--width-20" id="mobile-number-new" name="MobileNumberNew" type="text">
     </div>
+    
+  </details>
+
+      {{ govukButton({
+        text: "Request a new code",
+        href: "/" + version + "/sign-up-for-alerts/check-your-messages"
+      }) }}
+
   </div>
+</div>
 
 {% endblock %}

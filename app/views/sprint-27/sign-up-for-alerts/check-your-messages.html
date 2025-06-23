@@ -20,7 +20,9 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Check your text messages</h1>
+
+      <h1 class="govuk-heading-l">Check your mobile phone</h1>
+
       <p class="govuk-body">
         We've sent a text message to <strong>{{ text }}</strong> with a 5 digit activiation code.
       </p>
@@ -39,11 +41,16 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
 
       {{ govukDetails({
         summaryText: "Not received a text message?",
-        html: "<p>Text messages sometimes take a few minutes to arrive.</p><p>If you do not receive a text message after 10 minutes, check that you have entered your number correctly and that you have mobile phone signal.</p>"
+        html: "<p>Text messages sometimes take a few minutes to arrive.</p>
+        <p>If you do not receive a text message after 10 minutes, check that you have:</p> 
+        <ul>
+          <li>entered your number correctly</li>
+          <li>mobile phone signal</li>
+        </ul>"
       }) }}
       {{ govukButton({
-        text: "Confim code",
-        href: "/" + version + "/sign-up-for-alerts/manage-alerts-success"
+        text: "Continue",
+        href: "/" + version + "/sign-up-for-alerts/confirm-alert-details"
       }) }}
 
       <p>
