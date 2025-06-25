@@ -1,13 +1,13 @@
 const alerts = [
   {
-    stationName: "Southwark A2 Old Kent Road",
-    slug: 'southwark-a2-old-kent-road',
-    localAuthority: "Southwark",
+    stationName: "York Fishergate",
+    slug: 'york-fishergate',
+    localAuthority: "York",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
-    date: "2024-11-12",
+    date: "2025-06-30",
     pollutant: {
-      title: "nitrogen dioxide",
+      title: "Nitrogen dioxide",
       slug: "nitrogen-dioxide",
       maxLevel: 478,
       currentLevel: 418,
@@ -22,7 +22,7 @@ const alerts = [
     localAuthority: "Midlothian",
     mapUrl: "https://maps.app.goo.gl/vACXQPF6uAcxoEwr8",
     timeStamp: "23:00",
-    date: "2024-10-20",
+    date: "2025-06-30",
     pollutant: {
       title: "ozone",
       slug: "ozone",
@@ -39,7 +39,7 @@ const alerts = [
     localAuthority: "Doncaster",
     mapUrl: "https://maps.app.goo.gl/MJS4u4TMifcB1HbF8",
     timeStamp: "12:00",
-    date: "2024-10-20",
+    date: "2025-06-30",
     pollutant: {
       title: "Ozone",
       slug: "ozone",
@@ -56,7 +56,7 @@ const alerts = [
     localAuthority: "Southwark",
     mapUrl: "https://maps.app.goo.gl/S3RjJ4Xub6mFSrYr7",
     timeStamp: "08:00",
-    date: "2024-10-18",
+    date: "2025-06-28",
     pollutant: {
       title: "nitrogen dioxide",
       slug: "nitrogen-dioxide",
@@ -73,7 +73,7 @@ const alerts = [
     localAuthority: "Castell-nedd Port Talbot - Neath Port Talbot",
     mapUrl: "https://maps.app.goo.gl/c2V82axbUBGE33rH6",
     timeStamp: "15:00",
-    date: "2024-10-18",
+    date: "2025-06-26",
     pollutant: {
       title: "ozone",
       slug: "ozone",
