@@ -158,7 +158,7 @@ router.post('/sign-up-for-alerts/unsubscribe-alerts', (req, res) => {
 
 // Hardcoding the location page so it can be linked to from an email or text notification
 
-// MODERATE LEVEL
+// FORECAST MODERATE LEVEL
 
 router.get('/location-moderate', function(req, res) {
   const locationString = req.session.data['locationString'];
@@ -207,7 +207,7 @@ router.get('/location-moderate', function(req, res) {
 
 //-------------------------------------------------
 
-// HIGH LEVEL
+// FORECAST HIGH LEVEL 
 
 router.get('/location-high', function(req, res) {
   const locationString = req.session.data['locationString'];
@@ -256,7 +256,56 @@ router.get('/location-high', function(req, res) {
 
 //-------------------------------------------------
 
-// VERY HIGH LEVEL
+// MONITORED HIGH LEVEL 
+
+router.get('/location-breach', function(req, res) {
+  const locationString = req.session.data['locationString'];
+  const locationName = req.session.data['locationName'] || 'Missing name';
+
+  const airQuality = {
+    today: {
+      value: req.query.todayValue ||8,
+      readableBand: req.query.todayBand || 'high'
+    },
+    day2: {
+      value: req.query.day2Value || 6,
+      readableBand: req.query.day2Band || 'moderate'
+    },
+    day3: {
+      value: req.query.day3Value || 5,
+      readableBand: req.query.day3Band || 'moderate'
+    },
+    day4: {
+      value: req.query.day4Value || 3,
+      readableBand: req.query.day4Band || 'low'
+    },
+    day5: {
+      value: req.query.day5Value || 2,
+      readableBand: req.query.day5Band || 'low'
+    }
+  };
+
+  const result = {
+    GAZETTEER_ENTRY: {
+      NAME1: locationName
+    }
+  };
+
+
+  res.render(version + '/location-breach', {
+    airQuality: airQuality,
+    locationName: locationName,
+    locationString: locationString,
+    monitoringSites: monitoringSites,
+    pollutantTypes: pollutantTypes,
+    result: result,
+    version: version
+  });
+});
+
+//-------------------------------------------------
+
+// FORECAST VERY HIGH LEVEL
 
 router.get('/location-veryhigh', function(req, res) {
   const locationString = req.session.data['locationString'];

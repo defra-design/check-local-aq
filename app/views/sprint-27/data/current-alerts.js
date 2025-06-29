@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "York Fishergate",
-    slug: 'york-fishergate',
-    localAuthority: "York",
+    stationName: "London Westminster",
+    slug: 'london-westminster',
+    localAuthority: "Greater London",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",

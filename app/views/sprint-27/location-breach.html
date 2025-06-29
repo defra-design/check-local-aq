@@ -13,7 +13,6 @@
 
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
-{% set highestAQDetails = {'readableBand': 'high'} %}
 
 {% set day2 = 1 | addDaysToTodayAbrev %}
 {% set day3 = 2 | addDaysToTodayAbrev %}
@@ -25,15 +24,29 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row" data-module="edge">
-  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+          {{ title }}
+
+    <div class="govuk-!-padding-bottom-5"></div>
     
-    <h1 class="govuk-heading-{{ pageHeadingSize }}">
-        {{ title }}      
+    <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            High levels of air pollution detected.
+        </strong>
+    </div>
 
-    <h2 class="govuk-heading-m">Forecasted air pollution levels</h2>
+    <p class="govuk-body">High levels of nitrogen dioxide have been measured at a monitoring station in your region, Greater London. <a href="/{{ version }}/alerts/london-westminster">Get details</a>.</p>
 
-    <!---------- TABBED FORECAST ---------->
+    {% include "/" + folder + "/includes/daqi-breach.html" %}
+          
+      <h2 class="govuk-heading-m">Forecasted air pollution levels</h2>
+    
+      <!---------- TABBED FORECAST ---------->
 
       <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
@@ -49,22 +62,22 @@
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#day2">
+            <a class="govuk-tabs__tab" href="#tues">
               {{ day2 }}
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#day3">
+            <a class="govuk-tabs__tab" href="#wed">
               {{ day3 }}
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#day4">
+            <a class="govuk-tabs__tab" href="#thurs">
               {{ day4 }}
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#day5">
+            <a class="govuk-tabs__tab" href="#fri">
               {{ day5 }}
             </a>
           </li>
@@ -73,26 +86,26 @@
         <!-- panels -->
 
         <div class="govuk-tabs__panel" id="today">
-          {% include "/" + folder + "/includes/daqi.html" %}
+        <p class="govuk-body">Today's forecast was moderate. High levels of air pollution have been reported in your region.</p>
           <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tues">
           {% include "/" + folder + "/includes/daqi-day2.html" %}
           <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wed">
           {% include "/" + folder + "/includes/daqi-day3.html" %}
           <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="thurs">
           {% include "/" + folder + "/includes/daqi-day4.html" %}
           <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fri">
           {% include "/" + folder + "/includes/daqi-day5.html" %}
           <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
         </div>
@@ -101,21 +114,31 @@
 
       <!---------- END TABS ------------>
 
+      {% include "/" + folder + "/includes/uk-forecast-moderate.html" %}
 
-    {% include "/" + folder + "/includes/uk-forecast-high.html" %}
-    <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    {% include "/" + folder + "/includes/health-advice-high.html" %}
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    {% include "/" + folder + "/includes/reduce-your-exposure-high.html" %}
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    {% include "/" + folder + "/includes/pollutants.html" %}
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-    {% include "/" + folder + "/includes/monitoring-sites.html" %}
-  </div>
-  
+
+      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/health-advice-high.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      
+      {% include "/" + folder + "/includes/pollutants.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+      <div class="govuk-!-padding-bottom-9"></div>
+
+     
+    
+    </div>
+
 
   <!-- RELATED CONTENT -->
   <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
@@ -135,8 +158,8 @@
               href: "/" + version + "/health-advice-levels?locationName=" + locationName
           },
           {
-            text: "Access air quality alerts",
-            href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+            text: "Air quality alerts",
+            href: "/" + version + "/alerts?locationName=" + locationName
           }
           ]
       }]
@@ -146,6 +169,15 @@
   <!-- END RELATED CONTENT -->
 
 </div>
+
+<!-- UR SCENARIO LINKS (to test different versions of the location page )
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full app-contact-panel govuk-!-margin-bottom-6" >
+    <h3 class="govuk-heading-s">User research scenarios</h3>
+      <span class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-high?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario 1</a>     </span>
+      <span class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-veryhigh?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario 2</a></span>
+  </div>
+</div>
+<!--END UR LINKS -->
+
 {% endblock %}
-
-

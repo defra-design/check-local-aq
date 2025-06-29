@@ -83,28 +83,28 @@
    meta: {
      items: [
        {
-         href: "/",
-         text: "Change version"
-       },
-       {
         href: "/",
         text: version
       },
       {
-        href: "/" + version + "/" + "location" + "/" + "B235QW",
-        text: "Level: Low"
+        href: "/" + version + "/" + "location" + "/" + locationString,
+        text: "Forecast: Low"
       },
       {
         href: "/" + version + "/" + "location-moderate",
-        text: "Level: Moderate"
+        text: "Forecast: Moderate"
       },
       {
         href: "/" + version + "/" + "location-high",
-        text: "Level: High"
+        text: "Forecast: High"
+      },
+      {
+        href: "/" + version + "/" + "location-breach",
+        text: "Monitor: High"
       },
       {
         href: "/" + version + "/" + "location-veryhigh",
-        text: "Level: Very high"
+        text: "Forecast: Very high"
       }
      ],
      visuallyHiddenTitle: "Footer links"
