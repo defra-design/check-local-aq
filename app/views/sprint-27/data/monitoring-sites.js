@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "Manchester Piccadilly",
-    "site_id": "UKA00644",
-    "distance": 1.0,
-    "site_type": "urban-background",
+    "site_name": "Grangemouth Moray",
+    "site_id": "UKA00544",
+    "distance": 4.5,
+    "site_type": "urban-industrial",
     "pollutants": [
 
-       {
+       /* {
         "type": "particulate-matter2",
         "measurement": 7,
         "trend": "Falling",
@@ -22,29 +22,29 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        },
+        }, */
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	29,
+          "measurement": 	2,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        },
+        }/* ,
         {
           "type": "ozone",
           "measurement": 	22,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }
+        } */
     
     ]
 },
 {
-    "site_name": "Salford Eccles",
+    "site_name": "Grangemouth",
     "site_id": "UKA00253",
-    "distance": 7.7,
-    "site_type": "urban-background",
+    "distance": 4.8,
+    "site_type": "urban-industrial",
     "pollutants": [        
      {
       "type": "particulate-matter2",
@@ -67,20 +67,20 @@ const monitoringSites = [
       "band": "Low",
       "aqi": 3
       },
-      {
+      /* {
         "type": "ozone",
         "measurement": 	19,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }/* ,
+      }, */
       {
         "type": "sulphur-dioxide",
         "measurement": 	1,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      } */
+      }
       
     ]
 }

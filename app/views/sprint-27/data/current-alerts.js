@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Manchester Piccadilly",
-    slug: 'manchester-piccadilly',
-    localAuthority: "Greater Manchester",
+    stationName: "Glasgow Townhead",
+    slug: 'glasgow-townhead',
+    localAuthority: "Central Scotland",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",
