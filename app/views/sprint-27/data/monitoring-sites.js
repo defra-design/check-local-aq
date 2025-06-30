@@ -3,84 +3,84 @@
 const monitoringSites = [
   
   {
-    "site_name": "Borehamwood Meadow Park",
+    "site_name": "Manchester Piccadilly",
     "site_id": "UKA00644",
-    "distance": 5.3,
+    "distance": 1.0,
     "site_type": "urban-background",
     "pollutants": [
 
        {
         "type": "particulate-matter2",
-        "measurement": 3,
+        "measurement": 7,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 5,
+          "measurement": 9,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	3,
+          "measurement": 	29,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }/* ,
+        },
         {
           "type": "ozone",
-          "measurement": 	68,
+          "measurement": 	22,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } */
+        }
     
     ]
 },
 {
-    "site_name": "London N. Kensington",
+    "site_name": "Salford Eccles",
     "site_id": "UKA00253",
     "distance": 7.7,
     "site_type": "urban-background",
     "pollutants": [        
-     /*  {
+     {
       "type": "particulate-matter2",
-      "measurement": 2,
+      "measurement": 5,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
       },
       {
         "type": "particulate-matter10",
-        "measurement": 7,
+        "measurement": 8,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      }, */
+      },
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	6,
+      "measurement": 	26,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
       },
       {
         "type": "ozone",
-        "measurement": 	70,
+        "measurement": 	19,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      },
+      }/* ,
       {
         "type": "sulphur-dioxide",
         "measurement": 	1,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }
+      } */
       
     ]
 }
