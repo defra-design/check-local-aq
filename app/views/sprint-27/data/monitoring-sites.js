@@ -3,36 +3,36 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Haringey Priory Park South",
+    "site_name": "Manchester Piccadilly",
     "site_id": "UKA00544",
-    "distance": 4.5,
+    "distance": 7.5,
     "site_type": "urban-background",
     "pollutants": [
 
-       /* {
+      {
         "type": "particulate-matter2",
-        "measurement": 7,
+        "measurement": 8,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 9,
+          "measurement": 19,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        }, */
+        },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	22,
+          "measurement": 	17,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } ,
+        },
         {
           "type": "ozone",
-          "measurement": 	42,
+          "measurement": 	38,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
@@ -41,12 +41,12 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Tower Hamlets Roadside",
+    "site_name": "Manchester Sharston",
     "site_id": "UKA00253",
-    "distance": 4.8,
-    "site_type": "urban-traffic",
+    "distance": 6.1,
+    "site_type": "suburban-industrial",
     "pollutants": [        
-    /*  {
+      {
       "type": "particulate-matter2",
       "measurement": 5,
       "trend": "Falling",
@@ -59,14 +59,14 @@ const monitoringSites = [
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      }, */
+      },
       {
       "type": "nitrogen-dioxide",
       "measurement": 	28,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      }/*,
+      },
        {
         "type": "ozone",
         "measurement": 	19,
@@ -80,7 +80,7 @@ const monitoringSites = [
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }*/
+      }
       
     ]
 }

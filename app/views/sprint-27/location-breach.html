@@ -9,7 +9,7 @@
 
 {% set caption = "" %}
 
-{% set title = "Air quality in " + "EN9 1FQ, Waltham Abbey" %}
+{% set title = "Air quality in " + "SK2 5RP, Stockport" %}
 
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
@@ -40,7 +40,8 @@
         </strong>
     </div>
 
-    <p class="govuk-body">High levels of nitrogen dioxide have been measured at a monitoring station in your region, East of England. <a href="/{{ version }}/alerts/cambridge-roadside">Get details</a>.</p>
+    <!--- MANUALLY CHANGE THE REGION AND LINK LOCATION HERE FOR UR SESSIONS --->
+    <p class="govuk-body">High levels of nitrogen dioxide have been measured at a monitoring station in your region, the North West. <a href="/{{ version }}/alerts/blackpool-whitegate-drive">Get details</a>.</p>
 
     {% include "/" + folder + "/includes/daqi-breach.html" %}
           
