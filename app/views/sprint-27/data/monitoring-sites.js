@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Grangemouth Moray",
+    "site_name": "London Haringey Priory Park South",
     "site_id": "UKA00544",
     "distance": 4.5,
-    "site_type": "urban-industrial",
+    "site_type": "urban-background",
     "pollutants": [
 
        /* {
@@ -25,28 +25,28 @@ const monitoringSites = [
         }, */
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	2,
-          "trend": "Rising",
-          "band": "Low",
-          "aqi": 3
-        }/* ,
-        {
-          "type": "ozone",
           "measurement": 	22,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } */
+        } ,
+        {
+          "type": "ozone",
+          "measurement": 	42,
+          "trend": "Rising",
+          "band": "Low",
+          "aqi": 3
+        }
     
     ]
 },
 {
-    "site_name": "Grangemouth",
+    "site_name": "Tower Hamlets Roadside",
     "site_id": "UKA00253",
     "distance": 4.8,
-    "site_type": "urban-industrial",
+    "site_type": "urban-traffic",
     "pollutants": [        
-     {
+    /*  {
       "type": "particulate-matter2",
       "measurement": 5,
       "trend": "Falling",
@@ -59,28 +59,28 @@ const monitoringSites = [
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },
+      }, */
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	26,
+      "measurement": 	28,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      },
-      /* {
+      }/*,
+       {
         "type": "ozone",
         "measurement": 	19,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }, */
+      }, 
       {
         "type": "sulphur-dioxide",
         "measurement": 	1,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }
+      }*/
       
     ]
 }
