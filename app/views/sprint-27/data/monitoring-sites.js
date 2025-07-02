@@ -3,84 +3,84 @@
 const monitoringSites = [
   
   {
-    "site_name": "Manchester Piccadilly",
-    "site_id": "UKA00544",
-    "distance": 7.5,
-    "site_type": "urban-background",
+    "site_name": "Maidstone Upper Stone Street",
+    "site_id": "UKA00251",
+    "distance": 4.3,
+    "site_type": "rural-background",
     "pollutants": [
 
       {
         "type": "particulate-matter2",
-        "measurement": 8,
+        "measurement": 15,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 19,
+          "measurement": 23,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	17,
+          "measurement": 	7,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "ozone",
-          "measurement": 	38,
+          "measurement": 	103,
           "trend": "Rising",
-          "band": "Low",
-          "aqi": 3
+          "band": "Moderate",
+          "aqi": 5
         }
     
     ]
 },
 {
-    "site_name": "Manchester Sharston",
+    "site_name": "Rochester Stoke",
     "site_id": "UKA00253",
-    "distance": 6.1,
-    "site_type": "suburban-industrial",
+    "distance": 16.8,
+    "site_type": "rural-background",
     "pollutants": [        
       {
       "type": "particulate-matter2",
-      "measurement": 5,
+      "measurement": 10,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
       },
       {
         "type": "particulate-matter10",
-        "measurement": 8,
+        "measurement": 19,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	28,
+      "measurement": 	12,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
       },
        {
         "type": "ozone",
-        "measurement": 	19,
+        "measurement": 	103,
         "trend": "Rising",
-        "band": "Low",
-        "aqi": 3
-      }, 
+        "band": "Moderate",
+        "aqi": 5
+      }/* , 
       {
         "type": "sulphur-dioxide",
         "measurement": 	1,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }
+      } */
       
     ]
 }

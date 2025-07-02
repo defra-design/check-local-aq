@@ -9,11 +9,11 @@
     {% set urlString = "?locationName=" + locationName + parentArea %}
     {% set row = [
         { 
-            html: "<a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + urlString + "'>" + pollutantDetail.title + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
+            html: "<b><a class='govuk-!-margin-bottom-1' href='/" + version + pollutantDetail.href + urlString + "'>" + pollutantDetail.title + "</a></b><span class='govuk-caption-s govuk-!-margin-bottom-1'>Low range " ~ pollutantDetail.low_range ~  "</span>",
             classes: "align-middle" 
         },
         { 
-            html: (pollutant.measurement | int) + "<span class='govuk-!-font-size-16 govuk-!-font-weight-regular'> μg/m<sup>3</sup></span>",
+            html: "<b>" + (pollutant.measurement | int) + "</b>" + "<span class='govuk-!-font-size-16 govuk-!-font-weight-regular'> μg/m<sup>3</sup></span>",
             classes: "align-middle" 
         },
         { 

@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Blackpool Whitegate Drive",
-    slug: 'blackpool-whitegate-drive',
-    localAuthority: "North West",
+    stationName: "Reading New Town",
+    slug: 'Reading-new-town',
+    localAuthority: "South East",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",
