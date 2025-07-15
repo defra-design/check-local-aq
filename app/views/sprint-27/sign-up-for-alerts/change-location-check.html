@@ -1,0 +1,29 @@
+{% extends "layouts/sprint-27.html" %}
+{% set servicePage = true %}
+{% set title = "Locations matching '" ~ userLocation ~ "'" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Your alert location will change</h1>  <!-- REMOVED FROM H1 >> '{{ userLocation }}' -->
+    <p>You are changing your alert for <b>{{ locationString }}</b></p>
+    <p>Your new alert will be <b>Bristol, City of Bristol</b></p>
+
+    <p class="govuk-body govuk-!-margin-bottom-9">
+        
+    </p>
+  
+    <!-- BUTTON -->
+    {% set href = "/" + version + "/sign-up-for-alerts/manage-alerts-changed-location" %}
+    {{ govukButton({
+      text: "Change alert location",
+      href: href,
+      classes: "govuk-button govuk-!-margin-bottom-6"
+    }) }}
+
+    <p class="govuk-body"><a href="manage-alerts-setup.html">Cancel this location change</a></p>
+  </div>
+</div>
+{% endblock %}
