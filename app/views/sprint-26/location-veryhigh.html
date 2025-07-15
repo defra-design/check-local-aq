@@ -1,0 +1,150 @@
+{% extends "layouts/sprint-26.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+
+{% set title = "Air quality in " + "ME17 4DS, Coxheath" %}
+
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set highestAQDetails = {'readableBand': 'very high'} %}
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    
+    <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {{ title }}      
+    
+    <h2 class="govuk-heading-m">Forecasted air pollution levels</h2>
+
+    <!---------- TABBED FORECAST ---------->
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <!-- tabs -->
+
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#today">
+              Today
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day2">
+              {{ day2 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day3">
+              {{ day3 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day4">
+              {{ day4 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day5">
+              {{ day5 }}
+            </a>
+          </li>
+        </ul>
+
+        <!-- panels -->
+
+        <div class="govuk-tabs__panel" id="today">
+          {% include "/" + folder + "/includes/daqi.html" %}
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          {% include "/" + folder + "/includes/daqi-day2.html" %}
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          {% include "/" + folder + "/includes/daqi-day3.html" %}
+          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          {% include "/" + folder + "/includes/daqi-day4.html" %}
+          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          {% include "/" + folder + "/includes/daqi-day5.html" %}
+          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+        </div>
+
+      </div>
+
+      <!---------- END TABS ------------>
+
+    {% include "/" + folder + "/includes/uk-forecast-vhigh.html" %}
+    <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/health-advice-vhigh.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/reduce-your-exposure-high.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/pollutants.html" %}
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/monitoring-sites.html" %}
+  </div>
+  
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Health advice for air pollution levels",
+              href: "/" + version + "/health-advice-levels?locationName=" + locationName
+          },
+          {
+            text: "Air quality alerts",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+{% endblock %}
+
+

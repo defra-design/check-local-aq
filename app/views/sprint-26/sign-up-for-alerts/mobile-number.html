@@ -1,0 +1,66 @@
+{% extends "layouts/sprint-26.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+How would you like to receive your alert? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/code-presend" method="post">
+
+        {% set textHtml %}
+        {{ govukInput({
+          id: "notify-by-text",
+          name: "notifyByText",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter mobile phone number"
+          }
+        }) }}
+        {% endset %}
+        
+       <h1 class="govuk-heading-l">What is your mobile phone number? </h1>
+        <p>We will send you a text message with a 5-digit activation code.</p>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="mobile-number">
+                Enter your mobile phone number
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="notify-by-text" name="notifyByText" type="text" value="{{data['text']}}">
+        </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+      <!-- {{ locationString }} -->
+
+    </div>
+  </div>
+
+{% endblock %}
