@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% set displayBacklink = false %}
+{% set caption = "" %}
+{% set title = "Sulphur dioxide (SO₂)" %}
+
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <p>Sulphur dioxide is a colourless gas with a strong odour. Direct exposure to sulphur dioxide is associated with asthma and chronic bronchitis. It can lead to irritation and constriction of the airways.</p>
+      <h2 class="govuk-heading-s">
+        Sources of sulphur dioxide 
+      </h2>
+      <p>Sulphur dioxide can be emitted both by natural processes (for example, forest fires) and from human activities (for example, burning fuels). It's mainly produced from:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for sources in ["burning petrol or diesel in vehicles", "gas boilers", "coal burning power stations", "commercial manufacturing", "food manufacturing"] %}
+        <li>{{ sources }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+

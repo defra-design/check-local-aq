@@ -1,0 +1,59 @@
+{% extends "layouts/sprint-28.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Sign up for air quality alerts" %}
+
+
+{% block pageTitle %}
+What types of notifications would you like to receive? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <form class="form" action="/{{ version }}/sign-up-for-alerts/method-of-notification" method="post">
+        
+    {{ govukCheckboxes({
+      name: "air-quality-alerts", 
+      fieldset: {
+        legend: {
+          text: "What type of alert would you like to receive?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "a pollutant measured nearby goes above the legal limit",
+          text: "When a pollutant measured nearby goes above the legal limit"
+        },
+        {
+          value: "pollution levels are forecast to be moderate or above",
+          text: "When pollution levels are forecast to be moderate or above"
+        },
+        {
+          value: "an air quality alert has ended",
+          text: "When an air quality alert has ended"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: {
+        id: "notificationContinueButton"
+      }
+    }) }}
+  </form>
+</div>
+</div>
+{% endblock %}

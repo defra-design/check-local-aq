@@ -1,0 +1,28 @@
+
+// DAQI Colours
+
+$daqi-colour-0: govuk-colour("light-grey");
+$daqi-colour-1: govuk-colour("green");
+$daqi-colour-2: govuk-colour("green");
+$daqi-colour-3: govuk-colour("green");
+$daqi-colour-4: govuk-colour("yellow");
+$daqi-colour-5: govuk-colour("yellow");
+$daqi-colour-6: govuk-colour("yellow");
+$daqi-colour-7: govuk-colour("red");
+$daqi-colour-8: govuk-colour("red");
+$daqi-colour-9: govuk-colour("red");
+$daqi-colour-10: govuk-colour("purple");
+
+$daqi-colour: (
+  $daqi-colour-0,
+  $daqi-colour-1,
+  $daqi-colour-2,
+  $daqi-colour-3,
+  $daqi-colour-4,
+  $daqi-colour-5,
+  $daqi-colour-6,
+  $daqi-colour-7,
+  $daqi-colour-8,
+  $daqi-colour-9,
+  $daqi-colour-10
+);

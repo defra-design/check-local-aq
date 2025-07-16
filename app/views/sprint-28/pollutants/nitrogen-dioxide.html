@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Nitrogen dioxide (NO₂)" %}
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+      <p>Nitrogen dioxide is a brown gas that can affect our health and how well our lungs work. People with asthma are particularly affected.</p>
+      <h2 class="govuk-heading-s">Sources of nitrogen dioxide</h2>
+      <p>Nitrogen dioxide is released into the atmosphere when fuels are burned. It's mainly produced during:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for sources in ["burning petrol or diesel in vehicles", "burning natural gas in a central-heating boiler or power station", "welding", "the use of explosives", "commercial manufacturing", "food manufacturing"] %}
+          <li>{{ sources }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    </div>
+{% endblock %}
