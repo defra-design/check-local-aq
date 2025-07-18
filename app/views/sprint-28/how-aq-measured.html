@@ -1,7 +1,7 @@
 <!--{% extends "layouts/main.html" %}-->
 {% extends "layouts/sprint-28.html" %}
 {% set caption = "" %}
-{% set title = "How air quality information is measured" %}
+{% set title = "How air quality is measured" %}
 
 {% block beforeContent %}
 
@@ -34,8 +34,8 @@
           <li><a href="/{{ version }}/pollutants/ozone?locationName={{ locationName }}&parentArea={{ parentArea }}">ozone</a></li>
           <li><a href="/{{ version }}/pollutants/nitrogen-dioxide?locationName={{ locationName }}&parentArea={{ parentArea }}">nitrogen dioxide</a></li>
           <li><a href="/{{ version }}/pollutants/sulphur-dioxide?locationName={{ locationName }}&parentArea={{ parentArea }}">sulphur dioxide</a></li>
-          <li><a href="/{{ version }}/pollutants/particulate-matter2?locationName={{ locationName }}&parentArea={{ parentArea }}">PM2.5</a></li>
-          <li><a href="/{{ version }}/pollutants/particulate-matter10?locationName={{ locationName }}&parentArea={{ parentArea }}">PM10</a></li>
+          <li><a href="/{{ version }}/pollutants/particulate-matter?locationName={{ locationName }}&parentArea={{ parentArea }}">particulate matter (PM2.5 and PM10)</a></li>
+          <!-- <li><a href="/{{ version }}/pollutants/particulate-matter10?locationName={{ locationName }}&parentArea={{ parentArea }}">PM10</a></li> -->
       </ul>
 
       <div class="govuk-!-padding-bottom-6"></div>

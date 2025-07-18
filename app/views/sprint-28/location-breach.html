@@ -31,21 +31,24 @@
           {{ title }}
 
     <div class="govuk-!-padding-bottom-5"></div>
+
+    <!--------- WARNING TEXT ----------->
     
     <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
             <span class="govuk-visually-hidden">Warning</span>
-            High levels of air pollution detected.
+            High levels of air pollution measured in this region
         </strong>
     </div>
 
     <!--- MANUALLY CHANGE THE REGION AND LINK LOCATION HERE FOR UR SESSIONS --->
-    <p class="govuk-body">High levels of nitrogen dioxide have been measured at a monitoring station in your region, the South East. <a href="/{{ version }}/alerts/reading-new-town">Get details</a>.</p>
+
+    <p class="govuk-body">A monitoring station in {region} has measured high levels of nitrogen dioxide. <a href="/{{ version }}/alerts/reading-new-town">Find out how this could affect you</a>.</p>
 
     {% include "/" + folder + "/includes/daqi-breach.html" %}
           
-      <h2 class="govuk-heading-m">Forecasted air pollution levels</h2>
+      <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
     
       <!---------- TABBED FORECAST ---------->
 
@@ -87,28 +90,28 @@
         <!-- panels -->
 
         <div class="govuk-tabs__panel" id="today">
-        <p class="govuk-body">Today's forecast was moderate. High levels of air pollution have been reported in your region.</p>
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+        <p class="govuk-body">The prediction for today was for moderate air pollution. However, high levels of nitrogen dioxide have been measured in this region.</p>
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tues">
           {% include "/" + folder + "/includes/daqi-day2.html" %}
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wed">
           {% include "/" + folder + "/includes/daqi-day3.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="thurs">
           {% include "/" + folder + "/includes/daqi-day4.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fri">
           {% include "/" + folder + "/includes/daqi-day5.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
       </div>

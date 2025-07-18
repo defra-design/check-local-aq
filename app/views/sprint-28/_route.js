@@ -215,7 +215,7 @@ router.get('/location-high', function(req, res) {
 
   const airQuality = {
     today: {
-      value: req.query.todayValue || 8,
+      value: req.query.todayValue || 9,
       readableBand: req.query.todayBand || 'high'
     },
     day2: {
@@ -264,7 +264,7 @@ router.get('/location-breach', function(req, res) {
 
   const airQuality = {
     today: {
-      value: req.query.todayValue ||8,
+      value: req.query.todayValue ||9,
       readableBand: req.query.todayBand || 'high'
     },
     day2: {

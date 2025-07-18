@@ -56,22 +56,22 @@
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#tues">
+            <a class="govuk-tabs__tab" href="#day2">
               {{ day2 }}
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#wed">
+            <a class="govuk-tabs__tab" href="#day3">
               {{ day3 }}
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#thurs">
+            <a class="govuk-tabs__tab" href="#day4">
               {{ day4 }}
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#fri">
+            <a class="govuk-tabs__tab" href="#day5">
               {{ day5 }}
             </a>
           </li>
@@ -81,27 +81,27 @@
 
         <div class="govuk-tabs__panel" id="today">
           {% include "/" + folder + "/includes/daqi.html" %}
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tues">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
           {% include "/" + folder + "/includes/daqi-day2.html" %}
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wed">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
           {% include "/" + folder + "/includes/daqi-day3.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="thurs">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
           {% include "/" + folder + "/includes/daqi-day4.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fri">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
           {% include "/" + folder + "/includes/daqi-day5.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
       </div>
