@@ -12,7 +12,10 @@
     }) }}
 
 <!-- BACK LINK -->
-    <a href="/{{ version }}/location?locationName={{ locationName }}" class="govuk-back-link">Air quality in {{ locationName }}</a>
+  {{ govukBackLink({
+    text: "Air quality in " + locationName,
+    href: "javascript:window.history.back()"
+  }) }}
   <!-- END BACK -->
 
 

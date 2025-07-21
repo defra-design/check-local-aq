@@ -32,12 +32,28 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
           <li>if a nearby monitoring site detects high or very high pollution levels anywhere in the South West region</li>
         </ul>
 
+{{ email }}
+{{ text }}
+
     <div class="govuk-!-padding-bottom-5"></div>
 
-      {{ govukButton({
+    <!---- DYNAMIC LINK BASED ON EMAIL OR TEXT ---->
+    {% if text %}
+
+       {{ govukButton({
         text: "Continue",
         href: "/" + version + "/sign-up-for-alerts/code-presend-2"
       }) }}
+
+    {% else %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/" + version + "/sign-up-for-alerts/check-your-email-2"
+      }) }}
+
+    {% endif %}
+     
 
     <!--{{ locationString }}-->
 

@@ -40,10 +40,16 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
         html: notification,
         type: "success"
       }) }}
-    
-    <p class="govuk-body">We have sent you a confirmation text message.</p>
 
-    <p class="govuk-body govuk-!-padding-bottom-6">If you want to set up another alert for <b>{{ text }}</b> you can <a href="/{{ version }}/sign-up-for-alerts/add-alert-location">search for another location</a>. </p>
+    <!---- DISPLAY CONFIRMATION TYPE MESSAGE ---->
+    {% if email %}
+      <p>We have sent you a confirmation email.</p>
+    {% else %}
+      <p>We have sent you a confirmation text message.</p>
+    {% endif %}
+  
+
+    <p class="govuk-body govuk-!-padding-bottom-6">If you want to set up another alert for <b>{{ text }}</b> <b>{{ email }}</b> you can <a href="/{{ version }}/sign-up-for-alerts/add-alert-location">search for another location</a>. </p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 

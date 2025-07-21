@@ -40,7 +40,9 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/change-location-check',
   '/sign-up-for-alerts/change-alert-method',
   '/sign-up-for-alerts/check-your-email',
+  '/sign-up-for-alerts/check-your-email-2',
   '/sign-up-for-alerts/check-your-messages',
+   '/sign-up-for-alerts/check-your-messages-2',
   '/sign-up-for-alerts/check-your-details',
   '/sign-up-for-alerts/confirm-location',
   '/sign-up-for-alerts/manage-alerts',
@@ -57,8 +59,11 @@ const locationRequiredRoutes = [
 
   '/sign-up-for-alerts/mobile-number',
   '/sign-up-for-alerts/code-presend',
+  '/sign-up-for-alerts/code-presend-2',
   '/sign-up-for-alerts/confirm-alert-details',
+  '/sign-up-for-alerts/confirm-alert-details-2',
   '/sign-up-for-alerts/alerts-success',
+  '/sign-up-for-alerts/alerts-success-2',
 
   '/reduce-exposure',
   '/health-effects',
