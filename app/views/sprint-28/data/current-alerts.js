@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Cambridge Roadside Information",
-    slug: 'cambridge-roadside',
-    localAuthority: "East England",
+    stationName: "Armagh Roadside",
+    slug: 'armagh-roadside',
+    localAuthority: "Armagh",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",

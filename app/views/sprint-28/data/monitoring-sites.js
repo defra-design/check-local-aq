@@ -3,56 +3,57 @@
 const monitoringSites = [
   
   {
-    "site_name": "Norwich Lakenfields",
+    "site_name": "Armagh Roadside",
     "site_id": "UKA00251",
-    "distance": 5.4,
-    "site_type": "urban-background",
+    "distance": 7.2,
+    "site_type": "urban-traffic",
     "pollutants": [
 
-      {
+     /*  {
         "type": "particulate-matter2",
         "measurement": 3,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
-        },
+        }, */
         {
           "type": "particulate-matter10",
-          "measurement": 9,
+          "measurement": 12,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
         } ,
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	5,
+          "measurement": 	18,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        },
+        }/* ,
         {
           "type": "ozone",
           "measurement": 	49,
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 5
-        } 
+        }  */
     
     ]
 },
 {
-    "site_name": "Weybourne",
+    "site_name": "Belfast Stockman's Lane",
     "site_id": "UKA00253",
-    "distance": 19.3,
-    "site_type": "rural-background",
-    "pollutants": [        
-      {
+    "distance": 31.6,
+    "site_type": "urban-traffic",
+    "pollutants": [   
+
+     /*  {
       "type": "particulate-matter2",
       "measurement": 3,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      },
+      }, */
       {
         "type": "particulate-matter10",
         "measurement": 6,
@@ -60,20 +61,20 @@ const monitoringSites = [
         "band": "Low",
         "aqi": 3
       },
-      /* {
+      {
       "type": "nitrogen-dioxide",
-      "measurement": 	43,
+      "measurement": 	15,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      }, */
+      }/*,
        {
         "type": "ozone",
         "measurement": 	50,
         "trend": "Rising",
         "band": "Low",
         "aqi": 5
-      }/* , 
+      } , 
       {
         "type": "sulphur-dioxide",
         "measurement": 	1,

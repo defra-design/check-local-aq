@@ -1,9 +1,9 @@
 const airQualityValues = {
-    aqValueToday: "3",
-    aqValueDay2: "4",
-    aqValueDay3: "1",
+    aqValueToday: "2",
+    aqValueDay2: "3",
+    aqValueDay3: "2",
     aqValueDay4: "3",
-    aqValueDay5: "3"
+    aqValueDay5: "1"
 };
 
 const commonMessages = {
