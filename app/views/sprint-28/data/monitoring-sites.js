@@ -3,26 +3,26 @@
 const monitoringSites = [
   
   {
-    "site_name": "Maidstone Upper Stone Street",
+    "site_name": "London Teddington Bushy Park",
     "site_id": "UKA00251",
-    "distance": 4.3,
-    "site_type": "rural-background",
+    "distance": 1.7,
+    "site_type": "urban-background",
     "pollutants": [
 
       {
         "type": "particulate-matter2",
-        "measurement": 15,
+        "measurement": 4,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 23,
+          "measurement": 8,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        },
+        }/* ,
         {
           "type": "nitrogen-dioxide",
           "measurement": 	7,
@@ -36,42 +36,42 @@ const monitoringSites = [
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 5
-        }
+        } */
     
     ]
 },
 {
-    "site_name": "Rochester Stoke",
+    "site_name": "London Harlington",
     "site_id": "UKA00253",
-    "distance": 16.8,
-    "site_type": "rural-background",
+    "distance": 4.6,
+    "site_type": "urban-industrial",
     "pollutants": [        
       {
       "type": "particulate-matter2",
-      "measurement": 10,
+      "measurement": 3,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
       },
       {
         "type": "particulate-matter10",
-        "measurement": 19,
+        "measurement": 6,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	12,
+      "measurement": 	43,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
       },
        {
         "type": "ozone",
-        "measurement": 	103,
+        "measurement": 	25,
         "trend": "Rising",
-        "band": "Moderate",
+        "band": "Low",
         "aqi": 5
       }/* , 
       {
