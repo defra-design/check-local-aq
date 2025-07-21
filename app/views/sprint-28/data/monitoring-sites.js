@@ -3,48 +3,48 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Teddington Bushy Park",
+    "site_name": "Norwich Lakenfields",
     "site_id": "UKA00251",
-    "distance": 1.7,
+    "distance": 5.4,
     "site_type": "urban-background",
     "pollutants": [
 
       {
         "type": "particulate-matter2",
-        "measurement": 4,
+        "measurement": 3,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
         },
         {
           "type": "particulate-matter10",
-          "measurement": 8,
+          "measurement": 9,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        }/* ,
+        } ,
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	7,
+          "measurement": 	5,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
         },
         {
           "type": "ozone",
-          "measurement": 	103,
+          "measurement": 	49,
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 5
-        } */
+        } 
     
     ]
 },
 {
-    "site_name": "London Harlington",
+    "site_name": "Weybourne",
     "site_id": "UKA00253",
-    "distance": 4.6,
-    "site_type": "urban-industrial",
+    "distance": 19.3,
+    "site_type": "rural-background",
     "pollutants": [        
       {
       "type": "particulate-matter2",
@@ -60,16 +60,16 @@ const monitoringSites = [
         "band": "Low",
         "aqi": 3
       },
-      {
+      /* {
       "type": "nitrogen-dioxide",
       "measurement": 	43,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      },
+      }, */
        {
         "type": "ozone",
-        "measurement": 	25,
+        "measurement": 	50,
         "trend": "Rising",
         "band": "Low",
         "aqi": 5

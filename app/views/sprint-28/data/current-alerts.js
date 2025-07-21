@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Reading New Town",
-    slug: 'reading-new-town',
-    localAuthority: "South East",
+    stationName: "Cambridge Roadside Information",
+    slug: 'cambridge-roadside',
+    localAuthority: "East England",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",

@@ -1,6 +1,6 @@
 const airQualityValues = {
     aqValueToday: "3",
-    aqValueDay2: "2",
+    aqValueDay2: "4",
     aqValueDay3: "1",
     aqValueDay4: "3",
     aqValueDay5: "3"
