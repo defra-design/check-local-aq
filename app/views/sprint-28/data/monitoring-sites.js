@@ -3,85 +3,85 @@
 const monitoringSites = [
   
   {
-    "site_name": "Armagh Roadside",
+    "site_name": "Salford Eccles",
     "site_id": "UKA00251",
-    "distance": 7.2,
-    "site_type": "urban-traffic",
+    "distance": 1.8,
+    "site_type": "urban-background",
     "pollutants": [
 
-     /*  {
+     {
         "type": "particulate-matter2",
         "measurement": 3,
         "trend": "Falling",
         "band": "Low",
           "aqi": 3
-        }, */
+        },
         {
           "type": "particulate-matter10",
-          "measurement": 12,
+          "measurement": 6,
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
         } ,
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	18,
+          "measurement": 	7,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }/* ,
+        } ,
         {
           "type": "ozone",
-          "measurement": 	49,
+          "measurement": 	64,
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 5
-        }  */
+        }
     
     ]
 },
 {
-    "site_name": "Belfast Stockman's Lane",
+    "site_name": "Manchester Piccadilly",
     "site_id": "UKA00253",
-    "distance": 31.6,
-    "site_type": "urban-traffic",
+    "distance": 2.5,
+    "site_type": "urban-background",
     "pollutants": [   
 
-     /*  {
+     {
       "type": "particulate-matter2",
-      "measurement": 3,
+      "measurement": 5,
       "trend": "Falling",
       "band": "Low",
         "aqi": 3
-      }, */
+      },
       {
         "type": "particulate-matter10",
-        "measurement": 6,
+        "measurement": 9,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	15,
+      "measurement": 	12,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      }/*,
+      },
        {
         "type": "ozone",
-        "measurement": 	50,
+        "measurement": 	59,
         "trend": "Rising",
         "band": "Low",
         "aqi": 5
       } , 
       {
         "type": "sulphur-dioxide",
-        "measurement": 	1,
+        "measurement": 	5,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      } */
+      }
       
     ]
 }

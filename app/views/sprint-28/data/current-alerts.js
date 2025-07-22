@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Armagh Roadside",
-    slug: 'armagh-roadside',
-    localAuthority: "Armagh",
+    stationName: "Blackpool Whitegate Drive",
+    slug: 'blackpool-whitegate',
+    localAuthority: "North West",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",
