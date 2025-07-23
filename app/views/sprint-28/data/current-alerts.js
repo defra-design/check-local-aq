@@ -1,8 +1,8 @@
 const alerts = [
   {
-    stationName: "Northampton Spring Park",
-    slug: 'northampton-spring-park',
-    localAuthority: "East Midlands",
+    stationName: "London Harlington",
+    slug: 'london-harlington',
+    localAuthority: "Greater London",
     mapUrl: "https://maps.app.goo.gl/6ic2LJXG1ZqTBYFaA",
     timeStamp: "07:00",
     date: "2025-06-30",

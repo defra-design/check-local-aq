@@ -3,9 +3,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "Lincoln Canwick Road",
+    "site_name": "Tower Hamlets Roadside",
     "site_id": "UKA00251",
-    "distance": 6.2,
+    "distance": 9.0,
     "site_type": "urban-traffic",
     "pollutants": [
 
@@ -25,7 +25,7 @@ const monitoringSites = [
         } , */
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	24,
+          "measurement": 	28,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
@@ -41,13 +41,13 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Toft Newton",
+    "site_name": "London Haringey Priory Park South",
     "site_id": "UKA00253",
-    "distance": 14.4,
-    "site_type": "rural-background",
+    "distance": 10.3,
+    "site_type": "urban-background",
     "pollutants": [   
 
-     {
+     /* {
       "type": "particulate-matter2",
       "measurement": 5,
       "trend": "Falling",
@@ -60,21 +60,21 @@ const monitoringSites = [
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      },
+      }, */
       {
       "type": "nitrogen-dioxide",
       "measurement": 	7,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      },
+      }/*,
        {
         "type": "ozone",
         "measurement": 	9,
         "trend": "Rising",
         "band": "Low",
         "aqi": 5
-      } /* , 
+      }, 
       {
         "type": "sulphur-dioxide",
         "measurement": 	5,
