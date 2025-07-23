@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "Salford Eccles",
+    "site_name": "Lincoln Canwick Road",
     "site_id": "UKA00251",
-    "distance": 1.8,
-    "site_type": "urban-background",
+    "distance": 6.2,
+    "site_type": "urban-traffic",
     "pollutants": [
 
-     {
+     /* {
         "type": "particulate-matter2",
         "measurement": 3,
         "trend": "Falling",
@@ -22,29 +22,29 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        } ,
+        } , */
         {
           "type": "nitrogen-dioxide",
-          "measurement": 	7,
+          "measurement": 	24,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } ,
+        } /* ,
         {
           "type": "ozone",
           "measurement": 	64,
           "trend": "Rising",
           "band": "Moderate",
           "aqi": 5
-        }
+        } */
     
     ]
 },
 {
-    "site_name": "Manchester Piccadilly",
+    "site_name": "Toft Newton",
     "site_id": "UKA00253",
-    "distance": 2.5,
-    "site_type": "urban-background",
+    "distance": 14.4,
+    "site_type": "rural-background",
     "pollutants": [   
 
      {
@@ -56,32 +56,32 @@ const monitoringSites = [
       },
       {
         "type": "particulate-matter10",
-        "measurement": 9,
+        "measurement": 3,
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
       },
       {
       "type": "nitrogen-dioxide",
-      "measurement": 	12,
+      "measurement": 	7,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
       },
        {
         "type": "ozone",
-        "measurement": 	59,
+        "measurement": 	9,
         "trend": "Rising",
         "band": "Low",
         "aqi": 5
-      } , 
+      } /* , 
       {
         "type": "sulphur-dioxide",
         "measurement": 	5,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      }
+      } */
       
     ]
 }
