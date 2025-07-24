@@ -1,3 +1,8 @@
 {
-  "serviceName": "Check air quality"
+  "serviceName": "Check air quality",
+  "plugins": {
+  "govuk-frontend": {
+	"rebrand": true
+    }
+  }
 }
