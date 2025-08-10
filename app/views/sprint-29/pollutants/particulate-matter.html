@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Smoke, dust and other particles (particulate matter)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+      <p>Particulate matter are small solid or liquid particles in the air. These particles can come from natural processes, industrial processes and other human activity.</p>
+      <p>There are 2 main types of particulate matter (PM):</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>PM2.5 are particles 2.5 micrometres wide, or smaller</li>
+        <li>PM10 are particles 10 micrometres wide, or smaller (this includes PM2.5)</li>
+      </ul>
+
+      <p>For context, the width of a human hair is about 50 to 70 micrometres.</p>
+      <p>These particles are small enough for us to breathe in. When there is a lot of particulate matter in the air, this can cause lung inflammation and <a href="../health-effects.html">other health effects</a>. The particles can also enter the bloodstream through the lungs and travel around the body, affecting the heart, brain and other organs.</p>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+      
+      <!---- SOURCES OF PARTICULATE MATTER ---->
+      <h2 class="govuk-heading-s">Sources of particulate matter</h2>
+      <p>Particulate matter includes smoke, dust, soot and small drops of liquid. These particles can come from many different sources.</p>
+
+      <p>The main sources of particulate matter pollution are:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>fuel burning by cars and other vehicles</li>
+        <li>fuel burning by industry and domestic properties</li>
+        <li>vehicle tyres and brakes getting worn down</li>
+        <li>dust and soil from construction sites, landfills, and agriculture</li>
+        <li>sea spray particles</li>
+        <li>burning vegetation and wildfires</li>
+        <li>pollen</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+      <!---- MONITORING PARTICULATE MATTER ---->
+      <h2 class="govuk-heading-s">Monitoring levels of particulate matter</h2>
+      <p>Particulate matter pollution is monitored across the UK.</p>
+      <p>PM2.5 and PM10 are 2 of the 5 pollutants used in the Daily Air Quality Index (DAQI) scale. The <a href="../how-aq-measured.html">DAQI scale</a> helps explain the short term risk of air pollution. It measures low, moderate, high and very high levels of pollutants in the air.</p>
+      <p>Pollutant levels are measured in micrograms per cubic metre (µg/m³).</p>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+      <!---- PM 2.5 ---->
+      <h2 class="govuk-heading-s">Measuring PM2.5</h2>
+      <p>PM2.5 pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 35 µg/m³</li>
+        <li>moderate from 36 to 53 µg/m³</li>
+        <li>high from 54 to 70 µg/m³</li>
+        <li>very high at 71 µg/m³ or higher</li>
+      </ul>
+
+      <p>How much PM2.5 is in the air at each level of the DAQI scale:</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-pm2.png"></div>
+      <!---- END DAQI SCALE ---->
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+      <!---- PM 10 ---->
+      <h2 class="govuk-heading-s">Measuring PM10</h2>
+      <p>PM10 pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 50 µg/m³</li>
+        <li>moderate from 51 to 75 µg/m³</li>
+        <li>high from 76 to 100 µg/m³</li>
+        <li>very high at 101 µg/m³ or higher</li>
+      </ul>
+
+      <p>How much PM10 is in the air at each level of the DAQI scale:</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-pm10.png"></div>
+      <!---- END DAQI SCALE ---->
+
+
+
+    
+    </div>
+  </div>
+{% endblock %}

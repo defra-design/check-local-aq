@@ -1,0 +1,74 @@
+{% extends "layouts/sprint-29.html" %}
+{% set servicePage = true %}
+{% set title = "Locations matching '" ~ userLocation ~ "'" %}
+
+{% block content %}
+
+<!-- TRYING TO OVERRIDE locationString WITH A TEMP LOCATION -->
+ <script>
+    // Define the variable
+    let locationString = '';
+  
+    // Add event listener to the link
+    document.getElementById('location-link').addEventListener('click', function(e) {
+  
+      // Set the variable when the link is clicked
+      locationString == 'Bristol';
+      
+      // You can then use LocationString as needed
+      console.log(locationString);  // Just for demonstration
+    });
+</script> 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Locations matching 'Bristol'</h1>  <!-- REMOVED FROM H1 >> '{{ userLocation }}' -->
+    <p>More than one match was found for your location. Choose the correct location from the following options:</p>
+
+  <ul class="govuk-list">
+    <li class="govuk-!-margin-bottom-2">
+        <!--<a href="/{{ version }}/sign-up-for-alerts/change-location-check?locationName=Bristol&parentArea=City%20of%20Bristol" class="govuk-link" id="location-link">-->
+        <a href="/{{ version }}/sign-up-for-alerts/change-location-check" class="govuk-link" id="location-link">
+        <span class="govuk-!-font-weight-bold">Bristol</span>, City of Bristol
+        </a>
+    </li>
+
+    <li class="govuk-!-margin-bottom-2">
+        <a href="#" class="govuk-link">
+        <span class="govuk-!-font-weight-bold">Stockland Bristol</span>, Somerset
+        </a>
+    </li>
+
+    <li class="govuk-!-margin-bottom-2">
+        <a href="#" class="govuk-link">
+        <span class="govuk-!-font-weight-bold">Little Bristol</span>, South Gloucestershire
+        </a>
+    </li>
+
+    <li class="govuk-!-margin-bottom-2">
+        <a href="#" class="govuk-link">
+        <span class="govuk-!-font-weight-bold">Bristol Airport</span>, North Somerset
+        </a>
+    </li>
+
+    <!--- DYNAMIC CONTENT 
+    {% for item in results %}
+      <li class="govuk-!-margin-bottom-2">
+        <a href="/{{ version }}/location/{{ item.GAZETTEER_ENTRY.ID }}" class="govuk-link">
+        <span class="govuk-!-font-weight-bold">{{ item.GAZETTEER_ENTRY.NAME1 }}</span>, 
+        {% if item.GAZETTEER_ENTRY.DISTRICT_BOROUGH %}
+          {{ item.GAZETTEER_ENTRY.DISTRICT_BOROUGH }}
+        {% else %}
+          {{ item.GAZETTEER_ENTRY.COUNTY_UNITARY }}
+        {% endif %}
+        </a>
+      </li>
+        {% endfor %}
+    <!---- END DYNAMIC ------>
+
+    </ul>
+    <p class="govuk-body govuk-!-margin-top-6">Alternatively, <a href="/{{ version }}/change-alert-location">try searching again</a></p>
+  </div>
+</div>
+{% endblock %}

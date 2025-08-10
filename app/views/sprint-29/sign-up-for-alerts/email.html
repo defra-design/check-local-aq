@@ -1,0 +1,66 @@
+{% extends "layouts/sprint-29.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/check-your-email" method="post">
+
+        {% set textHtml %}
+        {{ govukInput({
+          id: "notify-by-emsil",
+          name: "notifyByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter email address"
+          }
+        }) }}
+        {% endset %}
+        
+       <h1 class="govuk-heading-l">What is your email address? </h1>
+        <p>We will send you an email containing an activation link.</p>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="mobile-number">
+                Enter your email address
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="notify-by-email" name="notifyByEmail" type="text" value="{{data['email']}}">
+        </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+      <!-- {{ locationString }} -->
+
+    </div>
+  </div>
+
+{% endblock %}
