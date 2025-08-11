@@ -3,9 +3,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "Leeds Centre",
+    "site_name": "Salford Eccles",
     "site_id": "UKA00251",
-    "distance": 6.6,
+    "distance": 1.0,
     "site_type": "urban-background",
     "pollutants": [
 
@@ -41,9 +41,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Leeds Headingley Kerbside",
+    "site_name": "Manchester Piccadilly",
     "site_id": "UKA00253",
-    "distance": 8.0,
+    "distance": 4.7,
     "site_type": "urban-traffic",
     "pollutants": [   
 
@@ -67,7 +67,7 @@ const monitoringSites = [
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      }/* ,
+      },
        {
         "type": "ozone",
         "measurement": 	9,
@@ -81,7 +81,7 @@ const monitoringSites = [
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
-      } */
+      }
       
     ]
 }
