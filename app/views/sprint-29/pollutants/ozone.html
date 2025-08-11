@@ -22,19 +22,68 @@
 {% endblock %}
 
 
-
 {% block content %}
   <div class="govuk-grid-row govuk-!-margin-bottom-8">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
         {% endif %}
         {{ title | safe }}</h1>
-        <p>Ozone is a gas that forms a protective layer shielding us from the sun's radiation. However, at ground level, ozone has adverse effects on human health and the environment.</p>
-        <p>
-          Ground level ozone can be at unhealthy levels on both hot and cold days. It can travel by the wind, affecting both urban and rural areas. Ozone can react with other chemicals in the air to form particulate matter, or smog, which is also harmful to health. 
-        </p>
-        <h2 class="govuk-heading-s">Sources of ozone</h2>
-        <p>There are no major emission sources of ozone itself. Reactions between other pollutants form ozone in the air. For example, when pollutants from cars, power plants, and factories react with sunlight.</p>
+
+      <p>Ozone is a gas that can be found in the atmosphere and at ground level.</p>
+      <p>Atmospheric ozone forms a protective layer around the planet, shielding us from the sun’s radiation. </p>
+      <p>However, ground level ozone has harmful effects on our health and the environment. This is the type of ozone that impacts our air quality.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+      
+      <!---- WHERE OZONE COMES FROM ---->
+
+      <h2 class="govuk-heading-m">Where ozone comes from</h2>
+      <p>Ozone is created by chemical reactions between sunlight and other pollutants. There are no major sources of pollution that emit ozone directly.</p>
+      <p>Ground level ozone can form anywhere, but levels are usually higher in rural areas than in urban areas. Ozone can travel long distances on the wind, even between the UK and Europe.</p>
+      <p>Short term high levels of ozone can be caused by lots of sunlight and high temperatures, or high levels of other pollutants. Pollutants can build up in the air when there is less air circulation. </p>
+      <p>More ozone is usually created during the spring and summer months, and ozone levels are usually higher later in the day than in the morning.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <!-- HEALTH EFFECTS OF OZONE -->
+
+      <h2 class="govuk-heading-m">Health effects of ozone</h2>
+      <p>Exposure to ozone can cause inflammation of the eyes and respiratory tract (nose, throat and lungs). </p>
+      <p>People with lung conditions, children and older people are most at risk. Breathing in ozone can trigger asthma attacks and other <a href="../health-effects.html">short and long term health effects of exposure to air pollution</a>.</p>
+
+      <p>Ozone can also react with other chemicals in the air to create smog (<a href="particulate-matter.html">particulate matter</a>), which is harmful to health.</p>
+
+      <p>In addition to its impact on human and animal health, ozone can harm the environment by damaging crops and other plants.</p>
+
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+      <!---- HOW OZONE IS MEASURED ---->
+
+      <h2 class="govuk-heading-m">How ozone is measured</h2>
+
+      <p>Ozone is one of the 5 pollutants measured hourly to inform the Daily Air Quality Index (DAQI).<a href="../how-aq-measured.html"> Find out how air pollution is measured in the UK</a>.</p>
+      <p>Ozone pollution can be difficult to predict. The chemical reactions that form ozone are complex and depend on many factors, including the weather and global pollutant emissions.</p>
+      <p>Pollutant levels are measured in micrograms per cubic metre (µg/m³), which tells us how much of the pollutant is in the air.</p>
+
+      <p>Ozone pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 100 µg/m³</li>
+        <li>moderate from 101 to 160 µg/m³</li>
+        <li>high from 161 to 241 µg/m³</li>
+        <li>very high at 241 µg/m³ or higher</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <p>How much ozone is in the air at each level of the Daily Air Quality Index:</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-ozone.png"></div>
+      <!---- END DAQI SCALE ---->
+
     </div>
   </div>
 {% endblock %}
