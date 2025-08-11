@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "Tower Hamlets Roadside",
+    "site_name": "Leeds Centre",
     "site_id": "UKA00251",
-    "distance": 9.0,
-    "site_type": "urban-traffic",
+    "distance": 6.6,
+    "site_type": "urban-background",
     "pollutants": [
 
-     /* {
+     {
         "type": "particulate-matter2",
         "measurement": 3,
         "trend": "Falling",
@@ -22,32 +22,32 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        } , */
+        },
         {
           "type": "nitrogen-dioxide",
           "measurement": 	28,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } /* ,
+        },
         {
           "type": "ozone",
           "measurement": 	64,
           "trend": "Rising",
-          "band": "Moderate",
-          "aqi": 5
-        } */
+          "band": "Low",
+          "aqi": 3
+        }
     
     ]
 },
 {
-    "site_name": "London Haringey Priory Park South",
+    "site_name": "Leeds Headingley Kerbside",
     "site_id": "UKA00253",
-    "distance": 10.3,
-    "site_type": "urban-background",
+    "distance": 8.0,
+    "site_type": "urban-traffic",
     "pollutants": [   
 
-     /* {
+     {
       "type": "particulate-matter2",
       "measurement": 5,
       "trend": "Falling",
@@ -60,14 +60,14 @@ const monitoringSites = [
         "trend": "Falling",
         "band": "Low",
         "aqi": 3
-      }, */
+      },
       {
       "type": "nitrogen-dioxide",
       "measurement": 	7,
       "trend": "Rising",
       "band": "Low",
       "aqi": 3
-      }/*,
+      }/* ,
        {
         "type": "ozone",
         "measurement": 	9,
