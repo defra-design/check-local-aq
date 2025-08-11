@@ -69,6 +69,7 @@ const locationRequiredRoutes = [
   '/health-effects',
   '/health-advice-levels',
   '/pollutants/nitrogen-dioxide',
+  '/pollutants/particulate-matter',
   '/pollutants/particulate-matter2',
   '/pollutants/particulate-matter10',
   '/pollutants/ozone',
