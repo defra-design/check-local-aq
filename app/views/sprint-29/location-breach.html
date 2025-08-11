@@ -42,7 +42,7 @@
 
         <!--- MANUALLY CHANGE THE REGION AND LINK LOCATION HERE FOR UR SESSIONS --->
         </h3>
-        <p class="govuk-body">A monitoring station in Yorkshire and the Humber <a class="govuk-notification-banner__link" href="#">has measured air pollution over the statutory limit within the last 24 hours</a>.</p>
+        <p class="govuk-body">A monitoring station in Yorkshire and the Humber <a class="govuk-notification-banner__link" href="{{ version }}/alerts.html">has measured air pollution over the statutory limit within the last 24 hours</a>.</p>
       </div>
     </div>
 
@@ -52,12 +52,16 @@
           {{ title }}
 
     <h2 class="govuk-heading-m">Actual air pollution levels</h2>
+
+    <!------ ACTUAL DAQI LEVELS ------>
+    <img src="/public/images/daqi-breach-9.png" class="govuk-!-margin-bottom-7">
+
     <p>Air pollution in YO1 7PX, York is high today, even though moderate levels of air pollution were predicted earlier.</p>
     <p>This is because ozone levels in the region are higher than expected. <a href="/{{ version }}/pollutants/ozone.html">Learn more about ozone</a>.</p>
 
-    <div class="govuk-!-padding-bottom-4"></div>
+    <div class="govuk-!-padding-bottom-2"></div>
 
-    {% include "/" + folder + "/includes/daqi-breach.html" %}
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
     <div class="govuk-!-padding-bottom-4"></div>
           
@@ -108,22 +112,22 @@
         </div> -->
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          {% include "/" + folder + "/includes/daqi-day2.html" %}
+          <img src="/public/images/daqi-colour-6.png" class="govuk-!-margin-bottom-6">
           <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          {% include "/" + folder + "/includes/daqi-day3.html" %}
+          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
           <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
-          {% include "/" + folder + "/includes/daqi-day4.html" %}
+          <img src="/public/images/daqi-colour-4.png" class="govuk-!-margin-bottom-6">
           <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          {% include "/" + folder + "/includes/daqi-day5.html" %}
+          <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
           <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
         </div>
 
