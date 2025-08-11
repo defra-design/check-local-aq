@@ -3,9 +3,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "Salford Eccles",
+    "site_name": "Glasgow Townhead",
     "site_id": "UKA00251",
-    "distance": 1.0,
+    "distance": 3.0,
     "site_type": "urban-background",
     "pollutants": [
 
@@ -41,9 +41,9 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Manchester Piccadilly",
+    "site_name": "Glasgow High Street",
     "site_id": "UKA00253",
-    "distance": 4.7,
+    "distance": 3.1,
     "site_type": "urban-traffic",
     "pollutants": [   
 
