@@ -3,10 +3,10 @@
 const monitoringSites = [
   
   {
-    "site_name": "Glasgow Townhead",
+    "site_name": "Southampton A33",
     "site_id": "UKA00251",
-    "distance": 3.0,
-    "site_type": "urban-background",
+    "distance": 13.1,
+    "site_type": "urban-traffic",
     "pollutants": [
 
      {
@@ -41,10 +41,10 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Glasgow High Street",
+    "site_name": "Southampton Centre",
     "site_id": "UKA00253",
-    "distance": 3.1,
-    "site_type": "urban-traffic",
+    "distance": 16.1,
+    "site_type": "urban-background",
     "pollutants": [   
 
      {
