@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "Southampton A33",
+    "site_name": "Sunderland Wessington Way",
     "site_id": "UKA00251",
-    "distance": 13.1,
+    "distance": 0.9,
     "site_type": "urban-traffic",
     "pollutants": [
 
-     {
+     /* {
         "type": "particulate-matter2",
         "measurement": 3,
         "trend": "Falling",
@@ -22,28 +22,28 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        },
+        }, */
         {
           "type": "nitrogen-dioxide",
           "measurement": 	28,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        },
+        }/* ,
         {
           "type": "ozone",
           "measurement": 	64,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }
+        } */
     
     ]
 },
 {
-    "site_name": "Southampton Centre",
+    "site_name": "Sunderland Silksworth",
     "site_id": "UKA00253",
-    "distance": 16.1,
+    "distance": 3.0,
     "site_type": "urban-background",
     "pollutants": [   
 
