@@ -28,6 +28,8 @@
     <h3 class="defra-aq-site__title govuk-heading-s">{{ site.site_name }}</h3>
     <p class="defra-aq-site__distance govuk-caption-m govuk-!-margin-bottom-3">{{ site.distance }} miles away</p>
     
+      <p>{{ siteTypeDescriptions[site.site_type] }}</p>
+
     {{ govukTable({
         classes: "govuk-!-margin-bottom-2",
         firstCellIsHeader: false,
@@ -40,7 +42,7 @@
     }) }}
     <p class='govuk-caption-s govuk-!-margin-bottom-4'>Latest measurement {{ "now" | date | minusOneHour | lower }} on {{ "today" | govukDate }}</p>
     <p class="govuk-!-margin-bottom-3">Readings are measured every hour. The unit µg/m<sup>3</sup> stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
-    <p>{{ siteTypeDescriptions[site.site_type] }}</p>
+    
   {% endset %}
 
   {% set tabItem = {

@@ -3,13 +3,13 @@
 const monitoringSites = [
   
   {
-    "site_name": "Sunderland Wessington Way",
+    "site_name": "Bournemouth",
     "site_id": "UKA00251",
-    "distance": 0.9,
-    "site_type": "urban-traffic",
+    "distance": 9.9,
+    "site_type": "urban-background",
     "pollutants": [
 
-     /* {
+     {
         "type": "particulate-matter2",
         "measurement": 3,
         "trend": "Falling",
@@ -22,29 +22,29 @@ const monitoringSites = [
           "trend": "Falling",
           "band": "Low",
           "aqi": 3
-        }, */
+        },
         {
           "type": "nitrogen-dioxide",
           "measurement": 	28,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        }/* ,
+        },
         {
           "type": "ozone",
           "measurement": 	64,
           "trend": "Rising",
           "band": "Low",
           "aqi": 3
-        } */
+        }
     
     ]
 },
 {
-    "site_name": "Sunderland Silksworth",
+    "site_name": "Christchurch Barrack Road",
     "site_id": "UKA00253",
-    "distance": 3.0,
-    "site_type": "urban-background",
+    "distance": 10.8,
+    "site_type": "urban-traffic",
     "pollutants": [   
 
      {

@@ -9,7 +9,7 @@
 
 {% set caption = "" %}
 
-{% set title = "Air pollution in " + "SR5 1PX, Sunderland" %}
+{% set title = "Air pollution in " + "BH31 6DP, Verwood" %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
 
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
@@ -40,9 +40,9 @@
         <h3 class="govuk-notification-banner__heading">
           High levels of air pollution measured in this region
 
-        <!--- MANUALLY CHANGE THE REGION AND LINK LOCATION HERE FOR UR SESSIONS --->
+        <!--- ** UR SESSIONS ** MANUALLY UPDATE THE REGION AND LINK LOCATION HERE FOR  --->
         </h3>
-        <p class="govuk-body">A monitoring station in North East England <a class="govuk-notification-banner__link" href="alerts.html">has measured air pollution over the statutory limit within the last 24 hours</a>.</p>
+        <p class="govuk-body">A monitoring station in South West England <a class="govuk-notification-banner__link" href="alerts.html">has measured air pollution over the statutory limit within the last 24 hours</a>.</p>
       </div>
     </div>
 
@@ -56,7 +56,9 @@
     <!------ ACTUAL DAQI LEVELS ------>
     <img src="/public/images/daqi-breach-9.png" class="govuk-!-margin-bottom-7">
 
-    <p>Air pollution in SR5 1PX, Sunderland is high today, even though moderate levels of air pollution were predicted earlier.</p> <!----- <<<<< UPDATE LOCATION FOR UR ------->
+    <!--- ** UR SESSIONS ** UPDATE LOCATION FOR UR ------->
+    <p>Air pollution in BH31 6DP, Verwood is high today, even though moderate levels of air pollution were predicted earlier.</p> 
+
     <p>This is because ozone levels in the region are higher than expected. <a href="/{{ version }}/pollutants/ozone.html">Learn more about ozone</a>.</p>
 
     <div class="govuk-!-padding-bottom-2"></div>
