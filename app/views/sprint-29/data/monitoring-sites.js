@@ -3,9 +3,9 @@
 const monitoringSites = [
   
   {
-    "site_name": "Bournemouth",
+    "site_name": "Borehamwood Meadow Park",
     "site_id": "UKA00251",
-    "distance": 9.9,
+    "distance": 12.6,
     "site_type": "urban-background",
     "pollutants": [
 
@@ -41,10 +41,10 @@ const monitoringSites = [
     ]
 },
 {
-    "site_name": "Christchurch Barrack Road",
+    "site_name": "London Hillingdon",
     "site_id": "UKA00253",
-    "distance": 10.8,
-    "site_type": "urban-traffic",
+    "distance": 12.8,
+    "site_type": "urban-background",
     "pollutants": [   
 
      {
@@ -70,14 +70,14 @@ const monitoringSites = [
       },
        {
         "type": "ozone",
-        "measurement": 	9,
+        "measurement": 	4,
         "trend": "Rising",
         "band": "Low",
-        "aqi": 5
+        "aqi": 3
       }, 
       {
         "type": "sulphur-dioxide",
-        "measurement": 	5,
+        "measurement": 	3,
         "trend": "Rising",
         "band": "Low",
         "aqi": 3
