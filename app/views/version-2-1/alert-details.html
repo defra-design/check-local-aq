@@ -1,0 +1,96 @@
+{% extends "layouts/version-2-1.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Air quality alerts" %}
+{% set serviceNameSlug = "alerts" %}
+{% set displayBacklink = true %}
+{% set title = "Air quality alert " + alert.stationName + "," + alert.localAuthority %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+  text: Back,
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Air quality alert {{ alert.stationName }}, {{ alert.localAuthority }}
+    </h1>
+    <p class="govuk-caption-s">Updated at {{ alert.timeStamp | govukTime }} on {{ alert.date | govukDate }}</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-9" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+
+    <p>A monitoring area in {{ alert.stationName }}, {{ alert.localAuthority }} has measured high levels of {{ alert.pollutant.title }}.</p>
+    <p>Monitoring stations are positioned across the UK as part of the Automatic Urban and Rural Network (AURN). Measurements from these stations are good indicators of the pollution level in the whole region, even if they seem far away.</p>
+
+    <!------ POLLUTANT INFO ------>
+    <h2 class="govuk-heading-m">
+      Nitrogen Dioxide (NO2)
+    </h2>
+    <p>Nitrogen dioxide is a brown gas that can affect our health and how well our lungs work. People with asthma are particularly affected.</p>
+
+
+    <h3 class="govuk-heading-s">
+      Sources of {{ alert.pollutant.title }}
+    </h3>
+
+    {% include "/" + folder + "/includes/pollutant-sources/" + alert.pollutant.slug + ".html" %}
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+  <!----- HEALTH ADVICE ------>
+    {% include "/" + folder + "/includes/health-advice-high.html" %}
+    
+<hr class="govuk-section-break govuk-section-break--m govuk-!-margin-top-8 govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <p>
+      <a href="#" class="defra-link-icon">
+          <svg viewBox="0 0 14 20" width="14" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" fill="currentColor">
+              <path d="M9.27 15.747C9.27 16.99 8.26 18 7.016 18s-2.253-1.01-2.253-2.253H9.27zM6.015 1.86v-.859A1 1 0 0 1 7.016 0c.553 0 1.002.449 1.002 1.001v.859c2.284.465 4.006 2.487 4.006 4.907v4.357l1.628 1.661c.488.489.488 1.282 0 1.771a1.25 1.25 0 0 1-.886.366H1.252a1.25 1.25 0 0 1-.886-.366c-.488-.489-.488-1.282 0-1.771l1.643-1.661V6.767c0-2.42 1.721-4.442 4.006-4.907z"></path>
+          </svg>Receive air quality alerts by text
+      </a>
+      </p>
+    
+
+  </div>
+
+
+
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Health advice for air pollution levels",
+              href: "/" + version + "/health-advice-levels?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

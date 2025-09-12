@@ -1,0 +1,206 @@
+{% extends "layouts/version-2-1.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+
+{% set title = "Air pollution in " + "HP6 6QU, Little Chalfont" %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
+
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set highestAQDetails = {'readableBand': 'high'} %}
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+    <!--------- ALERT PANEL ----------->
+    
+    <div class="govuk-notification-banner alert-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Alert
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          High levels of air pollution measured in this region
+
+        <!--- ** UR SESSIONS ** MANUALLY UPDATE THE REGION AND LINK LOCATION HERE FOR  --->
+        </h3>
+        <p class="govuk-body">A monitoring station within 25 miles of TN13 2DZ, Sevenoaks <a class="govuk-notification-banner__link" href="alerts.html">has measured air pollution levels over the safe limit in the last 24 hours</a>.</p>
+      </div>
+    </div>
+
+    <!--------- END PANEL ----------->
+
+    <h1 class="govuk-heading-{{ pageHeadingSize }}">
+          {{ title }}
+
+    <h2 class="govuk-heading-m">Actual air pollution levels</h2>
+
+    <!------ ACTUAL DAQI LEVELS ------>
+    <img src="/public/images/daqi-breach-9.png" class="govuk-!-margin-bottom-7">
+
+    <!--- ** UR SESSIONS ** UPDATE LOCATION FOR UR ------->
+    <p>Air pollution in TN13 2DZ, Sevenoaks is high today, even though moderate levels of air pollution were predicted earlier.</p> 
+
+    <p>This is because ozone levels in the region are higher than expected. <a href="/{{ version }}/pollutants/ozone.html">Learn more about ozone</a>.</p>
+
+    <div class="govuk-!-padding-bottom-2"></div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-!-padding-bottom-4"></div>
+          
+      <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
+    
+      <!---------- TABBED FORECAST ---------->
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h3 class="govuk-tabs__title">
+          Contents
+        </h3>
+
+        <!-- tabs -->
+
+        <ul class="govuk-tabs__list">
+          <!-- <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#today">
+              Today
+            </a>
+          </li> -->
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day2">
+              {{ day2 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day3">
+              {{ day3 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day4">
+              {{ day4 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day5">
+              {{ day5 }}
+            </a>
+          </li>
+        </ul>
+
+        <!-- panels -->
+
+        <!-- <div class="govuk-tabs__panel" id="today">
+        <p class="govuk-body">The prediction for today was for moderate air pollution. However, high levels of nitrogen dioxide have been measured in this region.</p>
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
+        </div> -->
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          <img src="/public/images/daqi-colour-6.png" class="govuk-!-margin-bottom-6">
+          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <img src="/public/images/daqi-colour-4.png" class="govuk-!-margin-bottom-6">
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
+          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
+        </div>
+
+      </div>
+
+      <!---------- END TABS ------------>
+
+      {% include "/" + folder + "/includes/uk-forecast-moderate.html" %}
+
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/health-advice-high.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      
+      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      
+      {% include "/" + folder + "/includes/pollutants.html" %}
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+      <div class="govuk-!-padding-bottom-9"></div>
+
+     
+    
+    </div>
+
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Government actions to improve air quality",
+              href: "/" + version + "/government-actions?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+
+<!-- UR SCENARIO LINKS (to test different versions of the location page )
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full app-contact-panel govuk-!-margin-bottom-6" >
+    <h3 class="govuk-heading-s">User research scenarios</h3>
+      <span class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-high?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario 1</a>     </span>
+      <span class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-veryhigh?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario 2</a></span>
+  </div>
+</div>
+<!--END UR LINKS -->
+
+{% endblock %}

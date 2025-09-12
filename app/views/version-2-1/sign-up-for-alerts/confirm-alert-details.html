@@ -1,0 +1,49 @@
+{% extends "layouts/version-2-1.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+
+{% block pageTitle %}
+Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm you want to set up an alert for {{ locationString }}</h1>
+
+      <p class="govuk-body">
+        You are setting up an alert to get notified: 
+      </p>
+      
+        <ul class="govuk-list govuk-list--bullet">
+          <li>when the air quality forecast in {{ locationString }} is high or very high</li>
+          <li>if a nearby monitoring site detects high or very high pollution levels anywhere in the Greater London region</li>
+        </ul>
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+    
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/" + version + "/sign-up-for-alerts/alerts-success"
+      }) }}
+
+    <!--{{ locationString }}-->
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "layouts/version-2-1.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{% if status == 'check-your-details' %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% else %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-------- NOTIFICATION BANNER -------->
+
+{% set notification %}
+  <h1 class="govuk-notification-banner__heading">
+    You have set up air quality alerts for Bristol, City of Bristol
+  </h1>
+{% endset %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      {{ govukNotificationBanner({
+        html: notification,
+        type: "success"
+      }) }}
+
+    <!---- DISPLAY CONFIRMATION TYPE MESSAGE ---->
+    {% if email %}
+      <p>We have sent you a confirmation email.</p>
+    {% else %}
+      <p>We have sent you a confirmation text message.</p>
+    {% endif %}
+  
+
+    <p class="govuk-body govuk-!-padding-bottom-6">If you want to set up another alert for <b>{{ text }}</b> <b>{{ email }}</b> you can <a href="/{{ version }}/sign-up-for-alerts/add-alert-location">search for another location</a>. </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <!--------- UR SIGN-UP body content -------->
+
+    <h2 class="govuk-heading-m">Help us make our service better</h2>
+
+    <p>Join our user research panel to share your feedback and contribute to the ongoing improvement of this service.
+By signing up, you agree to our <a href="https://www.gov.uk/government/publications/defras-social-research-privacy-notice">privacy statement</a> and consent to being contacted for research purposes.</p>
+
+
+    <!-- RADIOS -->
+
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+            Would you like to help improve this service?
+
+        </legend>
+
+        <div id="contact-hint" class="govuk-hint">
+        Select one option
+        </div>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+            Yes
+            </label>
+        </div>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+
+            <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-by-email">
+                Email address
+            </label>
+            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+            </div>
+
+        </div>
+
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+            No
+            </label>
+        </div>
+
+    </fieldset>
+    </div>
+
+    <!-- END RADIOS-->
+
+
+  </div>
+</div>
+
+{% endblock %}

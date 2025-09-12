@@ -1,0 +1,100 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/version-2-1.html" %}
+{% set caption = "" %}
+{% set title = "Government actions to improve air quality" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<!-- BACK LINK -->
+  {{ govukBackLink({
+    text: "Air quality in " + locationName,
+    href: "javascript:window.history.back()"
+  }) }}
+  <!-- END BACK -->
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+
+
+    <!-- LOCAL AUTHORITY -->
+    <h2 class="govuk-heading-m">Local authorities</h2>
+  
+      <p>Local councils and devolved administrations are taking various actions to improve their local air quality.</p>
+
+      <p>This includes putting in place:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>congestion charges, <a href="https://www.gov.uk/guidance/driving-in-a-clean-air-zone">clean air zones</a> and London’s low emission zones (LEZ) and ultra low emission zones (ULEZ) – these all help reduce the amount of traffic and vehicle emissions in busy urban areas</li>
+            <li>lower speed limits, such as 20mph zones</li>
+            <li><a href="">smoke control areas</a>, which restrict what you can burn at home</li>
+            <li>school streets, which restrict the use of motor vehicles around schools</li>
+        </ul>
+
+    <p>For more information about local air quality improvement actions or to report nuisance smoke, waste or smells, <a href="https://www.gov.uk/find-local-council">contact your local council</a>.</p>
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+
+    <!-- AQMAS -->
+      <h2 class="govuk-heading-s">Air Quality Management Areas (AQMAs)</h2>
+
+      <p>Each local authority in the UK checks air quality in their area against national air quality objectives. </p>
+
+      <p>In any area where these objectives are not likely to be met, the local authority must declare an Air Quality Management Area (AQMA). An AQMA could be just a few streets, or it could be a much bigger area.</p>
+
+      <p>The local authority will then create a Local Air Quality Action Plan to improve the air quality in the AQMA.</p>
+
+      <p>For more information about Local Air Quality Action Plans and any AQMAs in your area, <a href="https://www.gov.uk/find-local-council">contact your local council</a>.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+
+      <!-- NATIONAL GOVERNMENT -->
+      <h2 class="govuk-heading-m">National government</h2>
+
+      <p>The UK government also provides ways for you to understand and help improve your local air quality:</p>
+      <ul class="govuk-list govuk-list--bullet">
+            <li>Check air quality (this service)</li>
+            <li><a href="https://get-air-pollution-data.service.gov.uk/">Get air pollution data</a></li>
+            <li><a href="https://www.gov.uk/report-environmental-problem">Report an environmental problem</a></li>
+        </ul>
+
+  </div>
+
+    <!-- RELATED CONTENT -->
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+      {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+    
+    </div>
+    <!-- END RELATED CONTENT -->
+     
+  </div>
+{% endblock %}

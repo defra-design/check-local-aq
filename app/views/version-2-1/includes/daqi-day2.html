@@ -1,0 +1,34 @@
+{% set day2 = 1 | addDaysToTodayFull %}
+{% set day3 = 2 | addDaysToTodayFull %}
+{% set day4 = 3 | addDaysToTodayFull %}
+{% set day5 = 4 | addDaysToTodayFull %}
+
+{% set daqiValue = airQuality.day2.value %}
+
+<p class="govuk-hint">Daily Air Quality Index (DAQI)</p>
+  <!-- <h2 id="air-pollution-forecast-today" class="govuk-heading-m govuk-!-margin-bottom-4">
+    The air pollution forecast for {{ day2 }}<span class="govuk-visually-hidden"> on a scale of low to very high</span> is {{ airQuality.day2.readableBand }}
+    <span class="govuk-visually-hidden">, {{ airQuality.day2.value }} out of 10</span>
+  </h2> -->
+
+  <div class="daqi-scale govuk-!-margin-bottom-7" role="img" aria-describedby="air-pollution-forecast-today" aria-hidden="true">
+    <div class="daqi-bar">
+      {% for i in range(1, 11) %}
+          {% if i <= daqiValue %}
+              <div class="daqi-bar-segment daqi-selected daqi-{{ daqiValue }}">
+              </div>
+          {% else %}
+              <div class="daqi-bar-segment daqi-0">
+              </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+    <div class="daqi-labels">
+      <span class="daqi-band">Low</span>
+      <span class="daqi-band">Moderate</span>
+      <span class="daqi-band">High</span>
+      <span class="daqi-band">Very high</span>
+    </div>
+  </div>
+
+

@@ -1,0 +1,18 @@
+<p>Some people might experience symptoms of exposure to air pollution, even when levels are low. Adults and children with lung or heart conditions are at greater risk. </p>
+
+{% if healthDetails %}
+{% else %}
+
+<p>Symptoms can include:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>coughing</li> 
+    <li>eye, nose, and throat irritation</li> 
+    <li>chest tightness and pain</li>
+    <li>difficulty breathing, chest tightness and pain</li>
+    <li>increased symptoms of existing lung and heart conditions</li>
+</ul>
+
+<p>Find out more about the <a href="/{{ version }}/health-effects?locationName.html">health effects of air pollution, and what to do if you’re experiencing symptoms</a>.</p>
+
+
+{% endif %}

@@ -1,0 +1,173 @@
+{% extends "layouts/version-2-1.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+
+{% set title = "Air pollution in " + "HP6 6QU, Little Chalfont" %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
+
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set highestAQDetails = {'readableBand': 'very high'} %}
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    
+    <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {{ title }}
+
+     <!--------- WARNING TEXT ----------->
+    
+    <div class="govuk-warning-text govuk-!-margin-top-6">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            Very high levels of air pollution are predicted in this location.
+        </strong>
+    </div>
+    
+    <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
+
+    <!---------- TABBED FORECAST ---------->
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <!-- tabs -->
+
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#today">
+              Today
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day2">
+              {{ day2 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day3">
+              {{ day3 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day4">
+              {{ day4 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day5">
+              {{ day5 }}
+            </a>
+          </li>
+        </ul>
+
+        <!-- panels -->
+
+        <div class="govuk-tabs__panel" id="today">
+          <p>The current heatwave combined with low winds means air pollution levels will be very high across many areas today.</p>
+          <img src="/public/images/daqi-colour-10.png" class="govuk-!-margin-bottom-6">
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <img src="/public/images/daqi-colour-10.png" class="govuk-!-margin-bottom-6">
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <img src="/public/images/daqi-colour-10.png" class="govuk-!-margin-bottom-6">
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <<p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+        </div>
+
+      </div>
+
+      <!---------- END TABS ------------>
+
+    <div class="govuk-!-padding-bottom-4"></div>
+
+    {% include "/" + folder + "/includes/health-advice-vhigh.html" %}
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">    
+    {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+
+  </div>
+  
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Government actions to improve air quality",
+              href: "/" + version + "/government-actions?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+{% endblock %}
+
+

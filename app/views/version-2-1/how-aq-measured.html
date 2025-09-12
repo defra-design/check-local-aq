@@ -1,0 +1,134 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/version-2-1.html" %}
+{% set caption = "" %}
+{% set title = "How air pollution is measured and predicted" %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+  
+      <p>Even at low levels, air pollution harms our health, reduces our life expectancy and damages the environment.</p>
+      <p>Health conditions caused by air pollution reduce people’s quality of life and put a high burden on the NHS and other public services. </p>
+      <p>We set legal limits on air pollution and track <a href="">certain air pollutants</a> that are known to affect human health.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+
+      <!-------- DAQI -------->
+      <h2 class="govuk-heading-s">The Daily Air Quality Index (DAQI) </h2>
+
+      <p>The Daily Air Quality Index is a 10 point scale which explains air pollution levels in a simple way, and gives public health advice for each level.</p>
+      <p>At <b>low</b> levels (1, 2 and 3), air pollution can cause short term effects in some vulnerable people. Long term exposure to air pollution, even at low levels, can cause many long term <a href="/{{ version }}/health-effects?locationName">health effects</a>. </p>
+
+      <p>At <b>moderate</b> levels (4, 5 and 6), some people may experience short term effects. Vulnerable people should <a href="/{{ version }}/reduce-exposure">take action to reduce their exposure to air pollution</a>. This includes:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>children and adults with lung and heart conditions</li>
+          <li>older adults and elderly people</li>
+          <li>pregnant people and very young children</li>
+      </ul>
+
+      <p>At <b>high</b> and <b>very high</b> levels (7, 8, 9 and 10), everyone should take action to reduce their exposure to air pollution. </p>
+
+      <!---- DAQI SCALE ---->
+        <div class="govuk-!-padding-top-2"><img src="/public/images/daqi-scale-levels.png"></div>
+      <!---- END DAQI SCALE ---->
+
+     <div class="govuk-!-padding-bottom-8"></div>
+      
+
+      <!-------- PREDICTED LEVELS -------->
+      <h2 class="govuk-heading-s">Predicted air pollution levels</h2>
+      
+      <p>Every morning, the Met Office gives a 5 day air pollution forecast. Like weather forecasts, these predictions are more accurate for the short term, and less certain for days that are further in the future.</p>
+      <p>The Met Office uses weather forecasts and recent air pollution measurements to predict what air pollution levels will be in different areas. Each day’s prediction lasts until midnight on that day.</p>
+      <p>Get air pollution predictions by <a href="/{{ version }}/where">searching for a town or postcode</a>.</p>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+
+      <!-- POLLUTION MEASUREMENTS -->
+      <h2 class="govuk-heading-s">Air pollution measurements</h2>
+      
+      <p>There are more than 200 air pollution monitoring stations across the UK. They provide hourly measurements of many different pollutants.</p>
+      <p>The monitoring stations are carefully positioned to give a good representation of the surrounding area. This means that measurements from anywhere in your region can give you a good idea of the pollution levels nearby, even if they seem far away.</p>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+
+    <!-------- POLLUTANTS -------->
+      <h2 class="govuk-heading-s">Air pollutants we measure</h2>
+
+      <p>There are hundreds of different air pollutants, which come from many different sources. The information on this service is based on some common pollutants that we know are harmful to human health, even at low levels:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="/{{ version }}/pollutants/ozone?locationName={{ locationName }}&parentArea={{ parentArea }}"><b>Ozone</b></a>
+            <p>Long term exposure to ground level ozone (O3) increases the risk of developing reproductive issues and cancer.</p>
+          </li>
+          <li>
+            <a href="/{{ version }}/pollutants/nitrogen-dioxide?locationName={{ locationName }}&parentArea={{ parentArea }}"><b>Nitrogen dioxide</b></a>
+            <p>Long term exposure to nitrogen dioxide (NO2) increases the risk of respiratory infections, and causes poorer lung function in children.</p>
+          </li>
+          <li>
+            <a href="/{{ version }}/pollutants/sulphur-dioxide?locationName={{ locationName }}&parentArea={{ parentArea }}"><b>Sulphur dioxide</b></a>
+            <p>Long term exposure to sulphur dioxide (SO2) can lead to poorer lung function and more frequent respiratory infections.</p>
+          </li>
+          <li>
+            <a href="/{{ version }}/pollutants/particulate-matter?locationName={{ locationName }}&parentArea={{ parentArea }}"><b>Smoke, dust and other particulates (particulate matter)</b></a>
+            <p>Long term exposure to particulate matter (PM2.5 and PM10) increases the risk of developing many serious health conditions including cancer, strokes, chronic obstructive pulmonary disease (COPD), Alzheimer's disease and Parkinson's disease.</p>
+          </li>
+          <!-- <li><a href="/{{ version }}/pollutants/particulate-matter10?locationName={{ locationName }}&parentArea={{ parentArea }}">PM10</a></li> -->
+      </ul>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+  </div>
+
+    <!-- RELATED CONTENT -->
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+      {{ xGovukRelatedNavigation({
+        sections: [{
+            items: [
+
+            {
+              text: "Actions to reduce your exposure to air pollution",
+              href: "/" + version + "/reduce-exposure?locationName=" + locationName
+            },
+            {
+                text: "Health advice for air pollution levels",
+                href: "/" + version + "/health-advice-levels?locationName=" + locationName
+            },
+            {
+              text: "Access air quality alerts",
+              href: "/" + version + "/sign-up-for-alerts/setup-or-manage?locationName=" + locationName
+            }
+            ]
+        }]
+    }) }}
+    
+    </div>
+    <!-- END RELATED CONTENT -->
+     
+  </div>
+{% endblock %}

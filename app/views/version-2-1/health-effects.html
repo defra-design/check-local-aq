@@ -1,0 +1,115 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/version-2-1.html" %}
+{% set caption = "" %}
+{% set title = "Health effects of air pollution" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<!-- BACK LINK -->
+  {{ govukBackLink({
+    text: "Air quality in " + locationName,
+    href: "javascript:window.history.back()"
+  }) }}
+  <!-- END BACK -->
+
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+  
+      <p>Poor air quality is the largest environmental risk to public health in the UK.</p>
+      <p>It is a particular threat to vulnerable groups, including adults and children with lung or heart conditions, pregnant people and older people.</p>
+      <p>Every year in the UK, an estimated 20,000 people are admitted to hospital following high air pollution episodes. Many more develop serious health conditions after long term exposure to air pollution, even at low levels. This has a huge impact on our NHS and other public services.</p>
+
+      <h2 class="govuk-heading-m">How air pollution impacts the body</h2>
+
+      <p>Air pollution (particles and gases) can damage our cells in different ways.</p>
+      <p>Pollutants usually enter our lungs first as we breathe them in. They can then enter our blood and reach other organs, such as the heart and brain. Damage to these major organs can cause many serious health conditions.</p>
+      <p>Any amount of pollution can be damaging to our health, but the more pollution you are exposed to, the greater the risk and the bigger the impact. The damage can be gradual and you may not notice it for many years. </p>
+      <p>Although there is no safe level of air pollution, there are <a href="/{{ version }}/reduce-exposure.html">actions you can take to reduce your exposure</a>.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- SHORT TERM -->
+      <h2 class="govuk-heading-s">Short term air pollution exposure</h2>
+
+      <p>Exposure to air pollution over a few hours or days can cause a range of symptoms, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for symptoms in ["coughing", "eye, nose and throat irritation", "chest tightness and pain", "difficulty breathing"] %}
+          <li>{{ symptoms }}</li>
+        {% endfor %}
+      </ul>
+
+      <p>Short term exposure to air pollution can also worsen the symptoms of existing health conditions. This includes lung conditions like asthma and chronic obstructive pulmonary disease (COPD), and heart conditions.</p>
+
+      <p>Speak to your doctor or nurse if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you have new symptoms</li>
+        <li>your symptoms get worse</li>
+        <li>your symptoms do not get better after a week</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+      <!-- LONG TERM -->
+      <h2 class="govuk-heading-s">Long term air pollution exposure</h2>
+
+      <p>Exposure to air pollution over many years increases the risk of developing a serious health condition, even when pollution levels are low.</p>
+      <p>When air pollutants enter the body, they can harm many different organs and systems, not just the respiratory system. One of the main health effects of air pollution is damage to the heart and blood vessels. There is also evidence linking air pollution to decreased brain function and conditions like dementia.</p>
+
+      <p>Long term exposure to air pollution has been linked to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for conditions in ["getting more respiratory illnesses", "poorer lung function in children", "chronic obstructive pulmonary disease (COPD)", "heart and blood vessel diseases, including strokes", "low birth weight and other early life impacts", "cancer", "diabetes", "dementia and Alzheimer's disease", "Parkinson's disease"] %}
+          <li>{{ conditions }}</li>
+        {% endfor %}
+      </ul>
+
+      <p>Find out more about the health effects of specific pollutants:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/{{ version }}/pollutants/ozone">ozone</a></li>
+        <li><a href="/{{ version }}/pollutants/nitrogen-dioxide">nitrogen dioxide</a></li>
+        <li><a href="/{{ version }}/pollutants/sulphur-dioxide">sulphur dioxide</a></li>
+        <li><a href="/{{ version }}/pollutants/particulate-matter">smoke, dust and other particles (particulate matter)</a></li>
+      </ul>
+
+  </div>
+
+    <!-- RELATED CONTENT -->
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+      {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/reduce-exposure?locationName=" + locationName
+          },
+          {
+              text: "Government actions to improve air quality",
+              href: "/" + version + "/government-actions?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+    
+    </div>
+    <!-- END RELATED CONTENT -->
+     
+  </div>
+{% endblock %}

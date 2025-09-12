@@ -1,0 +1,177 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/version-2-1.html" %}
+{% set caption = "" %}
+{% set title = "Actions you can take to reduce your exposure to air pollution" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+
+      <p>There is no safe level of air pollution, but there are actions you can take to reduce your exposure. There are also actions you can take to reduce your personal contributions to air pollution. </p>
+      <p>Being exposed to air pollution for years, even at low levels, can lead to <a href="health-effects.html">serious health conditions and reduce life expectancy</a>.</p>
+
+
+      <!------------------------ OUTDOOR ------>
+      <h2 class="govuk-heading-m">Outdoor air pollution</h2>
+
+      <p>You should try to reduce your exposure to outdoor air pollution where you can. For example, you can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>take routes with less traffic, especially at busy times of day</li>
+        <li>commute, walk or exercise in parks or other green spaces, if you are not affected by pollen</li>
+        <li>check pollution forecasts to help you plan outdoor activities</li>
+        <li>wear a respirator or mask that fits close to the face and is manufactured to national or international standards (such as N95 or KN95)</li>
+      </ul>
+
+      <p>Most disposable face masks and cloth masks are loose fitting and do not meet any manufacturing standards. They are less effective against air pollution than respirators.</p>
+
+
+      <!------ URBAN ------>
+      <h2 class="govuk-heading-s">Urban areas</h2>
+
+      <p>Urban areas have more than 10,000 residents, for example a large town or a city. They often have more roads and more traffic than rural areas, which contributes to higher pollution levels.</p>
+
+      <p>Consider the following actions if you live or work in an urban area:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>avoid driving in heavy traffic, as sitting in traffic can expose you to high levels of pollution </li>
+        <li>if you need to walk next to a busy road, stay as far away from the edge of the road as you can</li>
+      </ul>
+
+      <p>The further away from the road you are, the lower the pollution levels will be. Even a short distance makes a difference to how much pollution you breathe in.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+
+      <!------ RURAL ------>
+      <h2 class="govuk-heading-s">Rural areas</h2>
+
+      <p>Rural areas have less than 10,000 residents, for example a village, hamlet or small town.</p>
+      <p>Even though there can be fewer sources of pollution in rural areas than in urban areas, the wind can blow pollutants long distances. Sources of pollution may not always be visible or obvious. For example, <a href="/{{ version }}/pollutants/ozone">ozone</a> levels are often higher in rural areas than in urban areas.</p>
+
+      <p>Consider the following actions if you live or work in a rural area:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>avoid bonfires and burning garden waste</li>
+          <li>check for agricultural activities and plan to avoid them, for example by closing your windows or scheduling outdoor events for different days</li>
+      </ul>
+
+      <p>Activities like ploughing fields, spreading fertilisers and spraying pesticides can all raise air pollution levels.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+
+
+      <!----------------------------------- INDOOR ------>
+
+      <h2 class="govuk-heading-m">Indoor air pollution</h2>
+
+      <p>The air quality indoors is not always better than outdoors.</p>
+      <p>The best way to improve indoor air quality is to reduce sources of pollutants and to ventilate with clean outdoor air. You can also use an air purifier.</p>
+
+      <h2 class="govuk-heading-s">Reduce indoor air pollution</h2>
+
+      <p>The following actions can help reduce the amount of air pollution in your home:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>avoid smoking or vaping indoors</li>
+          <li>ventilate when cooking, showering, bathing and washing and drying laundry – for example, use an extractor fan or open windows</li>
+          <li>if you exercise indoors, make sure the room is well ventilated</li>
+          <li>avoid burning on a stove or open fire if you can</li>
+          <li>use an electric or induction hob instead of a gas stovetop</li>
+          <li>vacuum, mop and dust more frequently</li>
+          <li>buy less polluting products, like cleaning products, aerosols and paints – look for products labelled as low emission or “low VOC” (volatile organic compounds)</li>
+      </ul>
+      <p>If you need to use cleaning products, aerosols and paints indoors, follow the manufacturer's instructions and use them in a ventilated area.</p>
+
+
+      <h2 class="govuk-heading-s">Air purifiers</h2>
+
+      <p>Using an air purifier can be a good option to improve indoor air quality, especially in places where you may not want to open the windows.</p>
+
+      <p>The most effective air purifiers use:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>a fan to pull air into the air purifier to be filtered</li>
+          <li>a HEPA (high efficiency particulate air) filter to remove solid or liquid particles like <a href="/{{ version }}/pollutants/particulate-matter">particulate matter</a></li>
+          <li>an activated carbon filter to remove gases like <a href="/{{ version }}/pollutants/nitrogen-dioxide">nitrogen dioxide</a></li>
+      </ul>
+
+      <p>Filters come in many ‘grades’, and some work better than others. Make sure you get an air purifier with the right filters for your needs.</p>
+      <p>Also make sure you get the right product for the size of the room it’s in. Less powerful air purifiers will struggle to properly clean the air in a larger space. Around 5 ‘air changes per hour’ will give you the best results.</p>
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+
+      <!-------------------------------------- REDUCE ------>
+
+      <h2 class="govuk-heading-m">Reduce your contribution to air pollution</h2>
+
+      <p>There are many ways for you to reduce your personal contribution to air pollution while travelling. For example: </p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>walk, cycle and use public transport more frequently</li>
+          <li>drive less and car share when you can</li>
+          <li>turn your engine off when you’re not moving, for example in parking lots or heavy traffic, or while waiting for someone</li>
+          <li>keep your vehicle well maintained</li>
+          <li>consider switching to a hybrid or electric vehicle, or another vehicle with lower emissions</li>
+      </ul>
+
+      <p>Some types of low-emission vehicles are <a href="https://www.gov.uk/government/collections/grants-for-plug-in-vehicles">eligible for a grant from the government</a>, so that you can buy them more cheaply.</p>
+
+      <p>You can also reduce your personal contribution to air pollution by doing less burning at home. For example: </p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>compost your garden waste</li>
+          <li>take garden waste and household waste to a refuse centre</li>
+          <li>reduce how often you use a wood burner or have an open fire</li>
+          <li>if you need to burn wood or other fuel for heating, you should use <a href="https://www.readytoburn.org/">Ready to Burn</a> fuels and keep your appliances clean and maintained</li>
+      </ul>
+
+      <p>There are specific <a href="https://www.gov.uk/garden-bonfires-rules">rules around garden bonfires</a>, to prevent them causing a public nuisance or a danger.</p>
+
+      <div class="govuk-!-padding-bottom-8"></div>
+
+    </div>
+
+
+<!-- RELATED CONTENT -->
+<div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+              text: "Government actions to improve air quality",
+              href: "/" + version + "/government-actions?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+  </div>
+{% endblock %}
