@@ -72,19 +72,19 @@
       <!---------- TABBED FORECAST ---------->
 
       <div class="govuk-tabs" data-module="govuk-tabs">
-        <h3 class="govuk-tabs__title">
+        <h2 class="govuk-tabs__title">
           Contents
-        </h3>
+        </h2>
 
         <!-- tabs -->
 
         <ul class="govuk-tabs__list">
-          <!-- <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#today">
               Today
             </a>
-          </li> -->
-          <li class="govuk-tabs__list-item">
+          </li>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#day2">
               {{ day2 }}
             </a>
@@ -108,38 +108,57 @@
 
         <!-- panels -->
 
-        <!-- <div class="govuk-tabs__panel" id="today">
-        <p class="govuk-body">The prediction for today was for moderate air pollution. However, high levels of nitrogen dioxide have been measured in this region.</p>
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
-        </div> -->
+        <div class="govuk-tabs__panel" id="today">
+          
+          <img src="/public/images/daqi-colour-8.png" class="govuk-!-margin-bottom-6">
+          <p>Levels of air pollution are high today due to high temperatures and low winds.</p>
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>.
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
+        </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          <img src="/public/images/daqi-colour-6.png" class="govuk-!-margin-bottom-6">
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality is measured</a>
+          
+          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
+          <p>The current warm weather will continue, causing air pollution levels to remain high across many areas tomorrow.</p>
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>.
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
-          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
+          
+          <img src="/public/images/daqi-colour-8.png" class="govuk-!-margin-bottom-6">
+          <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>.
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
-          <img src="/public/images/daqi-colour-4.png" class="govuk-!-margin-bottom-6">
-          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
+          
+          <img src="/public/images/daqi-colour-7.png" class="govuk-!-margin-bottom-6">
+          <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>.
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
-          <a href="/{{ version }}/how-aq-measured.html">How air quality is measured</a>
+          
+          <img src="/public/images/daqi-colour-7.png" class="govuk-!-margin-bottom-6">
+          <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>.
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
       </div>
 
       <!---------- END TABS ------------>
 
-      {% include "/" + folder + "/includes/uk-forecast-moderate.html" %}
 
-      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+      <p class="govuk-caption-s govuk-!-margin-bottom-2">Last updated today at 5am</p>
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
 
       {% include "/" + folder + "/includes/health-advice-high.html" %}

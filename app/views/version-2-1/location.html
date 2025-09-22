@@ -81,48 +81,53 @@
 
         <!--Today-->
         <div class="govuk-tabs__panel" id="today">
-          <p>{{ airQuality.today.ukToday }}</p>
+          
           <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
+          <p>{{ airQuality.today.ukToday }}</p>
           Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
 
-          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
 
         </div>
 
         <!--Tomorrow-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          <p>{{ airQuality.today.ukTomorrow }}</p>
+          
           <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6">
-          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
+          <p>{{ airQuality.today.ukTomorrow }}</p>
+          Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>.
 
-          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
         <!--Day 3-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
+          
           <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6">
+          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
           Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
-          <br>
-          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
         <!--Day 4-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
-          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
+          
           <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
+          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
           Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
 
-          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
         <!--Day 5-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
+          
           <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
+          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
           Find out <a href="/{{ version }}/how-aq-measured.html">how air pollution is predicted and measured</a>
 
-          <p class="govuk-caption-s govuk-!-margin-top-4">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+          <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
         </div>
 
       </div>
