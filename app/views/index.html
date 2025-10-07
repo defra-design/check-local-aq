@@ -5,12 +5,15 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+  <div class="govuk-width-container govuk-grid-row">
     <div class="govuk-grid-column-full-width">
 
+      <div><!-- UR PROTOTYPE VERSIONS -->
+
+      <h1 class="govuk-heading-l">User research prototypes</h1>
+      <p class="govuk-body">This prototype is an experimental space where we explore and test ideas so that they can be proven or disproven.</p>
+
       {{ govukTable({
-        caption: "User research prototypes",
-        captionClasses: "govuk-table__caption--l",
         firstCellIsHeader: false,
         head: [
           {
@@ -263,6 +266,7 @@
                 ]
               ]
     }) }}
+    </div>
     
   </div>
 </div>
