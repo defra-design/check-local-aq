@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Nitrogen dioxide (NO₂)" %}
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+      <p>Nitrogen dioxide is a brown gas that comes from burning fuels.</p>
+
+      <p>Breathing in a lot of nitrogen dioxide irritates the lungs. This can cause inflammation and breathing difficulties. People with existing lung conditions, like asthma, are particularly affected by nitrogen dioxide.</p>
+
+
+      <!---- HEALTH EFFECTS NITROGEN ---->
+
+      <h2 class="govuk-heading-m">Health effects of nitrogen dioxide</h2>
+
+      <p>Short term exposure to nitrogen dioxide can cause:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>inflammation of the airways</li>
+        <li>asthma attacks</li>
+        <li>higher risk of getting respiratory infections</li>
+        <li>worsening symptoms of lung or heart conditions</li>
+        <li>worse symptoms of exposure to allergens</li>
+      </ul>
+
+      <p>Long term exposure to nitrogen dioxide may lead to an overall increased risk of respiratory infection, and poorer lung function in children.</p>
+      <p>Find out more <a href="../health-effects.html">health effects of exposure to air pollution</a>.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+      <!-- SOURCES OF NITROGEN DIOXIDE -->
+
+      <h2 class="govuk-heading-m">Where nitrogen dioxide comes from</h2>
+
+      <p>Nitrogen dioxide is released when fuels are burned, for example in vehicle engines and industrial processes.</p>
+
+      <p>The main sources of nitrogen dioxide are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for sources in ["fuel burning by cars and other vehicles", "burning natural gas, for example in a power station or household boiler",
+"welding", "the use of explosives, for example in construction", "commercial and food manufacturing industries"] %}
+          <li>{{ sources }}</li>
+        {% endfor %}
+      </ul>
+
+      <p>Short term high levels of nitrogen dioxide be caused by lots of road traffic, roadworks or traffic jams. Diesel fuelled vehicles usually emit far more nitrogen dioxide than equivalent petrol fuelled vehicles.</p>
+
+      <p>Nitrogen dioxide air pollution is often worse in urban areas, where there are more roads and more traffic. But there can also be a lot of nitrogen dioxide in busier rural areas, and the wind can blow the gas across long distances.</p>
+
+
+      <!---- HOW NITROGEN IS MEASURED ---->
+
+      <h2 class="govuk-heading-m">How nitrogen dioxide is measured</h2>
+
+      <p>Find out <a href="../how-aq-measured.html">how air pollution is measured and predicted</a>.</p>
+
+      <p>Nitrogen dioxide pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 200 micrograms per cubic metre (µg/m³)</li>
+        <li>moderate from 201 to 400 µg/m³</li>
+        <li>high from 401 to 600 µg/m³</li>
+        <li>very high at 601 µg/m³ or higher</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <p>How much nitrogen dioxide is in the air at each level of the Daily Air Quality Index (DAQI):</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-no2.png"></div>
+      <!---- END DAQI SCALE ---->
+
+    </div>
+  </div>
+{% endblock %}

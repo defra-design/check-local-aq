@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% set version = "version-2-2" %}
+{% set bodyClasses = "version-2-2" %}
+
+{% block headIcons %}{% endblock %}
+
+{% block pageTitle %}
+{% if title %}{{ title }} – {% endif %}
+{{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+  {% if servicePage %}
+    {{ govukHeader({
+      homepageUrl: "/" + version,
+      serviceName: serviceName,
+      serviceUrl: "/" + version,
+      containerClasses: "govuk-width-container",
+      useTudorCrown: true
+    }) }}
+  {% elif showAnotherService is defined and showAnotherService %}
+    {{ govukHeader({
+      homepageUrl: "/" + version,
+      serviceName: anotherServiceName,
+      serviceUrl: "/" + version + "/" + serviceNameSlug,
+      containerClasses: "govuk-width-container",
+      useTudorCrown: true
+    }) }}
+  {% elif startPage %}
+    {{ govukHeader({
+      homepageUrl: "/" + version,
+      containerClasses: "govuk-width-container",
+      useTudorCrown: true
+    }) }}
+  {% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% if servicePage or startPage %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    
+    {% if displayBacklink %}
+    {{ govukBackLink({
+      text: "Change location",
+      href: "/" + version + "/where"
+    }) }}
+    {% endif %}
+  {% elif not (showAnotherService is defined and showAnotherService) %}
+    {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "Home",
+          href: "#"
+        },
+        {
+          text: "Environment and countryside",
+          href: "#"
+        },
+        {
+          text: "Air pollution",
+          href: "#"
+        }
+      ]
+    }) }}
+  {% endif %}
+{% endblock %}
+
+      
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+        href: "/",
+        text: version
+      },
+      {
+        href: "/" + version + "/" + "location" + "/" + locationString,
+        text: "Forecast: Low"
+      },
+      {
+        href: "/" + version + "/" + "location-moderate",
+        text: "Forecast: Moderate"
+      },
+      {
+        href: "/" + version + "/" + "location-high",
+        text: "Forecast: High"
+      },
+      {
+        href: "/" + version + "/" + "location-veryhigh",
+        text: "Forecast: Very high"
+      },
+      {
+        href: "/" + version + "/" + "location-breach",
+        text: "Monitor: High"
+      }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends "layouts/version-2-2.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Contact details for air quality alerts – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!------ VALIDATE THE ERROR ------>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.querySelector('form');
+          const mobileInput = document.getElementById('notify-by-text');
+          const errorSummary = document.querySelector('.govuk-error-summary');
+          const errorMessage = document.querySelector('#notify-by-text-error');
+
+          // Hide errors initially
+          if (errorSummary) errorSummary.style.display = 'none';
+          if (errorMessage) errorMessage.style.display = 'none';
+
+          form.addEventListener('submit', function (e) {
+            const enteredNumber = mobileInput?.value.trim();
+
+            // Check if the radio for "With a mobile phone number" is selected
+            const mobileSelected = document.querySelector('input[value="check-text"]')?.checked;
+
+            // Only validate if the mobile option is selected
+            if (mobileSelected && enteredNumber === '07123456789') {
+              e.preventDefault(); // Stop the form from submitting
+
+              // Show error summary and input error message
+              if (errorSummary) {
+                errorSummary.style.display = '';
+                errorSummary.focus(); // Optionally set focus for accessibility
+              }
+              if (errorMessage) errorMessage.style.display = '';
+              mobileInput.classList.add('govuk-input--error');
+            } else {
+              // No error, hide everything
+              if (errorSummary) errorSummary.style.display = 'none';
+              if (errorMessage) errorMessage.style.display = 'none';
+              mobileInput.classList.remove('govuk-input--error');
+            }
+          });
+        });
+      </script>
+    <!---- END VALIDATE ERROR ------>
+
+
+
+    <!------ ERROR SUMMARY ------>
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "There are no alerts set up for 07123456789",
+            href: "#"
+          }
+        ]
+      }) }}
+    <!------ END ERROR SUMMARY ------>
+
+      <form class="form" action="" method="post">
+        
+        {% set textHtml %}
+        {{ govukInput({
+          id: "notify-by-text",
+          name: "notifyByText",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter the mobile number used to setup alerts"
+          },
+          errorMessage: {
+            text: "There are no alerts set up for 07123456789"
+          }
+        }) }}
+        {% endset %}
+
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "notify-by-email",
+          name: "notifyByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter the email address used to setup alerts"
+          }
+        }) }}
+        {% endset %}
+        
+        
+        {{ govukRadios({
+          name: "contact-manage-alerts",
+          fieldset: {
+            legend: {
+              text: "How did you set up your air quality alerts?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "check-text",
+              text: "With a mobile phone number",
+              conditional: {
+                html: textHtml
+              }
+            },
+            {
+              value: "check-email",
+              text: "With an email address",
+              conditional: {
+                html: emailHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
