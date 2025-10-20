@@ -572,6 +572,12 @@
   background-color: #d4351c;
 }
 
+.hidden-link {
+  text-decoration: none
+}
+
+//-------------------------------------------------------
+
 .sandbox {
   // Tools
   @import "sandbox/tools/mixins";
