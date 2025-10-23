@@ -77,44 +77,54 @@
           </li>
         </ul>
 
-        <!------ PANEL ------>
+        <!------ TAB PANEL ------>
 
         <!--Today-->
         <div class="govuk-tabs__panel" id="today">
-          {% include "/" + folder + "/includes/daqi_new.html" %}
-          <!-- <img src="/public/images/daqi-colour-3.png"  -->
+          <h2 class="govuk-heading-m">Today</h2>
+          
+          {% include "/" + folder + "/includes/daqi-new.html" %}
+
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukToday }}</p>
 
         </div>
 
         <!--Tomorrow-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          <h2 class="govuk-heading-m">Friday</h2>
+
           {% include "/" + folder + "/includes/daqi-day2.html" %}
-          <!-- <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6"> -->
+
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukTomorrow }}</p>         
 
         </div>
 
         <!--Day 3-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          <h2 class="govuk-heading-m">Saturday</h2>
+
           {% include "/" + folder + "/includes/daqi-day3.html" %}
-          <!-- <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6"> -->
+
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
         </div>
 
         <!--Day 4-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <h2 class="govuk-heading-m">Sunday</h2>
+
           {% include "/" + folder + "/includes/daqi-day4.html" %}
-          <!-- <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6"> -->
+
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
         </div>
 
         <!--Day 5-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <h2 class="govuk-heading-m">Monday</h2>
+
           {% include "/" + folder + "/includes/daqi-day5.html" %}
-          <!-- <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6"> -->
+
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
         </div>

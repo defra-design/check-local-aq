@@ -55,7 +55,7 @@
 
 
     <!------ ACTUAL DAQI LEVELS ------>
-    <img src="/public/images/daqi-breach-9.png" class="govuk-!-margin-bottom-7">
+    {% include "/" + folder + "/includes/daqi-actual.html" %}
 
     <!--- ** UR SESSIONS ** UPDATE LOCATION FOR UR ------->
     <p>Air pollution in NP12 2GD, Pontllanfraith is high today, even though moderate levels of air pollution were predicted earlier.</p> 
@@ -114,36 +114,46 @@
         <!-- panels -->
 
         <div class="govuk-tabs__panel" id="today">
+          <h2 class="govuk-heading-m">Today</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod.html" %}
           
-          <img src="/public/images/daqi-colour-6.png" class="govuk-!-margin-bottom-6">
           <p>Levels of air pollution are moderate today for many areas of the UK due to warmer temperatures and low winds.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          <h2 class="govuk-heading-m">Friday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day2.html" %}
           
-          <img src="/public/images/daqi-colour-6.png" class="govuk-!-margin-bottom-6">
           <p>The current warm weather will continue, causing air pollution levels to remain moderate across many areas tomorrow.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          <h2 class="govuk-heading-m">Saturday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day3.html" %}
           
-          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
           <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <h2 class="govuk-heading-m">Sunday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day4.html" %}
           
-          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
           <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <h2 class="govuk-heading-m">Monday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day5.html" %}
           
-          <img src="/public/images/daqi-colour-4.png" class="govuk-!-margin-bottom-6">
           <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
 
         </div>

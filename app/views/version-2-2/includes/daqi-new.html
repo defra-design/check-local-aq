@@ -6,20 +6,20 @@
 {% set day5 = 4 %}
 
 <p class="govuk-hint">Daily Air Quality Index (DAQI)</p>
- <!--  <h2 id="air-pollution-forecast-today" class="govuk-heading-m govuk-!-margin-bottom-4">
+  <!-- <h2 id="air-pollution-forecast-today" class="govuk-heading-m govuk-!-margin-bottom-4">
     The air pollution forecast for today<span class="govuk-visually-hidden"> on a scale of low to very high</span> is {{ airQuality.today.readableBand }}
     <span class="govuk-visually-hidden">, {{ airQuality.today.value }} out of 10</span>
-  </h2>
- -->
+  </h2> -->
+
   <div class="daqi-scale govuk-!-margin-bottom-7" role="img" aria-describedby="air-pollution-forecast-today" aria-hidden="true">
     <div class="daqi-bar">
               <div class="daqi-bar-segment daqi-0">
                 1
               </div>
-              <div class="daqi-bar-segment daqi-selected daqi-2">
+              <div class="daqi-bar-segment daqi-0">
                 2
               </div>
-              <div class="daqi-bar-segment daqi-0">
+              <div class="daqi-bar-segment daqi-selected daqi-3">. <!---- selected highlights the active daqi level on the scale ---->
                 3
               </div>
               <div class="daqi-bar-segment daqi-0">

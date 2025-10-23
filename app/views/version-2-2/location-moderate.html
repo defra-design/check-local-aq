@@ -73,37 +73,47 @@
         <!-- panels -->
 
         <div class="govuk-tabs__panel" id="today">
-          
-          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
-          <p>Levels of air pollution are moderate today for many areas of the UK due to warmer temperatures and low winds.</p>
+          <h2 class="govuk-heading-m">Today</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod.html" %}
+
+          <p class="govuk-!-margin-top-6">Levels of air pollution are moderate today for many areas of the UK due to warmer temperatures and low winds.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          
-          <img src="/public/images/daqi-colour-6.png" class="govuk-!-margin-bottom-6">
-          <p>The current warm temperatures will continue, causing air pollution levels to remain at moderate across many areas</p>
+          <h2 class="govuk-heading-m">Friday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day2.html" %}
+
+          <p class="govuk-!-margin-top-6">The current warm temperatures will continue, causing air pollution levels to remain at moderate across many areas</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          
-          <img src="/public/images/daqi-colour-5.png" class="govuk-!-margin-bottom-6">
-          <p>Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
+          <h2 class="govuk-heading-m">Saturday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day3.html" %}
+
+          <p class="govuk-!-margin-top-6">Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
-          
-          <img src="/public/images/daqi-colour-4.png" class="govuk-!-margin-bottom-6">
-          <p>Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
+          <h2 class="govuk-heading-m">Sunday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day4.html" %}
+
+          <p class="govuk-!-margin-top-6">Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          
-          <img src="/public/images/daqi-colour-4.png" class="govuk-!-margin-bottom-6">
-          <p>Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
+          <h2 class="govuk-heading-m">Monday</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day5.html" %}
+
+          <p class="govuk-!-margin-top-6">Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
         
         </div>
 

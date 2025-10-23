@@ -80,40 +80,50 @@
           </li>
         </ul>
 
-        <!-- panels -->
+        <!-- TAB PANELS -->
 
         <div class="govuk-tabs__panel" id="today">
-          
-          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
-          <p>Levels of air pollution are high today due to high temperatures and low winds.</p>
+          <h2 class="govuk-heading-m">Today</h2>
+
+          {% include "/" + folder + "/includes/daqi-high.html" %}
+
+          <p class="govuk-!-margin-top-6">Levels of air pollution are high today due to high temperatures and low winds.</p>
           
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          
-          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
-          <p>The current warm weather will continue, causing air pollution levels to remain high across many areas tomorrow.</p>
+          <h2 class="govuk-heading-m">Friday</h2>
+
+          {% include "/" + folder + "/includes/daqi-high-day2.html" %}
+
+          <p class="govuk-!-margin-top-6">The current warm weather will continue, causing air pollution levels to remain high across many areas tomorrow.</p>
           
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          
-          <img src="/public/images/daqi-colour-8.png" class="govuk-!-margin-bottom-6">
-          <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          <h2 class="govuk-heading-m">Saturday</h2>
+
+          {% include "/" + folder + "/includes/daqi-high-day3.html" %}
+
+          <p class="govuk-!-margin-top-6">As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
           
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <h2 class="govuk-heading-m">Sunday</h2>
           
-          <img src="/public/images/daqi-colour-7.png" class="govuk-!-margin-bottom-6">
-          <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          {% include "/" + folder + "/includes/daqi-high-day4.html" %}
+
+          <p class="govuk-!-margin-top-6">As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
           
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          
-          <img src="/public/images/daqi-colour-7.png" class="govuk-!-margin-bottom-6">
-          <p>As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          <h2 class="govuk-heading-m">Monday</h2>
+
+          {% include "/" + folder + "/includes/daqi-high-day5.html" %}
+
+          <p class="govuk-!-margin-top-6">As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
           
         </div>
 

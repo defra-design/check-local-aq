@@ -80,40 +80,51 @@
           </li>
         </ul>
 
-        <!-- panels -->
+        <!-- TAB PANELS -->
 
         <div class="govuk-tabs__panel" id="today">
+          <h2 class="govuk-heading-m">Today</h2>
+
+          {% include "/" + folder + "/includes/daqi-vhigh.html" %}
           
-          <img src="/public/images/daqi-colour-10.png" class="govuk-!-margin-bottom-6">
-          <p>The current heatwave combined with low winds means air pollution levels will be very high across many areas today.</p>
+          <p class="govuk-!-margin-top-6">The current heatwave combined with low winds means air pollution levels will be very high across many areas today.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          
-          <img src="/public/images/daqi-colour-10.png" class="govuk-!-margin-bottom-6">
-          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <h2 class="govuk-heading-m">Friday</h2>
+
+          {% include "/" + folder + "/includes/daqi-vhigh-day2.html" %}
+
+          <p class="govuk-!-margin-top-6">Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          
-          <img src="/public/images/daqi-colour-10.png" class="govuk-!-margin-bottom-6">
-          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <h2 class="govuk-heading-m">Saturday</h2>
+
+          {% include "/" + folder + "/includes/daqi-vhigh-day3.html" %}
+
+          <p class="govuk-!-margin-top-6">Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <h2 class="govuk-heading-m">Sunday</h2>
           
-          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
-          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          {% include "/" + folder + "/includes/daqi-vhigh-day4.html" %}
+
+          <p class="govuk-!-margin-top-6">Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
 
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <h2 class="govuk-heading-m">Monday</h2>
+
+          {% include "/" + folder + "/includes/daqi-vhigh-day5.html" %}
+
           
-          <img src="/public/images/daqi-colour-9.png" class="govuk-!-margin-bottom-6">
-          <p>Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
+          <p class="govuk-!-margin-top-6">Temperatures will remain very high across the country this will keep air pollution levels very high.</p>
           
         </div>
 
