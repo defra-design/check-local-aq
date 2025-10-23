@@ -9,7 +9,7 @@
 
 {% set caption = "" %}
 
-{% set title = "Air pollution in " + "NE39 2DG, Highfield " %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
+{% set title = "Air pollution in " + "NP12 2GD, Pontllanfraith " %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
 
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
@@ -121,15 +121,24 @@
 
       </div>
 
-      <!---------- END TABS ------------>
-      <div class="govuk-!-padding-bottom-4"></div>
+    <!---------- END TABS ------------>
+
+    <!--------- PAGE SECTIONS -------->
+
+    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
       
     {% include "/" + folder + "/includes/health-advice-high.html" %}
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    
     {% include "/" + folder + "/includes/reduce-your-exposure-high.html" %}
 
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
+
     {% include "/" + folder + "/includes/air-quality-alerts.html" %}
 
   </div>

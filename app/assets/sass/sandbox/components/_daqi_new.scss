@@ -1,0 +1,75 @@
+.daqi-labels {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+}
+
+.daqi-bar {
+  display: flex;
+  height: govuk-spacing(7);
+  margin-bottom: govuk-spacing(2);
+  //border: 1px solid transparent;
+}
+
+.daqi-selected {
+  @media (forced-colors: active) {
+    border: 1px solid black;
+    background-color: WindowText !important;
+  }
+}
+
+.daqi-bar-segment {
+  width: 10%;
+  height: 110%;
+  margin-right: 2px;
+  @media (forced-colors: active) {
+    margin-right: 1px;
+  }
+  border-right: 1px solid transparent;
+
+  &:last-child {
+    border-right: none;
+    margin-right: 0;
+  }
+}
+
+.daqi-band {
+  @include govuk-font($size: 16, $weight: regular);
+  border: 0;
+  width: 20%;
+  vertical-align: top;
+  text-align: center;
+  justify-content: space-between;
+
+ // &:last-child, &:nth-child(3) {
+  //  width: 20%;
+  }
+//}
+
+.daqi-band-div {
+  width: 10%;
+  padding-left: 1%;
+  padding-right: 1%;
+  text-align: center;
+}
+
+
+
+@for $i from 0 through 10 {
+  .daqi-#{$i} {
+    background-color: map-get((
+      0: $daqi-colour-0,
+      1: $daqi-colour-1,
+      2: $daqi-colour-2,
+      3: $daqi-colour-3,
+      4: $daqi-colour-4,
+      5: $daqi-colour-5,
+      6: $daqi-colour-6,
+      7: $daqi-colour-7,
+      8: $daqi-colour-8,
+      9: $daqi-colour-9,
+      10: $daqi-colour-10
+    ), $i); 
+    color: if($i == 0 or $i == 4 or $i == 5 or $i == 6, govuk-colour("black"), govuk-colour("white"));
+  }
+}

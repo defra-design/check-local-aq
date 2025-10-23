@@ -81,41 +81,41 @@
 
         <!--Today-->
         <div class="govuk-tabs__panel" id="today">
-          
-          <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
-          <p>{{ airQuality.today.ukToday }}</p>
+          {% include "/" + folder + "/includes/daqi_new.html" %}
+          <!-- <img src="/public/images/daqi-colour-3.png"  -->
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukToday }}</p>
 
         </div>
 
         <!--Tomorrow-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          
-          <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6">
-          <p>{{ airQuality.today.ukTomorrow }}</p>         
+          {% include "/" + folder + "/includes/daqi-day2.html" %}
+          <!-- <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6"> -->
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukTomorrow }}</p>         
 
         </div>
 
         <!--Day 3-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          
-          <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6">
-          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
+          {% include "/" + folder + "/includes/daqi-day3.html" %}
+          <!-- <img src="/public/images/daqi-colour-2.png" class="govuk-!-margin-bottom-6"> -->
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
         </div>
 
         <!--Day 4-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
-          
-          <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
-          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
+          {% include "/" + folder + "/includes/daqi-day4.html" %}
+          <!-- <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6"> -->
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
         </div>
 
         <!--Day 5-->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          
-          <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6">
-          <p class="govuk-!-margin-bottom-6">{{ airQuality.today.ukOutlook }}</p>
+          {% include "/" + folder + "/includes/daqi-day5.html" %}
+          <!-- <img src="/public/images/daqi-colour-3.png" class="govuk-!-margin-bottom-6"> -->
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
         </div>
 
@@ -124,15 +124,27 @@
       </div>
       <!---------- END TABS ------------>
 
+      <!--------- PAGE SECTIONS -------->
       <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
 
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+      <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+
+      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+
+      <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
       {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
   
       {% include "/" + folder + "/includes/health-advice.html" %}
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
 
-      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+      
+      
 
       <div class="govuk-!-padding-bottom-9"></div>
 

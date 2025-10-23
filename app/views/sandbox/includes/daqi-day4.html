@@ -1,32 +1,60 @@
+{% set daqiValue = airQuality.today.value %}
+
 {% set day2 = 1 | addDaysToTodayAbrev %}
-{% set day3 = 2 | addDaysToTodayAbrev %}
-{% set day4 = 3 | addDaysToTodayAbrev %}
-{% set day5 = 4 | addDaysToTodayAbrev %}
+{% set day3 = 2 %}
+{% set day4 = 3 %}
+{% set day5 = 4 %}
 
-{% set daqiValue = airQuality.day4.value %}
+<h2 class="govuk-heading-m">Sunday</h2>
 
-  <h2 id="air-pollution-forecast-today" class="govuk-heading-m govuk-!-margin-bottom-4">
-    The air pollution forecast for {{ day4 }}<span class="govuk-visually-hidden"> on a scale of low to very high</span> is {{ airQuality.day4.readableBand }}
-    <span class="govuk-visually-hidden">, {{ airQuality.day4.value }} out of 10</span>
-  </h2>
+<p class="govuk-hint">Daily Air Quality Index (DAQI)</p>
+ <!--  <h2 id="air-pollution-forecast-today" class="govuk-heading-m govuk-!-margin-bottom-4">
+    The air pollution forecast for today<span class="govuk-visually-hidden"> on a scale of low to very high</span> is {{ airQuality.today.readableBand }}
+    <span class="govuk-visually-hidden">, {{ airQuality.today.value }} out of 10</span>
+  </h2> -->
 
   <div class="daqi-scale govuk-!-margin-bottom-7" role="img" aria-describedby="air-pollution-forecast-today" aria-hidden="true">
     <div class="daqi-bar">
-      {% for i in range(1, 11) %}
-          {% if i <= daqiValue %}
-              <div class="daqi-bar-segment daqi-selected daqi-{{ daqiValue }}">
-              </div>
-          {% else %}
               <div class="daqi-bar-segment daqi-0">
+                1
               </div>
-          {% endif %}
-      {% endfor %}
+              <div class="daqi-bar-segment daqi-selected daqi-2">
+                2
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                3
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                4
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                5
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                6
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                7
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                8
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                9
+              </div>
+              <div class="daqi-bar-segment daqi-0">
+                10
+              </div>
+
     </div>
     <div class="daqi-labels">
-      <span class="daqi-band">Low</span>
-      <span class="daqi-band">Moderate</span>
-      <span class="daqi-band">High</span>
-      <span class="daqi-band">Very high</span>
+      <span class="daqi-band-low">Low</span>
+      <span class="daqi-band-div"> | </span>
+      <span class="daqi-band-mod">Moderate</span>
+      <span class="daqi-band-div"> | </span>
+      <span class="daqi-band-high">High</span>
+      <span class="daqi-band-div"> | </span>
+      <span class="daqi-band-vhigh">Very high</span>
     </div>
   </div>
 

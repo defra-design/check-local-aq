@@ -80,57 +80,42 @@
         <!-- panels -->
 
         <div class="govuk-tabs__panel" id="today">
-          {% include "/" + folder + "/includes/daqi.html" %}
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
+          {% include "/" + folder + "/includes/daqi_new.html" %}
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tues">
           {% include "/" + folder + "/includes/daqi-day2.html" %}
-          <a href="/{{ version }}/how-aq-measured?locationName={{ locationName }}&parentArea={{ parentArea }}">How air quality information is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wed">
           {% include "/" + folder + "/includes/daqi-day3.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="thurs">
           {% include "/" + folder + "/includes/daqi-day4.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fri">
           {% include "/" + folder + "/includes/daqi-day5.html" %}
-          <a href="/{{ version }}/how-aq-measured.html">How air quality information is measured</a>
         </div>
 
       </div>
 
       <!---------- END TABS ------------>
 
-      {% include "/" + folder + "/includes/uk-forecast.html" %}
-
-      <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-
-      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
 
       {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
 
       {% include "/" + folder + "/includes/health-advice.html" %}
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-      
-      {% include "/" + folder + "/includes/pollutants.html" %}
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
 
-      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
 
       <div class="govuk-!-padding-bottom-9"></div>
 
      
-    
     </div>
 
 

@@ -42,7 +42,7 @@
 
       <!---- ACTIVE BREACH ---->
 
-        <h3 class="govuk-heading-s">North East, England</h3>
+        <h3 class="govuk-heading-m">South Wales</h3>
 
         <!-- ACTIVE SUMMARY LIST -->
         <dl class="govuk-summary-list">
@@ -51,7 +51,7 @@
               Monitoring location
             </dt>
             <dd class="govuk-summary-list__value">
-              Sunderland Wessington Way
+              Port Talbot Margam
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -59,7 +59,7 @@
               Alert area
             </dt>
             <dd class="govuk-summary-list__value">
-              Within 25 miles of Sunderland Wessington Way
+              Within 25 miles of Port Talbot Margam
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -75,7 +75,14 @@
               Alert started
             </dt>
             <dd class="govuk-summary-list__value">
-              About 22 hours ago (5:33pm, 22 September 2025)
+              <!----- DISPLAYS TODAYS DATE DYNAMICALLY ----->
+              <script> 
+                const CollectEvent = new Date();
+                const CollectOptions = { year: 'numeric', month: 'long'};
+              </script>
+	
+              <p>About 22 hours ago (5:33pm, <script type="text/javascript"> document.write(CollectEvent.getDate());</script> 	
+              <script type="text/javascript"> document.write(CollectEvent.toLocaleDateString(undefined, CollectOptions));</script>)</p>
             </dd>
           </div>
         </dl>
@@ -83,7 +90,7 @@
 
         
 
-<!--   RADIUS MAP 
+        <!--   RADIUS MAP (DISABLED)
         <div><img src="/public/images/alert-radius-sunderland.png"></div> <!------ <<<< MAP IMAGE TO CHANGE 
        END RADIUS  -->
 
@@ -93,7 +100,7 @@
       <!---- END ACTIVE ------>
 
       <div class="govuk-!-padding-bottom-6"></div>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <div class="govuk-!-padding-bottom-4"></div>
 
       <!------------------------------------------->
@@ -110,7 +117,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                  Chigwell, Essex, England (2 August 2025)
+                  Birmingham Hall Green, West Midlands, England (2 August 2025)
                 </span>
               </h2>
             </div>
@@ -123,7 +130,7 @@
                       Alert region
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Essex, England
+                      West Midlands, England
                     </dd>
                   </div>
                   <div class="govuk-summary-list__row">
@@ -131,7 +138,7 @@
                       Monitoring area
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Chigwell
+                      Birmingham Hall Green
                     </dd>
                   </div>
                   <div class="govuk-summary-list__row">
@@ -170,7 +177,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-                  Bush Estate, Midlothian, Scotland (21 July 2025)
+                  London Bloomsbury, Greater London, England (21 July 2025)
                 </span>
               </h2>
             </div>
@@ -184,7 +191,7 @@
                       Alert region
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Midlothian, Scotland
+                      Greater London, England
                     </dd>
                   </div>
                   <div class="govuk-summary-list__row">
@@ -192,7 +199,7 @@
                       Monitoring area
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Bush Estate
+                      London Bloomsbury
                     </dd>
                   </div>
                   <div class="govuk-summary-list__row">
@@ -231,7 +238,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                  Stockport, North West, England (05 July 2025)
+                 London Honor Oak Park, Greater London, England (05 July 2025)
                 </span>
               </h2>
             </div>
@@ -246,7 +253,7 @@
             <div class="govuk-accordion__section-header">
               <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                  Bristol, South West, England (25 June 2025)
+                   London N. Kensington, Greater London, England (25 June 2025)
                 </span>
               </h2>
             </div>
