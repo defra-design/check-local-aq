@@ -27,21 +27,21 @@
 .daqi-band-low {
   @include govuk-font($size: 16, $weight: regular);
   border: 0;
-  width: 40%;
+  width: 29%;
   vertical-align: top;
   text-align: center;
 }
 .daqi-band-mod {
   @include govuk-font($size: 16, $weight: regular);
   border: 0;
-  width: 40%;
+  width: 29%;
   vertical-align: top;
   text-align: center;
 }
 .daqi-band-high {
   @include govuk-font($size: 16, $weight: regular);
   border: 0;
-  width: 40%;
+  width: 29%;
   vertical-align: top;
   text-align: center;
 }
@@ -54,13 +54,12 @@
 }
 
 .daqi-band-div {
-  width: 10%;
+  width: 1%;
   padding-left: 1%;
   padding-right: 1%;
   color: #E0E0E0;
   text-align: center;
 }
-
 
 
 .daqi-band:last-child {

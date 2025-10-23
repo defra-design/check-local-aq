@@ -4,20 +4,20 @@
 const monitoringSites = [
   
   {
-    "site_name": "Cwmbran Crownbridge",
-    "site_id": "UKA00819",
-    "distance": 8.5,
-    "site_type": "urban-background",
+    "site_name": "Chatham Roadside",
+    "site_id": "UKA00553",
+    "distance": 12.0,
+    "site_type": "urban-traffic",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "	Newport",
+    "site_name": "Thurrock",
     "site_id": "UKA00380",
-    "distance": 10.3,
+    "distance": 12.9,
     "site_type": "urban-background",
     "site_band": "Moderate",
-    "site_aqi": 4
+    "site_aqi": 5
 }
 
 ]
