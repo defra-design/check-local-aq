@@ -9,7 +9,7 @@
 
 {% set caption = "" %}
 
-{% set title = "Air pollution in " + "TN15 8RG, Borough Green" %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
+{% set title = "Air pollution in " + "BT27 4DL, Lisburn and Castlereagh" %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
 
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
@@ -19,6 +19,11 @@
 {% set day3 = 2 | addDaysToTodayAbrev %}
 {% set day4 = 3 | addDaysToTodayAbrev %}
 {% set day5 = 4 | addDaysToTodayAbrev %}
+
+{% set day2b = 1 | addDaysToTodayFull %}
+{% set day3b = 2 | addDaysToTodayFull %}
+{% set day4b = 3 | addDaysToTodayFull %}
+{% set day5b = 4 | addDaysToTodayFull %}
 
 {% block pageScripts %}
   <script src="/public/javascripts/toggletips.js"></script>
@@ -92,7 +97,7 @@
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
-          <h2 class="govuk-heading-m">Friday</h2>
+          <h2 class="govuk-heading-m">{{ day2b }}</h2>
 
           {% include "/" + folder + "/includes/daqi-vhigh-day2.html" %}
 
@@ -101,7 +106,7 @@
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
-          <h2 class="govuk-heading-m">Saturday</h2>
+          <h2 class="govuk-heading-m">{{ day3b }}</h2>
 
           {% include "/" + folder + "/includes/daqi-vhigh-day3.html" %}
 
@@ -110,7 +115,7 @@
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
-          <h2 class="govuk-heading-m">Sunday</h2>
+          <h2 class="govuk-heading-m">{{ day4b }}</h2>
           
           {% include "/" + folder + "/includes/daqi-vhigh-day4.html" %}
 
@@ -119,7 +124,7 @@
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
-          <h2 class="govuk-heading-m">Monday</h2>
+          <h2 class="govuk-heading-m">{{ day5b }}</h2>
 
           {% include "/" + folder + "/includes/daqi-vhigh-day5.html" %}
 

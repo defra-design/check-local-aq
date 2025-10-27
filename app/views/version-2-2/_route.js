@@ -66,17 +66,21 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/alerts-success-2',
 
   '/actions',
-  '/reduce-your-exposure',
+  '/email-high',
   '/health-effects',
   '/health-advice-levels',
+  '/how-aq-measured',
+  '/location-moderate',
+  '/location-high',
+  '/location-veryhigh',
   '/pollutants/nitrogen-dioxide',
   '/pollutants/particulate-matter',
   '/pollutants/particulate-matter2',
   '/pollutants/particulate-matter10',
   '/pollutants/ozone',
   '/pollutants/sulphur-dioxide',
-  '/email-high',
-  '/how-aq-measured'
+  '/reduce-your-exposure'
+
 
 ];
 

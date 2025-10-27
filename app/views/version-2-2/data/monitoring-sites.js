@@ -4,17 +4,17 @@
 const monitoringSites = [
   
   {
-    "site_name": "Chatham Roadside",
-    "site_id": "UKA00553",
-    "distance": 12.0,
+    "site_name": "Belfast Stockman's Lane",
+    "site_id": "UKA00594",
+    "distance": 3.7,
     "site_type": "urban-traffic",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Thurrock",
-    "site_id": "UKA00380",
-    "distance": 12.9,
+    "site_name": "Belfast Centre",
+    "site_id": "UKA00212",
+    "distance": 6.4,
     "site_type": "urban-background",
     "site_band": "Moderate",
     "site_aqi": 5
