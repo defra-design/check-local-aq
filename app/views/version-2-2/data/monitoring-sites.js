@@ -4,18 +4,18 @@
 const monitoringSites = [
   
   {
-    "site_name": "Manchester Piccadilly",
+    "site_name": "Cambridge Roadside",
     "site_id": "UKA00594",
-    "distance": 4.4,
-    "site_type": "urban-background",
+    "distance": 0.3,
+    "site_type": "urban-traffic",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Shaw Crompton Way",
+    "site_name": "Wicken Fen",
     "site_id": "UKA00212",
     "distance": 6.4,
-    "site_type": "urban-traffic",
+    "site_type": "rural-background",
     "site_band": "Moderate",
     "site_aqi": 5
 }
