@@ -4,18 +4,18 @@
 const monitoringSites = [
   
   {
-    "site_name": "Belfast Stockman's Lane",
+    "site_name": "Manchester Piccadilly",
     "site_id": "UKA00594",
-    "distance": 3.7,
-    "site_type": "urban-traffic",
+    "distance": 4.4,
+    "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Belfast Centre",
+    "site_name": "Shaw Crompton Way",
     "site_id": "UKA00212",
     "distance": 6.4,
-    "site_type": "urban-background",
+    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 }
