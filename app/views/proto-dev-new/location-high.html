@@ -1,0 +1,189 @@
+{% extends "layouts/version-2-2.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+
+{% set title = "Air pollution in " + "CB2 1ST, Cambridge" %} <!-- PASTE POSTCODE AND LOCATION FROM HEROKU -->
+
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set highestAQDetails = {'readableBand': 'high'} %}
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+{% set day2b = 1 | addDaysToTodayFull %}
+{% set day3b = 2 | addDaysToTodayFull %}
+{% set day4b = 3 | addDaysToTodayFull %}
+{% set day5b = 4 | addDaysToTodayFull %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-9">
+    
+    <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {{ title }}      
+
+    <!--------- WARNING TEXT ----------->
+    
+    <div class="govuk-warning-text govuk-!-margin-top-6">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            High levels of air pollution are predicted in this location today.
+        </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
+
+    <!---------- TABBED FORECAST ---------->
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <!-- tabs -->
+
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#today">
+              Today
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#day2">
+              {{ day2 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day3">
+              {{ day3 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day4">
+              {{ day4 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day5">
+              {{ day5 }}
+            </a>
+          </li>
+        </ul>
+
+        <!-- TAB PANELS -->
+
+        <div class="govuk-tabs__panel" id="today">
+          <h2 class="govuk-heading-m">Today</h2>
+
+          {% include "/" + folder + "/includes/daqi-high.html" %}
+
+          <p class="govuk-!-margin-top-6">Levels of air pollution are high today due to high temperatures and low winds.</p>
+          
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          <h2 class="govuk-heading-m">{{ day2b }}</h2>
+
+          {% include "/" + folder + "/includes/daqi-high-day2.html" %}
+
+          <p class="govuk-!-margin-top-6">The current warm weather will continue, causing air pollution levels to remain high across many areas tomorrow.</p>
+          
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          <h2 class="govuk-heading-m">{{ day3b }}</h2>
+
+          {% include "/" + folder + "/includes/daqi-high-day3.html" %}
+
+          <p class="govuk-!-margin-top-6">As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <h2 class="govuk-heading-m">{{ day4b }}</h2>
+          
+          {% include "/" + folder + "/includes/daqi-high-day4.html" %}
+
+          <p class="govuk-!-margin-top-6">As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <h2 class="govuk-heading-m">{{ day5b }}</h2>
+
+          {% include "/" + folder + "/includes/daqi-high-day5.html" %}
+
+          <p class="govuk-!-margin-top-6">As unsettled weather returns, the air pollution outlook will likely return to lower levels.</p>
+          
+        </div>
+
+        <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
+
+      </div>
+
+    <!---------- END TABS ------------>
+
+    <!--------- PAGE SECTIONS -------->
+
+    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
+      
+    {% include "/" + folder + "/includes/health-advice-high.html" %}
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+    
+    {% include "/" + folder + "/includes/reduce-your-exposure-high.html" %}
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
+
+    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+
+  </div>
+  
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/actions?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+{% endblock %}
+
+

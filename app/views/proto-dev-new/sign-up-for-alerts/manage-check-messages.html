@@ -1,0 +1,58 @@
+{% extends "layouts/version-2-2.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+
+{% block pageTitle %}
+Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your text messages</h1>
+      <p class="govuk-body">
+        We've sent a text message to <strong>{{ text }}</strong> with a 5 digit security code.
+      </p>
+      {{ govukInput({
+        label: {
+          text: "Enter the code to access and manage your air quality alerts."
+        },
+        classes: "govuk-!-width-one-third",
+        id: "security-code",
+        name: "security-code"
+      }) }}
+
+      <p>
+        The code expires in 24 hours.
+      </p>
+
+      {{ govukDetails({
+        summaryText: "Not received a text message?",
+        html: "<p>Text messages sometimes take a few minutes to arrive.</p><p>If you do not receive a text message after 10 minutes, check that you have entered your number correctly and that you have mobile phone signal.</p>"
+      }) }}
+      {{ govukButton({
+        text: "Confim code",
+        href: "/" + version + "/sign-up-for-alerts/manage-alerts"
+      }) }}
+
+      <p>
+      <a href="send-new-code.html">Send a new activation code</a>
+    </p>
+
+    <!-- {{ locationString }} -->
+
+    </div>
+  </div>
+
+{% endblock %}
