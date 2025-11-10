@@ -615,6 +615,8 @@
   background-color: #f5f5f5;
 }
 
+//-------------------- DEV ---------------------------------
+
 .proto-dev {
   // Tools
   @import "proto-dev/tools/mixins";
@@ -644,6 +646,38 @@
   @import "proto-dev/components/aq-browse-section";
   @import "proto-dev/components/language-toggle";
 }
+
+.proto-dev-new {
+  // Tools
+  @import "proto-dev-new/tools/mixins";
+
+  // Elements
+  @import "proto-dev-new/elements/colour";
+  @import "proto-dev-new/elements/layout";
+  @import "proto-dev-new/elements/typography";
+  @import "proto-dev-new/elements/tables";
+  @import "proto-dev-new/elements/icons";
+  @import "proto-dev-new/elements/aq-buttons";
+
+  // Components
+  @import "proto-dev-new/components/daqitag";
+  @import "proto-dev-new/components/daqi";
+  @import "proto-dev-new/components/toggletips";
+  @import "proto-dev-new/components/aq-levels-table";
+  @import "proto-dev-new/components/aq-tabs";
+  @import "proto-dev-new/components/cards";
+  @import "proto-dev-new/components/inset-text-colour";
+  @import "proto-dev-new/components/aq-definition-list";
+  @import "proto-dev-new/components/aq-levels-list";
+  @import "proto-dev-new/components/aq-forecast";
+  @import "proto-dev-new/components/gem-cards.scss";
+  @import "proto-dev-new/components/notfication-banner.scss";
+  @import "proto-dev-new/components/masthead";
+  @import "proto-dev-new/components/aq-browse-section";
+
+}
+
+//----------------------------------------------------------
 
 .private-beta-fixes {
 // Tools

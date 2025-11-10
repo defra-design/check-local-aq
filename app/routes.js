@@ -4,6 +4,7 @@ const router = govukPrototypeKit.requests.setupRouter();
 require('./views/private-beta/_route.js');
 require('./views/private-beta-fixes/_route.js');
 require('./views/proto-dev/_route.js');
+require('./views/proto-dev-new/_route.js');
 require('./views/sandbox/_route.js');
 require('./views/version-2-2/_route.js');
 require('./views/version-2-1/_route.js');

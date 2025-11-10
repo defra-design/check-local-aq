@@ -259,7 +259,7 @@
     }) }}
 
     <h2 class="govuk-heading-l">Developer build prototype</h1>
-      <p class="govuk-body">This prototype is a stable version and a reference for developers to build from</p>
+      <p class="govuk-body">This prototype is a stable version and a reference for developers to build from. For visual details developers should also refer to any linked Figma design files.</p>
 
     {{ govukTable({
         caption: "Dev build and experiment prototypes",
@@ -271,16 +271,20 @@
           }
           ,
           {
-            text: "Design history"
+            text: "Last updated"
           }
         ],
         rows: [
         [
                 {
-                  html: '<a href="/proto-dev" class="govuk-!-margin-right-2">Prototype for development</a>'
+                  html: '<a href="/proto-dev-new" class="govuk-!-margin-right-2">Prototype for development</a><br><br>Also relevant to this update;
+                  <ul>
+                      <li><a href="https://www.figma.com/design/g3rNhEwaCkluhDpDgZc6Sy/Air-quality-citizen---DAQI-master?node-id=0-1&t=erTH3FQ7KCp88hUC-1">Figma: Air quality citizen - DAQI master</a></li>
+                  </ul>
+                  '
                 },
                 {
-                  html: 'Not applicable'
+                  html: '10/11/2025'
                 }
                 ]
               ]

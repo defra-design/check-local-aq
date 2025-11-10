@@ -1,11 +1,11 @@
 const govukPrototypeKit = require('govuk-prototype-kit');
-const router = govukPrototypeKit.requests.setupRouter('/version-2-2');
+const router = govukPrototypeKit.requests.setupRouter('/proto-dev-new');
 const locationController = require('./controllers/location.js'); 
 const airQualityModule = require('./data/air-quality.js');
 const alertsController = require('./controllers/alerts.js');
 const { monitoringSites, pollutantTypes, siteTypeDescriptions } = require('./data/monitoring-sites.js');  
 
-const version = 'version-2-2';
+const version = 'proto-dev-new';
 
 // Location search
 router.get('/' + version + '/where', (req, res) => {

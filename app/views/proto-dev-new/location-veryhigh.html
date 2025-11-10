@@ -1,4 +1,4 @@
-{% extends "layouts/version-2-2.html" %}
+{% extends "layouts/proto-dev-new.html" %}
 {% set displayBacklink = true %}
 
 {% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
@@ -144,20 +144,17 @@
     {% include "/" + folder + "/includes/health-advice-vhigh.html" %}
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">    
+
     {% include "/" + folder + "/includes/reduce-your-exposure-high.html" %}
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-
-    {% include "/" + folder + "/includes/monitoring-sites.html" %}
-
-    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
 
     {% include "/" + folder + "/includes/air-quality-alerts.html" %}
 
   </div>
   
 
-  <!-- RELATED CONTENT -->
+  <!-- RELATED CONTENT
   <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
       
     {{ xGovukRelatedNavigation({
@@ -179,7 +176,7 @@
   }) }}
   
   </div>
-  <!-- END RELATED CONTENT -->
+  END RELATED CONTENT -->
 
 </div>
 {% endblock %}
