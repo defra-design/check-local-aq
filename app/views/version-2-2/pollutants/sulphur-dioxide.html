@@ -1,5 +1,5 @@
-{% extends "layouts/main.html" %}
-
+<!-- {% extends "layouts/main.html" %} -->
+{% extends "layouts/version-2-2.html" %}
 {% set displayBacklink = false %}
 {% set caption = "" %}
 {% set title = "Sulphur dioxide (SO₂)" %}
@@ -10,7 +10,7 @@
 
 {{ govukPhaseBanner({
       tag: {
-        text: "Prototype"
+        text: "Prototype " + version
       },
       html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
     }) }}
