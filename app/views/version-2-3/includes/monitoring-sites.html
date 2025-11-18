@@ -1,0 +1,36 @@
+<h2 class="govuk-heading-m">Current air pollution levels nearby </h2>
+<p>Air pollution information in {{ result.GAZETTEER_ENTRY.NAME1 }} is based upon data from the nearest monitoring areas.  The readings are taken every hour.</p>
+
+<!-- <p class="govuk-!-margin-bottom-6"><a href="/{{ version }}/why-we-monitor-air-pollution">Find out more about why we monitor air pollution</a></p> -->
+                                    
+                                    
+{% set rows = [] %}
+{% for site in monitoringSites %}
+  {% set row = [
+      { 
+          html: "<a class='govuk-!-margin-bottom-1' href='#' data-message='This part of the prototype does not exist yet'>" + site.site_name + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>" + site.distance + " miles away</span>"
+      },
+      { 
+          html: "<strong class='daqi-tag daqi-tag--" + site.site_aqi + "'>" + site.site_band + "</strong>",
+          classes: "align-middle" 
+      }
+  ] %}
+  {% set _ = rows.push(row) %}
+{% endfor %}
+
+{{ govukTable({
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Monitoring area"
+    },
+    {
+      text: "Current level"
+    }
+  ],
+  rows: rows
+}) }}
+
+
+
+

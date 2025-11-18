@@ -1,0 +1,58 @@
+{% extends "layouts/version-2-3.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to unsubscribe from all air quality alerts?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="" method="post">
+        {{ govukRadios({
+          name: "unsubscribe-all-alerts",
+          fieldset: {
+            legend: {
+              text: "Do you want to unsubscribe from all air quality alerts?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "unsubscribe", 
+              text: "Yes"
+            },
+            {
+              value: "manage",
+              text: "No, return to manage my air quality alerts"
+            }
+          ]
+        }) }}
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

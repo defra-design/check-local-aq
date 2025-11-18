@@ -559,6 +559,36 @@
 
 }
 
+.version-2-3 {
+  // Tools
+  @import "version-2-3/tools/mixins";
+
+  // Elements
+  @import "version-2-3/elements/colour";
+  @import "version-2-3/elements/layout";
+  @import "version-2-3/elements/typography";
+  @import "version-2-3/elements/tables";
+  @import "version-2-3/elements/icons";
+  @import "version-2-3/elements/aq-buttons";
+
+  // Components
+  @import "version-2-3/components/daqitag";
+  @import "version-2-3/components/daqi";
+  @import "version-2-3/components/toggletips";
+  @import "version-2-3/components/aq-levels-table";
+  @import "version-2-3/components/aq-tabs";
+  @import "version-2-3/components/cards";
+  @import "version-2-3/components/inset-text-colour";
+  @import "version-2-3/components/aq-definition-list";
+  @import "version-2-3/components/aq-levels-list";
+  @import "version-2-3/components/aq-forecast";
+  @import "version-2-3/components/gem-cards.scss";
+  @import "version-2-3/components/notfication-banner.scss";
+  @import "version-2-3/components/masthead";
+  @import "version-2-3/components/aq-browse-section";
+
+}
+
 
 
 // alerts - active and expired

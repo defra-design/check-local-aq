@@ -1,0 +1,90 @@
+<!-- {% extends "layouts/main.html" %} -->
+{% extends "layouts/version-2-3.html" %}
+{% set caption = "" %}
+{% set title = "Particulate matter (PM10)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+      <p>Particulate matter are small solid or liquid particles in the air. These particles can come from natural processes, industrial processes and other human activity.</p>
+
+      <p>There are 2 main types of particulate matter (PM):</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="particulate-matter2.html">PM2.5</a> are particles 2.5 micrometres wide, or smaller</li>
+        <li>PM10 are particles 10 micrometres wide, or smaller (this includes PM2.5)</li>
+      </ul>
+
+      <p>For context, the width of a human hair is about 50 to 70 micrometres.</p>
+
+      <p>These particles are small enough for us to breathe in. When there is a lot of particulate matter in the air, this can cause lung inflammation and <a href="../health-effects.html">other health effects</a>. The particles can also enter the bloodstream through the lungs and travel around the body, affecting the heart, brain and other organs.</p>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+      
+      <h2 class="govuk-heading-s">Sources of PM10</h2>
+      <p>Particulate matter includes dust. soot. smoke and small drops of liquid. These particles can come from many different sources.</p>
+      
+      <p>The main sources of PM10 are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>dust from construction sites</li>
+        <li>dust from landfills</li>
+        <li>dust from agriculture</li>
+        <li>wildfires</li>
+        <li>pollen</li>
+        <li>power plants</li>
+        <li>vehicles</li>
+      </ul>
+
+      <p>In 2022, 16 per cent of total PM10 emissions in the UK were from road transport. This includes both exhaust emissions (from the engine) and non-exhaust emissions (from brake, tyre and road wear).</p>
+
+      <p>Particulate matter air pollution is often worse in urban areas, where there is more traffic. But there can also be particulate matter in rural areas, and the wind can blow these particles across long distances.</p>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+      <!---- MONITORING PARTICULATE MATTER ---->
+      <h2 class="govuk-heading-s">Monitoring levels of PM10</h2>
+
+      <p>PM10 pollution is monitored across the UK. It is one of the 5 pollutants used in the <a href="../how-aq-measured.html">DAQI scale</a>.</p>
+      <p>The DAQI scale helps explain the short term risk of air pollution. It measures low, moderate, high and very high levels of pollutants in the air. Pollutants are measured in micrograms per cubic metre (µgm³). </p>
+
+      <p>PM10 pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 50 µg/m³</li>
+        <li>moderate from 51 to 75 µg/m³</li>
+        <li>high from 76 to 100 µg/m³</li>
+        <li>very high at 101 µg/m³ or higher</li>
+      </ul>
+
+      <p>How much PM10 is in the air at each level of the DAQI scale:</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-pm10.png"></div>
+      <!---- END DAQI SCALE ---->
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "layouts/version-2-3.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+How would you like to receive your alert? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="" method="post">
+        
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "notify-by-email",
+          name: "notifyByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter email address"
+          }
+        }) }}
+        {% endset %}
+        
+        {% set textHtml %}
+        {{ govukInput({
+          id: "notify-by-text",
+          name: "notifyByText",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Enter mobile phone number"
+          }
+        }) }}
+        {% endset %}
+        
+        {{ govukRadios({
+          name: "alert-method-change",
+          fieldset: {
+            legend: {
+              text: "How would you like to receive your alert?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "check-text",
+              text: "Text to a mobile phone",
+              conditional: {
+                html: textHtml
+              }
+            },
+            {
+              value: "check-email",
+              text: "Email",
+              conditional: {
+                html: emailHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,276 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/version-2-3.html" %}
+{% set caption = "" %}
+{% set title = "Air pollution breaches" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+  text: Back,
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Air pollution breaches</h1>
+  
+      <p>The <a href="https://www.legislation.gov.uk/uksi/2010/1001/contents">Air Quality Standards Regulations (2010)</a> sets out the legal safe limits for specific air pollutants.</p>
+      <p>When a pollutant goes over (breaches) its legal safe limit in one area, it may be a serious health risk to people nearby. <a href="/{{ version }}/actions.html" data-message='This part of the prototype does not exist yet'>Find out what to do if you’re in an area with an active air pollution breach</a>.</p>
+      <p>Air pollution levels across the UK are measured hourly. </p>
+
+      <div class="govuk-!-padding-bottom-2"></div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <!----- ACTIVE BREACHES SECTION ----->
+      <h2 class="govuk-heading-m">Active breaches</h2>
+
+      <p>There is currently <b>1</b> active air pollution breach</p>
+      <p>This alert will stay active until 24 hours after the last measured breach. This is currently expected to be in about 2 hours.</p>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+
+      <!---- ACTIVE BREACH ---->
+
+        <h3 class="govuk-heading-m">East of England</h3>
+
+        <!-- ACTIVE SUMMARY LIST -->
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monitoring location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Wicken Fen
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Alert area
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Within 25 miles of Wicken Fen
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Pollutant
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Ozone (<a href="/{{ version }}/pollutants/ozone.html">What causes high ozone levels?</a>)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Alert started
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <!----- DISPLAYS TODAYS DATE DYNAMICALLY ----->
+              <script> 
+                const CollectEvent = new Date();
+                const CollectOptions = { year: 'numeric', month: 'long'};
+              </script>
+	
+              <p>About 10 hours ago (5:33am, <script type="text/javascript"> document.write(CollectEvent.getDate());</script> 	
+              <script type="text/javascript"> document.write(CollectEvent.toLocaleDateString(undefined, CollectOptions));</script>)</p>
+            </dd>
+          </div>
+        </dl>
+        <!-- END SUMMARY -->
+
+        
+
+        <!--   RADIUS MAP (DISABLED)
+        <div><img src="/public/images/alert-radius-sunderland.png"></div> <!------ <<<< MAP IMAGE TO CHANGE 
+       END RADIUS  -->
+
+
+        <p class="govuk-caption-s gem-c-cards__timestamp">Last updated 2 hours ago (1:42pm)</p>
+
+      <!---- END ACTIVE ------>
+
+      <div class="govuk-!-padding-bottom-6"></div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <!------------------------------------------->
+
+      <!----- PAST BREACHES SECTION ----->
+
+      <h2 class="govuk-heading-m">Past breaches</h2>
+      <h3 class ="govuk-heading-s">Recorded in the last 12 months</h3>
+
+        <!-- ACCORDION -->
+         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section">
+
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Birmingham Hall Green, West Midlands, England (2 August 2025)
+                </span>
+              </h2>
+            </div>
+
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+              <!-- EXPIRED SUMMARY LIST -->
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Alert region
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      West Midlands, England
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Monitoring area
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Birmingham Hall Green
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Pollutant
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Ozone (<a href="/{{ version }}/pollutants/ozone.html">What causes high Ozone levels?</a>)
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Data source
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Automatic Urban and Rural Network (AURN) 
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Alert period
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      From  12:02pm, 2 August 2025<br>
+                      To 12:02pm, 3 August 2025
+                    </dd>
+                  </div>
+                </dl>
+              <!-- END SUMMARY -->
+            </div>
+
+          </div>
+
+          <div class="govuk-accordion__section">
+
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  London Bloomsbury, Greater London, England (21 July 2025)
+                </span>
+              </h2>
+            </div>
+
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+
+              <!-- EXPIRED SUMMARY LIST -->
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Alert region
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Greater London, England
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Monitoring area
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      London Bloomsbury
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Pollutant
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      PM2.5 (<a href="/{{ version }}/pollutants/particulate-matter.html">What causes high PM2.5 levels?</a>)
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Data source
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Automatic Urban and Rural Network (AURN) 
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Alert period
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      From  12:02pm, 21 July 2025<br>
+                      To 12:02pm, 22 July 2025
+                    </dd>
+                  </div>
+                </dl>
+              <!-- END SUMMARY -->
+            </div>
+
+          </div>
+
+          <div class="govuk-accordion__section">
+
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                 London Honor Oak Park, Greater London, England (05 July 2025)
+                </span>
+              </h2>
+            </div>
+
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+              <p class="govuk-body">No information available</p>
+            </div>
+
+          </div>
+
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                   London N. Kensington, Greater London, England (25 June 2025)
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+              <p class="govuk-body">No information available</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- END ACCORDION-->
+     
+
+      </div>
+
+      <!---- END EXPIRED ------>
+
+  </div>
+</div>
+
+{% endblock %}

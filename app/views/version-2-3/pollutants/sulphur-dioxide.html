@@ -1,0 +1,117 @@
+<!-- {% extends "layouts/main.html" %} -->
+{% extends "layouts/version-2-3.html" %}
+{% set displayBacklink = false %}
+{% set caption = "" %}
+{% set title = "Sulphur dioxide (SO₂)" %}
+
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+      <p>Sulphur dioxide is colourless gas with an irritating, strong odour. It causes health effects if you come into contact with it, for example:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>by breathing it in</li>
+        <li>by eating or drinking it</li>
+        <li>through skin contact</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+    
+      <!---- HEALTH EFFECTS SULPHUR ---->
+
+      <h2 class="govuk-heading-m">Health effects of sulphur dioxide</h2>
+
+      <p>Breathing in sulphur dioxide can cause irritation of the nose and throat. It is associated with asthma and chronic bronchitis (inflammation of the airways in the lungs).</p>
+
+      <p>Skin contact with sulphur dioxide causes stinging pain, blisters and skin redness. Sulphur dioxide can also irritate the eyes and cause eye watering.</p>
+
+      <p>Acute exposure to high levels of sulphur dioxide can cause:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>nausea, stomach pain and vomiting</li>
+        <li>corrosive damage to the airways and lungs</li>
+        <li>eye irritation and blindness</li>
+      </ul>
+
+      <p>Long term exposure to high levels of sulphur dioxide can lead to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>reduced lung function and breathing problems</li>
+        <li>altered sense of smell</li>
+        <li>getting more respiratory infections</li>
+      </ul>
+
+      <p>Find out more about the <a href="../health-effects.html">health effects of exposure to air pollution</a>.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+      <!-- SOURCES OF SULPHUR DIOXIDE -->
+
+      <h2 class="govuk-heading-m">Where sulphur dioxide comes from</h2>
+
+      <p>Sulphur dioxide is released when fuels are burned, both in industry and in households.</p>
+
+      <p>The main sources of sulphur dioxide are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for sources in ["fuel burning by cars and other vehicles", "fuel burning by domestic properties, such as indoor wood burners",
+"burning natural gas, for example in a power station or household boiler", "coal burning power stations", "oil refineries", "commercial and food manufacturing"] %}
+          <li>{{ sources }}</li>
+        {% endfor %}
+      </ul>
+
+      <p>Sulphur dioxide can also be released by natural processes, for example forest fires and volcanic eruptions.</p>
+
+      <p>Find out more about <a href="https://www.gov.uk/government/publications/sulphur-dioxide-properties-and-incident-management/sulphur-dioxide-general-information">sulphur dioxide on GOV.UK</a>.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+      <!---- HOW Sulphur IS MEASURED ---->
+
+      <h2 class="govuk-heading-m">How sulphur dioxide is measured</h2>
+
+      <p>Find out <a href="../how-aq-measured.html">how air pollution is measured and predicted</a>.</p>
+
+      <p>Sulphur dioxide pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 200 micrograms per cubic metre (µg/m³)</li>
+        <li>moderate from 201 to 400 µg/m³</li>
+        <li>high from 401 to 600 µg/m³</li>
+        <li>very high at 601 µg/m³ or higher</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <p>How much sulphur dioxide is in the air at each level of the Daily Air Quality Index (DAQI):</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-so2.png"></div>
+      <!---- END DAQI SCALE ---->
+
+    </div>
+  </div>
+{% endblock %}
+

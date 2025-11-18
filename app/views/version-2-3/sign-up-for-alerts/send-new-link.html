@@ -1,0 +1,61 @@
+{% extends "layouts/version-2-3.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Request a new activation link – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Request a new activation link</h1>
+      <p class="govuk-body">Emails messages can take a few minutes to arrive.<p>
+
+      <p class="govuk-body">If the activation link has not arrived after 10 minutes, you can get a new link sent to:</p>
+        <ul class="govuk-body">
+          <li>the same email address, <strong>{{ email }}</strong> </li>
+          <li>a different email address </li>
+        </ul>
+
+  <div class="govuk-!-padding-bottom-5"></div>
+      
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Send the link to a different email address
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <label class="govuk-label" for="event-name">
+        Enter email address (optional)
+        </label>
+        <input class="govuk-input govuk-input govuk-input--width-20" id="mobile-number-new" name="MobileNumberNew" type="text">
+    </div>
+    
+  </details>
+
+      {{ govukButton({
+        text: "Request a new link",
+        href: "/" + version + "/sign-up-for-alerts/check-your-email"
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}
