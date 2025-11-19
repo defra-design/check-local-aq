@@ -6,6 +6,7 @@
                                     
 {% set rows = [] %}
 {% for site in monitoringSites %}
+{% set urlString = "?locationName=" + locationName + parentArea %}
   {% set row = [
       { 
           html: "<a class='govuk-!-margin-bottom-1' href='#' data-message='This part of the prototype does not exist yet'>" + site.site_name + "</a><span class='govuk-caption-s govuk-!-margin-bottom-1'>" + site.distance + " miles away</span>"

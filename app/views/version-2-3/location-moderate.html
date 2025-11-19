@@ -131,16 +131,18 @@
     <!--------- PAGE SECTIONS -------->
     <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
 
-    {% include "/" + folder + "/includes/monitoring-sites.html" %}
-
-    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
-
-    {% include "/" + folder + "/includes/reduce-your-exposure-moderate.html" %}
-
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/health-advice-moderate.html" %}
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    {% include "/" + folder + "/includes/reduce-your-exposure-moderate.html" %}
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    {% include "/" + folder + "/includes/monitoring-sites.html" %}
+    
+    <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
+
     {% include "/" + folder + "/includes/air-quality-alerts.html" %}
 
   </div>

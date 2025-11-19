@@ -103,14 +103,19 @@
 
     {% include "/" + folder + "/includes/uk-forecast-moderate.html" %}
     <p class="govuk-caption-s govuk-!-margin-bottom-2">Latest forecast at 5am on {{ "today" | govukDate }}</p>
+    
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/health-advice-moderate.html" %}
+
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/reduce-your-exposure-moderate.html" %}
+
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/pollutants.html" %}
+
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
     {% include "/" + folder + "/includes/monitoring-sites.html" %}
   </div>
