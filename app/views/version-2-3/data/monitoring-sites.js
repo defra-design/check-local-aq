@@ -4,18 +4,18 @@
 const monitoringSites = [
   
   {
-    "site_name": "Cambridge Roadside",
+    "site_name": "Sheffield Devonshire Green",
     "site_id": "UKA00594",
-    "distance": 0.3,
-    "site_type": "urban-traffic",
+    "distance": 3.7,
+    "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Wicken Fen",
+    "site_name": "Sheffield Tinsley",
     "site_id": "UKA00212",
-    "distance": 6.4,
-    "site_type": "rural-background",
+    "distance": 4.1,
+    "site_type": "urban-background",
     "site_band": "Moderate",
     "site_aqi": 5
 }
