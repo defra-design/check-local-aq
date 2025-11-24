@@ -4,18 +4,18 @@
 const monitoringSites = [
   
   {
-    "site_name": "Sheffield Devonshire Green",
+    "site_name": "Swansea Roadside",
     "site_id": "UKA00594",
-    "distance": 3.7,
-    "site_type": "urban-background",
+    "distance": 2.8,
+    "site_type": "urban-traffic",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Sheffield Tinsley",
+    "site_name": "Port Talbot Margam",
     "site_id": "UKA00212",
-    "distance": 4.1,
-    "site_type": "urban-background",
+    "distance": 7.2,
+    "site_type": "urban-industrial",
     "site_band": "Moderate",
     "site_aqi": 5
 }
