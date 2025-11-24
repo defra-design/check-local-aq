@@ -1,0 +1,42 @@
+{% extends "layouts/version-2-3.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to unsubscribe from air pollution email alerts?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Confirm you want to unsubscribe</h1>
+
+        <p class="govuk-body">Confirm that you want to stop getting air pollution alerts to <b>{{text}} {{email}}</b></p>
+
+        <div class="govuk-!-padding-bottom-4"></div> <!-- <<< SPACER -->
+
+        {{ govukButton({
+        text: "Confirm and unsubscribe",
+        href: "/" + version + "/sign-up-for-alerts/unsubscribe-email-confirmation"
+      }) }}
+
+      <div class="govuk-body">
+        <a href="/{{ version }}/sign-up-for-alerts/unsubscribe-email-cancel.html">Cancel unsubscribe</a>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
