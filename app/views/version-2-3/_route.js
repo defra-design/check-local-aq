@@ -37,14 +37,22 @@ router.get('/alerts/:slug', (req, res) => {
 // Screens that display session data need to be listed here
 const locationRequiredRoutes = [
   '/sign-up-for-alerts/setup-or-manage',
+
   '/sign-up-for-alerts/change-location-check',
   '/sign-up-for-alerts/change-alert-method',
+
+  '/sign-up-for-alerts/email',
+  '/sign-up-for-alerts/send-new-link',
+
   '/sign-up-for-alerts/check-your-email',
   '/sign-up-for-alerts/check-your-email-2',
+  '/sign-up-for-alerts/check-your-email-updated',
   '/sign-up-for-alerts/check-your-messages',
   '/sign-up-for-alerts/check-your-messages-2',
   '/sign-up-for-alerts/check-your-details',
+
   '/sign-up-for-alerts/confirm-location',
+
   '/sign-up-for-alerts/manage-alerts',
   '/sign-up-for-alerts/manage-alerts-success',
   '/sign-up-for-alerts/manage-alerts-added',
@@ -53,6 +61,7 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/manage-alerts-method',
   '/sign-up-for-alerts/manage-check-messages',
   '/sign-up-for-alerts/manage-check-email',
+
   '/sign-up-for-alerts/email-notification',
   '/sign-up-for-alerts/text-notification',
   '/sign-up-for-alerts/unsubscribe-confirmation',
@@ -61,7 +70,7 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/code-presend',
   '/sign-up-for-alerts/code-presend-2',
   '/sign-up-for-alerts/send-new-code',
-  '/sign-up-for-alerts/send-new-link',
+
   '/sign-up-for-alerts/confirm-alert-details',
   '/sign-up-for-alerts/confirm-alert-details-2',
   '/sign-up-for-alerts/alerts-success',
@@ -82,8 +91,10 @@ const locationRequiredRoutes = [
   '/pollutants/particulate-matter10',
   '/pollutants/ozone',
   '/pollutants/sulphur-dioxide',
-  '/reduce-your-exposure'
+  '/reduce-your-exposure',
 
+  '../layouts/main',
+  '../layouts/version-2-3'
 
 ];
 

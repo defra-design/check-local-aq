@@ -29,7 +29,7 @@ What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
 
         {% set textHtml %}
         {{ govukInput({
-          id: "notify-by-emsil",
+          id: "notify-by-email",
           name: "notifyByEmail",
           type: "email",
           autocomplete: "email",
@@ -45,7 +45,7 @@ What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
         <p>We will send you an email containing an activation link.</p>
 
         <div class="govuk-form-group">
-            <label class="govuk-label" for="mobile-number">
+            <label class="govuk-label" for="email-address">
                 Enter your email address
             </label>
             <input class="govuk-input govuk-input--width-20" id="notify-by-email" name="notifyByEmail" type="text" value="{{data['email']}}">

@@ -1,0 +1,61 @@
+{% extends "layouts/version-2-3.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+
+{% block pageTitle %}
+Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your email</h1>
+      <p class="govuk-body">
+        We’ve sent an activation link to <strong>{{ email }}</strong>
+      </p>
+      <div class="govuk-body">
+        <a href="alerts-success.html" class="hidden-link">Use the link in the email</a> to confirm you want to get email notifications about air pollution in <strong>{{ locationString }}</strong>.
+      </div>
+      <p class="govuk-body">
+        The link expires in 15 minutes.
+      </p>
+
+      <!-- DETAILS -->
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Not received the email?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Emails sometimes take a few minutes to arrive. </p>
+        <p>If you do not receive an email after 10 minutes:</p> 
+
+        <ul>
+          <li>check that the email is not in your spam or junk folder</li>
+          <li>confirm that the email address shown here is correct</li>
+          <li>check you are connected to the internet</li>
+        </ul>
+
+        <p>You can <a href="send-new-link.html">request a new activation link</a> to the same email address, or to a different email address.</p>
+        <p>Or you can <a href="mobile-number.html">set up text message alerts using a mobile phone number</a> instead.</p>
+
+        </div>
+      </details>
+      <!-- END DETAILS -->
+
+    </div>
+  </div>
+
+{% endblock %}
