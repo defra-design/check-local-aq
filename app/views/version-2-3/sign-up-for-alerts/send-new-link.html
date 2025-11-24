@@ -25,7 +25,7 @@ Request a new activation link – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/{{ version }}/sign-up-for-alerts/check-your-email-updated" method="post">
+    <form class="form" action="/{{ version }}/sign-up-for-alerts/check-your-email" method="post">
 
     {% set textHtml %}
         {{ govukInput({
@@ -77,7 +77,7 @@ Request a new activation link – {{ serviceName }} – GOV.UK Prototype Kit
 
       {{ govukButton({
         text: "Request a new link",
-        href: "/" + version + "/sign-up-for-alerts/check-your-email-updated"
+        href: "/" + version + "/sign-up-for-alerts/check-your-email"
       }) }}
 
   </form>
