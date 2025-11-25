@@ -4,18 +4,18 @@
 const monitoringSites = [
   
   {
-    "site_name": "Swansea Roadside",
+    "site_name": "London Bloomsbury",
     "site_id": "UKA00594",
-    "distance": 2.8,
-    "site_type": "urban-traffic",
+    "distance": 14.3,
+    "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Port Talbot Margam",
+    "site_name": "Luton A505 Roadside",
     "site_id": "UKA00212",
-    "distance": 7.2,
-    "site_type": "urban-industrial",
+    "distance": 15.0,
+    "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
 }
