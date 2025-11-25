@@ -4,17 +4,17 @@
 const monitoringSites = [
   
   {
-    "site_name": "London Bloomsbury",
+    "site_name": "Leicester University",
     "site_id": "UKA00594",
-    "distance": 14.3,
+    "distance": 7.5,
     "site_type": "urban-background",
     "site_band": "Low",
     "site_aqi": 3
 },
   {
-    "site_name": "Luton A505 Roadside",
+    "site_name": "Leicester A594 Roadside",
     "site_id": "UKA00212",
-    "distance": 15.0,
+    "distance": 8.4,
     "site_type": "urban-traffic",
     "site_band": "Moderate",
     "site_aqi": 5
