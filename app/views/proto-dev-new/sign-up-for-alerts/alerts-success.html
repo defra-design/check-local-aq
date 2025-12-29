@@ -29,7 +29,7 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
 
 {% set notification %}
   <h1 class="govuk-notification-banner__heading">
-    You have set up air quality alerts for {{ locationString }}
+    You have set up air pollution alerts for {{ locationString }}
   </h1>
 {% endset %}
 
@@ -48,6 +48,7 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
       <p>We have sent you a confirmation text message.</p>
     {% endif %}
 
+    
     <p class="govuk-body govuk-!-padding-bottom-6">If you want to set up another alert for <b>{{ text }}</b> <b>{{ email }}</b> you can <a href="/{{ version }}/sign-up-for-alerts/add-alert-location">search for another location</a>. </p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -55,13 +56,11 @@ Do you want to create an alert for {{ locationString }}? â€“ {{ serviceName }} â
 
     <!--------- UR SIGN-UP body content -------->
 
-    <h2 class="govuk-heading-m">Help us make our service better</h2>
+    <h2 class="govuk-heading-m">Help improve this service</h2>
 
-    <p>Join our user research panel to share your feedback and contribute to the ongoing improvement of this service.
-By signing up, you agree to our <a href="https://www.gov.uk/government/publications/defras-social-research-privacy-notice">privacy statement</a> and consent to being contacted for research purposes.</p>
-
-<p><a href="">I would like to join the user research panel to share my feedback</a></p>
-
+    <p>This is a new service and we are looking for people to share their feedback with us. <a href="https://defragroup.eu.qualtrics.com/jfe/form/SV_3JEDGo4ZaGtBpHw">Sign up to participate in future research and help improve this service</a>.</p>
+      
+    <p>By signing up, you agree to our <a href="https://www.gov.uk/government/publications/defras-social-research-privacy-notice">privacy statement</a> and consent to being contacted for research purposes.</p>
 
   </div>
 </div>

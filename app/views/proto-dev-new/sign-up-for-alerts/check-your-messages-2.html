@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+Check your mobile phone – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -36,26 +36,32 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       }) }}
 
       <p>
-        The code expires in 24 hours.
+        The code expires in 15 minutes.
       </p>
 
-      {{ govukDetails({
-        summaryText: "Not received a text message?",
-        html: "<p>Text messages sometimes take a few minutes to arrive.</p>
-        <p>If you do not receive a text message after 10 minutes, check that:</p> 
+      <!-- DETAILS -->
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Not received a text message?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive.</p>
+        <p>If you have not received the text message after 10 minutes, check that:</p> 
         <ul>
           <li>the phone number shown here is correct</li>
           <li>you have mobile phone signal</li>
-        </ul>"
-      }) }}
-      {{ govukButton({
-        text: "Continue",
-        href: "/" + version + "/sign-up-for-alerts/alerts-success-2"
-      }) }}
+        </ul>
+        <p>If you still don’t have the text message, you can <a href="send-new-code.html">request a new security code</a>.</p>
+        </div>
+      </details>
+      <!-- END DETAILS -->
 
-      <p>
-      <a href="send-new-code.html">Send a new security code</a>
-    </p>
+       {{ govukButton({
+        text: "Continue",
+        href: "/" + version + "/sign-up-for-alerts/alerts-success-2.html"
+      }) }}
 
     <!--{{ locationString }}-->
 

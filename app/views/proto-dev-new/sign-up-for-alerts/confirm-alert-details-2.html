@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+Confirm you want to set up an alert– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,8 +28,8 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       </p>
       
         <ul class="govuk-list govuk-list--bullet">
-          <li>when the air quality forecast in Bristol, City of Bristol is high or very high</li>
-          <li>if a nearby monitoring site detects high or very high pollution levels anywhere in the South West region</li>
+          <li>when air pollution in Bristol, City of Bristol is predicted to be high or very high</li>
+          <li>if a monitoring site measures high or very high pollution levels in the area</li>
         </ul>
 
     <div class="govuk-!-padding-bottom-5"></div>
@@ -38,14 +38,14 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
     {% if text %}
 
        {{ govukButton({
-        text: "Continue",
+        text: "Confirm and set up alert",
         href: "/" + version + "/sign-up-for-alerts/code-presend-2"
       }) }}
 
     {% else %}
 
       {{ govukButton({
-        text: "Continue",
+        text: "Confirm and set up alert",
         href: "/" + version + "/sign-up-for-alerts/check-your-email-2"
       }) }}
 

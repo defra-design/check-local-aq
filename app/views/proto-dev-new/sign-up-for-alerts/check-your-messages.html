@@ -4,13 +4,13 @@
 
 
 {% block pageTitle %}
-Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+Check your mobile phone – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
-    text: "Dev Prototype "
+    text: "Dev Prototype"
   },
   html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
 }) }}
@@ -28,7 +28,7 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       </p>
       {{ govukInput({
         label: {
-          text: "Enter the code to activate your air quality alert."
+          text: "Enter the code to activate your air pollution alert."
         },
         classes: "govuk-!-width-one-third",
         id: "activation-code",
@@ -39,25 +39,30 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
         The code expires in 15 minutes.
       </p>
 
-      {{ govukDetails({
-        summaryText: "Not received a text message?",
-        html: "<p>Text messages sometimes take a few minutes to arrive.</p>
-        <p>If you do not receive a text message after 10 minutes, check that:</p> 
+      <!-- DETAILS -->
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Not received a text message?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive.</p>
+        <p>If you have not received the text message after 10 minutes, check that:</p> 
         <ul>
           <li>the phone number shown here is correct</li>
           <li>you have mobile phone signal</li>
-        </ul>"
-      }) }}
+        </ul>
+        <p>If you still don’t have the text message, you can <a href="send-new-code.html">request a new activation code</a>.</p>
+        </div>
+      </details>
+      <!-- END DETAILS -->
+
+      
       {{ govukButton({
         text: "Continue",
         href: "/" + version + "/sign-up-for-alerts/confirm-alert-details"
       }) }}
-
-      <p>
-      <a href="send-new-code.html">Request a new activation code</a>
-    </p>
-
-    <!--{{ locationString }}-->
 
     </div>
   </div>

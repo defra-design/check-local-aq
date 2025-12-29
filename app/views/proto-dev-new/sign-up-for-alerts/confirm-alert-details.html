@@ -28,8 +28,8 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
       </p>
       
         <ul class="govuk-list govuk-list--bullet">
-          <li>when the air quality forecast in {{ locationString }} is high or very high</li>
-          <li>if a nearby monitoring site detects high or very high pollution levels anywhere within 25 miles of {{ locationString }}</li>
+          <li>when air pollution in {{ locationString }} is predicted to be high or very high</li>
+          <li>if a monitoring site measures high or very high pollution levels in the area</li>
         </ul>
 
     <div class="govuk-!-padding-bottom-5"></div>
@@ -37,7 +37,7 @@ Check your email – {{ serviceName }} – GOV.UK Prototype Kit
     
 
       {{ govukButton({
-        text: "Continue",
+        text: "Confirm and set up alert",
         href: "/" + version + "/sign-up-for-alerts/alerts-success"
       }) }}
 

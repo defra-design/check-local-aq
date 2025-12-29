@@ -3,7 +3,7 @@
 {% set anotherServiceName = "Check air quality" %}
 
 {% block pageTitle %}
-Do you want to create an alert for {{ locationString }}? – {{ serviceName }} – GOV.UK Prototype Kit
+You have set up air pollution alerts for Bristol, City of Bristol – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +29,7 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
 
 {% set notification %}
   <h1 class="govuk-notification-banner__heading">
-    You have set up air quality alerts for Bristol, City of Bristol
+    You have set up air pollution alerts for Bristol, City of Bristol
   </h1>
 {% endset %}
 
@@ -56,57 +56,11 @@ Do you want to create an alert for {{ locationString }}? – {{ serviceName }} �
 
     <!--------- UR SIGN-UP body content -------->
 
-    <h2 class="govuk-heading-m">Help us make our service better</h2>
+    <h2 class="govuk-heading-m">Help improve this service</h2>
 
-    <p>Join our user research panel to share your feedback and contribute to the ongoing improvement of this service.
-By signing up, you agree to our <a href="https://www.gov.uk/government/publications/defras-social-research-privacy-notice">privacy statement</a> and consent to being contacted for research purposes.</p>
-
-
-    <!-- RADIOS -->
-
-    <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-
-            Would you like to help improve this service?
-
-        </legend>
-
-        <div id="contact-hint" class="govuk-hint">
-        Select one option
-        </div>
-
-        <div class="govuk-radios" data-module="govuk-radios">
-
-        <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="contact">
-            Yes
-            </label>
-        </div>
-
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-
-            <div class="govuk-form-group">
-            <label class="govuk-label" for="contact-by-email">
-                Email address
-            </label>
-            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-            </div>
-
-        </div>
-
-        <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
-            <label class="govuk-label govuk-radios__label" for="contact-2">
-            No
-            </label>
-        </div>
-
-    </fieldset>
-    </div>
-
-    <!-- END RADIOS-->
+    <p>This is a new service and we are looking for people to share their feedback with us. <a href="https://defragroup.eu.qualtrics.com/jfe/form/SV_3JEDGo4ZaGtBpHw">Sign up to participate in future research and help improve this service</a>.</p>
+      
+    <p>By signing up, you agree to our <a href="https://www.gov.uk/government/publications/defras-social-research-privacy-notice">privacy statement</a> and consent to being contacted for research purposes.</p>
 
 
   </div>
