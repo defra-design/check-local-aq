@@ -1,0 +1,62 @@
+{% extends "layouts/version-2-4.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Request a new activation code – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Request a new activation code</h1>
+      <p class="govuk-body">Text messages can take a few minutes to arrive.<p>
+
+      <p class="govuk-body">If the activation code has not arrived after 10 minutes, you can get a new code sent to:</p>
+        <ul class="govuk-body">
+          <li>the same mobile phone number, <strong>{{ text }}</strong> </li>
+          <li>a different mobile phone number </li>
+        </ul>
+
+  <div class="govuk-!-padding-bottom-5"></div>
+      
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Send the text to a different number
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <label class="govuk-label" for="event-name">
+        Enter mobile phone number (optional)
+        </label>
+        <input class="govuk-input govuk-input govuk-input--width-20" id="mobile-number-new" name="MobileNumberNew" type="text">
+    </div>
+    
+  </details>
+
+      {{ govukButton({
+        text: "Request a new code",
+        href: "/" + version + "/sign-up-for-alerts/check-your-messages"
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}

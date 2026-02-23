@@ -1,0 +1,34 @@
+{% extends "layouts/version-2-4.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+
+{% block pageTitle %}
+Email link expired – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">This activation link has expired</h1>
+      <p class="govuk-body">
+        Activation links stop working after 15 minutes.
+      </p>
+      <div class="govuk-body">
+        <a href="/{{ version }}/where.html">Search for a town or postcode </a> to set up an air pollution alert.
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

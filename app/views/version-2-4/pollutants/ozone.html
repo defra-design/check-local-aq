@@ -1,0 +1,109 @@
+<!-- {% extends "layouts/main.html" %} -->
+{% extends "layouts/version-2-4.html" %}
+{% set caption = "" %}
+{% set title = "Ozone (O₃)" %}
+
+{% set displayBacklink = false %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBackLink({
+  text: "Air quality in " + locationName,
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-8">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{% if caption %}<span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title | safe }}</h1>
+
+      <p>Ozone is a gas that can be found in the atmosphere and at ground level.</p>
+      <p>Atmospheric ozone forms a protective layer around the planet, shielding us from the sun’s radiation. </p>
+      <p>However, ground level ozone has harmful effects on our health and the environment. This is the type of ozone that impacts our air quality.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+      <!-- HEALTH EFFECTS OF OZONE -->
+
+      <h2 class="govuk-heading-m">Health effects of ozone</h2>
+      <p>Breathing in ozone damages the lungs and can cause many of the short and long term <a href="../health-effects.html">health effects of exposure to air pollution</a>. People with lung conditions, children and older people are most at risk.</p>
+
+      <p>Short term exposure to ozone can cause:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>shortness of breath, wheezing and coughing</li>
+        <li>irritation of the eyes and respiratory tract (nose, throat and lungs)</li>
+        <li>asthma attacks</li>
+        <li>increased risk of respiratory infections</li>
+      </ul>
+
+      <p>Long term exposure to ozone can lead to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>getting more respiratory illnesses</li>
+        <li>nervous system conditions</li>
+        <li>cancer</li>
+        <li>heart conditions</li>
+        <li>reproductive issues</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+      
+
+      <!---- WHERE OZONE COMES FROM ---->
+
+      <h2 class="govuk-heading-m">Where ozone comes from</h2>
+      <p>There are no major sources of pollution that emit ozone directly. Ozone is created by chemical reactions between sunlight and other pollutants, called precursor chemicals. </p>
+      <p>Many sources can release precursor chemicals, including vehicles, industrial processes, burning fossil fuels and natural sources like plants and animals.</p>
+
+      <p>Ozone levels are usually higher:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>later in the day, when there is more sunlight</li>
+        <li>when there are higher levels of precursor chemicals</li>
+        <li>in more rural areas, rather than urban areas</li>
+      </ul>
+
+      <p>There are often more precursor chemicals in the air in rural areas, including volatile organic compounds (VOCs) like methane. In urban areas, other chemical reactions happening in the air, often involving <a href="nitrogen-dioxide.html">nitrogen dioxide</a>, can mean less ozone ends up forming.</p>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+
+      <!---- HOW OZONE IS MEASURED ---->
+
+      <h2 class="govuk-heading-m">How ozone is measured</h2>
+
+      <p>Find out <a href="../how-aq-measured.html">how air pollution is measured and predicted</a>.</p>
+
+      <p>Ozone pollution is considered:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>low from 0 to 100 micrograms per cubic metre (µg/m³)</li>
+        <li>moderate from 101 to 160 µg/m³</li>
+        <li>high from 161 to 241 µg/m³</li>
+        <li>very high at 241 µg/m³ or higher</li>
+      </ul>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <p>How much ozone is in the air at each level of the Daily Air Quality Index (DAQI):</p>
+
+      <!---- DAQI SCALE ---->
+        <div><img src="/public/images/daqi-scale-ozone.png"></div>
+      <!---- END DAQI SCALE ---->
+
+    </div>
+  </div>
+{% endblock %}
+

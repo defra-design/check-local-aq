@@ -1,0 +1,60 @@
+{% extends "layouts/version-2-4.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+Do you want to set up an alert for the first time or manage existing alerts?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/{{ version }}/sign-up-for-alerts/setup-or-manage?locationString={{ locationString }}" method="post">
+        {{ govukRadios({
+          name: "create-manage-alerts",
+          fieldset: {
+            legend: {
+              text: "Do you want to set up an alert for the first time or manage existing alerts?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+            }
+          },
+          items: [
+            {
+              value: "create-alert", 
+              text: "I want to set up my first alert"
+            },
+            {
+              value: "manage-alert",
+              text: "I want to manage my existing alerts"
+            }
+          ]
+        }) }}
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+      <!--{{ locationString }}-->
+      
+
+    </div>
+  </div>
+
+{% endblock %}

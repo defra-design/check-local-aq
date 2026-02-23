@@ -1,0 +1,20 @@
+{% extends "layouts/version-2-4.html" %}
+{% set caption = "" %}
+{% set title = "Page not found" %}
+{% set servicePage = true %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Alert not found</h1>
+      <p>The alert you are looking for could not be found.
+      <p>This may be because:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you typed or pasted the web address for the alert incorrectly</li>
+        <li>the alert has expired since you last checked</li>
+      </ul>
+      <p>You can check the list of active and expired alerts <a href="/{{ version }}/alerts">alerts</a>.</p></p>
+  </div>
+</div>
+{% endblock %}

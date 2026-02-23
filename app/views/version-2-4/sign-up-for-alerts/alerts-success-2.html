@@ -1,0 +1,69 @@
+{% extends "layouts/version-2-4.html" %}
+{% set showAnotherService = true %}
+{% set anotherServiceName = "Check air quality" %}
+
+{% block pageTitle %}
+You have set up air pollution alerts for Bristol, City of Bristol – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype " + version
+  },
+  html: 'This is a prototype and is not a live service.'
+}) }}
+
+{% if status == 'check-your-details' %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% else %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-------- NOTIFICATION BANNER -------->
+
+{% set notification %}
+  <h1 class="govuk-notification-banner__heading">
+    You have set up air pollution alerts for Bristol, City of Bristol
+  </h1>
+{% endset %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      {{ govukNotificationBanner({
+        html: notification,
+        type: "success"
+      }) }}
+
+    <!---- DISPLAY CONFIRMATION TYPE MESSAGE ---->
+    {% if email %}
+      <p>We have sent you a confirmation email.</p>
+    {% else %}
+      <p>We have sent you a confirmation text message.</p>
+    {% endif %}
+  
+
+    <p class="govuk-body govuk-!-padding-bottom-6">If you want to set up another alert for <b>{{ text }}</b> <b>{{ email }}</b> you can <a href="/{{ version }}/sign-up-for-alerts/add-alert-location">search for another location</a>. </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<!--------- UR SIGN-UP body content -------->
+
+    <h2 class="govuk-heading-m">Help improve this service</h2>
+
+    <p>This is a new service and we are looking for people to share their feedback with us. <a href="https://defragroup.eu.qualtrics.com/jfe/form/SV_3JEDGo4ZaGtBpHw">Sign up to participate in future research and help improve this service</a>.</p>
+      
+    <p>By signing up, you agree to our <a href="https://www.gov.uk/government/publications/defras-social-research-privacy-notice">privacy statement</a> and consent to being contacted for research purposes.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}
