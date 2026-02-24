@@ -1,0 +1,180 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Birmingham City Council " %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<!-- BACK LINK -->
+  {{ govukBackLink({
+    text: "Air quality in " + locationName,
+    href: "javascript:window.history.back()"
+  }) }}
+  <!-- END BACK -->
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+
+        <p class="govuk-body"> <a href="https://www.gov.uk/find-local-council" class="govuk-link">Find your local authority website</a></p>
+ <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+         <h2 class="govuk-heading-l">
+    Air pollution levels: last year
+  </h2>
+     
+<div class="govuk-tabs" data-module="govuk-tabs" >
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" >
+      <a class="govuk-tabs__tab" href="#pm25">
+        PM2.5
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#pm10">
+        PM10
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#no2">
+        Nitrogen dioxide
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#o3">
+       Ozone
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#so2">
+       Sulphur dioxide
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="pm25" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Fine particulate matter (PM2.5)</h2>
+    <p class="govuk-body"><strong>4</strong> monitoring stations measure PM2.5 in Birmingham City Council.</p>
+   <div style="display: flex; gap: 100px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">0</span>
+    <strong class="govuk-tag govuk-tag--red">Below legal limit</strong>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">4</span>
+    <strong class="govuk-tag govuk-tag--green">Above legal limit</strong>
+  </div>
+</div>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pm10" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Particulate matter (PM10)</h2>
+    <p class="govuk-body"><strong>4</strong> monitoring stations measure PM10 in Birmingham City Council.</p>
+   <div style="display: flex; gap: 100px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">0</span>
+    <strong class="govuk-tag govuk-tag--red">Below legal limit</strong>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">4</span>
+    <strong class="govuk-tag govuk-tag--green">Above legal limit</strong>
+  </div>
+</div>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="no2" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Nitrogen dioxide</h2>
+    <p class="govuk-body"><strong>143</strong> monitoring stations measure nitrogen dioxide in Birmingham City Council.</p>
+   <div style="display: flex; gap: 100px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">3</span>
+    <strong class="govuk-tag govuk-tag--red">Below legal limit</strong>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">140</span>
+    <strong class="govuk-tag govuk-tag--green">Above legal limit</strong>
+  </div>
+</div>
+      
+            
+          </div>
+  
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="o3" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Ozone</h2>
+    <p class="govuk-body"><strong>3</strong> monitoring stations measure ozone in Birmingham City Council.</p>
+   <div style="display: flex; gap: 100px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">0</span>
+    <strong class="govuk-tag govuk-tag--red">Below legal limit</strong>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">3</span>
+    <strong class="govuk-tag govuk-tag--green">Above legal limit</strong>
+  </div>
+</div>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="so2" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Sulphur dioxide</h2>
+    <p class="govuk-body"><strong>0</strong> monitoring stations measure sulphur dioxide in Birmingham City Council.</p>
+   <div style="display: flex; gap: 100px;">
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">0</span>
+    <strong class="govuk-tag govuk-tag--red">Below legal limit</strong>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <span style="font-size: 80px; font-weight: bold;">0</span>
+    <strong class="govuk-tag govuk-tag--green">Above legal limit</strong>
+  </div>
+</div>
+  </div>
+
+  <p class="govuk-body"> <a href="https://get-air-pollution-data-proto-c7a2601e06dd.herokuapp.com/version-13/station/birmingham-la" class="govuk-link">View an air pollution summary for this local authority</a></p>
+
+
+       <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+
+              <h2 class="govuk-heading-m">
+          Find out how air pollution is being managed
+              </h2>
+         <p class="govuk-body">Local authorities must have interventions (plans) to reduce air pollution. For example, by promoting active travel and public transport. </p>
+          <h3 class="govuk-heading-s">
+          Air Quality Management Areas (AQMAs)         
+          </h3>
+                  <p class="govuk-body">An AQMA is declared when air quality objectives for specific pollutants are not being met or are unlikely to be met.  Local authorities must create action plans to improve air quality in these areas. </p>
+
+                  <div class="govuk-inset-text" style="border-left: 10px solid #ECD228; background-color: #FFF7BF;">
+                    There is an AQMA in this local authority.
+                    <p class="govuk"><a href="aqma.html" class="govuk-link">View AQMAs</a></p>
+                  </div>
+                  <h3 class="govuk-heading-s">
+                  Smoke control areas        
+                  </h3>
+                  <p class="govuk-body">Smoke control areas are zones where it’s illegal to emit smoke from a chimney or buy or sell unauthorised fuel for use within them. </p>
+                  <div class="govuk-inset-text" style="border-left: 10px solid #00703C; background-color: #D4FAE2;">
+                  There are no smoke control areas for this local authority                  
+                  </div>
+                  <a href="https://www.gov.uk/smoke-control-area-rules" class="govuk-link">Smoke control areas: the rules</a>
+
+
+
+    </div>
+    </div>
+
+{% endblock %}

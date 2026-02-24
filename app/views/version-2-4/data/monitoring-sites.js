@@ -4,20 +4,20 @@
 const monitoringSites = [
   
   {
-    "site_name": "Leicester University",
+    "site_name": "Birmingham A4540 Roadside",
     "site_id": "UKA00594",
     "distance": 7.5,
-    "site_type": "urban-background",
-    "site_band": "Low",
-    "site_aqi": 3
+    "site_type": "urban-traffic",
+    "site_band": "moderate",
+    "site_aqi": 4
 },
   {
-    "site_name": "Leicester A594 Roadside",
+    "site_name": "Birmingham Ladywood",
     "site_id": "UKA00212",
     "distance": 8.4,
-    "site_type": "urban-traffic",
-    "site_band": "Moderate",
-    "site_aqi": 5
+    "site_type": "urban-background",
+    "site_band": "low",
+    "site_aqi": 2
 }
 
 ]
