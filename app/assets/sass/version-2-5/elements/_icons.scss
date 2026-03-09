@@ -1,0 +1,28 @@
+.defra-link-icon svg, .defra-link-icon-s svg {
+    position: relative;
+    display: inline-block;
+    color: #0b0c0c;
+    vertical-align: top;
+    margin: 3px govuk-spacing(2) 0 0;
+    top: 1px;
+}
+
+.defra-link-icon, .defra-link-icon-s {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+
+@media (forced-colors: active) {
+    .defra-link-icon svg {
+      color: CanvasText; 
+      fill: CanvasText;  
+      stroke: CanvasText; 
+    }
+  }
+  

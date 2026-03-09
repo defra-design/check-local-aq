@@ -1,0 +1,25 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="app-search {%- if params.classes %} {{ params.classes }}{% endif -%}">
+  {{ govukInput({
+    id: params.id,
+    name: params.name,
+    value: params.value,
+    type: "search",
+    describedBy: params.describedBy,
+    label: params.label,
+    hint: params.hint,
+    errorMessage: params.errorMessage,
+    formGroup: {
+      classes: "app-search__form-group"
+    },
+    classes: "app-search__input govuk-!-width-one-half",
+    attributes: params.attributes
+  }) }}
+
+  {{ govukButton({
+    classes: "app-search__button",
+    text: "Continue"
+  }) }}
+</div>

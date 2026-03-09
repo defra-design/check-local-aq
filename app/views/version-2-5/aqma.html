@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Birmingham City Council " %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<!-- BACK LINK -->
+  {{ govukBackLink({
+    text: "Birmingham City Council",
+    href: "javascript:window.history.back()"
+  }) }}
+  <!-- END BACK -->
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">
+        {{ title | safe }}</h1>
+
+        <p class="govuk-body"> <a href="https://www.gov.uk/find-local-council" class="govuk-link">Find your local authority website</a></p>
+ <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+         <h2 class="govuk-heading-l">
+    Air Quality Management Areas (AQMAs)
+  </h2>
+   <p class="govuk-body">An AQMA is declared when air quality objectives for specific pollutants are not being met or are unlikely to be met.  Local authorities must create action plans to improve air quality in these areas. </p>
+
+     <p class="govuk-body"><a href="" class="govuk-link">View ways local authorities reduce air pollution</a></p>
+
+     <table class="govuk-table">
+<!--   <caption class="govuk-table__caption govuk-table__caption--m">AQMAs</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">AQMA</th>
+      <th scope="col" class="govuk-table__header">Location</th>
+      <th scope="col" class="govuk-table__header">Objective</th>
+      <th scope="col" class="govuk-table__header">View</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Birmingham AQMA</th>
+      <td class="govuk-table__cell">The whole local authority</td>
+      <td class="govuk-table__cell">Reduce nitrogen dioxide levels</td>
+      <td class="govuk-table__cell"><a href="https://www.planning.data.gov.uk/map/?dataset=air-quality-management-area#52.5633440107959,-1.339228841740237,6z" class="govuk-link">View on a map</a></td>
+    </tr>
+    
+  </tbody>
+</table>
+    </div>
+    </div>
+
+{% endblock %}

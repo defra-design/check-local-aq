@@ -1,0 +1,386 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Birmingham A4540 Roadside" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<!-- BACK LINK -->
+  {{ govukBackLink({
+    text: "Air quality in " + locationName,
+    href: "javascript:window.history.back()"
+  }) }}
+  <!-- END BACK -->
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        {{ title | safe }}</h1>
+       
+       <strong class="govuk-tag">
+  Active
+</strong><p class="govuk-body" style="    margin-left: 10px;
+    display: inline-block;
+    color: #505a5f;">Last updated 9:30am 10 March 2026</p>
+
+        <p class="govuk-body"> <a href="https://get-air-pollution-data-proto-c7a2601e06dd.herokuapp.com/version-13/station/station" class="govuk-link">Get more information and data for this station</a></p>
+ <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+         <h2 class="govuk-heading-l">
+    Pollution levels: past 5 years
+  </h2>
+     
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" >
+      <a class="govuk-tabs__tab" href="#pm25">
+        PM2.5
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#pm10">
+        PM10
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#no2">
+        Nitrogen dioxide
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#o3">
+       Ozone
+      </a>
+    </li>
+ 
+  </ul>
+  <div class="govuk-tabs__panel" id="pm25" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Fine particulate matter (PM2.5)</h2>
+    <p class="govuk-body">Particulate matter are small solid or liquid particles in the air. These particles can come from natural processes, industrial processes and other human activity.</p>
+        <p class="govuk-body">Particulate matter includes dust. soot. smoke and small drops of liquid. These particles can come from many different sources.</p>
+        <p class="govuk-body">The main sources of PM2.5 are:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+              <li>burning of fuel by vehicles, industry and domestic properties </li>
+              <li>wear of tyres and brakes
+</li>
+              <li>wind blown soil and dust
+</li>
+              <li>sea spray particles
+</li>
+              <li>burning vegetation
+</li>
+            </ul>
+
+                    <p class="govuk-body"> <a href="pollutants/particulate-matter2.html" class="govuk-link">Learn more about fine particulate matter (PM2.5)</a></p>
+
+                     <h3 class="govuk-heading-s">Yearly levels</h3>
+    <p class="govuk-body">Annual average PM2.5 levels must not go above 20 µg/m3 in a calendar year.</p>
+    <p class="govuk-body">The unit µg/m3 stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
+   
+      <table class="govuk-table">
+ 
+    
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Year</th>
+      <th scope="col" class="govuk-table__header">Level</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2025</th>
+      <td class="govuk-table__cell">10 µg/m3
+        <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2024</th>
+      <td class="govuk-table__cell">11 µg/m3
+           <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2023</th>
+      <td class="govuk-table__cell">8 µg/m3
+           <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2022</th>
+      <td class="govuk-table__cell">10 µg/m3
+         <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2021</th>
+      <td class="govuk-table__cell">13 µg/m3
+         <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            
+  </div>
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pm10" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Particulate matter (PM10)</h2>
+       <p class="govuk-body">Particulate matter are small solid or liquid particles in the air. These particles can come from natural processes, industrial processes and other human activity.</p>
+        <p class="govuk-body">Particulate matter includes dust. soot. smoke and small drops of liquid. These particles can come from many different sources.</p>
+        <p class="govuk-body">The main sources of PM10 are:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+              <li>dust from construction sites
+ </li>
+              <li>dust from landfills
+
+</li>
+              <li>dust from agriculture
+
+</li>
+              <li>wildfires
+</li>
+              <li>pollen
+</li>
+              <li>power plants
+
+</li>
+              <li>vehicles
+</li>
+            </ul>
+
+                                <p class="govuk-body"> <a href="pollutants/particulate-matter10.html" class="govuk-link">Learn more about particulate matter (PM10)</a></p>
+
+
+                 <h3 class="govuk-heading-s">Yearly levels</h3>
+    <p class="govuk-body">Annual average PM10 levels must not go above 40 µg/m3 in a calendar year.</p>
+    <p class="govuk-body">The unit µg/m3 stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
+   
+      <table class="govuk-table">
+ 
+    
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Year</th>
+      <th scope="col" class="govuk-table__header">Level</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2025</th>
+      <td class="govuk-table__cell">22 µg/m3
+        <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2024</th>
+      <td class="govuk-table__cell">21 µg/m3
+           <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2023</th>
+      <td class="govuk-table__cell">20 µg/m3
+           <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2022</th>
+      <td class="govuk-table__cell">25 µg/m3
+         <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2021</th>
+      <td class="govuk-table__cell">30 µg/m3
+         <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="no2" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Nitrogen dioxide (NO2)</h2>
+    <p class="govuk-body">Nitrogen dioxide is a colourless gas. It's mainly produced during:</p>
+     <ul class="govuk-list govuk-list--bullet">
+              <li>burning of petrol or diesel in a car engine </li>
+              <li>burning natural gas in a central-heating boiler or power station welding</li>
+              <li>the use of explosives </li>
+              <li>commercial manufacturing</li>
+              <li>food manufacturing</li>
+            </ul>
+
+                    <p class="govuk-body"> <a href="pollutants/nitrogen-dioxide.html" class="govuk-link">Learn more about nitrogen dioxide (NO2)</a></p>
+
+                     <h3 class="govuk-heading-s">Yearly levels</h3>
+    <p class="govuk-body">Annual average nitrogen dioxide levels must not go above 40 µg/m3 in a calendar year.</p>
+    <p class="govuk-body">The unit µg/m3 stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
+   
+      <table class="govuk-table">
+ 
+    
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Year</th>
+      <th scope="col" class="govuk-table__header">Level</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2025</th>
+      <td class="govuk-table__cell">32 µg/m3
+        <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2024</th>
+      <td class="govuk-table__cell">37 µg/m3
+           <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--green">
+  Below limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2023</th>
+      <td class="govuk-table__cell">42 µg/m3
+           <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--red">
+  Above limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2022</th>
+      <td class="govuk-table__cell">41 µg/m3
+         <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--red">
+  Above limit
+</strong></span>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2021</th>
+      <td class="govuk-table__cell">43 µg/m3
+         <span style="display: block; margin-top:10px;"><strong class="govuk-tag govuk-tag--red">
+  Above limit
+</strong></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            
+          </div>
+  
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="o3" style="border:none; padding-left: 0px;">
+    <h2 class="govuk-heading-m">Ozone</h2>
+     <p class="govuk-body">Ozone is a gas that can be found in the atmosphere and at ground level.
+
+</p>
+
+  <p class="govuk-body">There are no major sources of pollution that emit ozone directly. Ozone is created by chemical reactions between sunlight and other pollutants, called precursor chemicals.
+</p>
+  <p class="govuk-body">Many sources can release precursor chemicals, including vehicles, industrial processes, burning fossil fuels and natural sources like plants and animals.
+</p>
+  <p class="govuk-body">Ozone levels are usually higher:
+</p>
+     <ul class="govuk-list govuk-list--bullet">
+              <li>later in the day, when there is more sunlight
+</li>
+              <li>when there are higher levels of precursor chemicals
+</li>
+              <li>in more rural areas, rather than urban areas
+ </li>
+
+            </ul>
+
+                    <p class="govuk-body"> <a href="pollutants/ozone.html" class="govuk-link">Learn more about ozone (O3)</a></p>
+
+                     <h3 class="govuk-heading-s">Yearly levels</h3>
+    <p class="govuk-body">There is no annual limit for ozone.</p>
+    <p class="govuk-body">The unit µg/m3 stands for micrograms (one millionth of a gram) per cubic metre of air.</p>
+   
+      <table class="govuk-table">
+ 
+    
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Year</th>
+      <th scope="col" class="govuk-table__header">Level</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2025</th>
+      <td class="govuk-table__cell">32 µg/m3
+       
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2024</th>
+      <td class="govuk-table__cell">37 µg/m3
+          
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2023</th>
+      <td class="govuk-table__cell">42 µg/m3
+          
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2022</th>
+      <td class="govuk-table__cell">41 µg/m3
+        
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2021</th>
+      <td class="govuk-table__cell">43 µg/m3
+       
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  
+
+
+
+    </div>
+    </div>
+
+{% endblock %}
