@@ -1,0 +1,31 @@
+{% extends "layouts/version-2-5.html" %}
+{% set startPage = true %}
+{% set displayBreadcrumbs = false %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+       Alerts development
+      </h1>
+  
+      <h2 class="govuk-heading-m">Past breaches pages</h2>
+
+      <p class="govuk-body"><a href="alerts" class="govuk-link">1 alert active</a></p>
+
+            <p class="govuk-body"><a href="alerts-none" class="govuk-link">no alerts active</a></p>
+
+                  <p class="govuk-body"><a href="alerts-multiple" class="govuk-link">Multiple alerts active from same station</a></p>
+
+                   <p class="govuk-body"><a href="alerts-multiple-different" class="govuk-link">Multiple regional alerts</a></p>
+
+                   <p class="govuk-body"><a href="alerts-breach-same-station" class="govuk-link">Same station has consecutive breaches</a></p>
+                  
+                  
+    </div>
+  </div>
+
+{% endblock %}
