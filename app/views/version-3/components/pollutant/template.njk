@@ -1,0 +1,18 @@
+{% from "components/daqitag/macro.njk" import appDaqitag %}
+
+<div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+    <a class="govuk-link" href="{{ params.href }}">{{ params.type | safe }}</a>
+  </h3>
+  <div class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-!-font-size-80">
+    {{ params.value }}
+  </div>
+    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+      {{ params.unit | safe }}
+    </p>
+  {{ appDaqitag({
+    classes: params.tagClass,
+    text: params.tagText | capitalize
+  }) }}
+    {# <span class="govuk-body-s">{{ params.limit | safe }}</span> #}
+</div>

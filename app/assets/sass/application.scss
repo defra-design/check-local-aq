@@ -621,31 +621,62 @@
 
 .version-2-5 {
   // Tools
-  @import "version-2-4/tools/mixins";
+  @import "version-2-5/tools/mixins";
 
   // Elements
-  @import "version-2-4/elements/colour";
-  @import "version-2-4/elements/layout";
-  @import "version-2-4/elements/typography";
-  @import "version-2-4/elements/tables";
-  @import "version-2-4/elements/icons";
-  @import "version-2-4/elements/aq-buttons";
+  @import "version-2-5/elements/colour";
+  @import "version-2-5/elements/layout";
+  @import "version-2-5/elements/typography";
+  @import "version-2-5/elements/tables";
+  @import "version-2-5/elements/icons";
+  @import "version-2-5/elements/aq-buttons";
 
   // Components
-  @import "version-2-4/components/daqitag";
-  @import "version-2-4/components/daqi";
-  @import "version-2-4/components/toggletips";
-  @import "version-2-4/components/aq-levels-table";
-  @import "version-2-4/components/aq-tabs";
-  @import "version-2-4/components/cards";
-  @import "version-2-4/components/inset-text-colour";
-  @import "version-2-4/components/aq-definition-list";
-  @import "version-2-4/components/aq-levels-list";
-  @import "version-2-4/components/aq-forecast";
-  @import "version-2-4/components/gem-cards.scss";
-  @import "version-2-4/components/notfication-banner.scss";
-  @import "version-2-4/components/masthead";
-  @import "version-2-4/components/aq-browse-section";
+  @import "version-2-5/components/daqitag";
+  @import "version-2-5/components/daqi";
+  @import "version-2-5/components/toggletips";
+  @import "version-2-5/components/aq-levels-table";
+  @import "version-2-5/components/aq-tabs";
+  @import "version-2-5/components/cards";
+  @import "version-2-5/components/inset-text-colour";
+  @import "version-2-5/components/aq-definition-list";
+  @import "version-2-5/components/aq-levels-list";
+  @import "version-2-5/components/aq-forecast";
+  @import "version-2-5/components/gem-cards.scss";
+  @import "version-2-5/components/notfication-banner.scss";
+  @import "version-2-5/components/masthead";
+  @import "version-2-5/components/aq-browse-section";
+
+}
+
+.version-3 {
+  // Tools
+  @import "version-3/tools/mixins";
+
+  // Elements
+  @import "version-3/elements/colour";
+  @import "version-3/elements/layout";
+  @import "version-3/elements/typography";
+  @import "version-3/elements/tables";
+  @import "version-3/elements/icons";
+  @import "version-3/elements/aq-buttons";
+
+  // Components
+  @import "version-3/components/aq-buttons";
+  @import "version-3/components/daqitag";
+  @import "version-3/components/daqi";
+  @import "version-3/components/toggletips";
+  @import "version-3/components/aq-levels-table";
+  @import "version-3/components/aq-tabs";
+  @import "version-3/components/cards";
+  @import "version-3/components/inset-text-colour";
+  @import "version-3/components/aq-definition-list";
+  @import "version-3/components/aq-levels-list";
+  @import "version-3/components/aq-forecast";
+  @import "version-3/components/gem-cards.scss";
+  @import "version-3/components/notfication-banner.scss";
+  @import "version-3/components/masthead";
+  @import "version-3/components/aq-browse-section";
 
 }
 

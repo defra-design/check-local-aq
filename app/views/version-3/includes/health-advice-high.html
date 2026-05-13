@@ -1,0 +1,14 @@
+{% set advice %}
+{% include "/" + folder + "/includes/health-advice/advice-high.html" %}
+{% endset %}
+{% set atrisk %}
+{% include "/" + folder + "/includes/health-advice/atrisk-high.html" %}
+{% endset %}
+
+<h2 class="govuk-heading-m">Health advice for high levels of air pollution</h2>
+{{ govukInsetText({
+    classes: "govuk-inset-text--9",
+    html: advice
+}) }}
+
+<div class="govuk-!-padding-bottom-4"></div>

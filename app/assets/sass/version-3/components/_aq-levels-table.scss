@@ -1,0 +1,50 @@
+.defra-aq-levels-table {
+  @extend .govuk-table;
+  position: relative;
+  margin-top: -1px;
+  margin-bottom: 0px;
+
+  &__head &__cell {
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+  
+  &__row {
+    border-top: 1px solid govuk-tint($govuk-border-colour, 0);
+    border-bottom: 1px solid govuk-tint($govuk-border-colour, 0);
+  }
+  &__cell {
+    @extend .govuk-table__cell;
+    border-bottom: 0px;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    a {
+      display: inline-block;
+    }
+  }
+  &__cell--pollutant {
+    @include govuk-font($size: 19, $weight: bold);
+    width: 40%;
+    padding-right:20px;
+  }
+  &__cell--reading {
+    @include govuk-font($size: 19, $weight: bold);
+    width: 20%;
+  }
+  &__cell--level {
+    width: 20%;
+    @include mq ($until: tablet) {
+      width: 25%;
+      //flex: 1 1 0.5em;
+    }
+  }
+  &__cell--level strong {
+    position: relative;
+    top: -1px;
+  } 
+}
+
+

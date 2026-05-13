@@ -1,0 +1,15 @@
+
+.aq-browse__section {
+    margin-bottom: govuk-spacing(9);
+    border-top: 1px solid govuk-colour("mid-grey");
+    padding-top: govuk-spacing(3);
+}
+
+.aq-browse__section:first-child {
+    border-top: none;
+    padding-top: 0; 
+}
+
+.aq-browse__list-item {
+    margin-bottom: govuk-spacing(5);
+}

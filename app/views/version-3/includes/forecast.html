@@ -1,0 +1,35 @@
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-4">The forecast for the next 4 days</h2>
+
+<dl class="aq-forecast-dl">
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day2 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day2.value }}">
+      {{ airQuality.day2.readableBand | capitalize }}
+    </dd>
+  </div>
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day3 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day3.value }}">
+      {{ airQuality.day3.readableBand | capitalize }}
+    </dd>
+  </div>
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day4 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day4.value }}">
+      {{ airQuality.day4.readableBand | capitalize }}
+    </dd>
+  </div>
+  <div class="aq-forecast-item">
+    <dt class="aq-forecast-dt">{{ day5 }}</dt>
+    <dd class="aq-forecast-dd daqi-tag--{{ airQuality.day5.value }}">
+      {{ airQuality.day5.readableBand | capitalize }}
+    </dd>
+  </div>
+</dl>
