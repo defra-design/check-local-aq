@@ -102,6 +102,20 @@ addFilter('addDaysToTodayAndDisplayDay', function(daysToAdd) {
     return futureDate.format('dddd');
 });
 
+addFilter('randomIntBetween', function(_value, min, max) {
+    const lower = Number(min);
+    const upper = Number(max);
+
+    if (!Number.isFinite(lower) || !Number.isFinite(upper)) {
+        return 1;
+    }
+
+    const smallest = Math.ceil(Math.min(lower, upper));
+    const largest = Math.floor(Math.max(lower, upper));
+
+    return Math.floor(Math.random() * (largest - smallest + 1)) + smallest;
+});
+
 
 
 

@@ -24,6 +24,12 @@
 {% set day4b = 3 | addDaysToTodayFull %}
 {% set day5b = 4 | addDaysToTodayFull %}
 
+{% set todayPollutantLevel = (airQuality.today.readableBand if airQuality and airQuality.today and airQuality.today.readableBand else "moderate") %}
+{% set day2PollutantLevel = (airQuality.day2.readableBand if airQuality and airQuality.day2 and airQuality.day2.readableBand else "moderate") %}
+{% set day3PollutantLevel = (airQuality.day3.readableBand if airQuality and airQuality.day3 and airQuality.day3.readableBand else "low") %}
+{% set day4PollutantLevel = (airQuality.day4.readableBand if airQuality and airQuality.day4 and airQuality.day4.readableBand else "low") %}
+{% set day5PollutantLevel = (airQuality.day5.readableBand if airQuality and airQuality.day5 and airQuality.day5.readableBand else "low") %}
+
 {% block pageScripts %}
   <script src="/public/javascripts/toggletips.js"></script>
 {% endblock %}
@@ -83,16 +89,9 @@
 
           <p class="govuk-!-margin-top-6">Levels of air pollution are moderate today for many areas of the UK due to warmer temperatures and low winds.</p>
 
-                <details class="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      View the levels of each pollutant
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-                  </div>
-                </details>
+          {% set dayPollutantLevel = todayPollutantLevel %}
+          {% set ozoneDaqiOverride = airQuality.today.value | default(5, true) %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
 
         </div>
 
@@ -103,6 +102,10 @@
 
           <p class="govuk-!-margin-top-6">The current warm temperatures will continue, causing air pollution levels to remain at moderate across many areas</p>
 
+          {% set dayPollutantLevel = day2PollutantLevel %}
+          {% set ozoneDaqiOverride = 6 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
@@ -111,6 +114,10 @@
           {% include "/" + folder + "/includes/daqi-mod-day3.html" %}
 
           <p class="govuk-!-margin-top-6">Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
+
+          {% set dayPollutantLevel = day3PollutantLevel %}
+          {% set ozoneDaqiOverride = 5 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
 
         </div>
 
@@ -121,6 +128,10 @@
 
           <p class="govuk-!-margin-top-6">Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
 
+          {% set dayPollutantLevel = day4PollutantLevel %}
+          {% set ozoneDaqiOverride = 4 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
@@ -129,6 +140,10 @@
           {% include "/" + folder + "/includes/daqi-mod-day5.html" %}
 
           <p class="govuk-!-margin-top-6">Warm temperatures will continue and being to reduce later in the week, are pollution levels should remain at moderate</p>
+
+          {% set dayPollutantLevel = day5PollutantLevel %}
+          {% set ozoneDaqiOverride = 4 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
         
         </div>
 

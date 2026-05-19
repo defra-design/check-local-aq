@@ -32,6 +32,12 @@
 {% set day4b = 3 | addDaysToTodayFull %}
 {% set day5b = 4 | addDaysToTodayFull %}
 
+{% set todayPollutantLevel = (airQuality.today.readableBand if airQuality and airQuality.today and airQuality.today.readableBand else "moderate") %}
+{% set day2PollutantLevel = (airQuality.day2.readableBand if airQuality and airQuality.day2 and airQuality.day2.readableBand else "moderate") %}
+{% set day3PollutantLevel = (airQuality.day3.readableBand if airQuality and airQuality.day3 and airQuality.day3.readableBand else "low") %}
+{% set day4PollutantLevel = (airQuality.day4.readableBand if airQuality and airQuality.day4 and airQuality.day4.readableBand else "low") %}
+{% set day5PollutantLevel = (airQuality.day5.readableBand if airQuality and airQuality.day5 and airQuality.day5.readableBand else "low") %}
+
 {% block pageScripts %}
   <script src="/public/javascripts/toggletips.js"></script>
 {% endblock %}
@@ -92,6 +98,10 @@
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukToday }}</p>
 
+          {% set dayPollutantLevel = todayPollutantLevel %}
+          {% set ozoneDaqiOverride = 5 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
         </div>
 
         <!--Tomorrow-->
@@ -103,6 +113,10 @@
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukTomorrow }}</p>         
 
+          {% set dayPollutantLevel = day2PollutantLevel %}
+          {% set ozoneDaqiOverride = 6 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
         </div>
 
         <!--Day 3-->
@@ -112,6 +126,10 @@
           {% include "/" + folder + "/includes/daqi-mod-day3.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
+
+          {% set dayPollutantLevel = day3PollutantLevel %}
+          {% set ozoneDaqiOverride = 5 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
 
         </div>
 
@@ -123,6 +141,10 @@
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
+          {% set dayPollutantLevel = day4PollutantLevel %}
+          {% set ozoneDaqiOverride = 4 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
         </div>
 
         <!--Day 5-->
@@ -132,6 +154,10 @@
           {% include "/" + folder + "/includes/daqi-mod-day5.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
+
+          {% set dayPollutantLevel = day5PollutantLevel %}
+          {% set ozoneDaqiOverride = 4 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
 
         </div>
 
