@@ -88,7 +88,7 @@
         <div class="govuk-tabs__panel" id="today">
           <h2 class="govuk-heading-m">Today</h2>
           
-          {% include "/" + folder + "/includes/daqi-new.html" %}
+          {% include "/" + folder + "/includes/daqi-mod.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukToday }}</p>
 
@@ -99,7 +99,7 @@
           <h2 class="govuk-heading-m">{{ day2b }}</h2>
           
 
-          {% include "/" + folder + "/includes/daqi-day2.html" %}
+          {% include "/" + folder + "/includes/daqi-mod-day2.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukTomorrow }}</p>         
 
@@ -109,7 +109,7 @@
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
           <h2 class="govuk-heading-m">{{ day3b }}</h2>
 
-          {% include "/" + folder + "/includes/daqi-day3.html" %}
+          {% include "/" + folder + "/includes/daqi-mod-day3.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
@@ -119,7 +119,7 @@
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
           <h2 class="govuk-heading-m">{{ day4b }}</h2>
 
-          {% include "/" + folder + "/includes/daqi-day4.html" %}
+          {% include "/" + folder + "/includes/daqi-mod-day4.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
@@ -129,7 +129,7 @@
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
           <h2 class="govuk-heading-m">{{ day5b }}</h2>
 
-          {% include "/" + folder + "/includes/daqi-day5.html" %}
+          {% include "/" + folder + "/includes/daqi-mod-day5.html" %}
 
           <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
 
@@ -143,7 +143,7 @@
       <!--------- PAGE SECTIONS -------->
       
   
-      {% include "/" + folder + "/includes/health-advice-high.html" %}
+      {% include "/" + folder + "/includes/health-advice-moderate.html" %}
 
       <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">

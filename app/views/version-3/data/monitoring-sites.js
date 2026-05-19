@@ -8,8 +8,8 @@ const monitoringSites = [
     "site_id": "UKA00594",
     "distance": 7.5,
     "site_type": "urban-traffic",
-    "site_band": "high",
-    "site_aqi": 7
+    "site_band": "moderate",
+    "site_aqi": 4
 },
   {
     "site_name": "Birmingham Ladywood",
