@@ -1,0 +1,72 @@
+<!--{% extends "layouts/main.html" %}-->
+{% extends "layouts/version-2-5.html" %}
+{% set caption = "" %}
+{% set title = "Air pollution breaches" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+  text: Back,
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Air pollution breaches</h1>
+  
+      <p>The <a href="https://www.legislation.gov.uk/uksi/2010/1001/contents">Air Quality Standards Regulations (2010)</a> set out the legal limits for specific air pollutants.</p>
+      <p>When a pollutant goes over (breaches) its legal limit in one area, it may be a serious health risk to people nearby. <a href="/{{ version }}/actions.html" data-message='This part of the prototype does not exist yet'>Find out what to do if you’re in an area with an active air pollution breach</a>.</p>
+      <p>Air pollution levels across the UK are measured hourly. </p>
+
+      <div class="govuk-!-padding-bottom-2"></div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <!----- ACTIVE BREACHES SECTION ----->
+      <h2 class="govuk-heading-m">Active breaches</h2>
+
+      <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    No data currently being received. We are investigating the issue and hope to have it resolved soon.
+  </strong>
+</div>
+     
+
+      <div class="govuk-!-padding-bottom-3"></div>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <div class="govuk-!-padding-bottom-4"></div>
+
+      <!------------------------------------------->
+
+      <!----- PAST BREACHES SECTION ----->
+
+      <h2 class="govuk-heading-m">Past breaches</h2>
+      <h3 class ="govuk-heading-s">Recorded in the last 12 months</h3>
+
+      <div class="govuk-inset-text">
+No data currently available. Check back later.
+</div>
+     
+
+      </div>
+
+      <!---- END EXPIRED ------>
+
+  </div>
+</div>
+
+{% endblock %}
