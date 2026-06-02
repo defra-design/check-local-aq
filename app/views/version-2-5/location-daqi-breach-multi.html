@@ -28,26 +28,6 @@
   <div class="govuk-grid-row" data-module="edge">
     <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
 
-       <!--------- ALERT PANEL ----------->
-    
-    <div class="govuk-notification-banner alert-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Alert
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          High levels of ozone measured in this region
-
-        <!--- ** UR SESSIONS ** MANUALLY UPDATE THE REGION AND LINK LOCATION HERE FOR  --->
-        </h3>
-        <p class="govuk-body"><a class="govuk-notification-banner__link" href="alerts.html">A monitoring station near LE8 0SN, Kibworth Harcourt</a> has measured high ozone levels in the last 24 hours.</p>
-      </div>
-    </div>
-
-    <!--------- END PANEL ----------->
-
     <!--------- ALERT PANEL ----------->
     
     <div class="govuk-notification-banner alert-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -80,7 +60,10 @@
     <!--- ** UR SESSIONS ** UPDATE LOCATION FOR UR ------->
     <p>Air pollution in LE8 0SN, Kibworth Harcourt is high today, even though moderate levels of air pollution were predicted earlier.</p> 
 
-    <p>This is because nitrogen dioxide levels in the region are higher than expected. <a href="/{{ version }}/pollutants/nitrogen-dioxide.html">Learn more about nitrogen dioxide</a>.</p>
+    <p>This is because ozone, nitrogen dioxide and sulphur dioxide levels in the region are higher than expected.</p>
+     <p> <a href="/{{ version }}/pollutants/ozone.html">Learn more about ozone</a></p>
+     <p> <a href="/{{ version }}/pollutants/nitrogen-dioxide.html">Learn more about nitrogen dioxide</a></p>
+     <p> <a href="/{{ version }}/pollutants/sulphur-dioxide.html">Learn more about sulphur dioxide</a></p>
 
     <div class="govuk-!-padding-bottom-2"></div>
 
@@ -93,14 +76,6 @@
     <div class="govuk-!-padding-bottom-4"></div>
           
       <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
-
-       <div class="govuk-warning-text govuk-!-margin-top-6">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span>
-            High levels of air pollution are predicted in this location today.
-        </strong>
-    </div>
     
       <!---------- TABBED FORECAST ---------->
 
@@ -144,7 +119,7 @@
         <div class="govuk-tabs__panel" id="today">
           <h2 class="govuk-heading-m">Forecast at 5am today</h2>
 
-          {% include "/" + folder + "/includes/daqi-high.html" %}
+          {% include "/" + folder + "/includes/daqi-mod.html" %}
           
           <p>Levels of air pollution are moderate today for many areas of the UK due to warmer temperatures and low winds.</p>
 
