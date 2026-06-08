@@ -1,0 +1,54 @@
+{% extends "layouts/version-4.html" %}
+{% set startPage = true %}
+{% set displayBreadcrumbs = false %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+       Alerts development
+      </h1>
+
+
+        <h2 class="govuk-heading-m">Normal alerts</h2>
+
+         <p class="govuk-body"><a href="location-breach" class="govuk-link">Measured breach alert for ozone</a></p>
+
+         <p class="govuk-body"><a href="location-high" class="govuk-link">Forecast DAQI alert</a></p>
+
+           <p class="govuk-body"><a href="location-daqi-breach.html" class="govuk-link">DAQI measured alert</a></p>
+  
+      <h2 class="govuk-heading-m">Past breaches pages</h2>
+
+      <p class="govuk-body"><a href="alerts" class="govuk-link">1 alert active</a></p>
+
+            <p class="govuk-body"><a href="alerts-none" class="govuk-link">no alerts active</a></p>
+
+                  <p class="govuk-body"><a href="alerts-multiple" class="govuk-link">Multiple alerts active from same station</a></p>
+
+                   <p class="govuk-body"><a href="alerts-multiple-different" class="govuk-link">Multiple regional alerts</a></p>
+
+                   <p class="govuk-body"><a href="alerts-breach-same-station" class="govuk-link">Same station has consecutive breaches</a></p>
+
+                         <h2 class="govuk-heading-m">Measured breach alert and forecast alert edge cases</h2>
+                  
+                         <p class="govuk-body"><a href="location-edge-breach" class="govuk-link">Measured breach alert while forecast alert is active</a></p>
+
+                           <p class="govuk-body"><a href="location-breach-multiple.html" class="govuk-link">Different pollutant breaches measured at same station</a></p>
+
+                                       <p class="govuk-body"><a href="location-breach-multiple-stations.html" class="govuk-link">Different pollutant breaches measured at multiple stations</a></p>
+
+                                         <p class="govuk-body"><a href="location-breach-multiple-same-station.html" class="govuk-link">Same pollutant breaches measured at multiple stations</a></p>
+
+
+                        <h2 class="govuk-heading-m">DAQI measured alert edge cases</h2>
+
+                         <p class="govuk-body"><a href="location-daqi-breach-edge.html" class="govuk-link">Same pollutant breaches measured at multiple stations</a></p>
+                  
+    </div>
+  </div>
+
+{% endblock %}

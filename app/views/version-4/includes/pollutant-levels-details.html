@@ -1,0 +1,82 @@
+{% set dayPollutantLevel = dayPollutantLevel | default("moderate", true) %}
+{% set levelToDaqi = {
+  "low": 3,
+  "moderate": 5,
+  "high": 8,
+  "very high": 10
+} %}
+{% set pm25Daqi = "" | randomIntBetween(1, 3) %}
+{% set pm10Daqi = "" | randomIntBetween(1, 3) %}
+{% set no2Daqi = "" | randomIntBetween(1, 3) %}
+{% set so2Daqi = "" | randomIntBetween(1, 3) %}
+{% set ozoneDaqi = ozoneDaqiOverride | default(levelToDaqi[dayPollutantLevel], true) | default(levelToDaqi["moderate"], true) %}
+{% set ozoneLevel = "low" %}
+{% if ozoneDaqi >= 10 %}
+  {% set ozoneLevel = "very high" %}
+{% elif ozoneDaqi >= 7 %}
+  {% set ozoneLevel = "high" %}
+{% elif ozoneDaqi >= 4 %}
+  {% set ozoneLevel = "moderate" %}
+{% endif %}
+
+<details class="govuk-details govuk-!-margin-top-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View the levels of each pollutant
+    </span>
+  </summary>
+  <div class="govuk-details__text govuk-!-padding-bottom-0">
+      <p>The DAQI measures the short term health risk of air pollution.</p>
+      <p>The DAQI score for a specific location is based on the highest measured or predicted level out of these 5 pollutants.</p>
+    <table class="govuk-table govuk-!-margin-bottom-0">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Pollutant</th>
+          <th scope="col" class="govuk-table__header govuk-!-text-align-centre">Level</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter2">Fine particulate matter (PM2.5)</a>
+          </th>
+          <td class="govuk-table__cell govuk-!-text-align-centre">
+            <strong class="daqi-tag daqi-tag--{{ pm25Daqi }}">{{ pm25Daqi }} (low)</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter10">Particulate matter (PM10)</a>
+          </th>
+          <td class="govuk-table__cell govuk-!-text-align-centre">
+            <strong class="daqi-tag daqi-tag--{{ pm10Daqi }}">{{ pm10Daqi }} (low)</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/{{ version }}/pollutants/nitrogen-dioxide">Nitrogen dioxide (NO2)</a>
+          </th>
+          <td class="govuk-table__cell govuk-!-text-align-centre">
+            <strong class="daqi-tag daqi-tag--{{ no2Daqi }}">{{ no2Daqi }} (low)</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/{{ version }}/pollutants/ozone">Ozone (O3)</a>
+          </th>
+          <td class="govuk-table__cell govuk-!-text-align-centre">
+            <strong class="daqi-tag daqi-tag--{{ ozoneDaqi }}">{{ ozoneDaqi }} ({{ ozoneLevel }})</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-link" href="/{{ version }}/pollutants/sulphur-dioxide">Sulphur dioxide (SO2)</a>
+          </th>
+          <td class="govuk-table__cell govuk-!-text-align-centre">
+            <strong class="daqi-tag daqi-tag--{{ so2Daqi }}">{{ so2Daqi }} (low)</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>

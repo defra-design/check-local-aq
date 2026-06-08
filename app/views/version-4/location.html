@@ -1,0 +1,253 @@
+{% extends "layouts/version-4.html" %}
+{% set displayBacklink = true %}
+
+{% from "/" + folder + "/components/toggletip/macro.njk" import toggletip %}
+{% from "/" + folder + "/components/aq-levels-table/macro.njk" import aqLevelsTable %}
+{% from "/" + folder + "/components/aq-tabs/macro.njk" import aqTabs %}
+{% from  "/" + folder + "/components/search/macro.njk" import appSearch %}
+{% from  "/" + folder + "/components/pollutant-levels/macro.njk" import appPollutantLevels %}
+
+{% set caption = "" %}
+{% macro getParentArea(result) %}
+  {% if result.GAZETTEER_ENTRY.LOCAL_TYPE == 'Postcode' %}
+    {{ result.populatedPlace | default("", true) | trim | safe }}
+  {% else %}
+    {{ (result.GAZETTEER_ENTRY.DISTRICT_BOROUGH if result.GAZETTEER_ENTRY.DISTRICT_BOROUGH else result.GAZETTEER_ENTRY.COUNTY_UNITARY) | default("", true) | trim | safe }}
+  {% endif %}
+{% endmacro %}
+
+{% set locationName = result.GAZETTEER_ENTRY.NAME1 | default("", true) | trim | safe %}
+{% set parentArea = getParentArea(result) %}
+{% set title = "Air pollution in " ~ locationName ~ (", " ~ parentArea if parentArea else "") %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+
+{% set day2 = 1 | addDaysToTodayAbrev %}
+{% set day3 = 2 | addDaysToTodayAbrev %}
+{% set day4 = 3 | addDaysToTodayAbrev %}
+{% set day5 = 4 | addDaysToTodayAbrev %}
+
+{% set day2b = 1 | addDaysToTodayFull %}
+{% set day3b = 2 | addDaysToTodayFull %}
+{% set day4b = 3 | addDaysToTodayFull %}
+{% set day5b = 4 | addDaysToTodayFull %}
+
+{% set todayPollutantLevel = (airQuality.today.readableBand if airQuality and airQuality.today and airQuality.today.readableBand else "moderate") %}
+{% set day2PollutantLevel = (airQuality.day2.readableBand if airQuality and airQuality.day2 and airQuality.day2.readableBand else "moderate") %}
+{% set day3PollutantLevel = (airQuality.day3.readableBand if airQuality and airQuality.day3 and airQuality.day3.readableBand else "low") %}
+{% set day4PollutantLevel = (airQuality.day4.readableBand if airQuality and airQuality.day4 and airQuality.day4.readableBand else "low") %}
+{% set day5PollutantLevel = (airQuality.day5.readableBand if airQuality and airQuality.day5 and airQuality.day5.readableBand else "low") %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/toggletips.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+          {{ title }}  
+          
+      <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
+    
+      <!---------- TABBED FORECAST ---------->
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <!------ TABS ------>
+
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#today">
+              Today
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day2">
+              {{ day2 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day3">
+              {{ day3 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day4">
+              {{ day4 }}
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#day5">
+              {{ day5 }}
+            </a>
+          </li>
+        </ul>
+
+        <!------ TAB PANEL ------>
+
+        <!--Today-->
+        <div class="govuk-tabs__panel" id="today">
+          <h2 class="govuk-heading-m">Today</h2>
+          
+          {% include "/" + folder + "/includes/daqi-mod.html" %}
+
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukToday }}</p>
+
+          {% set dayPollutantLevel = todayPollutantLevel %}
+          {% set ozoneDaqiOverride = 5 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
+        </div>
+
+        <!--Tomorrow-->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day2">
+          <h2 class="govuk-heading-m">{{ day2b }}</h2>
+          
+
+          {% include "/" + folder + "/includes/daqi-mod-day2.html" %}
+
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukTomorrow }}</p>         
+
+          {% set dayPollutantLevel = day2PollutantLevel %}
+          {% set ozoneDaqiOverride = 6 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
+        </div>
+
+        <!--Day 3-->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day3">
+          <h2 class="govuk-heading-m">{{ day3b }}</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day3.html" %}
+
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
+
+          {% set dayPollutantLevel = day3PollutantLevel %}
+          {% set ozoneDaqiOverride = 5 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
+        </div>
+
+        <!--Day 4-->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day4">
+          <h2 class="govuk-heading-m">{{ day4b }}</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day4.html" %}
+
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
+
+          {% set dayPollutantLevel = day4PollutantLevel %}
+          {% set ozoneDaqiOverride = 4 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
+        </div>
+
+        <!--Day 5-->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="day5">
+          <h2 class="govuk-heading-m">{{ day5b }}</h2>
+
+          {% include "/" + folder + "/includes/daqi-mod-day5.html" %}
+
+          <p class="govuk-!-margin-top-6">{{ airQuality.today.ukOutlook }}</p>
+
+          {% set dayPollutantLevel = day5PollutantLevel %}
+          {% set ozoneDaqiOverride = 4 %}
+          {% include "/" + folder + "/includes/pollutant-levels-details.html" %}
+
+        </div>
+
+        <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
+      <a href="https://get-air-pollution-data-proto-c7a2601e06dd.herokuapp.com/version-15/forecast-map" role="button" id="map-btn" class="aq-button-secondary aq-button-secondary--icon govuk-!-margin-top-2">
+      <span class="aq-button-secondary__icon">
+        <svg focusable="false" width="15" height="20" viewBox="0 0 15 20">
+          <path d="M15,7.5c0.009,3.778 -4.229,9.665 -7.5,12.5c-3.271,-2.835 -7.509,-8.722 -7.5,-12.5c0,-4.142 3.358,-7.5 7.5,-7.5c4.142,0 7.5,3.358 7.5,7.5Zm-7.5,5.461c3.016,0 5.461,-2.445 5.461,-5.461c0,-3.016 -2.445,-5.461 -5.461,-5.461c-3.016,0 -5.461,2.445 -5.461,5.461c0,3.016 2.445,5.461 5.461,5.461Z" fill="currentColor"></path>
+        </svg>
+      </span>
+      <span class="aq-button-secondary__text">View air pollution forecast on a map</span>
+      <span class="govuk-visually-hidden">(Visual only)</span>
+    </a>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6">
+
+      </div>
+      <!---------- END TABS ------------>
+
+      <!--------- PAGE SECTIONS -------->
+      
+  
+      {% include "/" + folder + "/includes/health-advice-moderate.html" %}
+
+      <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+
+      {% include "/" + folder + "/includes/reduce-your-exposure.html" %}
+
+      <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/monitoring-sites.html" %}
+
+      <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/local-authority.html" %}
+
+      <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+
+
+
+      
+      
+
+      <div class="govuk-!-padding-bottom-9"></div>
+
+    </div>
+
+
+  <!-- RELATED CONTENT -->
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+      
+    {{ xGovukRelatedNavigation({
+      sections: [{
+          items: [{
+              text: "Health effects of air pollution",
+              href: "/" + version + "/health-effects?locationName=" + locationName
+          },
+          {
+            text: "Actions to reduce your exposure to air pollution",
+            href: "/" + version + "/actions?locationName=" + locationName
+          },
+          {
+            text: "Air pollution breaches",
+            href: "/" + version + "/alerts?locationName=" + locationName
+          }
+          ]
+      }]
+  }) }}
+  
+  </div>
+  <!-- END RELATED CONTENT -->
+
+</div>
+
+<!-- UR SCENARIO LINKS (to test different versions of the location page )
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full app-contact-panel govuk-!-margin-bottom-6" >
+    <h3 class="govuk-heading-s">User research scenarios</h3>
+      <span class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-high?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario 1</a>     </span>
+      <span class="govuk-body-s"><a class="govuk-link" href="/{{ version }}/location-veryhigh?locationName={{ locationName }}&parentArea={{ parentArea }}">Research scenario 2</a></span>
+  </div>
+</div>
+<!--END UR LINKS -->
+
+{% endblock %}

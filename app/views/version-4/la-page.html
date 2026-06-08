@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+{% set caption = "" %}
+{% set title = "Birmingham City Council " %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+      tag: {
+        text: "Prototype " + version
+      },
+      html: 'This is a prototype and not a live service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+<!-- BACK LINK -->
+  {{ govukBackLink({
+    text: "Air quality in " + locationName,
+    href: "javascript:window.history.back()"
+  }) }}
+  <!-- END BACK -->
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        {{ title | safe }}</h1>
+
+    
+ <div class="govuk-!-padding-bottom-2"></div> <!-- <<< SPACER -->
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+         <h2 class="govuk-heading-m">
+    How this council is reducing air pollution
+  </h2>
+     
+   <p class="govuk-body">This council’s priorities for reducing exposure to air pollution are: </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Clean Air Zone Implementation and Operation</li>
+          <li>Work with schools and nurseries in the Jewellery Quarter - Implement the Transport for West Midlands 'Travel for Life' Programme</li>
+          <li>School Streets: establishing permanent School Streets where traffic and parking are restricted during peak times to reduce engine idling and encourage walking and cycling</li>
+          <li>EV Infrastructure: installing 130 new fast and rapid electric vehicle charging points to support the transition from petrol and diesel</li>
+        </ul>
+        <p class="govuk-body"> <a href="https://www.gov.uk/find-local-council" class="govuk-link">Find the website for this council</a> for other ways they are reducing air pollution.</p>
+
+
+          <h3 class="govuk-heading-s">
+          Smoke control areas       
+          </h3>
+                  <p class="govuk-body">Smoke control areas are zones where it’s illegal to emit smoke from a chimney or buy or sell unauthorised fuel for use within them.</p>
+                <p class="govuk"> <a href="https://www.gov.uk/smoke-control-area-rules" class="govuk-link">Smoke control areas: the rules</a></p>  
+                  <div class="govuk-inset-text" style="border-left: 10px solid #ECD228; background-color: #FFF7BF;">
+                    There are smoke control areas in this location
+                    <p class="govuk"><a href="https://get-air-pollution-data-proto-c7a2601e06dd.herokuapp.com/version-15/station/scas/" class="govuk-link">Find out what areas are affected</a></p>
+                  </div>
+                
+                
+
+
+           <p class="govuk-body"> <a href="https://get-air-pollution-data-proto-c7a2601e06dd.herokuapp.com/version-15/station/birmingham-la" class="govuk-link">Get more information and data for Birmingham City Council</a></p>
+
+
+    </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+.aq-levels-container {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+ }
+ 
+ .aq-levels {
+   @include mq($from: tablet) {
+     width: calc(50% - govuk-spacing(2)); 
+     box-sizing: border-box; 
+     margin-bottom: govuk-spacing(2); 
+ 
+     &:nth-of-type(odd) {
+       margin-right: govuk-spacing(1);
+     }
+ 
+     &:nth-of-type(even) {
+       margin-left: govuk-spacing(1);
+     }
+ 
+     &:nth-of-type(5n) {
+       clear: both;
+       margin-left: 0;
+       margin-right: 0;
+     }
+   }
+ }
+ 
+ .aq-levels-list {
+   dt {
+     @include govuk-font($size: 19);
+     padding: 0;
+   }
+ 
+   dd {
+     padding: 0;
+     margin: 0;
+   }
+ }
+
+ .govuk-tag {
+   @include govuk-font($size: 16);
+ }
+ 

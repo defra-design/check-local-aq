@@ -1,0 +1,83 @@
+<h2 class="govuk-heading-m govuk-!-margin-bottom-6">Current air pollution levels nearby</h2>
+<p>Air pollution information in {{ locationName }} is based upon data from the nearest monitoring areas.</p>
+{% set tabItems = [] %} {# Initialize an empty array to hold tab items #}
+
+{% for site in monitoringSites %}
+
+  {# Calculate highest AQI across all pollutants for this site #}
+  {% set highestAqi = 0 %}
+  {% set highestBand = "Low" %}
+  {% for pollutant in site.pollutants %}
+    {% if pollutant.aqi > highestAqi %}
+      {% set highestAqi = pollutant.aqi %}
+      {% set highestBand = pollutant.band %}
+    {% endif %}
+  {% endfor %}
+
+  {% set measurementToggletip %}
+    {{ toggletip(
+      '',
+      'More information about measurement',
+      'Readings are measured every hour. The unit µg/&#13221; stands for micrograms (one millionth of a gram) per cubic metre of air.',
+      'Latest'
+    )}}
+  {% endset %}
+
+  {% set panelHtml %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1 pollutant-table"><a href="https://get-air-pollution-data-proto-c7a2601e06dd.herokuapp.com/version-15/station/station">{{ site.site_name }}</a></h3>
+    <p class="defra-aq-tabs__mobile-distance govuk-caption-m">{{ site.distance }} miles away</p>
+    <p class="govuk-!-margin-bottom-4"><strong>Current level</strong> <strong class="daqi-tag daqi-tag--{{ highestAqi }} govuk-!-margin-left-1">{{ highestAqi }} ({{ highestBand }})</strong></p>
+    <p class="govuk-caption-s govuk-!-margin-bottom-3">Latest measurement {{ "now" | date | minusOneHour | lower }} on {{ "today" | govukDate }}</p>
+    <p>{{ siteTypeDescriptions[site.site_type] }}</p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">View the levels of each pollutant</span>
+      </summary>
+      <div class="govuk-details__text">
+    <table class="govuk-table govuk-!-margin-bottom-2">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Pollutants</th>
+          <th scope="col" class="govuk-table__header">{{ measurementToggletip | safe }}</th>
+          <th scope="col" class="govuk-table__header">Current level</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for pollutant in site.pollutants %}
+          {% set pollutantDetail = pollutantTypes[pollutant.type] %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell align-middle">
+              <a class="govuk-!-margin-bottom-1 govuk-!-font-weight-bold" href="/{{ version }}{{ pollutantDetail.href }}">{{ pollutantDetail.title }}</a>
+              <span class="govuk-caption-s govuk-!-margin-bottom-1">Low range {{ pollutantDetail.low_range }}</span>
+            </td>
+            <td class="govuk-table__cell align-middle">
+              <span class="govuk-!-font-weight-bold">{{ pollutant.measurement | int }}</span> <span class="govuk-!-font-size-16 govuk-!-font-weight-regular">μg/m<sup>3</sup></span>
+            </td>
+            <td class="govuk-table__cell align-middle">
+              <strong class="daqi-tag daqi-tag--{{ pollutant.aqi if pollutant.aqi else 'default-aqi-value' }}">{{ pollutant.aqi }} ({{ pollutant.band }})</strong>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+      </div>
+    </details>
+  {% endset %}
+
+  {% set tabItem = {
+    classes: "govuk-tabs__list-item--sites",
+    label: site.site_name | truncate(15),
+    status: "<span class='defra-aq-tabs__label-distance'>" ~ site.distance ~ " miles away</span>",
+    id: site.site_id,
+    panel: {
+      html: panelHtml
+    }
+  } %}
+
+  {% set _ = tabItems.push(tabItem) %}
+{% endfor %}
+
+{{ aqTabs({
+  classes: "defra-aq-tabs",
+  items: tabItems
+}) }}
