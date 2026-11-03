@@ -122,6 +122,7 @@ const locationRequiredRoutes = [
 
   '/actions',
   '/further-information',
+  '/further-information-current',
   '/further-information-health',
   '/further-information-council',
   '/la-page',

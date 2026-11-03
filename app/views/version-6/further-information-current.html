@@ -1,0 +1,41 @@
+{% extends "layouts/version-6.html" %}
+{% set displayBacklink = true %}
+{% set backlink = {
+  text: "Back to " ~ locationName,
+  href: "/version-6/location?locationName=" + locationName + "&parentArea=" + parentArea
+} %}
+
+{% set title = "Air pollution in " ~ locationName ~ (" in " ~ parentArea if parentArea else "") %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set furtherInfoPage = "current" %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+    {% include "/" + folder + "/includes/further-info-header.html" %}
+
+    <h2 class="govuk-heading-m">How {{ locationName }} compares to the UK</h2>
+
+    <p class="govuk-body">The average air pollution level is <strong class="daqi-tag daqi-tag--3">3 (low)</strong> for {{ locationName }}.</p>
+
+    <p class="govuk-body">Air pollution here is higher than in similar locations.</p>
+
+    <p class="govuk-body">This is due to higher levels of <a class="govuk-link" href="/{{ version }}/pollutants/ozone">ozone</a>.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="/{{ version }}/where">Search for another location</a></p>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    {% include "/" + folder + "/includes/further-info-pagination.html" %}
+
+    <div class="govuk-!-padding-bottom-9"></div>
+
+  </div>
+
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {% include "/" + folder + "/includes/further-info-related.html" %}
+  </div>
+</div>
+{% endblock %}

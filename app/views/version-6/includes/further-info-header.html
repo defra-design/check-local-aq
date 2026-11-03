@@ -1,5 +1,6 @@
 {% set furtherInfoHeadings = {
-  pollutants: "Pollutants and their impact",
+  pollutants: "Air pollution levels in detail",
+  current: "How air pollution compares to the UK",
   health: "Health advice and how to reduce your exposure",
   council: "What is being done to reduce air pollution"
 } %}
@@ -10,9 +11,16 @@
   <ul class="govuk-list app-contents-list">
     <li class="app-contents-list__item">
       {% if furtherInfoPage == "pollutants" %}
-        <span aria-current="page">Pollutants and their impact</span>
+        <span aria-current="page">Air pollution levels in detail</span>
       {% else %}
-        <a class="govuk-link" href="/{{ version }}/further-information">Pollutants and their impact</a>
+        <a class="govuk-link" href="/{{ version }}/further-information">Air pollution levels in detail</a>
+      {% endif %}
+    </li>
+    <li class="app-contents-list__item">
+      {% if furtherInfoPage == "current" %}
+        <span aria-current="page">How air pollution compares to the UK</span>
+      {% else %}
+        <a class="govuk-link" href="/{{ version }}/further-information-current">How air pollution compares to the UK</a>
       {% endif %}
     </li>
     <li class="app-contents-list__item">

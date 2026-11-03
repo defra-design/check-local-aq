@@ -1,6 +1,17 @@
 {% if furtherInfoPage == "pollutants" %}
   {{ govukPagination({
     next: {
+      href: "/" + version + "/further-information-current",
+      labelText: "How air pollution compares to the UK"
+    }
+  }) }}
+{% elif furtherInfoPage == "current" %}
+  {{ govukPagination({
+    previous: {
+      href: "/" + version + "/further-information",
+      labelText: "Air pollution levels in detail"
+    },
+    next: {
       href: "/" + version + "/further-information-health",
       labelText: "Health advice and how to reduce your exposure"
     }
@@ -8,8 +19,8 @@
 {% elif furtherInfoPage == "health" %}
   {{ govukPagination({
     previous: {
-      href: "/" + version + "/further-information",
-      labelText: "Pollutants and their impact"
+      href: "/" + version + "/further-information-current",
+      labelText: "How air pollution compares to the UK"
     },
     next: {
       href: "/" + version + "/further-information-council",
