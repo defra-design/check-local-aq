@@ -1,6 +1,6 @@
 {% set furtherInfoHeadings = {
   pollutants: "Air pollution levels in detail",
-  current: "How air pollution compares to the UK",
+  current: "How air pollution levels compare to the UK",
   health: "Health advice and how to reduce your exposure",
   council: "What is being done to reduce air pollution"
 } %}
@@ -18,9 +18,9 @@
     </li>
     <li class="app-contents-list__item">
       {% if furtherInfoPage == "current" %}
-        <span aria-current="page">How air pollution compares to the UK</span>
+        <span aria-current="page">How air pollution levels compare to the UK</span>
       {% else %}
-        <a class="govuk-link" href="/{{ version }}/further-information-current">How air pollution compares to the UK</a>
+        <a class="govuk-link" href="/{{ version }}/further-information-current">How air pollution levels compare to the UK</a>
       {% endif %}
     </li>
     <li class="app-contents-list__item">
