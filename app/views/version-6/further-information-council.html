@@ -1,0 +1,47 @@
+{% extends "layouts/version-6.html" %}
+{% set displayBacklink = true %}
+{% set backlink = {
+  text: "Back to " ~ locationName,
+  href: "/version-6/location?locationName=" + locationName + "&parentArea=" + parentArea
+} %}
+
+{% set title = "Air pollution in " ~ locationName ~ (" in " ~ parentArea if parentArea else "") %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set furtherInfoPage = "council" %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+    {% include "/" + folder + "/includes/further-info-header.html" %}
+
+    {% include "/" + folder + "/includes/local-authority.html" %}
+
+    <div class="govuk-!-padding-bottom-2"></div>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-m">What is being done to reduce air pollution nationally</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="#">Air pollution reports</a></li>
+      <li><a class="govuk-link" href="#">Clean Air Act 1993</a></li>
+      <li><a class="govuk-link" href="#">Environment Act 2021</a></li>
+      <li><a class="govuk-link" href="#">Clean air zones</a></li>
+      <li><a class="govuk-link" href="#">Air quality strategy</a></li>
+    </ul>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    {% include "/" + folder + "/includes/further-info-pagination.html" %}
+
+    <div class="govuk-!-padding-bottom-9"></div>
+
+  </div>
+
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {% include "/" + folder + "/includes/further-info-related.html" %}
+  </div>
+</div>
+{% endblock %}

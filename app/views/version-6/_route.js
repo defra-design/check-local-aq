@@ -76,7 +76,6 @@ const locationRequiredRoutes = [
   '/sign-up-for-alerts/setup-or-manage',
 
   '/sign-up-for-alerts/alerts-method',
-  '/sign-up-for-alerts/alerts-pollutants',
   '/sign-up-for-alerts/alerts-levels',
 
   '/sign-up-for-alerts/change-location-check',
@@ -123,6 +122,8 @@ const locationRequiredRoutes = [
 
   '/actions',
   '/further-information',
+  '/further-information-health',
+  '/further-information-council',
   '/la-page',
   '/email-high',
   '/health-effects',
@@ -165,7 +166,6 @@ router.get(locationRequiredRoutes, (req, res) => {
     email: req.session.data['notifyByEmail'],
     text: req.session.data['notifyByText'],
     alertsContactMethod: req.session.data['alertsContactMethod'],
-    alertsPollutants: req.session.data['alertsPollutants'],
     alertsLevels: req.session.data['alertsLevels'],
     monitoringSites: monitoringSites,
     siteTypeDescriptions: siteTypeDescriptions,
@@ -174,6 +174,14 @@ router.get(locationRequiredRoutes, (req, res) => {
 });
 
 // ---------- Alerts sign-up side journey ----------
+
+// Skip the location step when the user arrives with a location already chosen
+router.get('/sign-up-for-alerts/alerts-start', (req, res) => {
+  const locationPreselected = Boolean(req.query.locationName);
+  req.session.data['alertsLocationPreselected'] = locationPreselected;
+
+  res.render(`${version}/sign-up-for-alerts/alerts-start`, { locationPreselected });
+});
 
 // Location entered on the alerts journey
 router.post('/sign-up-for-alerts/alerts-where', (req, res) => {
@@ -194,12 +202,6 @@ router.post('/sign-up-for-alerts/alerts-where', (req, res) => {
 // How the user wants to receive alerts
 router.post('/sign-up-for-alerts/alerts-method', (req, res) => {
   req.session.data['alertsContactMethod'] = req.body['alertsContactMethod'];
-  res.redirect(`/${version}/sign-up-for-alerts/alerts-pollutants`);
-});
-
-// Pollutants the user wants alerts about
-router.post('/sign-up-for-alerts/alerts-pollutants', (req, res) => {
-  req.session.data['alertsPollutants'] = req.body['alertsPollutants'];
   res.redirect(`/${version}/sign-up-for-alerts/alerts-levels`);
 });
 

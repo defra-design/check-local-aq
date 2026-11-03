@@ -1,0 +1,49 @@
+{% extends "layouts/version-6.html" %}
+{% set displayBacklink = true %}
+{% set backlink = {
+  text: "Back to " ~ locationName,
+  href: "/version-6/location?locationName=" + locationName + "&parentArea=" + parentArea
+} %}
+
+{% set title = "Air pollution in " ~ locationName ~ (" in " ~ parentArea if parentArea else "") %}
+{% set servicePage = true %}
+{% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set furtherInfoPage = "health" %}
+
+{% block content %}
+<div class="govuk-grid-row" data-module="edge">
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
+
+    {% include "/" + folder + "/includes/further-info-header.html" %}
+
+    <h2 class="govuk-heading-m">Health advice for low or moderate levels of air pollution</h2>
+
+    {% set healthAdviceSummary %}
+      <p class="govuk-body">There is no safe level of air pollution. However, for most people, short term exposure to low or moderate air pollution is not an issue. Continue your usual outdoor activities. <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ locationName }}&parentArea={{ parentArea }}">Check air pollution symptoms and health advice</a>.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0">Long term exposure to air pollution can increase health risks. Simple steps like choosing less busy transport routes and reducing exposure to fire can help. <a class="govuk-link" href="/{{ version }}/actions?locationName={{ locationName }}&parentArea={{ parentArea }}">Get more advice on actions you can take to reduce your exposure</a>.</p>
+    {% endset %}
+
+    {{ govukInsetText({
+        classes: "govuk-inset-text--5",
+        html: healthAdviceSummary
+    }) }}
+
+    <div class="govuk-!-padding-bottom-2"></div>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    {% include "/" + folder + "/includes/air-quality-alerts.html" %}
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    {% include "/" + folder + "/includes/further-info-pagination.html" %}
+
+    <div class="govuk-!-padding-bottom-9"></div>
+
+  </div>
+
+  <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
+    {% include "/" + folder + "/includes/further-info-related.html" %}
+  </div>
+</div>
+{% endblock %}

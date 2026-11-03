@@ -1,0 +1,26 @@
+{% if furtherInfoPage == "pollutants" %}
+  {{ govukPagination({
+    next: {
+      href: "/" + version + "/further-information-health",
+      labelText: "Health advice and how to reduce your exposure"
+    }
+  }) }}
+{% elif furtherInfoPage == "health" %}
+  {{ govukPagination({
+    previous: {
+      href: "/" + version + "/further-information",
+      labelText: "Pollutants and their impact"
+    },
+    next: {
+      href: "/" + version + "/further-information-council",
+      labelText: "What is being done to reduce air pollution"
+    }
+  }) }}
+{% elif furtherInfoPage == "council" %}
+  {{ govukPagination({
+    previous: {
+      href: "/" + version + "/further-information-health",
+      labelText: "Health advice and how to reduce your exposure"
+    }
+  }) }}
+{% endif %}

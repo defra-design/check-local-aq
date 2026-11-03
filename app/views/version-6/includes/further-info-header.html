@@ -1,0 +1,33 @@
+{% set furtherInfoHeadings = {
+  pollutants: "Pollutants and their impact",
+  health: "Health advice and how to reduce your exposure",
+  council: "What is being done to reduce air pollution"
+} %}
+
+<h1 class="govuk-heading-{{ pageHeadingSize }}">{{ furtherInfoHeadings[furtherInfoPage] }}: {{ locationName }}</h1>
+
+<nav class="govuk-!-margin-bottom-8" aria-label="Contents">
+  <ul class="govuk-list app-contents-list">
+    <li class="app-contents-list__item">
+      {% if furtherInfoPage == "pollutants" %}
+        <span aria-current="page">Pollutants and their impact</span>
+      {% else %}
+        <a class="govuk-link" href="/{{ version }}/further-information">Pollutants and their impact</a>
+      {% endif %}
+    </li>
+    <li class="app-contents-list__item">
+      {% if furtherInfoPage == "health" %}
+        <span aria-current="page">Health advice and how to reduce your exposure</span>
+      {% else %}
+        <a class="govuk-link" href="/{{ version }}/further-information-health">Health advice and how to reduce your exposure</a>
+      {% endif %}
+    </li>
+    <li class="app-contents-list__item">
+      {% if furtherInfoPage == "council" %}
+        <span aria-current="page">What is being done to reduce air pollution</span>
+      {% else %}
+        <a class="govuk-link" href="/{{ version }}/further-information-council">What is being done to reduce air pollution</a>
+      {% endif %}
+    </li>
+  </ul>
+</nav>

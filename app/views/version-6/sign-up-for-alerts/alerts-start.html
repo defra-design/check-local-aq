@@ -13,24 +13,24 @@ Set up air pollution alerts – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-xl">Set up air pollution alerts</h1>
 
-      <p>Get a free alert by text message or email when air pollution is forecast to be raised in a place you choose.</p>
+      <p>Get a free alert by text message or email when air pollution is predicted to be high, or if a nearby monitoring site measures high pollution levels.</p>
 
-      <p>You can choose to get alerts about:</p>
+      <p>You can choose to get alerts about overall pollution levels, or alerts about specific pollutants:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
         <li><a class="govuk-link" href="/{{ version }}/pollutants/nitrogen-dioxide">nitrogen dioxide</a></li>
-        <li><a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter10">PM10</a></li>
         <li><a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter2">PM2.5</a></li>
+        <li><a class="govuk-link" href="/{{ version }}/pollutants/particulate-matter10">PM10</a></li>
         <li><a class="govuk-link" href="/{{ version }}/pollutants/ozone">ozone</a></li>
         <li><a class="govuk-link" href="/{{ version }}/pollutants/sulphur-dioxide">sulphur dioxide</a></li>
       </ul>
 
-      <p>You can also choose the pollution levels you want to be told about &ndash; moderate, high or very high.</p>
+      <p>You can also choose the pollution levels you want to get alerts for &ndash; moderate, high or very high.</p>
 
-      <p class="govuk-!-margin-bottom-6">Alerts include health advice and what you can do to reduce your exposure. You can change or stop your alerts at any time.</p>
+      <p class="govuk-!-margin-bottom-6">The alerts include health advice and what you can do to reduce your exposure. You can change or stop your alerts at any time.</p>
 
       {{ govukButton({
         text: "Set up air pollution alerts",
-        href: "/" + version + "/sign-up-for-alerts/alerts-where"
+        href: "/" + version + "/sign-up-for-alerts/" + ("alerts-method" if locationPreselected else "alerts-where")
       }) }}
 
     </div>

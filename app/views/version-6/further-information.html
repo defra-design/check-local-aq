@@ -11,6 +11,7 @@
 {% set title = "Air pollution in " ~ locationName ~ (" in " ~ parentArea if parentArea else "") %}
 {% set servicePage = true %}
 {% set pageHeadingSize = pageHeadingSize or "xl" %}
+{% set furtherInfoPage = "pollutants" %}
 
 {% set day2 = 1 | addDaysToTodayAbrev %}
 {% set day3 = 2 | addDaysToTodayAbrev %}
@@ -35,13 +36,13 @@
 <div class="govuk-grid-row" data-module="edge">
   <div class="govuk-grid-column-full-until-desktop govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-{{ pageHeadingSize }}">{{ title }}</h1>
+    {% include "/" + folder + "/includes/further-info-header.html" %}
 
     <h2 class="govuk-heading-m">Predicted air pollution levels</h2>
 
     <!---------- TABBED FORECAST ---------->
 
-    <nav class="x-govuk-secondary-navigation" aria-label="Forecast days">
+    <nav id="forecast-nav" class="x-govuk-secondary-navigation" aria-label="Forecast days">
       <ul class="x-govuk-secondary-navigation__list">
         <li class="x-govuk-secondary-navigation__list-item x-govuk-secondary-navigation__list-item--current">
           <a class="x-govuk-secondary-navigation__link" href="#today" aria-current="page">Today</a>
@@ -258,11 +259,11 @@
         </table>
       </div>
 
-      <p class="govuk-caption-s govuk-!-margin-top-4">Last updated today at 5am</p>
+      <p class="govuk-caption-s govuk-!-margin-top-4">Last updated 2 hours ago</p>
 
       <script>
         (function () {
-          var links = document.querySelectorAll('.x-govuk-secondary-navigation__link');
+          var links = document.querySelectorAll('#forecast-nav .x-govuk-secondary-navigation__link');
           var panels = document.querySelectorAll('.aq-forecast-panel');
 
           function updateBackLink(target) {
@@ -310,23 +311,13 @@
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
 
-    <h2 class="govuk-heading-m">Health advice for low or moderate levels of air pollution</h2>
+    <h2 class="govuk-heading-m">How {{ locationName }} compares to the UK</h2>
 
-    {% set healthAdviceSummary %}
-      <p class="govuk-body">There is no safe level of air pollution. However, for most people, short term exposure to low or moderate air pollution is not an issue. Continue your usual outdoor activities. <a class="govuk-link" href="/{{ version }}/health-effects?locationName={{ locationName }}&parentArea={{ parentArea }}">Check air pollution symptoms and health advice</a>.</p>
-      <p class="govuk-body govuk-!-margin-bottom-0">Long term exposure to air pollution can increase health risks. Simple steps like choosing less busy transport routes and reducing exposure to fire can help. <a class="govuk-link" href="/{{ version }}/actions?locationName={{ locationName }}&parentArea={{ parentArea }}">Get more advice on actions you can take to reduce your exposure</a>.</p>
-    {% endset %}
+    <p class="govuk-body">The average air pollution level is <strong class="daqi-tag daqi-tag--3">3 (low)</strong> for {{ locationName }}.</p>
 
-    {{ govukInsetText({
-        classes: "govuk-inset-text--5",
-        html: healthAdviceSummary
-    }) }}
+    <p class="govuk-body">Air pollution here is higher than in similar locations.</p>
 
-    <div class="govuk-!-padding-bottom-2"></div>
-
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
-
-    {% include "/" + folder + "/includes/local-authority.html" %}
+    <p class="govuk-body"><a class="govuk-link" href="/{{ version }}/where">Search for another location</a></p>
 
     <div class="govuk-!-padding-bottom-2"></div>
 
@@ -351,32 +342,16 @@
 
     {% include "/" + folder + "/includes/air-quality-alerts.html" %}
 
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    {% include "/" + folder + "/includes/further-info-pagination.html" %}
+
     <div class="govuk-!-padding-bottom-9"></div>
 
   </div>
 
   <div class="govuk-grid-column-full-until-desktop govuk-grid-column-one-third-from-desktop">
-    {{ xGovukRelatedNavigation({
-      sections: [{
-        items: [{
-          text: "Health effects of air pollution",
-          href: "/" + version + "/health-effects?locationName=" + locationName
-        },
-        {
-          text: "Actions to reduce your exposure to air pollution",
-          href: "/" + version + "/actions?locationName=" + locationName
-        },
-        {
-          text: "Air pollution alerts",
-          href: "/" + version + "/alerts?locationName=" + locationName
-        },
-        {
-          text: "Using the Daily Air Quality Index (DAQI)",
-          href: "https://www.gov.uk/government/publications/health-effects-of-air-pollution/using-the-daily-air-quality-index-daqi"
-        }
-        ]
-      }]
-    }) }}
+    {% include "/" + folder + "/includes/further-info-related.html" %}
   </div>
 </div>
 {% endblock %}
